@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fontFamilies>
+	<fontFamily name="CustomFont">
+		<normal><![CDATA[report/font/GenShinGothic-Normal.ttf]]></normal>
+		<bold><![CDATA[report/font/GenShinGothic-Bold.ttf]]></bold>
+		<italic><![CDATA[report/font/GenShinGothic-Normal.ttf]]></italic>
+		<boldItalic><![CDATA[report/font/GenShinGothic-Bold.ttf]]></boldItalic>
+		<pdfEncoding><![CDATA[Identity-H]]></pdfEncoding>
+		<pdfEmbedded><![CDATA[true]]></pdfEmbedded>
+		<exportFonts/>
+	</fontFamily>
+    <fontFamily name="bitstream-vera-sans-mono">
+        <normal><![CDATA[report/font/VeraMono.ttf]]></normal>
+        <bold><![CDATA[report/font/VeraMoBd.ttf]]></bold>
+        <italic><![CDATA[report/font/VeraMoIt.ttf]]></italic>
+        <boldItalic><![CDATA[report/font/VeraMoBI.ttf]]></boldItalic>
+        <pdfEncoding><![CDATA[Identity-H]]></pdfEncoding>
+        <pdfEmbedded><![CDATA[true]]></pdfEmbedded>
+        <exportFonts/>
+    </fontFamily>
+    <fontFamily name="anonymous-pro">
+        <normal><![CDATA[report/font/AnonymousPro-Regular.ttf]]></normal>
+        <bold><![CDATA[report/font/AnonymousPro-Bold.ttf]]></bold>
+        <italic><![CDATA[report/font/AnonymousPro-Italic.ttf]]></italic>
+        <boldItalic><![CDATA[report/font/AnonymousPro-BoldItalic.ttf]]></boldItalic>
+        <pdfEncoding><![CDATA[Identity-H]]></pdfEncoding>
+        <pdfEmbedded><![CDATA[true]]></pdfEmbedded>
+        <exportFonts/>
+    </fontFamily>
+    
+    
+
+
+
+    
+</fontFamilies>

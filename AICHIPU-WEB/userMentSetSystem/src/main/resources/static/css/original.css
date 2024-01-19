@@ -1,0 +1,543 @@
+.sidebar-dark-primary {
+  background-color: #007E66;
+    }
+.btn-green,
+.btn-green.disabled, .btn-green:disabled {
+  color: #fff;
+  background-color: #007E66;
+  border-color: #007E66;
+}
+
+/* focusされた時の枠線の色 */
+.btn-green:focus, .btn-green.focus,
+.btn-green:not(:disabled):not(.disabled):active:focus, .btn-green:not(:disabled):not(.disabled).active:focus,
+.show > .btn-green.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 217, 176, 1);
+}
+
+/* hover時（マウスカーソルを重ねた時）の色（通常より濃いor暗めの色を指定）*/
+.btn-green:hover {
+  color: #fff;
+  background-color: #006b57;
+  border-color: #006b57;
+}
+
+/* active時の色（hover時と同等かさらに濃いor暗めの色を指定） */
+.btn-green:not(:disabled):not(.disabled):active, .btn-green:not(:disabled):not(.disabled).active,
+.show > .btn-green.dropdown-toggle {
+  color: #fff;
+  background-color: #006b57;
+  border-color: #006b57;
+}
+.card-axio {
+  background-color: #007E66;
+  color: #fff;
+    }
+.btn-outline-success:hover{
+    background-color: #006b57;
+}
+.btn-outline-success:not(:disabled):not(.disabled):active, .btn-outline-success:not(:disabled):not(.disabled).active,
+.show > .btn-outline-success.dropdown-toggle {
+  color: #fff;
+  background-color: #006b57;
+  border-color: #006b57;
+}
+
+.pagination .page-item.active .page-link {color: #fff; background-color: #007E66;border-color: #006b57; }
+
+div.dataTables_wrapper div.dataTables_paginate ul.pagination .page-item.active .page-link:focus {
+color: #fff;
+background-color: #007E66;
+border-color: #006b57;
+}
+
+.pagination .page-item.active .page-link:hover {
+color: #fff;
+background-color: #007E66;
+border-color: #006b57;
+}
+/* focusされた時の枠線の色 */
+.pagination .page-item.active .page-link:focus, .pagination .page-item.active .page-link.focus,
+.pagination .page-item.active .page-link:not(:disabled):not(.disabled):active:focus, .pagination .page-item.active .page-link:not(:disabled):not(.disabled).active:focus,
+.show > .pagination .page-item.active .page-link.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 217, 176, 1);
+}
+.modal-dialog-fluid {
+  max-width: inherit;
+  width: 98%;
+  margin-left: 15px;
+}
+
+.page-link{
+  color: #007E66;
+  background-color: #fff;
+}
+.page-link:hover {
+  color: #fff;
+  background-color: #007E66;
+  border-color: #006b57;
+  }
+.page-link:focus, .page-link.focus,
+.page-link:not(:disabled):not(.disabled):active:focus, .page-link:not(:disabled):not(.disabled).active:focus,
+.show > .page-link.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 217, 176, 1);
+}
+
+.icon-color{
+  color: #007E66;
+}
+.icon-color:hover{
+  color: #006b57; 
+}
+
+.modal-open {
+  overflow: hidden;
+  height: 100%;
+}
+.modal-open .modal {
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-right: 0!important;
+}
+
+.dropzone {
+  border-radius: 4px;
+  border: 2px dashed #0087f7 !important;
+  width: 500px;
+  height: 100px;
+  margin-right: auto;
+}
+/* 必須マーク */
+/* .required::after {
+  content: "必須";
+  background-color: rgb(255, 0, 0);
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  min-width: 10px;
+  padding: 3px 7px;
+  margin: 0px 5px;
+  line-height: 1;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-align: center;
+  border-radius: 10px;
+  display: inline-block;
+} */
+
+.nav-sidebar .nav-item>.nav-link {
+  margin-bottom: 1rem;
+}
+
+/* DD試し */
+#inputFile {
+  position: relative;
+  padding: 40px 0 10px;
+  text-align: center;
+}
+
+#dropArea {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0 0 0;
+  border: 2px dashed #494949;
+  background: rgba(22, 165, 191, 0);
+  transition: all 0.25s cubic-bezier(0.21, 0.51, 0.51, 1);
+}
+
+#dropArea.dragover {
+  border: 2px solid #16a5bf;
+  background: rgba(22, 165, 191, 0.6);
+}
+
+#uploadFile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: block;
+  width: 300px;
+  height: 80px;
+  opacity: 0;
+}
+
+#inputFileWrap {
+  position: relative;
+  display: inline-block;
+}
+
+#btnInputFile,
+#btnChangeFile {
+  display: table;
+  width: 300px;
+}
+
+#btnChangeFile {
+  display: none;
+}
+
+
+#btnInputFile span,
+#btnChangeFile span {
+  position: relative;
+  z-index: 2;
+  display: table-cell;
+  width: 300px;
+  height: 10px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  background: #333;
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1;
+  font-weight: bold;
+  vertical-align: middle;
+}
+
+#upFileWrap.selected #btnInputFile {
+  display: none;
+}
+
+#upFileWrap.selected #btnChangeFile {
+  display: table;
+}
+
+/* アクシオユーザ検索結果テーブル */
+#providerUserSearchResults td,
+#providerUserSearchResults th{
+padding: 0.5rem 0.4rem;
+}
+
+/* 登録対象ユーザのテーブル */
+#registerProviderUsers td,
+#registerProviderUsers th{
+padding: 0.5rem 0.4rem;
+}
+
+#registerProviderUsers input{
+font-size: 14px;
+line-height: 14px;
+}
+
+#enviromentalInfo td,
+#enviromentalInfo th{
+padding: 0.5rem 0.4rem;
+}
+
+#providerPersonInChargeTable td,
+#providerPersonInChargeTable th{
+padding: 0.5rem 0.4rem;
+}
+
+#enviromentalInfoConfirm td,
+#enviromentalInfoConfirm th{
+padding: 0.5rem 0.4rem;
+}
+
+#providerPersonInChargeTableConfirm td,
+#providerPersonInChargeTableConfirm th{
+padding: 0.5rem 0.4rem;
+}
+
+#providerPersonInChargeTableConfirm input{
+  font-size: 14px;
+  line-height: 14px;
+  }
+
+#providerPersonInChargeTable input{
+  font-size: 14px;
+  line-height: 14px;
+  }
+
+.required::after {
+  content: "*";
+  color:  rgb(255, 0, 0);;
+  font-size: 14px;
+}
+
+/* 進捗率グラフ */
+
+#container1 {
+
+  /* margin: 20px;
+
+  width: 200px;
+
+  height: 200px; */
+
+  position: relative;
+
+}
+
+
+
+.progressbar-text {
+
+  /* color: #0087f7!important; */
+
+  color: #ff69b4!important;
+
+ 
+
+}
+
+/* #container2 .progressbar-text,
+#container3 .progressbar-text,
+#container4 .progressbar-text {
+
+  top: 18%!important;
+
+} */
+
+.support-button{
+  width: 40%;
+}
+
+/* 契約情報一覧のテーブル */
+/* 一覧系のテーブル */
+.listTable:hover {
+  cursor:pointer
+}
+
+.listTable th{
+  padding: 0.5rem 0.4rem;
+}
+
+.listTable td{
+padding: 0.5rem 0.4rem;
+}
+
+.listTable .statusClose{
+display: none;
+background: #d3d3d3;
+}
+
+/* 全てのテーブル */
+ th {
+  background: #00778c !important;
+  color: #fff !important;
+}
+
+/* 一覧画面のカテゴリボタン */
+.checkboxSearchItem {
+  margin-right: 5px; /* ボタン同士の間隔 */
+  margin-bottom: 15px; /* ボタン同士の間隔 */
+}
+
+.checkboxSearchItem input {
+  display: none; /* デフォルトのinputは非表示にする */
+}
+
+.checkboxSearchItem span {
+  color: #333; /* 文字色 */
+  font-size: 14px; /* 文字サイズ */
+  border: 1px solid #333; /* 淵の線 */
+  border-radius: 20px; /* 角丸を入れて、左右が丸いボタンにする */
+  padding: 5px 20px; /* 上下左右に余白をとる */
+}
+
+.checkboxSearchItem input:checked + span {
+  color: rgb(0, 0, 0); /* 文字色を白に */
+  background: #ffebcd; /* 背景色を薄い赤に */
+  border: 1px solid #ffa500; /* 淵の線を薄い赤に */
+}
+
+
+/* datatablesのscrollY対応 */
+table.dataTable thead th,
+table.dataTable thead td {
+  padding: 0.5rem 0.4rem;
+  border-bottom: 1px solid #111;
+}
+/* .dataTables_scrollHeadInner{
+  padding: 0px !important;
+} */
+
+table.dataTable>thead>tr>th:not(.sorting_disabled), table.dataTable>thead>tr>td:not(.sorting_disabled){
+  padding-right: 0px !important;
+}
+
+.checkboxSearchItem input:checked + span {
+  color: rgb(0, 0, 0); /* 文字色 */
+  background: #ffebcd; /* 背景色 */
+  border: 1px solid #ffa500; /* 淵の線 */
+}
+
+/* 詳細検索のスクロールボタン */
+#buttonScroll {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  }
+
+/* ツールチップ */
+.tooltip-inner{
+  max-width: 1000px; /* 幅 */
+}
+
+/* 一覧検索のチェックボックス項目 */
+.searchItemcheckbox {
+  margin-top: 5px;
+}
+
+/* 契約引継ぎモーダルの引継ぎ元チェックボックス */
+.contentCenter {
+  text-align: center;
+}
+
+/* 検索条件欄のラベル */
+.searchConditionField label {
+  margin-bottom: 0;
+}
+
+/* 検索結果選択領域 */
+.searchResultSelectArea {
+  font-size: 14px; 
+  height: 225px; 
+  padding: 10px 0px 10px 20px;
+}
+
+/* 検索結果選択テーブル領域 */
+.searchResultSelectTableArea {
+  overflow-y: scroll;
+  width: calc(100% - 1rem);
+  height: 200px;
+}
+
+/* 顧客検索結果選択テーブル領域 */
+.clientSearchResultSelectTableArea {
+  overflow-y: scroll;
+  width: calc(100% - 1rem);
+  height: 490px;
+}
+
+/* 検索結果選択テーブル */
+.searchResultSelectTable {
+  margin-bottom: 0px;
+}
+
+/* 検索結果選択テーブルのヘッダーセル */
+.searchResultSelectTable th{
+  position: sticky;
+  top: 0;
+  border-bottom: 2px solid #dee2e6;
+  z-index: 1;
+}
+
+/* 検索結果選択テーブルの選択済み行 */
+.searchResultSelectedRow {
+  /* 薄々黄色 */
+  background-color: #ffffe0 !important;
+}
+
+
+/* START：マイページ・管理者パスワード初期化 */
+/* パスワード変更の入力ボックス */
+.passwordChangeBox {
+  border-right: 0px;
+}
+
+/* プレースホルダー */
+.passwordChangeBox::placeholder {
+  font-size: 14px;
+}
+
+/* 目のアイコンボタン */
+.passwordChangeArea .input-group-append .input-group-text {
+  background-color: transparent;
+  border-bottom-right-radius: 0.25rem;
+  border-left: 0;
+  border-top-right-radius: 0.25rem;
+  color: #777;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+/* END：マイページ・管理者パスワード初期化 */
+
+
+/* START：管理者お問い合わせ登録 */
+/* 注目項目 */
+.attentionText {
+  color: #ff0000;
+}
+.attentionItem {
+  border: 1px solid #ff0000 !important;
+  background-color: #fff9fe !important;
+}
+/* END：管理者お問い合わせ登録 */
+
+
+/* START：統計情報 */
+.elementHidden {
+  visibility :hidden;
+}
+
+.scrollArea {
+  overflow-y: auto;
+  height: 500px;
+  width: 100%;
+  margin: 0 auto;
+}
+.scrollArea table {
+  margin: 0 auto;
+  padding: 0;
+  /* border-collapse: collapse; */
+  border-collapse:separate;
+	border-spacing:0;
+}
+
+.scrollArea table thead {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.scrollArea table .analyticsTitle2 {
+  position: sticky;
+  left: 0;
+}
+
+.scrollArea table .analyticsTitle3 {
+  position: sticky;
+  left: 0;
+  background: #398AB9;
+}
+
+.scrollArea table td {
+  background-color: #ffffff;
+}
+
+.btn-circle {
+	width: 90px;
+	height: 90px;
+	text-align: center;
+	padding: 6px 0;
+	font-size: 14px;
+	line-height: 1.428571429;
+	border-radius: 50px !important;
+  background-color: #ffebcd;
+  border: 2px solid #ffa500; /* 淵の線 */
+	}
+
+/* END：統計情報 */
+
+
+
+/* START：ログイン */
+/* 画像 */
+.loginImgArea {
+  margin: -40px -70px -20px 0px;
+  padding: 20px 10px;
+  color: #ffffff;
+
+  /* 薄青 */
+  /* background: #8FC1F0; */
+
+  /* 緑 */
+  background: #007e66;
+}
+
+/* END：ログイン */

@@ -1,0 +1,1783 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="jp.co.axio.masterMentsetSystem.repository.VAdminMaintenanceEntityMapper">
+  <resultMap id="BaseResultMap" type="jp.co.axio.masterMentsetSystem.model.VAdminMaintenanceEntity">
+    <result column="user_id" jdbcType="VARCHAR" property="userId" />
+    <result column="future_user_flag" jdbcType="VARCHAR" property="futureUserFlag" />
+    <result column="reflection_flag" jdbcType="VARCHAR" property="reflectionFlag" />
+    <result column="employee_id" jdbcType="VARCHAR" property="employeeId" />
+    <result column="init_password" jdbcType="VARCHAR" property="initPassword" />
+    <result column="enrollment_kbn" jdbcType="CHAR" property="enrollmentKbn" />
+    <result column="start_date" jdbcType="DATE" property="startDate" />
+    <result column="end_date" jdbcType="DATE" property="endDate" />
+    <result column="employment_kbn" jdbcType="CHAR" property="employmentKbn" />
+    <result column="employment_name" jdbcType="VARCHAR" property="employmentName" />
+    <result column="mailaddr" jdbcType="VARCHAR" property="mailaddr" />
+    <result column="mailaddr_secound" jdbcType="VARCHAR" property="mailaddrSecound" />
+    <result column="mailaddr_notification" jdbcType="VARCHAR" property="mailaddrNotification" />
+    <result column="tel" jdbcType="VARCHAR" property="tel" />
+    <result column="tel_ex" jdbcType="VARCHAR" property="telEx" />
+    <result column="surname_en" jdbcType="VARCHAR" property="surnameEn" />
+    <result column="surname_jp" jdbcType="VARCHAR" property="surnameJp" />
+    <result column="surname_kana" jdbcType="VARCHAR" property="surnameKana" />
+    <result column="middlename_en" jdbcType="VARCHAR" property="middlenameEn" />
+    <result column="middlename_jp" jdbcType="VARCHAR" property="middlenameJp" />
+    <result column="middlename_kana" jdbcType="VARCHAR" property="middlenameKana" />
+    <result column="givenname_en" jdbcType="VARCHAR" property="givennameEn" />
+    <result column="givenname_jp" jdbcType="VARCHAR" property="givennameJp" />
+    <result column="givenname_kana" jdbcType="VARCHAR" property="givennameKana" />
+    <result column="surname_nick_en" jdbcType="VARCHAR" property="surnameNickEn" />
+    <result column="surname_nick_jp" jdbcType="VARCHAR" property="surnameNickJp" />
+    <result column="surname_nick_kana" jdbcType="VARCHAR" property="surnameNickKana" />
+    <result column="middlename_nick_en" jdbcType="VARCHAR" property="middlenameNickEn" />
+    <result column="middlename_nick_jp" jdbcType="VARCHAR" property="middlenameNickJp" />
+    <result column="middlename_nick_kana" jdbcType="VARCHAR" property="middlenameNickKana" />
+    <result column="givenname_nuck_en" jdbcType="VARCHAR" property="givennameNuckEn" />
+    <result column="givenname_nuck_jp" jdbcType="VARCHAR" property="givennameNuckJp" />
+    <result column="givenname_nuck_kana" jdbcType="VARCHAR" property="givennameNuckKana" />
+    <result column="country_code" jdbcType="VARCHAR" property="countryCode" />
+    <result column="region_code" jdbcType="VARCHAR" property="regionCode" />
+    <result column="company_code" jdbcType="VARCHAR" property="companyCode" />
+    <result column="company_name_en" jdbcType="VARCHAR" property="companyNameEn" />
+    <result column="company_name_jp" jdbcType="VARCHAR" property="companyNameJp" />
+    <result column="organization_code" jdbcType="VARCHAR" property="organizationCode" />
+    <result column="organization_name_en" jdbcType="VARCHAR" property="organizationNameEn" />
+    <result column="organization_name_jp" jdbcType="VARCHAR" property="organizationNameJp" />
+    <result column="position_code" jdbcType="VARCHAR" property="positionCode" />
+    <result column="position_name_en" jdbcType="VARCHAR" property="positionNameEn" />
+    <result column="position_name_jp" jdbcType="VARCHAR" property="positionNameJp" />
+    <result column="grade_code" jdbcType="VARCHAR" property="gradeCode" />
+    <result column="grade_name_en" jdbcType="VARCHAR" property="gradeNameEn" />
+    <result column="grade_name_jp" jdbcType="VARCHAR" property="gradeNameJp" />
+    <result column="location_code" jdbcType="CHAR" property="locationCode" />
+    <result column="location_name_en" jdbcType="VARCHAR" property="locationNameEn" />
+    <result column="location_name_jp" jdbcType="VARCHAR" property="locationNameJp" />
+    <result column="kenmu_info" jdbcType="VARCHAR" property="kenmuInfo" />
+    <result column="delete_flag" jdbcType="CHAR" property="deleteFlag" />
+    <result column="invalid_flag" jdbcType="CHAR" property="invalidFlag" />
+    <result column="lang_code" jdbcType="CHAR" property="langCode" />
+    <result column="register_id" jdbcType="VARCHAR" property="registerId" />
+    <result column="regist_ts" jdbcType="TIMESTAMP" property="registTs" />
+    <result column="updater_id" jdbcType="VARCHAR" property="updaterId" />
+    <result column="update_ts" jdbcType="TIMESTAMP" property="updateTs" />
+    <result column="expansion_attr1" jdbcType="VARCHAR" property="expansionAttr1" />
+    <result column="expansion_attr2" jdbcType="VARCHAR" property="expansionAttr2" />
+    <result column="expansion_attr3" jdbcType="VARCHAR" property="expansionAttr3" />
+    <result column="expansion_attr4" jdbcType="VARCHAR" property="expansionAttr4" />
+    <result column="expansion_attr5" jdbcType="VARCHAR" property="expansionAttr5" />
+    <result column="expansion_attr6" jdbcType="VARCHAR" property="expansionAttr6" />
+    <result column="expansion_attr7" jdbcType="VARCHAR" property="expansionAttr7" />
+    <result column="expansion_attr8" jdbcType="VARCHAR" property="expansionAttr8" />
+    <result column="expansion_attr9" jdbcType="VARCHAR" property="expansionAttr9" />
+    <result column="expansion_attr10" jdbcType="VARCHAR" property="expansionAttr10" />
+    <result column="expansion_attr11" jdbcType="VARCHAR" property="expansionAttr11" />
+    <result column="expansion_attr12" jdbcType="VARCHAR" property="expansionAttr12" />
+    <result column="expansion_attr13" jdbcType="VARCHAR" property="expansionAttr13" />
+    <result column="expansion_attr14" jdbcType="VARCHAR" property="expansionAttr14" />
+    <result column="expansion_attr15" jdbcType="VARCHAR" property="expansionAttr15" />
+    <result column="expansion_attr16" jdbcType="VARCHAR" property="expansionAttr16" />
+    <result column="expansion_attr17" jdbcType="VARCHAR" property="expansionAttr17" />
+    <result column="expansion_attr18" jdbcType="VARCHAR" property="expansionAttr18" />
+    <result column="expansion_attr19" jdbcType="VARCHAR" property="expansionAttr19" />
+    <result column="expansion_attr20" jdbcType="VARCHAR" property="expansionAttr20" />
+    <result column="expansion_attr21" jdbcType="VARCHAR" property="expansionAttr21" />
+    <result column="expansion_attr22" jdbcType="VARCHAR" property="expansionAttr22" />
+    <result column="expansion_attr23" jdbcType="VARCHAR" property="expansionAttr23" />
+    <result column="expansion_attr24" jdbcType="VARCHAR" property="expansionAttr24" />
+    <result column="expansion_attr25" jdbcType="VARCHAR" property="expansionAttr25" />
+    <result column="expansion_attr26" jdbcType="VARCHAR" property="expansionAttr26" />
+    <result column="expansion_attr27" jdbcType="VARCHAR" property="expansionAttr27" />
+    <result column="expansion_attr28" jdbcType="VARCHAR" property="expansionAttr28" />
+    <result column="expansion_attr29" jdbcType="VARCHAR" property="expansionAttr29" />
+    <result column="expansion_attr30" jdbcType="VARCHAR" property="expansionAttr30" />
+    <result column="expansion_attr31" jdbcType="VARCHAR" property="expansionAttr31" />
+    <result column="expansion_attr32" jdbcType="VARCHAR" property="expansionAttr32" />
+    <result column="expansion_attr33" jdbcType="VARCHAR" property="expansionAttr33" />
+    <result column="expansion_attr34" jdbcType="VARCHAR" property="expansionAttr34" />
+    <result column="expansion_attr35" jdbcType="VARCHAR" property="expansionAttr35" />
+    <result column="expansion_attr36" jdbcType="VARCHAR" property="expansionAttr36" />
+    <result column="expansion_attr37" jdbcType="VARCHAR" property="expansionAttr37" />
+    <result column="expansion_attr38" jdbcType="VARCHAR" property="expansionAttr38" />
+    <result column="expansion_attr39" jdbcType="VARCHAR" property="expansionAttr39" />
+    <result column="expansion_attr40" jdbcType="VARCHAR" property="expansionAttr40" />
+    <result column="application_use_flag_01" jdbcType="VARCHAR" property="applicationUseFlag01" />
+    <result column="application_use_flag_02" jdbcType="VARCHAR" property="applicationUseFlag02" />
+    <result column="application_use_flag_03" jdbcType="VARCHAR" property="applicationUseFlag03" />
+    <result column="application_use_flag_04" jdbcType="VARCHAR" property="applicationUseFlag04" />
+    <result column="application_use_flag_05" jdbcType="VARCHAR" property="applicationUseFlag05" />
+    <result column="application_use_flag_06" jdbcType="VARCHAR" property="applicationUseFlag06" />
+    <result column="application_use_flag_07" jdbcType="VARCHAR" property="applicationUseFlag07" />
+    <result column="application_use_flag_08" jdbcType="VARCHAR" property="applicationUseFlag08" />
+    <result column="application_use_flag_09" jdbcType="VARCHAR" property="applicationUseFlag09" />
+    <result column="application_use_flag_10" jdbcType="VARCHAR" property="applicationUseFlag10" />
+    <result column="application_use_flag_11" jdbcType="VARCHAR" property="applicationUseFlag11" />
+    <result column="application_use_flag_12" jdbcType="VARCHAR" property="applicationUseFlag12" />
+    <result column="application_use_flag_13" jdbcType="VARCHAR" property="applicationUseFlag13" />
+    <result column="application_use_flag_14" jdbcType="VARCHAR" property="applicationUseFlag14" />
+    <result column="application_use_flag_15" jdbcType="VARCHAR" property="applicationUseFlag15" />
+    <result column="application_use_flag_16" jdbcType="VARCHAR" property="applicationUseFlag16" />
+    <result column="application_use_flag_17" jdbcType="VARCHAR" property="applicationUseFlag17" />
+    <result column="application_use_flag_18" jdbcType="VARCHAR" property="applicationUseFlag18" />
+    <result column="application_use_flag_19" jdbcType="VARCHAR" property="applicationUseFlag19" />
+    <result column="application_use_flag_20" jdbcType="VARCHAR" property="applicationUseFlag20" />
+    <result column="system_valid_flag_01" jdbcType="VARCHAR" property="systemValidFlag01" />
+    <result column="system_valid_flag_02" jdbcType="VARCHAR" property="systemValidFlag02" />
+    <result column="system_valid_flag_03" jdbcType="VARCHAR" property="systemValidFlag03" />
+    <result column="system_valid_flag_04" jdbcType="VARCHAR" property="systemValidFlag04" />
+    <result column="system_valid_flag_05" jdbcType="VARCHAR" property="systemValidFlag05" />
+    <result column="system_valid_flag_06" jdbcType="VARCHAR" property="systemValidFlag06" />
+    <result column="system_valid_flag_07" jdbcType="VARCHAR" property="systemValidFlag07" />
+    <result column="system_valid_flag_08" jdbcType="VARCHAR" property="systemValidFlag08" />
+    <result column="system_valid_flag_09" jdbcType="VARCHAR" property="systemValidFlag09" />
+    <result column="system_valid_flag_10" jdbcType="VARCHAR" property="systemValidFlag10" />
+    <result column="system_valid_flag_11" jdbcType="VARCHAR" property="systemValidFlag11" />
+    <result column="system_valid_flag_12" jdbcType="VARCHAR" property="systemValidFlag12" />
+    <result column="system_valid_flag_13" jdbcType="VARCHAR" property="systemValidFlag13" />
+    <result column="system_valid_flag_14" jdbcType="VARCHAR" property="systemValidFlag14" />
+    <result column="system_valid_flag_15" jdbcType="VARCHAR" property="systemValidFlag15" />
+    <result column="system_valid_flag_16" jdbcType="VARCHAR" property="systemValidFlag16" />
+    <result column="system_valid_flag_17" jdbcType="VARCHAR" property="systemValidFlag17" />
+    <result column="system_valid_flag_18" jdbcType="VARCHAR" property="systemValidFlag18" />
+    <result column="system_valid_flag_19" jdbcType="VARCHAR" property="systemValidFlag19" />
+    <result column="system_valid_flag_20" jdbcType="VARCHAR" property="systemValidFlag20" />
+    <result column="admin_flag" jdbcType="VARCHAR" property="adminFlag" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    user_id, future_user_flag, reflection_flag, employee_id, init_password, enrollment_kbn, 
+    start_date, end_date, employment_kbn, employment_name, mailaddr, mailaddr_secound, 
+    mailaddr_notification, tel, tel_ex, surname_en, surname_jp, surname_kana, middlename_en, 
+    middlename_jp, middlename_kana, givenname_en, givenname_jp, givenname_kana, surname_nick_en, 
+    surname_nick_jp, surname_nick_kana, middlename_nick_en, middlename_nick_jp, middlename_nick_kana, 
+    givenname_nuck_en, givenname_nuck_jp, givenname_nuck_kana, country_code, region_code, 
+    company_code, company_name_en, company_name_jp, organization_code, organization_name_en, 
+    organization_name_jp, position_code, position_name_en, position_name_jp, grade_code, 
+    grade_name_en, grade_name_jp, location_code, location_name_en, location_name_jp, 
+    kenmu_info, delete_flag, invalid_flag, lang_code, register_id, regist_ts, updater_id, 
+    update_ts, expansion_attr1, expansion_attr2, expansion_attr3, expansion_attr4, expansion_attr5, 
+    expansion_attr6, expansion_attr7, expansion_attr8, expansion_attr9, expansion_attr10, 
+    expansion_attr11, expansion_attr12, expansion_attr13, expansion_attr14, expansion_attr15, 
+    expansion_attr16, expansion_attr17, expansion_attr18, expansion_attr19, expansion_attr20, 
+    expansion_attr21, expansion_attr22, expansion_attr23, expansion_attr24, expansion_attr25, 
+    expansion_attr26, expansion_attr27, expansion_attr28, expansion_attr29, expansion_attr30, 
+    expansion_attr31, expansion_attr32, expansion_attr33, expansion_attr34, expansion_attr35, 
+    expansion_attr36, expansion_attr37, expansion_attr38, expansion_attr39, expansion_attr40, 
+    application_use_flag_01, application_use_flag_02, application_use_flag_03, application_use_flag_04, 
+    application_use_flag_05, application_use_flag_06, application_use_flag_07, application_use_flag_08, 
+    application_use_flag_09, application_use_flag_10, application_use_flag_11, application_use_flag_12, 
+    application_use_flag_13, application_use_flag_14, application_use_flag_15, application_use_flag_16, 
+    application_use_flag_17, application_use_flag_18, application_use_flag_19, application_use_flag_20, 
+    system_valid_flag_01, system_valid_flag_02, system_valid_flag_03, system_valid_flag_04, 
+    system_valid_flag_05, system_valid_flag_06, system_valid_flag_07, system_valid_flag_08, 
+    system_valid_flag_09, system_valid_flag_10, system_valid_flag_11, system_valid_flag_12, 
+    system_valid_flag_13, system_valid_flag_14, system_valid_flag_15, system_valid_flag_16, 
+    system_valid_flag_17, system_valid_flag_18, system_valid_flag_19, system_valid_flag_20, 
+    admin_flag
+  </sql>
+  <select id="selectByExample" parameterType="jp.co.axio.masterMentsetSystem.model.VAdminMaintenanceEntityExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from public.v_admin_maintenance
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="jp.co.axio.masterMentsetSystem.model.VAdminMaintenanceEntityExample">
+    delete from public.v_admin_maintenance
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="jp.co.axio.masterMentsetSystem.model.VAdminMaintenanceEntity">
+    insert into public.v_admin_maintenance (user_id, future_user_flag, reflection_flag, 
+      employee_id, init_password, enrollment_kbn, 
+      start_date, end_date, employment_kbn, 
+      employment_name, mailaddr, mailaddr_secound, 
+      mailaddr_notification, tel, tel_ex, 
+      surname_en, surname_jp, surname_kana, 
+      middlename_en, middlename_jp, middlename_kana, 
+      givenname_en, givenname_jp, givenname_kana, 
+      surname_nick_en, surname_nick_jp, surname_nick_kana, 
+      middlename_nick_en, middlename_nick_jp, middlename_nick_kana, 
+      givenname_nuck_en, givenname_nuck_jp, givenname_nuck_kana, 
+      country_code, region_code, company_code, 
+      company_name_en, company_name_jp, organization_code, 
+      organization_name_en, organization_name_jp, 
+      position_code, position_name_en, position_name_jp, 
+      grade_code, grade_name_en, grade_name_jp, 
+      location_code, location_name_en, location_name_jp, 
+      kenmu_info, delete_flag, invalid_flag, 
+      lang_code, register_id, regist_ts, 
+      updater_id, update_ts, expansion_attr1, 
+      expansion_attr2, expansion_attr3, expansion_attr4, 
+      expansion_attr5, expansion_attr6, expansion_attr7, 
+      expansion_attr8, expansion_attr9, expansion_attr10, 
+      expansion_attr11, expansion_attr12, expansion_attr13, 
+      expansion_attr14, expansion_attr15, expansion_attr16, 
+      expansion_attr17, expansion_attr18, expansion_attr19, 
+      expansion_attr20, expansion_attr21, expansion_attr22, 
+      expansion_attr23, expansion_attr24, expansion_attr25, 
+      expansion_attr26, expansion_attr27, expansion_attr28, 
+      expansion_attr29, expansion_attr30, expansion_attr31, 
+      expansion_attr32, expansion_attr33, expansion_attr34, 
+      expansion_attr35, expansion_attr36, expansion_attr37, 
+      expansion_attr38, expansion_attr39, expansion_attr40, 
+      application_use_flag_01, application_use_flag_02, 
+      application_use_flag_03, application_use_flag_04, 
+      application_use_flag_05, application_use_flag_06, 
+      application_use_flag_07, application_use_flag_08, 
+      application_use_flag_09, application_use_flag_10, 
+      application_use_flag_11, application_use_flag_12, 
+      application_use_flag_13, application_use_flag_14, 
+      application_use_flag_15, application_use_flag_16, 
+      application_use_flag_17, application_use_flag_18, 
+      application_use_flag_19, application_use_flag_20, 
+      system_valid_flag_01, system_valid_flag_02, system_valid_flag_03, 
+      system_valid_flag_04, system_valid_flag_05, system_valid_flag_06, 
+      system_valid_flag_07, system_valid_flag_08, system_valid_flag_09, 
+      system_valid_flag_10, system_valid_flag_11, system_valid_flag_12, 
+      system_valid_flag_13, system_valid_flag_14, system_valid_flag_15, 
+      system_valid_flag_16, system_valid_flag_17, system_valid_flag_18, 
+      system_valid_flag_19, system_valid_flag_20, admin_flag
+      )
+    values (#{userId,jdbcType=VARCHAR}, #{futureUserFlag,jdbcType=VARCHAR}, #{reflectionFlag,jdbcType=VARCHAR}, 
+      #{employeeId,jdbcType=VARCHAR}, #{initPassword,jdbcType=VARCHAR}, #{enrollmentKbn,jdbcType=CHAR}, 
+      #{startDate,jdbcType=DATE}, #{endDate,jdbcType=DATE}, #{employmentKbn,jdbcType=CHAR}, 
+      #{employmentName,jdbcType=VARCHAR}, #{mailaddr,jdbcType=VARCHAR}, #{mailaddrSecound,jdbcType=VARCHAR}, 
+      #{mailaddrNotification,jdbcType=VARCHAR}, #{tel,jdbcType=VARCHAR}, #{telEx,jdbcType=VARCHAR}, 
+      #{surnameEn,jdbcType=VARCHAR}, #{surnameJp,jdbcType=VARCHAR}, #{surnameKana,jdbcType=VARCHAR}, 
+      #{middlenameEn,jdbcType=VARCHAR}, #{middlenameJp,jdbcType=VARCHAR}, #{middlenameKana,jdbcType=VARCHAR}, 
+      #{givennameEn,jdbcType=VARCHAR}, #{givennameJp,jdbcType=VARCHAR}, #{givennameKana,jdbcType=VARCHAR}, 
+      #{surnameNickEn,jdbcType=VARCHAR}, #{surnameNickJp,jdbcType=VARCHAR}, #{surnameNickKana,jdbcType=VARCHAR}, 
+      #{middlenameNickEn,jdbcType=VARCHAR}, #{middlenameNickJp,jdbcType=VARCHAR}, #{middlenameNickKana,jdbcType=VARCHAR}, 
+      #{givennameNuckEn,jdbcType=VARCHAR}, #{givennameNuckJp,jdbcType=VARCHAR}, #{givennameNuckKana,jdbcType=VARCHAR}, 
+      #{countryCode,jdbcType=VARCHAR}, #{regionCode,jdbcType=VARCHAR}, #{companyCode,jdbcType=VARCHAR}, 
+      #{companyNameEn,jdbcType=VARCHAR}, #{companyNameJp,jdbcType=VARCHAR}, #{organizationCode,jdbcType=VARCHAR}, 
+      #{organizationNameEn,jdbcType=VARCHAR}, #{organizationNameJp,jdbcType=VARCHAR}, 
+      #{positionCode,jdbcType=VARCHAR}, #{positionNameEn,jdbcType=VARCHAR}, #{positionNameJp,jdbcType=VARCHAR}, 
+      #{gradeCode,jdbcType=VARCHAR}, #{gradeNameEn,jdbcType=VARCHAR}, #{gradeNameJp,jdbcType=VARCHAR}, 
+      #{locationCode,jdbcType=CHAR}, #{locationNameEn,jdbcType=VARCHAR}, #{locationNameJp,jdbcType=VARCHAR}, 
+      #{kenmuInfo,jdbcType=VARCHAR}, #{deleteFlag,jdbcType=CHAR}, #{invalidFlag,jdbcType=CHAR}, 
+      #{langCode,jdbcType=CHAR}, #{registerId,jdbcType=VARCHAR}, #{registTs,jdbcType=TIMESTAMP}, 
+      #{updaterId,jdbcType=VARCHAR}, #{updateTs,jdbcType=TIMESTAMP}, #{expansionAttr1,jdbcType=VARCHAR}, 
+      #{expansionAttr2,jdbcType=VARCHAR}, #{expansionAttr3,jdbcType=VARCHAR}, #{expansionAttr4,jdbcType=VARCHAR}, 
+      #{expansionAttr5,jdbcType=VARCHAR}, #{expansionAttr6,jdbcType=VARCHAR}, #{expansionAttr7,jdbcType=VARCHAR}, 
+      #{expansionAttr8,jdbcType=VARCHAR}, #{expansionAttr9,jdbcType=VARCHAR}, #{expansionAttr10,jdbcType=VARCHAR}, 
+      #{expansionAttr11,jdbcType=VARCHAR}, #{expansionAttr12,jdbcType=VARCHAR}, #{expansionAttr13,jdbcType=VARCHAR}, 
+      #{expansionAttr14,jdbcType=VARCHAR}, #{expansionAttr15,jdbcType=VARCHAR}, #{expansionAttr16,jdbcType=VARCHAR}, 
+      #{expansionAttr17,jdbcType=VARCHAR}, #{expansionAttr18,jdbcType=VARCHAR}, #{expansionAttr19,jdbcType=VARCHAR}, 
+      #{expansionAttr20,jdbcType=VARCHAR}, #{expansionAttr21,jdbcType=VARCHAR}, #{expansionAttr22,jdbcType=VARCHAR}, 
+      #{expansionAttr23,jdbcType=VARCHAR}, #{expansionAttr24,jdbcType=VARCHAR}, #{expansionAttr25,jdbcType=VARCHAR}, 
+      #{expansionAttr26,jdbcType=VARCHAR}, #{expansionAttr27,jdbcType=VARCHAR}, #{expansionAttr28,jdbcType=VARCHAR}, 
+      #{expansionAttr29,jdbcType=VARCHAR}, #{expansionAttr30,jdbcType=VARCHAR}, #{expansionAttr31,jdbcType=VARCHAR}, 
+      #{expansionAttr32,jdbcType=VARCHAR}, #{expansionAttr33,jdbcType=VARCHAR}, #{expansionAttr34,jdbcType=VARCHAR}, 
+      #{expansionAttr35,jdbcType=VARCHAR}, #{expansionAttr36,jdbcType=VARCHAR}, #{expansionAttr37,jdbcType=VARCHAR}, 
+      #{expansionAttr38,jdbcType=VARCHAR}, #{expansionAttr39,jdbcType=VARCHAR}, #{expansionAttr40,jdbcType=VARCHAR}, 
+      #{applicationUseFlag01,jdbcType=VARCHAR}, #{applicationUseFlag02,jdbcType=VARCHAR}, 
+      #{applicationUseFlag03,jdbcType=VARCHAR}, #{applicationUseFlag04,jdbcType=VARCHAR}, 
+      #{applicationUseFlag05,jdbcType=VARCHAR}, #{applicationUseFlag06,jdbcType=VARCHAR}, 
+      #{applicationUseFlag07,jdbcType=VARCHAR}, #{applicationUseFlag08,jdbcType=VARCHAR}, 
+      #{applicationUseFlag09,jdbcType=VARCHAR}, #{applicationUseFlag10,jdbcType=VARCHAR}, 
+      #{applicationUseFlag11,jdbcType=VARCHAR}, #{applicationUseFlag12,jdbcType=VARCHAR}, 
+      #{applicationUseFlag13,jdbcType=VARCHAR}, #{applicationUseFlag14,jdbcType=VARCHAR}, 
+      #{applicationUseFlag15,jdbcType=VARCHAR}, #{applicationUseFlag16,jdbcType=VARCHAR}, 
+      #{applicationUseFlag17,jdbcType=VARCHAR}, #{applicationUseFlag18,jdbcType=VARCHAR}, 
+      #{applicationUseFlag19,jdbcType=VARCHAR}, #{applicationUseFlag20,jdbcType=VARCHAR}, 
+      #{systemValidFlag01,jdbcType=VARCHAR}, #{systemValidFlag02,jdbcType=VARCHAR}, #{systemValidFlag03,jdbcType=VARCHAR}, 
+      #{systemValidFlag04,jdbcType=VARCHAR}, #{systemValidFlag05,jdbcType=VARCHAR}, #{systemValidFlag06,jdbcType=VARCHAR}, 
+      #{systemValidFlag07,jdbcType=VARCHAR}, #{systemValidFlag08,jdbcType=VARCHAR}, #{systemValidFlag09,jdbcType=VARCHAR}, 
+      #{systemValidFlag10,jdbcType=VARCHAR}, #{systemValidFlag11,jdbcType=VARCHAR}, #{systemValidFlag12,jdbcType=VARCHAR}, 
+      #{systemValidFlag13,jdbcType=VARCHAR}, #{systemValidFlag14,jdbcType=VARCHAR}, #{systemValidFlag15,jdbcType=VARCHAR}, 
+      #{systemValidFlag16,jdbcType=VARCHAR}, #{systemValidFlag17,jdbcType=VARCHAR}, #{systemValidFlag18,jdbcType=VARCHAR}, 
+      #{systemValidFlag19,jdbcType=VARCHAR}, #{systemValidFlag20,jdbcType=VARCHAR}, #{adminFlag,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="jp.co.axio.masterMentsetSystem.model.VAdminMaintenanceEntity">
+    insert into public.v_admin_maintenance
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="futureUserFlag != null">
+        future_user_flag,
+      </if>
+      <if test="reflectionFlag != null">
+        reflection_flag,
+      </if>
+      <if test="employeeId != null">
+        employee_id,
+      </if>
+      <if test="initPassword != null">
+        init_password,
+      </if>
+      <if test="enrollmentKbn != null">
+        enrollment_kbn,
+      </if>
+      <if test="startDate != null">
+        start_date,
+      </if>
+      <if test="endDate != null">
+        end_date,
+      </if>
+      <if test="employmentKbn != null">
+        employment_kbn,
+      </if>
+      <if test="employmentName != null">
+        employment_name,
+      </if>
+      <if test="mailaddr != null">
+        mailaddr,
+      </if>
+      <if test="mailaddrSecound != null">
+        mailaddr_secound,
+      </if>
+      <if test="mailaddrNotification != null">
+        mailaddr_notification,
+      </if>
+      <if test="tel != null">
+        tel,
+      </if>
+      <if test="telEx != null">
+        tel_ex,
+      </if>
+      <if test="surnameEn != null">
+        surname_en,
+      </if>
+      <if test="surnameJp != null">
+        surname_jp,
+      </if>
+      <if test="surnameKana != null">
+        surname_kana,
+      </if>
+      <if test="middlenameEn != null">
+        middlename_en,
+      </if>
+      <if test="middlenameJp != null">
+        middlename_jp,
+      </if>
+      <if test="middlenameKana != null">
+        middlename_kana,
+      </if>
+      <if test="givennameEn != null">
+        givenname_en,
+      </if>
+      <if test="givennameJp != null">
+        givenname_jp,
+      </if>
+      <if test="givennameKana != null">
+        givenname_kana,
+      </if>
+      <if test="surnameNickEn != null">
+        surname_nick_en,
+      </if>
+      <if test="surnameNickJp != null">
+        surname_nick_jp,
+      </if>
+      <if test="surnameNickKana != null">
+        surname_nick_kana,
+      </if>
+      <if test="middlenameNickEn != null">
+        middlename_nick_en,
+      </if>
+      <if test="middlenameNickJp != null">
+        middlename_nick_jp,
+      </if>
+      <if test="middlenameNickKana != null">
+        middlename_nick_kana,
+      </if>
+      <if test="givennameNuckEn != null">
+        givenname_nuck_en,
+      </if>
+      <if test="givennameNuckJp != null">
+        givenname_nuck_jp,
+      </if>
+      <if test="givennameNuckKana != null">
+        givenname_nuck_kana,
+      </if>
+      <if test="countryCode != null">
+        country_code,
+      </if>
+      <if test="regionCode != null">
+        region_code,
+      </if>
+      <if test="companyCode != null">
+        company_code,
+      </if>
+      <if test="companyNameEn != null">
+        company_name_en,
+      </if>
+      <if test="companyNameJp != null">
+        company_name_jp,
+      </if>
+      <if test="organizationCode != null">
+        organization_code,
+      </if>
+      <if test="organizationNameEn != null">
+        organization_name_en,
+      </if>
+      <if test="organizationNameJp != null">
+        organization_name_jp,
+      </if>
+      <if test="positionCode != null">
+        position_code,
+      </if>
+      <if test="positionNameEn != null">
+        position_name_en,
+      </if>
+      <if test="positionNameJp != null">
+        position_name_jp,
+      </if>
+      <if test="gradeCode != null">
+        grade_code,
+      </if>
+      <if test="gradeNameEn != null">
+        grade_name_en,
+      </if>
+      <if test="gradeNameJp != null">
+        grade_name_jp,
+      </if>
+      <if test="locationCode != null">
+        location_code,
+      </if>
+      <if test="locationNameEn != null">
+        location_name_en,
+      </if>
+      <if test="locationNameJp != null">
+        location_name_jp,
+      </if>
+      <if test="kenmuInfo != null">
+        kenmu_info,
+      </if>
+      <if test="deleteFlag != null">
+        delete_flag,
+      </if>
+      <if test="invalidFlag != null">
+        invalid_flag,
+      </if>
+      <if test="langCode != null">
+        lang_code,
+      </if>
+      <if test="registerId != null">
+        register_id,
+      </if>
+      <if test="registTs != null">
+        regist_ts,
+      </if>
+      <if test="updaterId != null">
+        updater_id,
+      </if>
+      <if test="updateTs != null">
+        update_ts,
+      </if>
+      <if test="expansionAttr1 != null">
+        expansion_attr1,
+      </if>
+      <if test="expansionAttr2 != null">
+        expansion_attr2,
+      </if>
+      <if test="expansionAttr3 != null">
+        expansion_attr3,
+      </if>
+      <if test="expansionAttr4 != null">
+        expansion_attr4,
+      </if>
+      <if test="expansionAttr5 != null">
+        expansion_attr5,
+      </if>
+      <if test="expansionAttr6 != null">
+        expansion_attr6,
+      </if>
+      <if test="expansionAttr7 != null">
+        expansion_attr7,
+      </if>
+      <if test="expansionAttr8 != null">
+        expansion_attr8,
+      </if>
+      <if test="expansionAttr9 != null">
+        expansion_attr9,
+      </if>
+      <if test="expansionAttr10 != null">
+        expansion_attr10,
+      </if>
+      <if test="expansionAttr11 != null">
+        expansion_attr11,
+      </if>
+      <if test="expansionAttr12 != null">
+        expansion_attr12,
+      </if>
+      <if test="expansionAttr13 != null">
+        expansion_attr13,
+      </if>
+      <if test="expansionAttr14 != null">
+        expansion_attr14,
+      </if>
+      <if test="expansionAttr15 != null">
+        expansion_attr15,
+      </if>
+      <if test="expansionAttr16 != null">
+        expansion_attr16,
+      </if>
+      <if test="expansionAttr17 != null">
+        expansion_attr17,
+      </if>
+      <if test="expansionAttr18 != null">
+        expansion_attr18,
+      </if>
+      <if test="expansionAttr19 != null">
+        expansion_attr19,
+      </if>
+      <if test="expansionAttr20 != null">
+        expansion_attr20,
+      </if>
+      <if test="expansionAttr21 != null">
+        expansion_attr21,
+      </if>
+      <if test="expansionAttr22 != null">
+        expansion_attr22,
+      </if>
+      <if test="expansionAttr23 != null">
+        expansion_attr23,
+      </if>
+      <if test="expansionAttr24 != null">
+        expansion_attr24,
+      </if>
+      <if test="expansionAttr25 != null">
+        expansion_attr25,
+      </if>
+      <if test="expansionAttr26 != null">
+        expansion_attr26,
+      </if>
+      <if test="expansionAttr27 != null">
+        expansion_attr27,
+      </if>
+      <if test="expansionAttr28 != null">
+        expansion_attr28,
+      </if>
+      <if test="expansionAttr29 != null">
+        expansion_attr29,
+      </if>
+      <if test="expansionAttr30 != null">
+        expansion_attr30,
+      </if>
+      <if test="expansionAttr31 != null">
+        expansion_attr31,
+      </if>
+      <if test="expansionAttr32 != null">
+        expansion_attr32,
+      </if>
+      <if test="expansionAttr33 != null">
+        expansion_attr33,
+      </if>
+      <if test="expansionAttr34 != null">
+        expansion_attr34,
+      </if>
+      <if test="expansionAttr35 != null">
+        expansion_attr35,
+      </if>
+      <if test="expansionAttr36 != null">
+        expansion_attr36,
+      </if>
+      <if test="expansionAttr37 != null">
+        expansion_attr37,
+      </if>
+      <if test="expansionAttr38 != null">
+        expansion_attr38,
+      </if>
+      <if test="expansionAttr39 != null">
+        expansion_attr39,
+      </if>
+      <if test="expansionAttr40 != null">
+        expansion_attr40,
+      </if>
+      <if test="applicationUseFlag01 != null">
+        application_use_flag_01,
+      </if>
+      <if test="applicationUseFlag02 != null">
+        application_use_flag_02,
+      </if>
+      <if test="applicationUseFlag03 != null">
+        application_use_flag_03,
+      </if>
+      <if test="applicationUseFlag04 != null">
+        application_use_flag_04,
+      </if>
+      <if test="applicationUseFlag05 != null">
+        application_use_flag_05,
+      </if>
+      <if test="applicationUseFlag06 != null">
+        application_use_flag_06,
+      </if>
+      <if test="applicationUseFlag07 != null">
+        application_use_flag_07,
+      </if>
+      <if test="applicationUseFlag08 != null">
+        application_use_flag_08,
+      </if>
+      <if test="applicationUseFlag09 != null">
+        application_use_flag_09,
+      </if>
+      <if test="applicationUseFlag10 != null">
+        application_use_flag_10,
+      </if>
+      <if test="applicationUseFlag11 != null">
+        application_use_flag_11,
+      </if>
+      <if test="applicationUseFlag12 != null">
+        application_use_flag_12,
+      </if>
+      <if test="applicationUseFlag13 != null">
+        application_use_flag_13,
+      </if>
+      <if test="applicationUseFlag14 != null">
+        application_use_flag_14,
+      </if>
+      <if test="applicationUseFlag15 != null">
+        application_use_flag_15,
+      </if>
+      <if test="applicationUseFlag16 != null">
+        application_use_flag_16,
+      </if>
+      <if test="applicationUseFlag17 != null">
+        application_use_flag_17,
+      </if>
+      <if test="applicationUseFlag18 != null">
+        application_use_flag_18,
+      </if>
+      <if test="applicationUseFlag19 != null">
+        application_use_flag_19,
+      </if>
+      <if test="applicationUseFlag20 != null">
+        application_use_flag_20,
+      </if>
+      <if test="systemValidFlag01 != null">
+        system_valid_flag_01,
+      </if>
+      <if test="systemValidFlag02 != null">
+        system_valid_flag_02,
+      </if>
+      <if test="systemValidFlag03 != null">
+        system_valid_flag_03,
+      </if>
+      <if test="systemValidFlag04 != null">
+        system_valid_flag_04,
+      </if>
+      <if test="systemValidFlag05 != null">
+        system_valid_flag_05,
+      </if>
+      <if test="systemValidFlag06 != null">
+        system_valid_flag_06,
+      </if>
+      <if test="systemValidFlag07 != null">
+        system_valid_flag_07,
+      </if>
+      <if test="systemValidFlag08 != null">
+        system_valid_flag_08,
+      </if>
+      <if test="systemValidFlag09 != null">
+        system_valid_flag_09,
+      </if>
+      <if test="systemValidFlag10 != null">
+        system_valid_flag_10,
+      </if>
+      <if test="systemValidFlag11 != null">
+        system_valid_flag_11,
+      </if>
+      <if test="systemValidFlag12 != null">
+        system_valid_flag_12,
+      </if>
+      <if test="systemValidFlag13 != null">
+        system_valid_flag_13,
+      </if>
+      <if test="systemValidFlag14 != null">
+        system_valid_flag_14,
+      </if>
+      <if test="systemValidFlag15 != null">
+        system_valid_flag_15,
+      </if>
+      <if test="systemValidFlag16 != null">
+        system_valid_flag_16,
+      </if>
+      <if test="systemValidFlag17 != null">
+        system_valid_flag_17,
+      </if>
+      <if test="systemValidFlag18 != null">
+        system_valid_flag_18,
+      </if>
+      <if test="systemValidFlag19 != null">
+        system_valid_flag_19,
+      </if>
+      <if test="systemValidFlag20 != null">
+        system_valid_flag_20,
+      </if>
+      <if test="adminFlag != null">
+        admin_flag,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="futureUserFlag != null">
+        #{futureUserFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="reflectionFlag != null">
+        #{reflectionFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeId != null">
+        #{employeeId,jdbcType=VARCHAR},
+      </if>
+      <if test="initPassword != null">
+        #{initPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="enrollmentKbn != null">
+        #{enrollmentKbn,jdbcType=CHAR},
+      </if>
+      <if test="startDate != null">
+        #{startDate,jdbcType=DATE},
+      </if>
+      <if test="endDate != null">
+        #{endDate,jdbcType=DATE},
+      </if>
+      <if test="employmentKbn != null">
+        #{employmentKbn,jdbcType=CHAR},
+      </if>
+      <if test="employmentName != null">
+        #{employmentName,jdbcType=VARCHAR},
+      </if>
+      <if test="mailaddr != null">
+        #{mailaddr,jdbcType=VARCHAR},
+      </if>
+      <if test="mailaddrSecound != null">
+        #{mailaddrSecound,jdbcType=VARCHAR},
+      </if>
+      <if test="mailaddrNotification != null">
+        #{mailaddrNotification,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null">
+        #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="telEx != null">
+        #{telEx,jdbcType=VARCHAR},
+      </if>
+      <if test="surnameEn != null">
+        #{surnameEn,jdbcType=VARCHAR},
+      </if>
+      <if test="surnameJp != null">
+        #{surnameJp,jdbcType=VARCHAR},
+      </if>
+      <if test="surnameKana != null">
+        #{surnameKana,jdbcType=VARCHAR},
+      </if>
+      <if test="middlenameEn != null">
+        #{middlenameEn,jdbcType=VARCHAR},
+      </if>
+      <if test="middlenameJp != null">
+        #{middlenameJp,jdbcType=VARCHAR},
+      </if>
+      <if test="middlenameKana != null">
+        #{middlenameKana,jdbcType=VARCHAR},
+      </if>
+      <if test="givennameEn != null">
+        #{givennameEn,jdbcType=VARCHAR},
+      </if>
+      <if test="givennameJp != null">
+        #{givennameJp,jdbcType=VARCHAR},
+      </if>
+      <if test="givennameKana != null">
+        #{givennameKana,jdbcType=VARCHAR},
+      </if>
+      <if test="surnameNickEn != null">
+        #{surnameNickEn,jdbcType=VARCHAR},
+      </if>
+      <if test="surnameNickJp != null">
+        #{surnameNickJp,jdbcType=VARCHAR},
+      </if>
+      <if test="surnameNickKana != null">
+        #{surnameNickKana,jdbcType=VARCHAR},
+      </if>
+      <if test="middlenameNickEn != null">
+        #{middlenameNickEn,jdbcType=VARCHAR},
+      </if>
+      <if test="middlenameNickJp != null">
+        #{middlenameNickJp,jdbcType=VARCHAR},
+      </if>
+      <if test="middlenameNickKana != null">
+        #{middlenameNickKana,jdbcType=VARCHAR},
+      </if>
+      <if test="givennameNuckEn != null">
+        #{givennameNuckEn,jdbcType=VARCHAR},
+      </if>
+      <if test="givennameNuckJp != null">
+        #{givennameNuckJp,jdbcType=VARCHAR},
+      </if>
+      <if test="givennameNuckKana != null">
+        #{givennameNuckKana,jdbcType=VARCHAR},
+      </if>
+      <if test="countryCode != null">
+        #{countryCode,jdbcType=VARCHAR},
+      </if>
+      <if test="regionCode != null">
+        #{regionCode,jdbcType=VARCHAR},
+      </if>
+      <if test="companyCode != null">
+        #{companyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="companyNameEn != null">
+        #{companyNameEn,jdbcType=VARCHAR},
+      </if>
+      <if test="companyNameJp != null">
+        #{companyNameJp,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationCode != null">
+        #{organizationCode,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationNameEn != null">
+        #{organizationNameEn,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationNameJp != null">
+        #{organizationNameJp,jdbcType=VARCHAR},
+      </if>
+      <if test="positionCode != null">
+        #{positionCode,jdbcType=VARCHAR},
+      </if>
+      <if test="positionNameEn != null">
+        #{positionNameEn,jdbcType=VARCHAR},
+      </if>
+      <if test="positionNameJp != null">
+        #{positionNameJp,jdbcType=VARCHAR},
+      </if>
+      <if test="gradeCode != null">
+        #{gradeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="gradeNameEn != null">
+        #{gradeNameEn,jdbcType=VARCHAR},
+      </if>
+      <if test="gradeNameJp != null">
+        #{gradeNameJp,jdbcType=VARCHAR},
+      </if>
+      <if test="locationCode != null">
+        #{locationCode,jdbcType=CHAR},
+      </if>
+      <if test="locationNameEn != null">
+        #{locationNameEn,jdbcType=VARCHAR},
+      </if>
+      <if test="locationNameJp != null">
+        #{locationNameJp,jdbcType=VARCHAR},
+      </if>
+      <if test="kenmuInfo != null">
+        #{kenmuInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="deleteFlag != null">
+        #{deleteFlag,jdbcType=CHAR},
+      </if>
+      <if test="invalidFlag != null">
+        #{invalidFlag,jdbcType=CHAR},
+      </if>
+      <if test="langCode != null">
+        #{langCode,jdbcType=CHAR},
+      </if>
+      <if test="registerId != null">
+        #{registerId,jdbcType=VARCHAR},
+      </if>
+      <if test="registTs != null">
+        #{registTs,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updaterId != null">
+        #{updaterId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTs != null">
+        #{updateTs,jdbcType=TIMESTAMP},
+      </if>
+      <if test="expansionAttr1 != null">
+        #{expansionAttr1,jdbcType=VARCHAR},
+      </if>
+      <if test="expansionAttr2 != null">
+        #{expansionAttr2,jdbcType=VARCHAR},
+      </if>
+      <if test="expansionAttr3 != null">
+        #{expansionAttr3,jdbcType=VARCHAR},
+      </if>
+      <if test="expansionAttr4 != null">
+        #{expansionAttr4,jdbcType=VARCHAR},
+      </if>
+      <if test="expansionAttr5 != null">
+        #{expansionAttr5,jdbcType=VARCHAR},
+      </if>
+      <if test="expansionAttr6 != null">
+        #{expansionAttr6,jdbcType=VARCHAR},
+      </if>
+      <if test="expansionAttr7 != null">
+        #{expansionAttr7,jdbcType=VARCHAR},
+      </if>
+      <if test="expansionAttr8 != null">
+        #{expansionAttr8,jdbcType=VARCHAR},
+      </if>
+      <if test="expansionAttr9 != null">
+        #{expansionAttr9,jdbcType=VARCHAR},
+      </if>
+      <if test="expansionAttr10 != null">
+        #{expansionAttr10,jdbcType=VARCHAR},
+      </if>
+      <if test="expansionAttr11 != null">
+        #{expansionAttr11,jdbcType=VARCHAR},
+      </if>
+      <if test="expansionAttr12 != null">
+        #{expansionAttr12,jdbcType=VARCHAR},
+      </if>
+      <if test="expansionAttr13 != null">
+        #{expansionAttr13,jdbcType=VARCHAR},
+      </if>
+      <if test="expansionAttr14 != null">
+        #{expansionAttr14,jdbcType=VARCHAR},
+      </if>
+      <if test="expansionAttr15 != null">
+        #{expansionAttr15,jdbcType=VARCHAR},
+      </if>
+      <if test="expansionAttr16 != null">
+        #{expansionAttr16,jdbcType=VARCHAR},
+      </if>
+      <if test="expansionAttr17 != null">
+        #{expansionAttr17,jdbcType=VARCHAR},
+      </if>
+      <if test="expansionAttr18 != null">
+        #{expansionAttr18,jdbcType=VARCHAR},
+      </if>
+      <if test="expansionAttr19 != null">
+        #{expansionAttr19,jdbcType=VARCHAR},
+      </if>
+      <if test="expansionAttr20 != null">
+        #{expansionAttr20,jdbcType=VARCHAR},
+      </if>
+      <if test="expansionAttr21 != null">
+        #{expansionAttr21,jdbcType=VARCHAR},
+      </if>
+      <if test="expansionAttr22 != null">
+        #{expansionAttr22,jdbcType=VARCHAR},
+      </if>
+      <if test="expansionAttr23 != null">
+        #{expansionAttr23,jdbcType=VARCHAR},
+      </if>
+      <if test="expansionAttr24 != null">
+        #{expansionAttr24,jdbcType=VARCHAR},
+      </if>
+      <if test="expansionAttr25 != null">
+        #{expansionAttr25,jdbcType=VARCHAR},
+      </if>
+      <if test="expansionAttr26 != null">
+        #{expansionAttr26,jdbcType=VARCHAR},
+      </if>
+      <if test="expansionAttr27 != null">
+        #{expansionAttr27,jdbcType=VARCHAR},
+      </if>
+      <if test="expansionAttr28 != null">
+        #{expansionAttr28,jdbcType=VARCHAR},
+      </if>
+      <if test="expansionAttr29 != null">
+        #{expansionAttr29,jdbcType=VARCHAR},
+      </if>
+      <if test="expansionAttr30 != null">
+        #{expansionAttr30,jdbcType=VARCHAR},
+      </if>
+      <if test="expansionAttr31 != null">
+        #{expansionAttr31,jdbcType=VARCHAR},
+      </if>
+      <if test="expansionAttr32 != null">
+        #{expansionAttr32,jdbcType=VARCHAR},
+      </if>
+      <if test="expansionAttr33 != null">
+        #{expansionAttr33,jdbcType=VARCHAR},
+      </if>
+      <if test="expansionAttr34 != null">
+        #{expansionAttr34,jdbcType=VARCHAR},
+      </if>
+      <if test="expansionAttr35 != null">
+        #{expansionAttr35,jdbcType=VARCHAR},
+      </if>
+      <if test="expansionAttr36 != null">
+        #{expansionAttr36,jdbcType=VARCHAR},
+      </if>
+      <if test="expansionAttr37 != null">
+        #{expansionAttr37,jdbcType=VARCHAR},
+      </if>
+      <if test="expansionAttr38 != null">
+        #{expansionAttr38,jdbcType=VARCHAR},
+      </if>
+      <if test="expansionAttr39 != null">
+        #{expansionAttr39,jdbcType=VARCHAR},
+      </if>
+      <if test="expansionAttr40 != null">
+        #{expansionAttr40,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag01 != null">
+        #{applicationUseFlag01,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag02 != null">
+        #{applicationUseFlag02,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag03 != null">
+        #{applicationUseFlag03,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag04 != null">
+        #{applicationUseFlag04,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag05 != null">
+        #{applicationUseFlag05,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag06 != null">
+        #{applicationUseFlag06,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag07 != null">
+        #{applicationUseFlag07,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag08 != null">
+        #{applicationUseFlag08,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag09 != null">
+        #{applicationUseFlag09,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag10 != null">
+        #{applicationUseFlag10,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag11 != null">
+        #{applicationUseFlag11,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag12 != null">
+        #{applicationUseFlag12,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag13 != null">
+        #{applicationUseFlag13,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag14 != null">
+        #{applicationUseFlag14,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag15 != null">
+        #{applicationUseFlag15,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag16 != null">
+        #{applicationUseFlag16,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag17 != null">
+        #{applicationUseFlag17,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag18 != null">
+        #{applicationUseFlag18,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag19 != null">
+        #{applicationUseFlag19,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag20 != null">
+        #{applicationUseFlag20,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag01 != null">
+        #{systemValidFlag01,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag02 != null">
+        #{systemValidFlag02,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag03 != null">
+        #{systemValidFlag03,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag04 != null">
+        #{systemValidFlag04,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag05 != null">
+        #{systemValidFlag05,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag06 != null">
+        #{systemValidFlag06,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag07 != null">
+        #{systemValidFlag07,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag08 != null">
+        #{systemValidFlag08,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag09 != null">
+        #{systemValidFlag09,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag10 != null">
+        #{systemValidFlag10,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag11 != null">
+        #{systemValidFlag11,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag12 != null">
+        #{systemValidFlag12,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag13 != null">
+        #{systemValidFlag13,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag14 != null">
+        #{systemValidFlag14,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag15 != null">
+        #{systemValidFlag15,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag16 != null">
+        #{systemValidFlag16,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag17 != null">
+        #{systemValidFlag17,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag18 != null">
+        #{systemValidFlag18,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag19 != null">
+        #{systemValidFlag19,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag20 != null">
+        #{systemValidFlag20,jdbcType=VARCHAR},
+      </if>
+      <if test="adminFlag != null">
+        #{adminFlag,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="jp.co.axio.masterMentsetSystem.model.VAdminMaintenanceEntityExample" resultType="java.lang.Long">
+    select count(*) from public.v_admin_maintenance
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update public.v_admin_maintenance
+    <set>
+      <if test="record.userId != null">
+        user_id = #{record.userId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.futureUserFlag != null">
+        future_user_flag = #{record.futureUserFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="record.reflectionFlag != null">
+        reflection_flag = #{record.reflectionFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeeId != null">
+        employee_id = #{record.employeeId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.initPassword != null">
+        init_password = #{record.initPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="record.enrollmentKbn != null">
+        enrollment_kbn = #{record.enrollmentKbn,jdbcType=CHAR},
+      </if>
+      <if test="record.startDate != null">
+        start_date = #{record.startDate,jdbcType=DATE},
+      </if>
+      <if test="record.endDate != null">
+        end_date = #{record.endDate,jdbcType=DATE},
+      </if>
+      <if test="record.employmentKbn != null">
+        employment_kbn = #{record.employmentKbn,jdbcType=CHAR},
+      </if>
+      <if test="record.employmentName != null">
+        employment_name = #{record.employmentName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mailaddr != null">
+        mailaddr = #{record.mailaddr,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mailaddrSecound != null">
+        mailaddr_secound = #{record.mailaddrSecound,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mailaddrNotification != null">
+        mailaddr_notification = #{record.mailaddrNotification,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tel != null">
+        tel = #{record.tel,jdbcType=VARCHAR},
+      </if>
+      <if test="record.telEx != null">
+        tel_ex = #{record.telEx,jdbcType=VARCHAR},
+      </if>
+      <if test="record.surnameEn != null">
+        surname_en = #{record.surnameEn,jdbcType=VARCHAR},
+      </if>
+      <if test="record.surnameJp != null">
+        surname_jp = #{record.surnameJp,jdbcType=VARCHAR},
+      </if>
+      <if test="record.surnameKana != null">
+        surname_kana = #{record.surnameKana,jdbcType=VARCHAR},
+      </if>
+      <if test="record.middlenameEn != null">
+        middlename_en = #{record.middlenameEn,jdbcType=VARCHAR},
+      </if>
+      <if test="record.middlenameJp != null">
+        middlename_jp = #{record.middlenameJp,jdbcType=VARCHAR},
+      </if>
+      <if test="record.middlenameKana != null">
+        middlename_kana = #{record.middlenameKana,jdbcType=VARCHAR},
+      </if>
+      <if test="record.givennameEn != null">
+        givenname_en = #{record.givennameEn,jdbcType=VARCHAR},
+      </if>
+      <if test="record.givennameJp != null">
+        givenname_jp = #{record.givennameJp,jdbcType=VARCHAR},
+      </if>
+      <if test="record.givennameKana != null">
+        givenname_kana = #{record.givennameKana,jdbcType=VARCHAR},
+      </if>
+      <if test="record.surnameNickEn != null">
+        surname_nick_en = #{record.surnameNickEn,jdbcType=VARCHAR},
+      </if>
+      <if test="record.surnameNickJp != null">
+        surname_nick_jp = #{record.surnameNickJp,jdbcType=VARCHAR},
+      </if>
+      <if test="record.surnameNickKana != null">
+        surname_nick_kana = #{record.surnameNickKana,jdbcType=VARCHAR},
+      </if>
+      <if test="record.middlenameNickEn != null">
+        middlename_nick_en = #{record.middlenameNickEn,jdbcType=VARCHAR},
+      </if>
+      <if test="record.middlenameNickJp != null">
+        middlename_nick_jp = #{record.middlenameNickJp,jdbcType=VARCHAR},
+      </if>
+      <if test="record.middlenameNickKana != null">
+        middlename_nick_kana = #{record.middlenameNickKana,jdbcType=VARCHAR},
+      </if>
+      <if test="record.givennameNuckEn != null">
+        givenname_nuck_en = #{record.givennameNuckEn,jdbcType=VARCHAR},
+      </if>
+      <if test="record.givennameNuckJp != null">
+        givenname_nuck_jp = #{record.givennameNuckJp,jdbcType=VARCHAR},
+      </if>
+      <if test="record.givennameNuckKana != null">
+        givenname_nuck_kana = #{record.givennameNuckKana,jdbcType=VARCHAR},
+      </if>
+      <if test="record.countryCode != null">
+        country_code = #{record.countryCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.regionCode != null">
+        region_code = #{record.regionCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.companyCode != null">
+        company_code = #{record.companyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.companyNameEn != null">
+        company_name_en = #{record.companyNameEn,jdbcType=VARCHAR},
+      </if>
+      <if test="record.companyNameJp != null">
+        company_name_jp = #{record.companyNameJp,jdbcType=VARCHAR},
+      </if>
+      <if test="record.organizationCode != null">
+        organization_code = #{record.organizationCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.organizationNameEn != null">
+        organization_name_en = #{record.organizationNameEn,jdbcType=VARCHAR},
+      </if>
+      <if test="record.organizationNameJp != null">
+        organization_name_jp = #{record.organizationNameJp,jdbcType=VARCHAR},
+      </if>
+      <if test="record.positionCode != null">
+        position_code = #{record.positionCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.positionNameEn != null">
+        position_name_en = #{record.positionNameEn,jdbcType=VARCHAR},
+      </if>
+      <if test="record.positionNameJp != null">
+        position_name_jp = #{record.positionNameJp,jdbcType=VARCHAR},
+      </if>
+      <if test="record.gradeCode != null">
+        grade_code = #{record.gradeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.gradeNameEn != null">
+        grade_name_en = #{record.gradeNameEn,jdbcType=VARCHAR},
+      </if>
+      <if test="record.gradeNameJp != null">
+        grade_name_jp = #{record.gradeNameJp,jdbcType=VARCHAR},
+      </if>
+      <if test="record.locationCode != null">
+        location_code = #{record.locationCode,jdbcType=CHAR},
+      </if>
+      <if test="record.locationNameEn != null">
+        location_name_en = #{record.locationNameEn,jdbcType=VARCHAR},
+      </if>
+      <if test="record.locationNameJp != null">
+        location_name_jp = #{record.locationNameJp,jdbcType=VARCHAR},
+      </if>
+      <if test="record.kenmuInfo != null">
+        kenmu_info = #{record.kenmuInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.deleteFlag != null">
+        delete_flag = #{record.deleteFlag,jdbcType=CHAR},
+      </if>
+      <if test="record.invalidFlag != null">
+        invalid_flag = #{record.invalidFlag,jdbcType=CHAR},
+      </if>
+      <if test="record.langCode != null">
+        lang_code = #{record.langCode,jdbcType=CHAR},
+      </if>
+      <if test="record.registerId != null">
+        register_id = #{record.registerId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.registTs != null">
+        regist_ts = #{record.registTs,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updaterId != null">
+        updater_id = #{record.updaterId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.updateTs != null">
+        update_ts = #{record.updateTs,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.expansionAttr1 != null">
+        expansion_attr1 = #{record.expansionAttr1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.expansionAttr2 != null">
+        expansion_attr2 = #{record.expansionAttr2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.expansionAttr3 != null">
+        expansion_attr3 = #{record.expansionAttr3,jdbcType=VARCHAR},
+      </if>
+      <if test="record.expansionAttr4 != null">
+        expansion_attr4 = #{record.expansionAttr4,jdbcType=VARCHAR},
+      </if>
+      <if test="record.expansionAttr5 != null">
+        expansion_attr5 = #{record.expansionAttr5,jdbcType=VARCHAR},
+      </if>
+      <if test="record.expansionAttr6 != null">
+        expansion_attr6 = #{record.expansionAttr6,jdbcType=VARCHAR},
+      </if>
+      <if test="record.expansionAttr7 != null">
+        expansion_attr7 = #{record.expansionAttr7,jdbcType=VARCHAR},
+      </if>
+      <if test="record.expansionAttr8 != null">
+        expansion_attr8 = #{record.expansionAttr8,jdbcType=VARCHAR},
+      </if>
+      <if test="record.expansionAttr9 != null">
+        expansion_attr9 = #{record.expansionAttr9,jdbcType=VARCHAR},
+      </if>
+      <if test="record.expansionAttr10 != null">
+        expansion_attr10 = #{record.expansionAttr10,jdbcType=VARCHAR},
+      </if>
+      <if test="record.expansionAttr11 != null">
+        expansion_attr11 = #{record.expansionAttr11,jdbcType=VARCHAR},
+      </if>
+      <if test="record.expansionAttr12 != null">
+        expansion_attr12 = #{record.expansionAttr12,jdbcType=VARCHAR},
+      </if>
+      <if test="record.expansionAttr13 != null">
+        expansion_attr13 = #{record.expansionAttr13,jdbcType=VARCHAR},
+      </if>
+      <if test="record.expansionAttr14 != null">
+        expansion_attr14 = #{record.expansionAttr14,jdbcType=VARCHAR},
+      </if>
+      <if test="record.expansionAttr15 != null">
+        expansion_attr15 = #{record.expansionAttr15,jdbcType=VARCHAR},
+      </if>
+      <if test="record.expansionAttr16 != null">
+        expansion_attr16 = #{record.expansionAttr16,jdbcType=VARCHAR},
+      </if>
+      <if test="record.expansionAttr17 != null">
+        expansion_attr17 = #{record.expansionAttr17,jdbcType=VARCHAR},
+      </if>
+      <if test="record.expansionAttr18 != null">
+        expansion_attr18 = #{record.expansionAttr18,jdbcType=VARCHAR},
+      </if>
+      <if test="record.expansionAttr19 != null">
+        expansion_attr19 = #{record.expansionAttr19,jdbcType=VARCHAR},
+      </if>
+      <if test="record.expansionAttr20 != null">
+        expansion_attr20 = #{record.expansionAttr20,jdbcType=VARCHAR},
+      </if>
+      <if test="record.expansionAttr21 != null">
+        expansion_attr21 = #{record.expansionAttr21,jdbcType=VARCHAR},
+      </if>
+      <if test="record.expansionAttr22 != null">
+        expansion_attr22 = #{record.expansionAttr22,jdbcType=VARCHAR},
+      </if>
+      <if test="record.expansionAttr23 != null">
+        expansion_attr23 = #{record.expansionAttr23,jdbcType=VARCHAR},
+      </if>
+      <if test="record.expansionAttr24 != null">
+        expansion_attr24 = #{record.expansionAttr24,jdbcType=VARCHAR},
+      </if>
+      <if test="record.expansionAttr25 != null">
+        expansion_attr25 = #{record.expansionAttr25,jdbcType=VARCHAR},
+      </if>
+      <if test="record.expansionAttr26 != null">
+        expansion_attr26 = #{record.expansionAttr26,jdbcType=VARCHAR},
+      </if>
+      <if test="record.expansionAttr27 != null">
+        expansion_attr27 = #{record.expansionAttr27,jdbcType=VARCHAR},
+      </if>
+      <if test="record.expansionAttr28 != null">
+        expansion_attr28 = #{record.expansionAttr28,jdbcType=VARCHAR},
+      </if>
+      <if test="record.expansionAttr29 != null">
+        expansion_attr29 = #{record.expansionAttr29,jdbcType=VARCHAR},
+      </if>
+      <if test="record.expansionAttr30 != null">
+        expansion_attr30 = #{record.expansionAttr30,jdbcType=VARCHAR},
+      </if>
+      <if test="record.expansionAttr31 != null">
+        expansion_attr31 = #{record.expansionAttr31,jdbcType=VARCHAR},
+      </if>
+      <if test="record.expansionAttr32 != null">
+        expansion_attr32 = #{record.expansionAttr32,jdbcType=VARCHAR},
+      </if>
+      <if test="record.expansionAttr33 != null">
+        expansion_attr33 = #{record.expansionAttr33,jdbcType=VARCHAR},
+      </if>
+      <if test="record.expansionAttr34 != null">
+        expansion_attr34 = #{record.expansionAttr34,jdbcType=VARCHAR},
+      </if>
+      <if test="record.expansionAttr35 != null">
+        expansion_attr35 = #{record.expansionAttr35,jdbcType=VARCHAR},
+      </if>
+      <if test="record.expansionAttr36 != null">
+        expansion_attr36 = #{record.expansionAttr36,jdbcType=VARCHAR},
+      </if>
+      <if test="record.expansionAttr37 != null">
+        expansion_attr37 = #{record.expansionAttr37,jdbcType=VARCHAR},
+      </if>
+      <if test="record.expansionAttr38 != null">
+        expansion_attr38 = #{record.expansionAttr38,jdbcType=VARCHAR},
+      </if>
+      <if test="record.expansionAttr39 != null">
+        expansion_attr39 = #{record.expansionAttr39,jdbcType=VARCHAR},
+      </if>
+      <if test="record.expansionAttr40 != null">
+        expansion_attr40 = #{record.expansionAttr40,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applicationUseFlag01 != null">
+        application_use_flag_01 = #{record.applicationUseFlag01,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applicationUseFlag02 != null">
+        application_use_flag_02 = #{record.applicationUseFlag02,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applicationUseFlag03 != null">
+        application_use_flag_03 = #{record.applicationUseFlag03,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applicationUseFlag04 != null">
+        application_use_flag_04 = #{record.applicationUseFlag04,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applicationUseFlag05 != null">
+        application_use_flag_05 = #{record.applicationUseFlag05,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applicationUseFlag06 != null">
+        application_use_flag_06 = #{record.applicationUseFlag06,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applicationUseFlag07 != null">
+        application_use_flag_07 = #{record.applicationUseFlag07,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applicationUseFlag08 != null">
+        application_use_flag_08 = #{record.applicationUseFlag08,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applicationUseFlag09 != null">
+        application_use_flag_09 = #{record.applicationUseFlag09,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applicationUseFlag10 != null">
+        application_use_flag_10 = #{record.applicationUseFlag10,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applicationUseFlag11 != null">
+        application_use_flag_11 = #{record.applicationUseFlag11,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applicationUseFlag12 != null">
+        application_use_flag_12 = #{record.applicationUseFlag12,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applicationUseFlag13 != null">
+        application_use_flag_13 = #{record.applicationUseFlag13,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applicationUseFlag14 != null">
+        application_use_flag_14 = #{record.applicationUseFlag14,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applicationUseFlag15 != null">
+        application_use_flag_15 = #{record.applicationUseFlag15,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applicationUseFlag16 != null">
+        application_use_flag_16 = #{record.applicationUseFlag16,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applicationUseFlag17 != null">
+        application_use_flag_17 = #{record.applicationUseFlag17,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applicationUseFlag18 != null">
+        application_use_flag_18 = #{record.applicationUseFlag18,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applicationUseFlag19 != null">
+        application_use_flag_19 = #{record.applicationUseFlag19,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applicationUseFlag20 != null">
+        application_use_flag_20 = #{record.applicationUseFlag20,jdbcType=VARCHAR},
+      </if>
+      <if test="record.systemValidFlag01 != null">
+        system_valid_flag_01 = #{record.systemValidFlag01,jdbcType=VARCHAR},
+      </if>
+      <if test="record.systemValidFlag02 != null">
+        system_valid_flag_02 = #{record.systemValidFlag02,jdbcType=VARCHAR},
+      </if>
+      <if test="record.systemValidFlag03 != null">
+        system_valid_flag_03 = #{record.systemValidFlag03,jdbcType=VARCHAR},
+      </if>
+      <if test="record.systemValidFlag04 != null">
+        system_valid_flag_04 = #{record.systemValidFlag04,jdbcType=VARCHAR},
+      </if>
+      <if test="record.systemValidFlag05 != null">
+        system_valid_flag_05 = #{record.systemValidFlag05,jdbcType=VARCHAR},
+      </if>
+      <if test="record.systemValidFlag06 != null">
+        system_valid_flag_06 = #{record.systemValidFlag06,jdbcType=VARCHAR},
+      </if>
+      <if test="record.systemValidFlag07 != null">
+        system_valid_flag_07 = #{record.systemValidFlag07,jdbcType=VARCHAR},
+      </if>
+      <if test="record.systemValidFlag08 != null">
+        system_valid_flag_08 = #{record.systemValidFlag08,jdbcType=VARCHAR},
+      </if>
+      <if test="record.systemValidFlag09 != null">
+        system_valid_flag_09 = #{record.systemValidFlag09,jdbcType=VARCHAR},
+      </if>
+      <if test="record.systemValidFlag10 != null">
+        system_valid_flag_10 = #{record.systemValidFlag10,jdbcType=VARCHAR},
+      </if>
+      <if test="record.systemValidFlag11 != null">
+        system_valid_flag_11 = #{record.systemValidFlag11,jdbcType=VARCHAR},
+      </if>
+      <if test="record.systemValidFlag12 != null">
+        system_valid_flag_12 = #{record.systemValidFlag12,jdbcType=VARCHAR},
+      </if>
+      <if test="record.systemValidFlag13 != null">
+        system_valid_flag_13 = #{record.systemValidFlag13,jdbcType=VARCHAR},
+      </if>
+      <if test="record.systemValidFlag14 != null">
+        system_valid_flag_14 = #{record.systemValidFlag14,jdbcType=VARCHAR},
+      </if>
+      <if test="record.systemValidFlag15 != null">
+        system_valid_flag_15 = #{record.systemValidFlag15,jdbcType=VARCHAR},
+      </if>
+      <if test="record.systemValidFlag16 != null">
+        system_valid_flag_16 = #{record.systemValidFlag16,jdbcType=VARCHAR},
+      </if>
+      <if test="record.systemValidFlag17 != null">
+        system_valid_flag_17 = #{record.systemValidFlag17,jdbcType=VARCHAR},
+      </if>
+      <if test="record.systemValidFlag18 != null">
+        system_valid_flag_18 = #{record.systemValidFlag18,jdbcType=VARCHAR},
+      </if>
+      <if test="record.systemValidFlag19 != null">
+        system_valid_flag_19 = #{record.systemValidFlag19,jdbcType=VARCHAR},
+      </if>
+      <if test="record.systemValidFlag20 != null">
+        system_valid_flag_20 = #{record.systemValidFlag20,jdbcType=VARCHAR},
+      </if>
+      <if test="record.adminFlag != null">
+        admin_flag = #{record.adminFlag,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update public.v_admin_maintenance
+    set user_id = #{record.userId,jdbcType=VARCHAR},
+      future_user_flag = #{record.futureUserFlag,jdbcType=VARCHAR},
+      reflection_flag = #{record.reflectionFlag,jdbcType=VARCHAR},
+      employee_id = #{record.employeeId,jdbcType=VARCHAR},
+      init_password = #{record.initPassword,jdbcType=VARCHAR},
+      enrollment_kbn = #{record.enrollmentKbn,jdbcType=CHAR},
+      start_date = #{record.startDate,jdbcType=DATE},
+      end_date = #{record.endDate,jdbcType=DATE},
+      employment_kbn = #{record.employmentKbn,jdbcType=CHAR},
+      employment_name = #{record.employmentName,jdbcType=VARCHAR},
+      mailaddr = #{record.mailaddr,jdbcType=VARCHAR},
+      mailaddr_secound = #{record.mailaddrSecound,jdbcType=VARCHAR},
+      mailaddr_notification = #{record.mailaddrNotification,jdbcType=VARCHAR},
+      tel = #{record.tel,jdbcType=VARCHAR},
+      tel_ex = #{record.telEx,jdbcType=VARCHAR},
+      surname_en = #{record.surnameEn,jdbcType=VARCHAR},
+      surname_jp = #{record.surnameJp,jdbcType=VARCHAR},
+      surname_kana = #{record.surnameKana,jdbcType=VARCHAR},
+      middlename_en = #{record.middlenameEn,jdbcType=VARCHAR},
+      middlename_jp = #{record.middlenameJp,jdbcType=VARCHAR},
+      middlename_kana = #{record.middlenameKana,jdbcType=VARCHAR},
+      givenname_en = #{record.givennameEn,jdbcType=VARCHAR},
+      givenname_jp = #{record.givennameJp,jdbcType=VARCHAR},
+      givenname_kana = #{record.givennameKana,jdbcType=VARCHAR},
+      surname_nick_en = #{record.surnameNickEn,jdbcType=VARCHAR},
+      surname_nick_jp = #{record.surnameNickJp,jdbcType=VARCHAR},
+      surname_nick_kana = #{record.surnameNickKana,jdbcType=VARCHAR},
+      middlename_nick_en = #{record.middlenameNickEn,jdbcType=VARCHAR},
+      middlename_nick_jp = #{record.middlenameNickJp,jdbcType=VARCHAR},
+      middlename_nick_kana = #{record.middlenameNickKana,jdbcType=VARCHAR},
+      givenname_nuck_en = #{record.givennameNuckEn,jdbcType=VARCHAR},
+      givenname_nuck_jp = #{record.givennameNuckJp,jdbcType=VARCHAR},
+      givenname_nuck_kana = #{record.givennameNuckKana,jdbcType=VARCHAR},
+      country_code = #{record.countryCode,jdbcType=VARCHAR},
+      region_code = #{record.regionCode,jdbcType=VARCHAR},
+      company_code = #{record.companyCode,jdbcType=VARCHAR},
+      company_name_en = #{record.companyNameEn,jdbcType=VARCHAR},
+      company_name_jp = #{record.companyNameJp,jdbcType=VARCHAR},
+      organization_code = #{record.organizationCode,jdbcType=VARCHAR},
+      organization_name_en = #{record.organizationNameEn,jdbcType=VARCHAR},
+      organization_name_jp = #{record.organizationNameJp,jdbcType=VARCHAR},
+      position_code = #{record.positionCode,jdbcType=VARCHAR},
+      position_name_en = #{record.positionNameEn,jdbcType=VARCHAR},
+      position_name_jp = #{record.positionNameJp,jdbcType=VARCHAR},
+      grade_code = #{record.gradeCode,jdbcType=VARCHAR},
+      grade_name_en = #{record.gradeNameEn,jdbcType=VARCHAR},
+      grade_name_jp = #{record.gradeNameJp,jdbcType=VARCHAR},
+      location_code = #{record.locationCode,jdbcType=CHAR},
+      location_name_en = #{record.locationNameEn,jdbcType=VARCHAR},
+      location_name_jp = #{record.locationNameJp,jdbcType=VARCHAR},
+      kenmu_info = #{record.kenmuInfo,jdbcType=VARCHAR},
+      delete_flag = #{record.deleteFlag,jdbcType=CHAR},
+      invalid_flag = #{record.invalidFlag,jdbcType=CHAR},
+      lang_code = #{record.langCode,jdbcType=CHAR},
+      register_id = #{record.registerId,jdbcType=VARCHAR},
+      regist_ts = #{record.registTs,jdbcType=TIMESTAMP},
+      updater_id = #{record.updaterId,jdbcType=VARCHAR},
+      update_ts = #{record.updateTs,jdbcType=TIMESTAMP},
+      expansion_attr1 = #{record.expansionAttr1,jdbcType=VARCHAR},
+      expansion_attr2 = #{record.expansionAttr2,jdbcType=VARCHAR},
+      expansion_attr3 = #{record.expansionAttr3,jdbcType=VARCHAR},
+      expansion_attr4 = #{record.expansionAttr4,jdbcType=VARCHAR},
+      expansion_attr5 = #{record.expansionAttr5,jdbcType=VARCHAR},
+      expansion_attr6 = #{record.expansionAttr6,jdbcType=VARCHAR},
+      expansion_attr7 = #{record.expansionAttr7,jdbcType=VARCHAR},
+      expansion_attr8 = #{record.expansionAttr8,jdbcType=VARCHAR},
+      expansion_attr9 = #{record.expansionAttr9,jdbcType=VARCHAR},
+      expansion_attr10 = #{record.expansionAttr10,jdbcType=VARCHAR},
+      expansion_attr11 = #{record.expansionAttr11,jdbcType=VARCHAR},
+      expansion_attr12 = #{record.expansionAttr12,jdbcType=VARCHAR},
+      expansion_attr13 = #{record.expansionAttr13,jdbcType=VARCHAR},
+      expansion_attr14 = #{record.expansionAttr14,jdbcType=VARCHAR},
+      expansion_attr15 = #{record.expansionAttr15,jdbcType=VARCHAR},
+      expansion_attr16 = #{record.expansionAttr16,jdbcType=VARCHAR},
+      expansion_attr17 = #{record.expansionAttr17,jdbcType=VARCHAR},
+      expansion_attr18 = #{record.expansionAttr18,jdbcType=VARCHAR},
+      expansion_attr19 = #{record.expansionAttr19,jdbcType=VARCHAR},
+      expansion_attr20 = #{record.expansionAttr20,jdbcType=VARCHAR},
+      expansion_attr21 = #{record.expansionAttr21,jdbcType=VARCHAR},
+      expansion_attr22 = #{record.expansionAttr22,jdbcType=VARCHAR},
+      expansion_attr23 = #{record.expansionAttr23,jdbcType=VARCHAR},
+      expansion_attr24 = #{record.expansionAttr24,jdbcType=VARCHAR},
+      expansion_attr25 = #{record.expansionAttr25,jdbcType=VARCHAR},
+      expansion_attr26 = #{record.expansionAttr26,jdbcType=VARCHAR},
+      expansion_attr27 = #{record.expansionAttr27,jdbcType=VARCHAR},
+      expansion_attr28 = #{record.expansionAttr28,jdbcType=VARCHAR},
+      expansion_attr29 = #{record.expansionAttr29,jdbcType=VARCHAR},
+      expansion_attr30 = #{record.expansionAttr30,jdbcType=VARCHAR},
+      expansion_attr31 = #{record.expansionAttr31,jdbcType=VARCHAR},
+      expansion_attr32 = #{record.expansionAttr32,jdbcType=VARCHAR},
+      expansion_attr33 = #{record.expansionAttr33,jdbcType=VARCHAR},
+      expansion_attr34 = #{record.expansionAttr34,jdbcType=VARCHAR},
+      expansion_attr35 = #{record.expansionAttr35,jdbcType=VARCHAR},
+      expansion_attr36 = #{record.expansionAttr36,jdbcType=VARCHAR},
+      expansion_attr37 = #{record.expansionAttr37,jdbcType=VARCHAR},
+      expansion_attr38 = #{record.expansionAttr38,jdbcType=VARCHAR},
+      expansion_attr39 = #{record.expansionAttr39,jdbcType=VARCHAR},
+      expansion_attr40 = #{record.expansionAttr40,jdbcType=VARCHAR},
+      application_use_flag_01 = #{record.applicationUseFlag01,jdbcType=VARCHAR},
+      application_use_flag_02 = #{record.applicationUseFlag02,jdbcType=VARCHAR},
+      application_use_flag_03 = #{record.applicationUseFlag03,jdbcType=VARCHAR},
+      application_use_flag_04 = #{record.applicationUseFlag04,jdbcType=VARCHAR},
+      application_use_flag_05 = #{record.applicationUseFlag05,jdbcType=VARCHAR},
+      application_use_flag_06 = #{record.applicationUseFlag06,jdbcType=VARCHAR},
+      application_use_flag_07 = #{record.applicationUseFlag07,jdbcType=VARCHAR},
+      application_use_flag_08 = #{record.applicationUseFlag08,jdbcType=VARCHAR},
+      application_use_flag_09 = #{record.applicationUseFlag09,jdbcType=VARCHAR},
+      application_use_flag_10 = #{record.applicationUseFlag10,jdbcType=VARCHAR},
+      application_use_flag_11 = #{record.applicationUseFlag11,jdbcType=VARCHAR},
+      application_use_flag_12 = #{record.applicationUseFlag12,jdbcType=VARCHAR},
+      application_use_flag_13 = #{record.applicationUseFlag13,jdbcType=VARCHAR},
+      application_use_flag_14 = #{record.applicationUseFlag14,jdbcType=VARCHAR},
+      application_use_flag_15 = #{record.applicationUseFlag15,jdbcType=VARCHAR},
+      application_use_flag_16 = #{record.applicationUseFlag16,jdbcType=VARCHAR},
+      application_use_flag_17 = #{record.applicationUseFlag17,jdbcType=VARCHAR},
+      application_use_flag_18 = #{record.applicationUseFlag18,jdbcType=VARCHAR},
+      application_use_flag_19 = #{record.applicationUseFlag19,jdbcType=VARCHAR},
+      application_use_flag_20 = #{record.applicationUseFlag20,jdbcType=VARCHAR},
+      system_valid_flag_01 = #{record.systemValidFlag01,jdbcType=VARCHAR},
+      system_valid_flag_02 = #{record.systemValidFlag02,jdbcType=VARCHAR},
+      system_valid_flag_03 = #{record.systemValidFlag03,jdbcType=VARCHAR},
+      system_valid_flag_04 = #{record.systemValidFlag04,jdbcType=VARCHAR},
+      system_valid_flag_05 = #{record.systemValidFlag05,jdbcType=VARCHAR},
+      system_valid_flag_06 = #{record.systemValidFlag06,jdbcType=VARCHAR},
+      system_valid_flag_07 = #{record.systemValidFlag07,jdbcType=VARCHAR},
+      system_valid_flag_08 = #{record.systemValidFlag08,jdbcType=VARCHAR},
+      system_valid_flag_09 = #{record.systemValidFlag09,jdbcType=VARCHAR},
+      system_valid_flag_10 = #{record.systemValidFlag10,jdbcType=VARCHAR},
+      system_valid_flag_11 = #{record.systemValidFlag11,jdbcType=VARCHAR},
+      system_valid_flag_12 = #{record.systemValidFlag12,jdbcType=VARCHAR},
+      system_valid_flag_13 = #{record.systemValidFlag13,jdbcType=VARCHAR},
+      system_valid_flag_14 = #{record.systemValidFlag14,jdbcType=VARCHAR},
+      system_valid_flag_15 = #{record.systemValidFlag15,jdbcType=VARCHAR},
+      system_valid_flag_16 = #{record.systemValidFlag16,jdbcType=VARCHAR},
+      system_valid_flag_17 = #{record.systemValidFlag17,jdbcType=VARCHAR},
+      system_valid_flag_18 = #{record.systemValidFlag18,jdbcType=VARCHAR},
+      system_valid_flag_19 = #{record.systemValidFlag19,jdbcType=VARCHAR},
+      system_valid_flag_20 = #{record.systemValidFlag20,jdbcType=VARCHAR},
+      admin_flag = #{record.adminFlag,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <select id="searchByUserId" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from v_admin_maintenance
+    where
+    user_id = #{userId,jdbcType=VARCHAR}
+  </select>
+    <select id="selectUserPage" resultType="jp.co.axio.masterMentsetSystem.model.VAdminMaintenanceEntity"></select>
+</mapper>

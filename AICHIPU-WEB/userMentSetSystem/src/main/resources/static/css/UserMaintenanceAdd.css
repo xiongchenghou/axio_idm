@@ -1,0 +1,103 @@
+
+
+/* ドロップダウンリストデザイン */
+.searchDetailBox__profileList__item select {
+  max-width: 270px;
+  padding: 7px 12px;
+  margin-left: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  font-size: 1.4rem;
+}
+
+.searchDetailBox__profileList__item input {
+  max-width: 230px;
+}
+
+.searchDetailBox__profileList__item select {
+  max-width: 230px;
+}
+
+.searchDetailBox__profileList__item--full input {
+  max-width: 760px;
+}
+
+.searchDetailBox__profileList__item--full select {
+  max-width: 760px;
+}
+
+.searchDetailBox__profileList__item--full.searchDetailBox__profileList__item--50 input {
+  max-width: 270px;
+}
+
+/* 変更ボタン　デザイン */
+#userSaveBtn {/*ボタンの下地*/
+  color: #1F3990;/*文字・アイコン色*/
+  border-radius: 14px;/*角丸に*/
+  position: relative;
+  display: block;
+  height: 100px;/*高さ*/
+  width: 100px;/*幅*/
+  text-align: center;/*中身を中央寄せ*/
+  padding-top: 8px;/*上側との余白*/
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 13px;/*文字のサイズ*/
+  font-weight: bold;
+  background-color: #FFF;
+  overflow: hidden;/*はみ出た部分を隠す*/
+  text-decoration:none;/*下線は消す*/
+}
+
+
+
+#userSaveBtn i {
+  font-size: 40px;/*アイコンサイズ*/
+  position: relative;
+  display:inline-block;
+  position: relative;
+  transition: .5;
+  color: #1F3990;
+  margin-bottom: 10px;
+}
+
+/* 取り消しボタン　デザイン */
+#userCancelBtn {/*ボタンの下地*/
+  color: #1F3990;/*文字・アイコン色*/
+  border-radius: 14px;/*角丸に*/
+  position: relative;
+  display: block;
+  height: 100px;/*高さ*/
+  width: 100px;/*幅*/
+  text-align: center;/*中身を中央寄せ*/
+  padding-top: 8px;/*上側との余白*/
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 13px;/*文字のサイズ*/
+  font-weight: bold;
+  background-color: #FFF;
+  overflow: hidden;/*はみ出た部分を隠す*/
+  text-decoration:none;/*下線は消す*/
+}
+
+
+
+#userCancelBtn i {
+  font-size: 40px;/*アイコンサイズ*/
+  position: relative;
+  display:inline-block;
+  position: relative;
+  transition: .5;
+  color: #1F3990;
+  margin-bottom: 10px;
+}
+
+.searchDetailBox__titleArea__btnArea {
+  justify-content:flex-start;
+}
+
+.searchDetailBox__titleArea__btnArea {
+  left: 10px;
+}
+

@@ -1,0 +1,326 @@
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout">
+<!-- <script type="text/javascript" src="chrome-extension://mdnleldcmiljblolnjhpnblkcekpdkpa/libs/customElements.js" class="__REQUESTLY__SCRIPT"></script> -->
+
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Change Password</title>
+
+  <link th:href="@{/vendor/jquery-ui-1.12.1/jquery-ui.css}" rel="stylesheet">
+  <link th:href="@{/vendor/bootstrap-5.0.2-dist/css/bootstrap.min.css}" rel="stylesheet">
+  <link th:href="@{/vendor/datatables/dataTables.bootstrap.css}" rel="stylesheet">
+  <link th:href="@{/css/common.css}" rel="stylesheet">
+  <link th:href="@{/vendor/fontawesome-free-6.1.1-web/css/all.css}" rel="stylesheet">
+
+  <!-- DataTables -->
+  <link rel="stylesheet" th:href="@{/vendor/datatables/1.13.6/css/bootstrap.min.css}">
+  <link rel="stylesheet" th:href="@{/vendor/datatables/1.13.6/css/dataTables.bootstrap5.min.css}">
+  <link rel="stylesheet" th:href="@{/vendor/datatables/1.13.6/css/fixedColumns.dataTables.min.css}">
+  <link rel="stylesheet" th:href="@{/vendor/AdminLTE-3.2.0/plugins/datatables-responsive/css/responsive.bootstrap4.min.css}">
+  <link rel="stylesheet" th:href="@{/vendor/AdminLTE-3.2.0/plugins/datatables-buttons/css/buttons.bootstrap4.min.css}">
+
+  <link rel="stylesheet" th:href="@{/vendor/AdminLTE-3.2.0/plugins/icheck-bootstrap/icheck-bootstrap.min.css}">
+
+  <!-- Theme style -->
+  <link rel="stylesheet" th:href="@{/vendor/AdminLTE-3.2.0/dist/css/adminlte.min.css}">
+  <!-- SweetAlert2 CSS Style -->
+  <link th:href="@{/vendor/sweetalert2/css/sweetalert2.min.css}" rel="stylesheet">
+  <!-- 個別設定CSS -->
+  <link th:href="@{/css/usercsv.css}" rel="stylesheet">
+
+  <!-- style -->
+  <style>
+
+    .container {
+      font-size: 100% !important;
+    }
+
+    form {
+      font-size: 15px;
+    }
+
+    #passwordChangeBtn {
+      font-size: 14px;
+    }
+
+    input[type="text"]{
+      font-size: 15px;
+    }
+
+    input[type="password"]{
+      font-size: 15px;
+    }
+
+    .note {
+      position: relative;
+      margin: 2em 0;
+      padding: 0.5em 1em;
+      border: solid 2px #0e24b0;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .note .note__title {
+      position: absolute;
+      display: inline-block;
+      top: -7px;
+      left: 10px;
+      padding: 0 9px;
+      line-height: 1;
+      font-size: 14px;
+      background: #FFF;
+      color: #0e24b0;
+      ;
+      font-weight: bold;
+    }
+
+    #auth-part .note__group {
+      margin-top: 120px;
+    }
+
+
+
+    .note p {
+      margin: 0;
+      padding: 0;
+    }
+
+  </style>
+
+
+  <!-- 個別設定CSS -->
+  <link th:href="@{./assets/css/style2.css}" rel="stylesheet">
+</head>
+
+<body>
+
+  <!--// header -->
+  <header id="header" class="header">
+    <div class="header__inner">
+      <figure class="header__img"><img src="./assets/img/common/img_logo01.png" alt="AXIO" width="73"
+          height="36"></figure>
+        <a href="./logout" class="header__link">Log out</a>
+    </div>
+  </header>
+  <!-- header //-->
+
+  <div class="modTitleArea">
+    <div class="modTitleArea__inner">
+      <h1 class="modTitleArea__title"><i class="fa-solid fa-key">　Change Password</i></h1>
+      <a  th:href="@{/menu}" class="modTitleArea__prevButton"><span>back</span></a>
+    </div>
+  </div>
+
+  <div class="main">
+
+    <div class="container" style="width: 800px">
+              <div class="callout callout-danger d-none" style="color: red; " id="errMsgDiv">
+              <p id="errMsgP"></p>
+              </div>
+
+      <div class="row">
+        <!-- 利用者一覧 -->
+        <div class="col-12">
+          <div class="card searchCard cardUniversal">
+              <div class="card-header">
+              </div>
+
+              <div class="mb-2"></div>
+
+              <div class="card-body">
+
+                <form id="chgPwdForm" th:action="@{/chgPwdSave}" th:object="${ChgPwdForm}"   method="post" class="form-horizontal">
+                  <div class="mb-3">
+                    <label for="userId" class="form-label">User ID</label>
+                    <input type="text" class="form-control" id="userId" th:value="*{userId}" disabled>
+                    <input type="hidden" th:field="*{userId}" th:value="*{userId}">
+                  </div>
+                  <div class="mb-3">
+                    <label for="nowPassword" class="form-label">Current Password</label>
+                    <input type="password" class="form-control" th:field="*{nowPassword}">
+                  </div>
+                  <div class="mb-3">
+                    <label for="newPassword" class="form-label">New Password</label>
+                    <input type="password" class="form-control" th:field="*{newPassword}">
+                  </div>
+                  <div class="mb-3">
+                    <label for="newPasswordConfirm" class="form-label">Confirm New Password</label>
+                    <input type="password" class="form-control" th:field="*{newPasswordConfirm}">
+                  </div>
+
+                  <div class="mb-5"></div>
+
+                  <div class="row d-flex justify-content-center">
+                    <div class="col-5 d-flex justify-content-center">
+                    　<button id="passwordChangeBtn" type="button" class="btn btn-primary">　　　　　　Change　　　　　　</button>
+                    </div>
+                  </div>
+
+                </form>
+
+                <div class="note__group">
+                  <div class="note">
+                    <span class="note__title">Password Policy</span>
+                      <div class="row">
+                        <div class="col-5">
+                          ・　Upper-case Alphabet Letters
+                        </div>
+                        <div class="col-7">
+                          1 letter or more
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-5">
+                          ・　Lower-case Alphabet Letters
+                        </div>
+                        <div class="col-7">
+                          1 letter or more
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-5">
+                          ・　Numbers
+                        </div>
+                        <div class="col-7">
+                          1 character or more
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-5">
+                          ・　Symbols
+                        </div>
+                        <div class="col-7">
+                          1 character or more (no use allowed symbols　" ' ` ,）
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-5">
+                          ・　Minimum Password Length
+                        </div>
+                        <div class="col-7">
+                          8 characters
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-5">
+                          ・　Maximum Password Length
+                        </div>
+                        <div class="col-7">
+                          <span style="font-weight:bold; color:red;">20 characters</span>
+                        </div>
+                      </div>
+
+                      <br>
+
+                      <div class="row">
+                        <div class="col-12">
+                          ※　You cannot use the password that includes your User ID or the same password as before
+                          <br>　　 the change.
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-12">
+                          ※　The password with 5 or more consecutive characters of the same type causes an error.
+                          <br>　　　e.g. abcd#123
+                        </div>
+                      </div>
+
+
+                      <div class="row">
+                        <div class="col-12">
+                          ※　You cannot use the password that contains string of 5 or more characters in common
+                          <br>　　with before the change.
+                          <br>　　　e.g. [before] abcd#123　⇒　[after] abcd#456
+                        </div>
+                      </div>
+
+
+                    <!-- <p>・　Upper-case Alphabet Letters　　　　1 letter or more</p>
+                    <p>・　Lower-case Alphabet Letters　　　　1 letter or more</p>
+                    <p>・　Numbers 　　　　　　　　　　　　　1 character or more</p>
+                    <p>・　Symbols 　　　　　　　　　　　　　　1 character or more (no use allowed symbols　" ' ` ,）</p>
+                    <p>・　Minimum Password Length　　　　　　8 characters</p>
+                    <p>・　Maximum Password Length　　　<span style="font-weight:bold; color:red;">20 characters</span></p>
+
+                    <br>
+
+                    <p>※　You cannot use the password that includes your User ID or the same password </p>
+                    <p>　　as before the change.</p>
+                    <p>※　The password with 5 or more consecutive characters of the same type causes an error.
+                    </p>
+                    <p>　　　e.g. abcd#123</p>
+                    <p>※　You cannot use the password that contains string of 5 or more characters in common</p>
+                    <p>　　with before the change.</p>
+                    <p>　　　e.g. [before] abcd#123　⇒　[after] abcd#456</p> -->
+
+                </div>
+
+              </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+  </div>
+
+
+  <!-- 解除確認モーダル -->
+  <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true"
+       data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header card-axio">
+          <h5 class="modal-title" id="userUnlockModalTitle">Confirm</h5>
+        </div>
+        <div class="modal-body" style="font-size: 16px; padding-bottom: 5px;">
+            <div style="margin-bottom: 15px;" id="confirmMessage">
+            </div>
+        </div>
+
+        <div class="modal-footer" style="font-size: 16px;">
+          <div class="">
+            <button type="button" class="btn btn-outline-secondary btn-lg" data-bs-dismiss="modal">
+              　Cancel　
+            </button>
+            <button id="btnConfirmOK" type="button" class="btn btn-primary btn-lg" >
+              　
+              <i class="fa-solid fa-check"></i>
+              　OK　　
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 解除確認モーダル ここまで -->
+  <footer id="footer" class="footer">
+    <p class="footer__text">Copyright © AXIO corporation. All Rights Reserved.</p>
+  </footer>
+
+  <!-- JS -->
+
+    <!-- common's javascript start -->
+    <script type="text/javascript" th:src="@{./vendor/jquery-3.7.0.js}"></script>
+    <script type="text/javascript" th:src="@{./vendor/jquery-ui-1.12.1/jquery-ui.min.js}"></script>
+    <script type="text/javascript" th:src="@{./vendor/bootstrap-5.0.2-dist/js/bootstrap.min.js}"></script>
+    <!-- common's javascript end -->
+    <script th:src="@{/vendor/sweetalert2/js/sweetalert2.min.js}" type="text/javascript"></script>
+    <script type="text/javascript" th:src="@{./js/common.js}"></script>
+    <script type="text/javascript" th:src="@{./js/chgPwd.js}"></script>
+
+</body>
+
+</html>

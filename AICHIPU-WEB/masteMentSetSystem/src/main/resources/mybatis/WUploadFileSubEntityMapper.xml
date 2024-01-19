@@ -1,0 +1,3514 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="jp.co.axio.masterMentsetSystem.repository.WUploadFileSubEntityMapper">
+  <resultMap id="BaseResultMap" type="jp.co.axio.masterMentsetSystem.model.WUploadFileSubEntity">
+    <id column="upload_user_id" jdbcType="VARCHAR" property="uploadUserId" />
+    <id column="upload_user_ts" jdbcType="TIMESTAMP" property="uploadUserTs" />
+    <id column="row_no" jdbcType="INTEGER" property="rowNo" />
+    <id column="upload_session" jdbcType="VARCHAR" property="uploadSession" />
+    <result column="row_data" jdbcType="VARCHAR" property="rowData" />
+    <result column="check_flag" jdbcType="CHAR" property="checkFlag" />
+    <result column="check_message" jdbcType="VARCHAR" property="checkMessage" />
+    <result column="process_kbn" jdbcType="VARCHAR" property="processKbn" />
+    <result column="user_id" jdbcType="VARCHAR" property="userId" />
+    <result column="reflection_date" jdbcType="DATE" property="reflectionDate" />
+    <result column="column_1" jdbcType="VARCHAR" property="column1" />
+    <result column="column_2" jdbcType="VARCHAR" property="column2" />
+    <result column="column_3" jdbcType="VARCHAR" property="column3" />
+    <result column="column_4" jdbcType="VARCHAR" property="column4" />
+    <result column="column_5" jdbcType="VARCHAR" property="column5" />
+    <result column="column_6" jdbcType="VARCHAR" property="column6" />
+    <result column="column_7" jdbcType="VARCHAR" property="column7" />
+    <result column="column_8" jdbcType="VARCHAR" property="column8" />
+    <result column="column_9" jdbcType="VARCHAR" property="column9" />
+    <result column="column_10" jdbcType="VARCHAR" property="column10" />
+    <result column="column_11" jdbcType="VARCHAR" property="column11" />
+    <result column="column_12" jdbcType="VARCHAR" property="column12" />
+    <result column="column_13" jdbcType="VARCHAR" property="column13" />
+    <result column="column_14" jdbcType="VARCHAR" property="column14" />
+    <result column="column_15" jdbcType="VARCHAR" property="column15" />
+    <result column="column_16" jdbcType="VARCHAR" property="column16" />
+    <result column="column_17" jdbcType="VARCHAR" property="column17" />
+    <result column="column_18" jdbcType="VARCHAR" property="column18" />
+    <result column="column_19" jdbcType="VARCHAR" property="column19" />
+    <result column="column_20" jdbcType="VARCHAR" property="column20" />
+    <result column="column_21" jdbcType="VARCHAR" property="column21" />
+    <result column="column_22" jdbcType="VARCHAR" property="column22" />
+    <result column="column_23" jdbcType="VARCHAR" property="column23" />
+    <result column="column_24" jdbcType="VARCHAR" property="column24" />
+    <result column="column_25" jdbcType="VARCHAR" property="column25" />
+    <result column="column_26" jdbcType="VARCHAR" property="column26" />
+    <result column="column_27" jdbcType="VARCHAR" property="column27" />
+    <result column="column_28" jdbcType="VARCHAR" property="column28" />
+    <result column="column_29" jdbcType="VARCHAR" property="column29" />
+    <result column="column_30" jdbcType="VARCHAR" property="column30" />
+    <result column="column_31" jdbcType="VARCHAR" property="column31" />
+    <result column="column_32" jdbcType="VARCHAR" property="column32" />
+    <result column="column_33" jdbcType="VARCHAR" property="column33" />
+    <result column="column_34" jdbcType="VARCHAR" property="column34" />
+    <result column="column_35" jdbcType="VARCHAR" property="column35" />
+    <result column="column_36" jdbcType="VARCHAR" property="column36" />
+    <result column="column_37" jdbcType="VARCHAR" property="column37" />
+    <result column="column_38" jdbcType="VARCHAR" property="column38" />
+    <result column="column_39" jdbcType="VARCHAR" property="column39" />
+    <result column="column_40" jdbcType="VARCHAR" property="column40" />
+    <result column="column_41" jdbcType="VARCHAR" property="column41" />
+    <result column="column_42" jdbcType="VARCHAR" property="column42" />
+    <result column="column_43" jdbcType="VARCHAR" property="column43" />
+    <result column="column_44" jdbcType="VARCHAR" property="column44" />
+    <result column="column_45" jdbcType="VARCHAR" property="column45" />
+    <result column="column_46" jdbcType="VARCHAR" property="column46" />
+    <result column="column_47" jdbcType="VARCHAR" property="column47" />
+    <result column="column_48" jdbcType="VARCHAR" property="column48" />
+    <result column="column_49" jdbcType="VARCHAR" property="column49" />
+    <result column="column_50" jdbcType="VARCHAR" property="column50" />
+    <result column="column_51" jdbcType="VARCHAR" property="column51" />
+    <result column="column_52" jdbcType="VARCHAR" property="column52" />
+    <result column="column_53" jdbcType="VARCHAR" property="column53" />
+    <result column="column_54" jdbcType="VARCHAR" property="column54" />
+    <result column="column_55" jdbcType="VARCHAR" property="column55" />
+    <result column="column_56" jdbcType="VARCHAR" property="column56" />
+    <result column="column_57" jdbcType="VARCHAR" property="column57" />
+    <result column="column_58" jdbcType="VARCHAR" property="column58" />
+    <result column="column_59" jdbcType="VARCHAR" property="column59" />
+    <result column="column_60" jdbcType="VARCHAR" property="column60" />
+    <result column="column_61" jdbcType="VARCHAR" property="column61" />
+    <result column="column_62" jdbcType="VARCHAR" property="column62" />
+    <result column="column_63" jdbcType="VARCHAR" property="column63" />
+    <result column="column_64" jdbcType="VARCHAR" property="column64" />
+    <result column="column_65" jdbcType="VARCHAR" property="column65" />
+    <result column="column_66" jdbcType="VARCHAR" property="column66" />
+    <result column="column_67" jdbcType="VARCHAR" property="column67" />
+    <result column="column_68" jdbcType="VARCHAR" property="column68" />
+    <result column="column_69" jdbcType="VARCHAR" property="column69" />
+    <result column="column_70" jdbcType="VARCHAR" property="column70" />
+    <result column="column_71" jdbcType="VARCHAR" property="column71" />
+    <result column="column_72" jdbcType="VARCHAR" property="column72" />
+    <result column="column_73" jdbcType="VARCHAR" property="column73" />
+    <result column="column_74" jdbcType="VARCHAR" property="column74" />
+    <result column="column_75" jdbcType="VARCHAR" property="column75" />
+    <result column="column_76" jdbcType="VARCHAR" property="column76" />
+    <result column="column_77" jdbcType="VARCHAR" property="column77" />
+    <result column="column_78" jdbcType="VARCHAR" property="column78" />
+    <result column="column_79" jdbcType="VARCHAR" property="column79" />
+    <result column="column_80" jdbcType="VARCHAR" property="column80" />
+    <result column="column_81" jdbcType="VARCHAR" property="column81" />
+    <result column="column_82" jdbcType="VARCHAR" property="column82" />
+    <result column="column_83" jdbcType="VARCHAR" property="column83" />
+    <result column="column_84" jdbcType="VARCHAR" property="column84" />
+    <result column="column_85" jdbcType="VARCHAR" property="column85" />
+    <result column="column_86" jdbcType="VARCHAR" property="column86" />
+    <result column="column_87" jdbcType="VARCHAR" property="column87" />
+    <result column="column_88" jdbcType="VARCHAR" property="column88" />
+    <result column="column_89" jdbcType="VARCHAR" property="column89" />
+    <result column="column_90" jdbcType="VARCHAR" property="column90" />
+    <result column="column_91" jdbcType="VARCHAR" property="column91" />
+    <result column="column_92" jdbcType="VARCHAR" property="column92" />
+    <result column="column_93" jdbcType="VARCHAR" property="column93" />
+    <result column="column_94" jdbcType="VARCHAR" property="column94" />
+    <result column="column_95" jdbcType="VARCHAR" property="column95" />
+    <result column="column_96" jdbcType="VARCHAR" property="column96" />
+    <result column="column_97" jdbcType="VARCHAR" property="column97" />
+    <result column="column_98" jdbcType="VARCHAR" property="column98" />
+    <result column="column_99" jdbcType="VARCHAR" property="column99" />
+    <result column="column_100" jdbcType="VARCHAR" property="column100" />
+    <result column="column_101" jdbcType="VARCHAR" property="column101" />
+    <result column="column_102" jdbcType="VARCHAR" property="column102" />
+    <result column="column_103" jdbcType="VARCHAR" property="column103" />
+    <result column="column_104" jdbcType="VARCHAR" property="column104" />
+    <result column="column_105" jdbcType="VARCHAR" property="column105" />
+    <result column="column_106" jdbcType="VARCHAR" property="column106" />
+    <result column="column_107" jdbcType="VARCHAR" property="column107" />
+    <result column="column_108" jdbcType="VARCHAR" property="column108" />
+    <result column="column_109" jdbcType="VARCHAR" property="column109" />
+    <result column="column_110" jdbcType="VARCHAR" property="column110" />
+    <result column="column_111" jdbcType="VARCHAR" property="column111" />
+    <result column="column_112" jdbcType="VARCHAR" property="column112" />
+    <result column="column_113" jdbcType="VARCHAR" property="column113" />
+    <result column="column_114" jdbcType="VARCHAR" property="column114" />
+    <result column="column_115" jdbcType="VARCHAR" property="column115" />
+    <result column="column_116" jdbcType="VARCHAR" property="column116" />
+    <result column="column_117" jdbcType="VARCHAR" property="column117" />
+    <result column="column_118" jdbcType="VARCHAR" property="column118" />
+    <result column="column_119" jdbcType="VARCHAR" property="column119" />
+    <result column="column_120" jdbcType="VARCHAR" property="column120" />
+    <result column="column_121" jdbcType="VARCHAR" property="column121" />
+    <result column="column_122" jdbcType="VARCHAR" property="column122" />
+    <result column="column_123" jdbcType="VARCHAR" property="column123" />
+    <result column="column_124" jdbcType="VARCHAR" property="column124" />
+    <result column="column_125" jdbcType="VARCHAR" property="column125" />
+    <result column="column_126" jdbcType="VARCHAR" property="column126" />
+    <result column="column_127" jdbcType="VARCHAR" property="column127" />
+    <result column="column_128" jdbcType="VARCHAR" property="column128" />
+    <result column="column_129" jdbcType="VARCHAR" property="column129" />
+    <result column="column_130" jdbcType="VARCHAR" property="column130" />
+    <result column="column_131" jdbcType="VARCHAR" property="column131" />
+    <result column="column_132" jdbcType="VARCHAR" property="column132" />
+    <result column="column_133" jdbcType="VARCHAR" property="column133" />
+    <result column="column_134" jdbcType="VARCHAR" property="column134" />
+    <result column="column_135" jdbcType="VARCHAR" property="column135" />
+    <result column="column_136" jdbcType="VARCHAR" property="column136" />
+    <result column="column_137" jdbcType="VARCHAR" property="column137" />
+    <result column="column_138" jdbcType="VARCHAR" property="column138" />
+    <result column="column_139" jdbcType="VARCHAR" property="column139" />
+    <result column="column_140" jdbcType="VARCHAR" property="column140" />
+    <result column="column_141" jdbcType="VARCHAR" property="column141" />
+    <result column="column_142" jdbcType="VARCHAR" property="column142" />
+    <result column="column_143" jdbcType="VARCHAR" property="column143" />
+    <result column="column_144" jdbcType="VARCHAR" property="column144" />
+    <result column="column_145" jdbcType="VARCHAR" property="column145" />
+    <result column="column_146" jdbcType="VARCHAR" property="column146" />
+    <result column="column_147" jdbcType="VARCHAR" property="column147" />
+    <result column="column_148" jdbcType="VARCHAR" property="column148" />
+    <result column="column_149" jdbcType="VARCHAR" property="column149" />
+    <result column="column_150" jdbcType="VARCHAR" property="column150" />
+    <result column="column_151" jdbcType="VARCHAR" property="column151" />
+    <result column="column_152" jdbcType="VARCHAR" property="column152" />
+    <result column="column_153" jdbcType="VARCHAR" property="column153" />
+    <result column="column_154" jdbcType="VARCHAR" property="column154" />
+    <result column="column_155" jdbcType="VARCHAR" property="column155" />
+    <result column="column_156" jdbcType="VARCHAR" property="column156" />
+    <result column="column_157" jdbcType="VARCHAR" property="column157" />
+    <result column="column_158" jdbcType="VARCHAR" property="column158" />
+    <result column="column_159" jdbcType="VARCHAR" property="column159" />
+    <result column="column_160" jdbcType="VARCHAR" property="column160" />
+    <result column="column_161" jdbcType="VARCHAR" property="column161" />
+    <result column="column_162" jdbcType="VARCHAR" property="column162" />
+    <result column="column_163" jdbcType="VARCHAR" property="column163" />
+    <result column="column_164" jdbcType="VARCHAR" property="column164" />
+    <result column="column_165" jdbcType="VARCHAR" property="column165" />
+    <result column="column_166" jdbcType="VARCHAR" property="column166" />
+    <result column="column_167" jdbcType="VARCHAR" property="column167" />
+    <result column="column_168" jdbcType="VARCHAR" property="column168" />
+    <result column="column_169" jdbcType="VARCHAR" property="column169" />
+    <result column="column_170" jdbcType="VARCHAR" property="column170" />
+    <result column="column_171" jdbcType="VARCHAR" property="column171" />
+    <result column="column_172" jdbcType="VARCHAR" property="column172" />
+    <result column="column_173" jdbcType="VARCHAR" property="column173" />
+    <result column="column_174" jdbcType="VARCHAR" property="column174" />
+    <result column="column_175" jdbcType="VARCHAR" property="column175" />
+    <result column="column_176" jdbcType="VARCHAR" property="column176" />
+    <result column="column_177" jdbcType="VARCHAR" property="column177" />
+    <result column="column_178" jdbcType="VARCHAR" property="column178" />
+    <result column="column_179" jdbcType="VARCHAR" property="column179" />
+    <result column="column_180" jdbcType="VARCHAR" property="column180" />
+    <result column="column_181" jdbcType="VARCHAR" property="column181" />
+    <result column="column_182" jdbcType="VARCHAR" property="column182" />
+    <result column="column_183" jdbcType="VARCHAR" property="column183" />
+    <result column="column_184" jdbcType="VARCHAR" property="column184" />
+    <result column="column_185" jdbcType="VARCHAR" property="column185" />
+    <result column="column_186" jdbcType="VARCHAR" property="column186" />
+    <result column="column_187" jdbcType="VARCHAR" property="column187" />
+    <result column="column_188" jdbcType="VARCHAR" property="column188" />
+    <result column="column_189" jdbcType="VARCHAR" property="column189" />
+    <result column="column_190" jdbcType="VARCHAR" property="column190" />
+    <result column="column_191" jdbcType="VARCHAR" property="column191" />
+    <result column="column_192" jdbcType="VARCHAR" property="column192" />
+    <result column="column_193" jdbcType="VARCHAR" property="column193" />
+    <result column="column_194" jdbcType="VARCHAR" property="column194" />
+    <result column="column_195" jdbcType="VARCHAR" property="column195" />
+    <result column="column_196" jdbcType="VARCHAR" property="column196" />
+    <result column="column_197" jdbcType="VARCHAR" property="column197" />
+    <result column="column_198" jdbcType="VARCHAR" property="column198" />
+    <result column="column_199" jdbcType="VARCHAR" property="column199" />
+    <result column="column_200" jdbcType="VARCHAR" property="column200" />
+    <result column="register_id" jdbcType="VARCHAR" property="registerId" />
+    <result column="regist_ts" jdbcType="TIMESTAMP" property="registTs" />
+    <result column="updater_id" jdbcType="VARCHAR" property="updaterId" />
+    <result column="update_ts" jdbcType="TIMESTAMP" property="updateTs" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    upload_user_id, upload_user_ts, row_no, upload_session, row_data, check_flag, check_message, 
+    process_kbn, user_id, reflection_date, column_1, column_2, column_3, column_4, column_5, 
+    column_6, column_7, column_8, column_9, column_10, column_11, column_12, column_13, 
+    column_14, column_15, column_16, column_17, column_18, column_19, column_20, column_21, 
+    column_22, column_23, column_24, column_25, column_26, column_27, column_28, column_29, 
+    column_30, column_31, column_32, column_33, column_34, column_35, column_36, column_37, 
+    column_38, column_39, column_40, column_41, column_42, column_43, column_44, column_45, 
+    column_46, column_47, column_48, column_49, column_50, column_51, column_52, column_53, 
+    column_54, column_55, column_56, column_57, column_58, column_59, column_60, column_61, 
+    column_62, column_63, column_64, column_65, column_66, column_67, column_68, column_69, 
+    column_70, column_71, column_72, column_73, column_74, column_75, column_76, column_77, 
+    column_78, column_79, column_80, column_81, column_82, column_83, column_84, column_85, 
+    column_86, column_87, column_88, column_89, column_90, column_91, column_92, column_93, 
+    column_94, column_95, column_96, column_97, column_98, column_99, column_100, column_101, 
+    column_102, column_103, column_104, column_105, column_106, column_107, column_108, 
+    column_109, column_110, column_111, column_112, column_113, column_114, column_115, 
+    column_116, column_117, column_118, column_119, column_120, column_121, column_122, 
+    column_123, column_124, column_125, column_126, column_127, column_128, column_129, 
+    column_130, column_131, column_132, column_133, column_134, column_135, column_136, 
+    column_137, column_138, column_139, column_140, column_141, column_142, column_143, 
+    column_144, column_145, column_146, column_147, column_148, column_149, column_150, 
+    column_151, column_152, column_153, column_154, column_155, column_156, column_157, 
+    column_158, column_159, column_160, column_161, column_162, column_163, column_164, 
+    column_165, column_166, column_167, column_168, column_169, column_170, column_171, 
+    column_172, column_173, column_174, column_175, column_176, column_177, column_178, 
+    column_179, column_180, column_181, column_182, column_183, column_184, column_185, 
+    column_186, column_187, column_188, column_189, column_190, column_191, column_192, 
+    column_193, column_194, column_195, column_196, column_197, column_198, column_199, 
+    column_200, register_id, regist_ts, updater_id, update_ts
+  </sql>
+  <select id="selectByExample" parameterType="jp.co.axio.masterMentsetSystem.model.WUploadFileSubEntityExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from public.w_upload_file_sub
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="jp.co.axio.masterMentsetSystem.model.WUploadFileSubEntityKey" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from public.w_upload_file_sub
+    where upload_user_id = #{uploadUserId,jdbcType=VARCHAR}
+      and upload_user_ts = #{uploadUserTs,jdbcType=TIMESTAMP}
+      and row_no = #{rowNo,jdbcType=INTEGER}
+      and upload_session = #{uploadSession,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="jp.co.axio.masterMentsetSystem.model.WUploadFileSubEntityKey">
+    delete from public.w_upload_file_sub
+    where upload_user_id = #{uploadUserId,jdbcType=VARCHAR}
+      and upload_user_ts = #{uploadUserTs,jdbcType=TIMESTAMP}
+      and row_no = #{rowNo,jdbcType=INTEGER}
+      and upload_session = #{uploadSession,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="jp.co.axio.masterMentsetSystem.model.WUploadFileSubEntityExample">
+    delete from public.w_upload_file_sub
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="jp.co.axio.masterMentsetSystem.model.WUploadFileSubEntity">
+    insert into public.w_upload_file_sub (upload_user_id, upload_user_ts, row_no, 
+      upload_session, row_data, check_flag, 
+      check_message, process_kbn, user_id, 
+      reflection_date, column_1, column_2, 
+      column_3, column_4, column_5, 
+      column_6, column_7, column_8, 
+      column_9, column_10, column_11, 
+      column_12, column_13, column_14, 
+      column_15, column_16, column_17, 
+      column_18, column_19, column_20, 
+      column_21, column_22, column_23, 
+      column_24, column_25, column_26, 
+      column_27, column_28, column_29, 
+      column_30, column_31, column_32, 
+      column_33, column_34, column_35, 
+      column_36, column_37, column_38, 
+      column_39, column_40, column_41, 
+      column_42, column_43, column_44, 
+      column_45, column_46, column_47, 
+      column_48, column_49, column_50, 
+      column_51, column_52, column_53, 
+      column_54, column_55, column_56, 
+      column_57, column_58, column_59, 
+      column_60, column_61, column_62, 
+      column_63, column_64, column_65, 
+      column_66, column_67, column_68, 
+      column_69, column_70, column_71, 
+      column_72, column_73, column_74, 
+      column_75, column_76, column_77, 
+      column_78, column_79, column_80, 
+      column_81, column_82, column_83, 
+      column_84, column_85, column_86, 
+      column_87, column_88, column_89, 
+      column_90, column_91, column_92, 
+      column_93, column_94, column_95, 
+      column_96, column_97, column_98, 
+      column_99, column_100, column_101, 
+      column_102, column_103, column_104, 
+      column_105, column_106, column_107, 
+      column_108, column_109, column_110, 
+      column_111, column_112, column_113, 
+      column_114, column_115, column_116, 
+      column_117, column_118, column_119, 
+      column_120, column_121, column_122, 
+      column_123, column_124, column_125, 
+      column_126, column_127, column_128, 
+      column_129, column_130, column_131, 
+      column_132, column_133, column_134, 
+      column_135, column_136, column_137, 
+      column_138, column_139, column_140, 
+      column_141, column_142, column_143, 
+      column_144, column_145, column_146, 
+      column_147, column_148, column_149, 
+      column_150, column_151, column_152, 
+      column_153, column_154, column_155, 
+      column_156, column_157, column_158, 
+      column_159, column_160, column_161, 
+      column_162, column_163, column_164, 
+      column_165, column_166, column_167, 
+      column_168, column_169, column_170, 
+      column_171, column_172, column_173, 
+      column_174, column_175, column_176, 
+      column_177, column_178, column_179, 
+      column_180, column_181, column_182, 
+      column_183, column_184, column_185, 
+      column_186, column_187, column_188, 
+      column_189, column_190, column_191, 
+      column_192, column_193, column_194, 
+      column_195, column_196, column_197, 
+      column_198, column_199, column_200, 
+      register_id, regist_ts, updater_id, 
+      update_ts)
+    values (#{uploadUserId,jdbcType=VARCHAR}, #{uploadUserTs,jdbcType=TIMESTAMP}, #{rowNo,jdbcType=INTEGER}, 
+      #{uploadSession,jdbcType=VARCHAR}, #{rowData,jdbcType=VARCHAR}, #{checkFlag,jdbcType=CHAR}, 
+      #{checkMessage,jdbcType=VARCHAR}, #{processKbn,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, 
+      #{reflectionDate,jdbcType=DATE}, #{column1,jdbcType=VARCHAR}, #{column2,jdbcType=VARCHAR}, 
+      #{column3,jdbcType=VARCHAR}, #{column4,jdbcType=VARCHAR}, #{column5,jdbcType=VARCHAR}, 
+      #{column6,jdbcType=VARCHAR}, #{column7,jdbcType=VARCHAR}, #{column8,jdbcType=VARCHAR}, 
+      #{column9,jdbcType=VARCHAR}, #{column10,jdbcType=VARCHAR}, #{column11,jdbcType=VARCHAR}, 
+      #{column12,jdbcType=VARCHAR}, #{column13,jdbcType=VARCHAR}, #{column14,jdbcType=VARCHAR}, 
+      #{column15,jdbcType=VARCHAR}, #{column16,jdbcType=VARCHAR}, #{column17,jdbcType=VARCHAR}, 
+      #{column18,jdbcType=VARCHAR}, #{column19,jdbcType=VARCHAR}, #{column20,jdbcType=VARCHAR}, 
+      #{column21,jdbcType=VARCHAR}, #{column22,jdbcType=VARCHAR}, #{column23,jdbcType=VARCHAR}, 
+      #{column24,jdbcType=VARCHAR}, #{column25,jdbcType=VARCHAR}, #{column26,jdbcType=VARCHAR}, 
+      #{column27,jdbcType=VARCHAR}, #{column28,jdbcType=VARCHAR}, #{column29,jdbcType=VARCHAR}, 
+      #{column30,jdbcType=VARCHAR}, #{column31,jdbcType=VARCHAR}, #{column32,jdbcType=VARCHAR}, 
+      #{column33,jdbcType=VARCHAR}, #{column34,jdbcType=VARCHAR}, #{column35,jdbcType=VARCHAR}, 
+      #{column36,jdbcType=VARCHAR}, #{column37,jdbcType=VARCHAR}, #{column38,jdbcType=VARCHAR}, 
+      #{column39,jdbcType=VARCHAR}, #{column40,jdbcType=VARCHAR}, #{column41,jdbcType=VARCHAR}, 
+      #{column42,jdbcType=VARCHAR}, #{column43,jdbcType=VARCHAR}, #{column44,jdbcType=VARCHAR}, 
+      #{column45,jdbcType=VARCHAR}, #{column46,jdbcType=VARCHAR}, #{column47,jdbcType=VARCHAR}, 
+      #{column48,jdbcType=VARCHAR}, #{column49,jdbcType=VARCHAR}, #{column50,jdbcType=VARCHAR}, 
+      #{column51,jdbcType=VARCHAR}, #{column52,jdbcType=VARCHAR}, #{column53,jdbcType=VARCHAR}, 
+      #{column54,jdbcType=VARCHAR}, #{column55,jdbcType=VARCHAR}, #{column56,jdbcType=VARCHAR}, 
+      #{column57,jdbcType=VARCHAR}, #{column58,jdbcType=VARCHAR}, #{column59,jdbcType=VARCHAR}, 
+      #{column60,jdbcType=VARCHAR}, #{column61,jdbcType=VARCHAR}, #{column62,jdbcType=VARCHAR}, 
+      #{column63,jdbcType=VARCHAR}, #{column64,jdbcType=VARCHAR}, #{column65,jdbcType=VARCHAR}, 
+      #{column66,jdbcType=VARCHAR}, #{column67,jdbcType=VARCHAR}, #{column68,jdbcType=VARCHAR}, 
+      #{column69,jdbcType=VARCHAR}, #{column70,jdbcType=VARCHAR}, #{column71,jdbcType=VARCHAR}, 
+      #{column72,jdbcType=VARCHAR}, #{column73,jdbcType=VARCHAR}, #{column74,jdbcType=VARCHAR}, 
+      #{column75,jdbcType=VARCHAR}, #{column76,jdbcType=VARCHAR}, #{column77,jdbcType=VARCHAR}, 
+      #{column78,jdbcType=VARCHAR}, #{column79,jdbcType=VARCHAR}, #{column80,jdbcType=VARCHAR}, 
+      #{column81,jdbcType=VARCHAR}, #{column82,jdbcType=VARCHAR}, #{column83,jdbcType=VARCHAR}, 
+      #{column84,jdbcType=VARCHAR}, #{column85,jdbcType=VARCHAR}, #{column86,jdbcType=VARCHAR}, 
+      #{column87,jdbcType=VARCHAR}, #{column88,jdbcType=VARCHAR}, #{column89,jdbcType=VARCHAR}, 
+      #{column90,jdbcType=VARCHAR}, #{column91,jdbcType=VARCHAR}, #{column92,jdbcType=VARCHAR}, 
+      #{column93,jdbcType=VARCHAR}, #{column94,jdbcType=VARCHAR}, #{column95,jdbcType=VARCHAR}, 
+      #{column96,jdbcType=VARCHAR}, #{column97,jdbcType=VARCHAR}, #{column98,jdbcType=VARCHAR}, 
+      #{column99,jdbcType=VARCHAR}, #{column100,jdbcType=VARCHAR}, #{column101,jdbcType=VARCHAR}, 
+      #{column102,jdbcType=VARCHAR}, #{column103,jdbcType=VARCHAR}, #{column104,jdbcType=VARCHAR}, 
+      #{column105,jdbcType=VARCHAR}, #{column106,jdbcType=VARCHAR}, #{column107,jdbcType=VARCHAR}, 
+      #{column108,jdbcType=VARCHAR}, #{column109,jdbcType=VARCHAR}, #{column110,jdbcType=VARCHAR}, 
+      #{column111,jdbcType=VARCHAR}, #{column112,jdbcType=VARCHAR}, #{column113,jdbcType=VARCHAR}, 
+      #{column114,jdbcType=VARCHAR}, #{column115,jdbcType=VARCHAR}, #{column116,jdbcType=VARCHAR}, 
+      #{column117,jdbcType=VARCHAR}, #{column118,jdbcType=VARCHAR}, #{column119,jdbcType=VARCHAR}, 
+      #{column120,jdbcType=VARCHAR}, #{column121,jdbcType=VARCHAR}, #{column122,jdbcType=VARCHAR}, 
+      #{column123,jdbcType=VARCHAR}, #{column124,jdbcType=VARCHAR}, #{column125,jdbcType=VARCHAR}, 
+      #{column126,jdbcType=VARCHAR}, #{column127,jdbcType=VARCHAR}, #{column128,jdbcType=VARCHAR}, 
+      #{column129,jdbcType=VARCHAR}, #{column130,jdbcType=VARCHAR}, #{column131,jdbcType=VARCHAR}, 
+      #{column132,jdbcType=VARCHAR}, #{column133,jdbcType=VARCHAR}, #{column134,jdbcType=VARCHAR}, 
+      #{column135,jdbcType=VARCHAR}, #{column136,jdbcType=VARCHAR}, #{column137,jdbcType=VARCHAR}, 
+      #{column138,jdbcType=VARCHAR}, #{column139,jdbcType=VARCHAR}, #{column140,jdbcType=VARCHAR}, 
+      #{column141,jdbcType=VARCHAR}, #{column142,jdbcType=VARCHAR}, #{column143,jdbcType=VARCHAR}, 
+      #{column144,jdbcType=VARCHAR}, #{column145,jdbcType=VARCHAR}, #{column146,jdbcType=VARCHAR}, 
+      #{column147,jdbcType=VARCHAR}, #{column148,jdbcType=VARCHAR}, #{column149,jdbcType=VARCHAR}, 
+      #{column150,jdbcType=VARCHAR}, #{column151,jdbcType=VARCHAR}, #{column152,jdbcType=VARCHAR}, 
+      #{column153,jdbcType=VARCHAR}, #{column154,jdbcType=VARCHAR}, #{column155,jdbcType=VARCHAR}, 
+      #{column156,jdbcType=VARCHAR}, #{column157,jdbcType=VARCHAR}, #{column158,jdbcType=VARCHAR}, 
+      #{column159,jdbcType=VARCHAR}, #{column160,jdbcType=VARCHAR}, #{column161,jdbcType=VARCHAR}, 
+      #{column162,jdbcType=VARCHAR}, #{column163,jdbcType=VARCHAR}, #{column164,jdbcType=VARCHAR}, 
+      #{column165,jdbcType=VARCHAR}, #{column166,jdbcType=VARCHAR}, #{column167,jdbcType=VARCHAR}, 
+      #{column168,jdbcType=VARCHAR}, #{column169,jdbcType=VARCHAR}, #{column170,jdbcType=VARCHAR}, 
+      #{column171,jdbcType=VARCHAR}, #{column172,jdbcType=VARCHAR}, #{column173,jdbcType=VARCHAR}, 
+      #{column174,jdbcType=VARCHAR}, #{column175,jdbcType=VARCHAR}, #{column176,jdbcType=VARCHAR}, 
+      #{column177,jdbcType=VARCHAR}, #{column178,jdbcType=VARCHAR}, #{column179,jdbcType=VARCHAR}, 
+      #{column180,jdbcType=VARCHAR}, #{column181,jdbcType=VARCHAR}, #{column182,jdbcType=VARCHAR}, 
+      #{column183,jdbcType=VARCHAR}, #{column184,jdbcType=VARCHAR}, #{column185,jdbcType=VARCHAR}, 
+      #{column186,jdbcType=VARCHAR}, #{column187,jdbcType=VARCHAR}, #{column188,jdbcType=VARCHAR}, 
+      #{column189,jdbcType=VARCHAR}, #{column190,jdbcType=VARCHAR}, #{column191,jdbcType=VARCHAR}, 
+      #{column192,jdbcType=VARCHAR}, #{column193,jdbcType=VARCHAR}, #{column194,jdbcType=VARCHAR}, 
+      #{column195,jdbcType=VARCHAR}, #{column196,jdbcType=VARCHAR}, #{column197,jdbcType=VARCHAR}, 
+      #{column198,jdbcType=VARCHAR}, #{column199,jdbcType=VARCHAR}, #{column200,jdbcType=VARCHAR}, 
+      #{registerId,jdbcType=VARCHAR}, #{registTs,jdbcType=TIMESTAMP}, #{updaterId,jdbcType=VARCHAR}, 
+      #{updateTs,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="jp.co.axio.masterMentsetSystem.model.WUploadFileSubEntity">
+    insert into public.w_upload_file_sub
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="uploadUserId != null">
+        upload_user_id,
+      </if>
+      <if test="uploadUserTs != null">
+        upload_user_ts,
+      </if>
+      <if test="rowNo != null">
+        row_no,
+      </if>
+      <if test="uploadSession != null">
+        upload_session,
+      </if>
+      <if test="rowData != null">
+        row_data,
+      </if>
+      <if test="checkFlag != null">
+        check_flag,
+      </if>
+      <if test="checkMessage != null">
+        check_message,
+      </if>
+      <if test="processKbn != null">
+        process_kbn,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="reflectionDate != null">
+        reflection_date,
+      </if>
+      <if test="column1 != null">
+        column_1,
+      </if>
+      <if test="column2 != null">
+        column_2,
+      </if>
+      <if test="column3 != null">
+        column_3,
+      </if>
+      <if test="column4 != null">
+        column_4,
+      </if>
+      <if test="column5 != null">
+        column_5,
+      </if>
+      <if test="column6 != null">
+        column_6,
+      </if>
+      <if test="column7 != null">
+        column_7,
+      </if>
+      <if test="column8 != null">
+        column_8,
+      </if>
+      <if test="column9 != null">
+        column_9,
+      </if>
+      <if test="column10 != null">
+        column_10,
+      </if>
+      <if test="column11 != null">
+        column_11,
+      </if>
+      <if test="column12 != null">
+        column_12,
+      </if>
+      <if test="column13 != null">
+        column_13,
+      </if>
+      <if test="column14 != null">
+        column_14,
+      </if>
+      <if test="column15 != null">
+        column_15,
+      </if>
+      <if test="column16 != null">
+        column_16,
+      </if>
+      <if test="column17 != null">
+        column_17,
+      </if>
+      <if test="column18 != null">
+        column_18,
+      </if>
+      <if test="column19 != null">
+        column_19,
+      </if>
+      <if test="column20 != null">
+        column_20,
+      </if>
+      <if test="column21 != null">
+        column_21,
+      </if>
+      <if test="column22 != null">
+        column_22,
+      </if>
+      <if test="column23 != null">
+        column_23,
+      </if>
+      <if test="column24 != null">
+        column_24,
+      </if>
+      <if test="column25 != null">
+        column_25,
+      </if>
+      <if test="column26 != null">
+        column_26,
+      </if>
+      <if test="column27 != null">
+        column_27,
+      </if>
+      <if test="column28 != null">
+        column_28,
+      </if>
+      <if test="column29 != null">
+        column_29,
+      </if>
+      <if test="column30 != null">
+        column_30,
+      </if>
+      <if test="column31 != null">
+        column_31,
+      </if>
+      <if test="column32 != null">
+        column_32,
+      </if>
+      <if test="column33 != null">
+        column_33,
+      </if>
+      <if test="column34 != null">
+        column_34,
+      </if>
+      <if test="column35 != null">
+        column_35,
+      </if>
+      <if test="column36 != null">
+        column_36,
+      </if>
+      <if test="column37 != null">
+        column_37,
+      </if>
+      <if test="column38 != null">
+        column_38,
+      </if>
+      <if test="column39 != null">
+        column_39,
+      </if>
+      <if test="column40 != null">
+        column_40,
+      </if>
+      <if test="column41 != null">
+        column_41,
+      </if>
+      <if test="column42 != null">
+        column_42,
+      </if>
+      <if test="column43 != null">
+        column_43,
+      </if>
+      <if test="column44 != null">
+        column_44,
+      </if>
+      <if test="column45 != null">
+        column_45,
+      </if>
+      <if test="column46 != null">
+        column_46,
+      </if>
+      <if test="column47 != null">
+        column_47,
+      </if>
+      <if test="column48 != null">
+        column_48,
+      </if>
+      <if test="column49 != null">
+        column_49,
+      </if>
+      <if test="column50 != null">
+        column_50,
+      </if>
+      <if test="column51 != null">
+        column_51,
+      </if>
+      <if test="column52 != null">
+        column_52,
+      </if>
+      <if test="column53 != null">
+        column_53,
+      </if>
+      <if test="column54 != null">
+        column_54,
+      </if>
+      <if test="column55 != null">
+        column_55,
+      </if>
+      <if test="column56 != null">
+        column_56,
+      </if>
+      <if test="column57 != null">
+        column_57,
+      </if>
+      <if test="column58 != null">
+        column_58,
+      </if>
+      <if test="column59 != null">
+        column_59,
+      </if>
+      <if test="column60 != null">
+        column_60,
+      </if>
+      <if test="column61 != null">
+        column_61,
+      </if>
+      <if test="column62 != null">
+        column_62,
+      </if>
+      <if test="column63 != null">
+        column_63,
+      </if>
+      <if test="column64 != null">
+        column_64,
+      </if>
+      <if test="column65 != null">
+        column_65,
+      </if>
+      <if test="column66 != null">
+        column_66,
+      </if>
+      <if test="column67 != null">
+        column_67,
+      </if>
+      <if test="column68 != null">
+        column_68,
+      </if>
+      <if test="column69 != null">
+        column_69,
+      </if>
+      <if test="column70 != null">
+        column_70,
+      </if>
+      <if test="column71 != null">
+        column_71,
+      </if>
+      <if test="column72 != null">
+        column_72,
+      </if>
+      <if test="column73 != null">
+        column_73,
+      </if>
+      <if test="column74 != null">
+        column_74,
+      </if>
+      <if test="column75 != null">
+        column_75,
+      </if>
+      <if test="column76 != null">
+        column_76,
+      </if>
+      <if test="column77 != null">
+        column_77,
+      </if>
+      <if test="column78 != null">
+        column_78,
+      </if>
+      <if test="column79 != null">
+        column_79,
+      </if>
+      <if test="column80 != null">
+        column_80,
+      </if>
+      <if test="column81 != null">
+        column_81,
+      </if>
+      <if test="column82 != null">
+        column_82,
+      </if>
+      <if test="column83 != null">
+        column_83,
+      </if>
+      <if test="column84 != null">
+        column_84,
+      </if>
+      <if test="column85 != null">
+        column_85,
+      </if>
+      <if test="column86 != null">
+        column_86,
+      </if>
+      <if test="column87 != null">
+        column_87,
+      </if>
+      <if test="column88 != null">
+        column_88,
+      </if>
+      <if test="column89 != null">
+        column_89,
+      </if>
+      <if test="column90 != null">
+        column_90,
+      </if>
+      <if test="column91 != null">
+        column_91,
+      </if>
+      <if test="column92 != null">
+        column_92,
+      </if>
+      <if test="column93 != null">
+        column_93,
+      </if>
+      <if test="column94 != null">
+        column_94,
+      </if>
+      <if test="column95 != null">
+        column_95,
+      </if>
+      <if test="column96 != null">
+        column_96,
+      </if>
+      <if test="column97 != null">
+        column_97,
+      </if>
+      <if test="column98 != null">
+        column_98,
+      </if>
+      <if test="column99 != null">
+        column_99,
+      </if>
+      <if test="column100 != null">
+        column_100,
+      </if>
+      <if test="column101 != null">
+        column_101,
+      </if>
+      <if test="column102 != null">
+        column_102,
+      </if>
+      <if test="column103 != null">
+        column_103,
+      </if>
+      <if test="column104 != null">
+        column_104,
+      </if>
+      <if test="column105 != null">
+        column_105,
+      </if>
+      <if test="column106 != null">
+        column_106,
+      </if>
+      <if test="column107 != null">
+        column_107,
+      </if>
+      <if test="column108 != null">
+        column_108,
+      </if>
+      <if test="column109 != null">
+        column_109,
+      </if>
+      <if test="column110 != null">
+        column_110,
+      </if>
+      <if test="column111 != null">
+        column_111,
+      </if>
+      <if test="column112 != null">
+        column_112,
+      </if>
+      <if test="column113 != null">
+        column_113,
+      </if>
+      <if test="column114 != null">
+        column_114,
+      </if>
+      <if test="column115 != null">
+        column_115,
+      </if>
+      <if test="column116 != null">
+        column_116,
+      </if>
+      <if test="column117 != null">
+        column_117,
+      </if>
+      <if test="column118 != null">
+        column_118,
+      </if>
+      <if test="column119 != null">
+        column_119,
+      </if>
+      <if test="column120 != null">
+        column_120,
+      </if>
+      <if test="column121 != null">
+        column_121,
+      </if>
+      <if test="column122 != null">
+        column_122,
+      </if>
+      <if test="column123 != null">
+        column_123,
+      </if>
+      <if test="column124 != null">
+        column_124,
+      </if>
+      <if test="column125 != null">
+        column_125,
+      </if>
+      <if test="column126 != null">
+        column_126,
+      </if>
+      <if test="column127 != null">
+        column_127,
+      </if>
+      <if test="column128 != null">
+        column_128,
+      </if>
+      <if test="column129 != null">
+        column_129,
+      </if>
+      <if test="column130 != null">
+        column_130,
+      </if>
+      <if test="column131 != null">
+        column_131,
+      </if>
+      <if test="column132 != null">
+        column_132,
+      </if>
+      <if test="column133 != null">
+        column_133,
+      </if>
+      <if test="column134 != null">
+        column_134,
+      </if>
+      <if test="column135 != null">
+        column_135,
+      </if>
+      <if test="column136 != null">
+        column_136,
+      </if>
+      <if test="column137 != null">
+        column_137,
+      </if>
+      <if test="column138 != null">
+        column_138,
+      </if>
+      <if test="column139 != null">
+        column_139,
+      </if>
+      <if test="column140 != null">
+        column_140,
+      </if>
+      <if test="column141 != null">
+        column_141,
+      </if>
+      <if test="column142 != null">
+        column_142,
+      </if>
+      <if test="column143 != null">
+        column_143,
+      </if>
+      <if test="column144 != null">
+        column_144,
+      </if>
+      <if test="column145 != null">
+        column_145,
+      </if>
+      <if test="column146 != null">
+        column_146,
+      </if>
+      <if test="column147 != null">
+        column_147,
+      </if>
+      <if test="column148 != null">
+        column_148,
+      </if>
+      <if test="column149 != null">
+        column_149,
+      </if>
+      <if test="column150 != null">
+        column_150,
+      </if>
+      <if test="column151 != null">
+        column_151,
+      </if>
+      <if test="column152 != null">
+        column_152,
+      </if>
+      <if test="column153 != null">
+        column_153,
+      </if>
+      <if test="column154 != null">
+        column_154,
+      </if>
+      <if test="column155 != null">
+        column_155,
+      </if>
+      <if test="column156 != null">
+        column_156,
+      </if>
+      <if test="column157 != null">
+        column_157,
+      </if>
+      <if test="column158 != null">
+        column_158,
+      </if>
+      <if test="column159 != null">
+        column_159,
+      </if>
+      <if test="column160 != null">
+        column_160,
+      </if>
+      <if test="column161 != null">
+        column_161,
+      </if>
+      <if test="column162 != null">
+        column_162,
+      </if>
+      <if test="column163 != null">
+        column_163,
+      </if>
+      <if test="column164 != null">
+        column_164,
+      </if>
+      <if test="column165 != null">
+        column_165,
+      </if>
+      <if test="column166 != null">
+        column_166,
+      </if>
+      <if test="column167 != null">
+        column_167,
+      </if>
+      <if test="column168 != null">
+        column_168,
+      </if>
+      <if test="column169 != null">
+        column_169,
+      </if>
+      <if test="column170 != null">
+        column_170,
+      </if>
+      <if test="column171 != null">
+        column_171,
+      </if>
+      <if test="column172 != null">
+        column_172,
+      </if>
+      <if test="column173 != null">
+        column_173,
+      </if>
+      <if test="column174 != null">
+        column_174,
+      </if>
+      <if test="column175 != null">
+        column_175,
+      </if>
+      <if test="column176 != null">
+        column_176,
+      </if>
+      <if test="column177 != null">
+        column_177,
+      </if>
+      <if test="column178 != null">
+        column_178,
+      </if>
+      <if test="column179 != null">
+        column_179,
+      </if>
+      <if test="column180 != null">
+        column_180,
+      </if>
+      <if test="column181 != null">
+        column_181,
+      </if>
+      <if test="column182 != null">
+        column_182,
+      </if>
+      <if test="column183 != null">
+        column_183,
+      </if>
+      <if test="column184 != null">
+        column_184,
+      </if>
+      <if test="column185 != null">
+        column_185,
+      </if>
+      <if test="column186 != null">
+        column_186,
+      </if>
+      <if test="column187 != null">
+        column_187,
+      </if>
+      <if test="column188 != null">
+        column_188,
+      </if>
+      <if test="column189 != null">
+        column_189,
+      </if>
+      <if test="column190 != null">
+        column_190,
+      </if>
+      <if test="column191 != null">
+        column_191,
+      </if>
+      <if test="column192 != null">
+        column_192,
+      </if>
+      <if test="column193 != null">
+        column_193,
+      </if>
+      <if test="column194 != null">
+        column_194,
+      </if>
+      <if test="column195 != null">
+        column_195,
+      </if>
+      <if test="column196 != null">
+        column_196,
+      </if>
+      <if test="column197 != null">
+        column_197,
+      </if>
+      <if test="column198 != null">
+        column_198,
+      </if>
+      <if test="column199 != null">
+        column_199,
+      </if>
+      <if test="column200 != null">
+        column_200,
+      </if>
+      <if test="registerId != null">
+        register_id,
+      </if>
+      <if test="registTs != null">
+        regist_ts,
+      </if>
+      <if test="updaterId != null">
+        updater_id,
+      </if>
+      <if test="updateTs != null">
+        update_ts,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="uploadUserId != null">
+        #{uploadUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="uploadUserTs != null">
+        #{uploadUserTs,jdbcType=TIMESTAMP},
+      </if>
+      <if test="rowNo != null">
+        #{rowNo,jdbcType=INTEGER},
+      </if>
+      <if test="uploadSession != null">
+        #{uploadSession,jdbcType=VARCHAR},
+      </if>
+      <if test="rowData != null">
+        #{rowData,jdbcType=VARCHAR},
+      </if>
+      <if test="checkFlag != null">
+        #{checkFlag,jdbcType=CHAR},
+      </if>
+      <if test="checkMessage != null">
+        #{checkMessage,jdbcType=VARCHAR},
+      </if>
+      <if test="processKbn != null">
+        #{processKbn,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="reflectionDate != null">
+        #{reflectionDate,jdbcType=DATE},
+      </if>
+      <if test="column1 != null">
+        #{column1,jdbcType=VARCHAR},
+      </if>
+      <if test="column2 != null">
+        #{column2,jdbcType=VARCHAR},
+      </if>
+      <if test="column3 != null">
+        #{column3,jdbcType=VARCHAR},
+      </if>
+      <if test="column4 != null">
+        #{column4,jdbcType=VARCHAR},
+      </if>
+      <if test="column5 != null">
+        #{column5,jdbcType=VARCHAR},
+      </if>
+      <if test="column6 != null">
+        #{column6,jdbcType=VARCHAR},
+      </if>
+      <if test="column7 != null">
+        #{column7,jdbcType=VARCHAR},
+      </if>
+      <if test="column8 != null">
+        #{column8,jdbcType=VARCHAR},
+      </if>
+      <if test="column9 != null">
+        #{column9,jdbcType=VARCHAR},
+      </if>
+      <if test="column10 != null">
+        #{column10,jdbcType=VARCHAR},
+      </if>
+      <if test="column11 != null">
+        #{column11,jdbcType=VARCHAR},
+      </if>
+      <if test="column12 != null">
+        #{column12,jdbcType=VARCHAR},
+      </if>
+      <if test="column13 != null">
+        #{column13,jdbcType=VARCHAR},
+      </if>
+      <if test="column14 != null">
+        #{column14,jdbcType=VARCHAR},
+      </if>
+      <if test="column15 != null">
+        #{column15,jdbcType=VARCHAR},
+      </if>
+      <if test="column16 != null">
+        #{column16,jdbcType=VARCHAR},
+      </if>
+      <if test="column17 != null">
+        #{column17,jdbcType=VARCHAR},
+      </if>
+      <if test="column18 != null">
+        #{column18,jdbcType=VARCHAR},
+      </if>
+      <if test="column19 != null">
+        #{column19,jdbcType=VARCHAR},
+      </if>
+      <if test="column20 != null">
+        #{column20,jdbcType=VARCHAR},
+      </if>
+      <if test="column21 != null">
+        #{column21,jdbcType=VARCHAR},
+      </if>
+      <if test="column22 != null">
+        #{column22,jdbcType=VARCHAR},
+      </if>
+      <if test="column23 != null">
+        #{column23,jdbcType=VARCHAR},
+      </if>
+      <if test="column24 != null">
+        #{column24,jdbcType=VARCHAR},
+      </if>
+      <if test="column25 != null">
+        #{column25,jdbcType=VARCHAR},
+      </if>
+      <if test="column26 != null">
+        #{column26,jdbcType=VARCHAR},
+      </if>
+      <if test="column27 != null">
+        #{column27,jdbcType=VARCHAR},
+      </if>
+      <if test="column28 != null">
+        #{column28,jdbcType=VARCHAR},
+      </if>
+      <if test="column29 != null">
+        #{column29,jdbcType=VARCHAR},
+      </if>
+      <if test="column30 != null">
+        #{column30,jdbcType=VARCHAR},
+      </if>
+      <if test="column31 != null">
+        #{column31,jdbcType=VARCHAR},
+      </if>
+      <if test="column32 != null">
+        #{column32,jdbcType=VARCHAR},
+      </if>
+      <if test="column33 != null">
+        #{column33,jdbcType=VARCHAR},
+      </if>
+      <if test="column34 != null">
+        #{column34,jdbcType=VARCHAR},
+      </if>
+      <if test="column35 != null">
+        #{column35,jdbcType=VARCHAR},
+      </if>
+      <if test="column36 != null">
+        #{column36,jdbcType=VARCHAR},
+      </if>
+      <if test="column37 != null">
+        #{column37,jdbcType=VARCHAR},
+      </if>
+      <if test="column38 != null">
+        #{column38,jdbcType=VARCHAR},
+      </if>
+      <if test="column39 != null">
+        #{column39,jdbcType=VARCHAR},
+      </if>
+      <if test="column40 != null">
+        #{column40,jdbcType=VARCHAR},
+      </if>
+      <if test="column41 != null">
+        #{column41,jdbcType=VARCHAR},
+      </if>
+      <if test="column42 != null">
+        #{column42,jdbcType=VARCHAR},
+      </if>
+      <if test="column43 != null">
+        #{column43,jdbcType=VARCHAR},
+      </if>
+      <if test="column44 != null">
+        #{column44,jdbcType=VARCHAR},
+      </if>
+      <if test="column45 != null">
+        #{column45,jdbcType=VARCHAR},
+      </if>
+      <if test="column46 != null">
+        #{column46,jdbcType=VARCHAR},
+      </if>
+      <if test="column47 != null">
+        #{column47,jdbcType=VARCHAR},
+      </if>
+      <if test="column48 != null">
+        #{column48,jdbcType=VARCHAR},
+      </if>
+      <if test="column49 != null">
+        #{column49,jdbcType=VARCHAR},
+      </if>
+      <if test="column50 != null">
+        #{column50,jdbcType=VARCHAR},
+      </if>
+      <if test="column51 != null">
+        #{column51,jdbcType=VARCHAR},
+      </if>
+      <if test="column52 != null">
+        #{column52,jdbcType=VARCHAR},
+      </if>
+      <if test="column53 != null">
+        #{column53,jdbcType=VARCHAR},
+      </if>
+      <if test="column54 != null">
+        #{column54,jdbcType=VARCHAR},
+      </if>
+      <if test="column55 != null">
+        #{column55,jdbcType=VARCHAR},
+      </if>
+      <if test="column56 != null">
+        #{column56,jdbcType=VARCHAR},
+      </if>
+      <if test="column57 != null">
+        #{column57,jdbcType=VARCHAR},
+      </if>
+      <if test="column58 != null">
+        #{column58,jdbcType=VARCHAR},
+      </if>
+      <if test="column59 != null">
+        #{column59,jdbcType=VARCHAR},
+      </if>
+      <if test="column60 != null">
+        #{column60,jdbcType=VARCHAR},
+      </if>
+      <if test="column61 != null">
+        #{column61,jdbcType=VARCHAR},
+      </if>
+      <if test="column62 != null">
+        #{column62,jdbcType=VARCHAR},
+      </if>
+      <if test="column63 != null">
+        #{column63,jdbcType=VARCHAR},
+      </if>
+      <if test="column64 != null">
+        #{column64,jdbcType=VARCHAR},
+      </if>
+      <if test="column65 != null">
+        #{column65,jdbcType=VARCHAR},
+      </if>
+      <if test="column66 != null">
+        #{column66,jdbcType=VARCHAR},
+      </if>
+      <if test="column67 != null">
+        #{column67,jdbcType=VARCHAR},
+      </if>
+      <if test="column68 != null">
+        #{column68,jdbcType=VARCHAR},
+      </if>
+      <if test="column69 != null">
+        #{column69,jdbcType=VARCHAR},
+      </if>
+      <if test="column70 != null">
+        #{column70,jdbcType=VARCHAR},
+      </if>
+      <if test="column71 != null">
+        #{column71,jdbcType=VARCHAR},
+      </if>
+      <if test="column72 != null">
+        #{column72,jdbcType=VARCHAR},
+      </if>
+      <if test="column73 != null">
+        #{column73,jdbcType=VARCHAR},
+      </if>
+      <if test="column74 != null">
+        #{column74,jdbcType=VARCHAR},
+      </if>
+      <if test="column75 != null">
+        #{column75,jdbcType=VARCHAR},
+      </if>
+      <if test="column76 != null">
+        #{column76,jdbcType=VARCHAR},
+      </if>
+      <if test="column77 != null">
+        #{column77,jdbcType=VARCHAR},
+      </if>
+      <if test="column78 != null">
+        #{column78,jdbcType=VARCHAR},
+      </if>
+      <if test="column79 != null">
+        #{column79,jdbcType=VARCHAR},
+      </if>
+      <if test="column80 != null">
+        #{column80,jdbcType=VARCHAR},
+      </if>
+      <if test="column81 != null">
+        #{column81,jdbcType=VARCHAR},
+      </if>
+      <if test="column82 != null">
+        #{column82,jdbcType=VARCHAR},
+      </if>
+      <if test="column83 != null">
+        #{column83,jdbcType=VARCHAR},
+      </if>
+      <if test="column84 != null">
+        #{column84,jdbcType=VARCHAR},
+      </if>
+      <if test="column85 != null">
+        #{column85,jdbcType=VARCHAR},
+      </if>
+      <if test="column86 != null">
+        #{column86,jdbcType=VARCHAR},
+      </if>
+      <if test="column87 != null">
+        #{column87,jdbcType=VARCHAR},
+      </if>
+      <if test="column88 != null">
+        #{column88,jdbcType=VARCHAR},
+      </if>
+      <if test="column89 != null">
+        #{column89,jdbcType=VARCHAR},
+      </if>
+      <if test="column90 != null">
+        #{column90,jdbcType=VARCHAR},
+      </if>
+      <if test="column91 != null">
+        #{column91,jdbcType=VARCHAR},
+      </if>
+      <if test="column92 != null">
+        #{column92,jdbcType=VARCHAR},
+      </if>
+      <if test="column93 != null">
+        #{column93,jdbcType=VARCHAR},
+      </if>
+      <if test="column94 != null">
+        #{column94,jdbcType=VARCHAR},
+      </if>
+      <if test="column95 != null">
+        #{column95,jdbcType=VARCHAR},
+      </if>
+      <if test="column96 != null">
+        #{column96,jdbcType=VARCHAR},
+      </if>
+      <if test="column97 != null">
+        #{column97,jdbcType=VARCHAR},
+      </if>
+      <if test="column98 != null">
+        #{column98,jdbcType=VARCHAR},
+      </if>
+      <if test="column99 != null">
+        #{column99,jdbcType=VARCHAR},
+      </if>
+      <if test="column100 != null">
+        #{column100,jdbcType=VARCHAR},
+      </if>
+      <if test="column101 != null">
+        #{column101,jdbcType=VARCHAR},
+      </if>
+      <if test="column102 != null">
+        #{column102,jdbcType=VARCHAR},
+      </if>
+      <if test="column103 != null">
+        #{column103,jdbcType=VARCHAR},
+      </if>
+      <if test="column104 != null">
+        #{column104,jdbcType=VARCHAR},
+      </if>
+      <if test="column105 != null">
+        #{column105,jdbcType=VARCHAR},
+      </if>
+      <if test="column106 != null">
+        #{column106,jdbcType=VARCHAR},
+      </if>
+      <if test="column107 != null">
+        #{column107,jdbcType=VARCHAR},
+      </if>
+      <if test="column108 != null">
+        #{column108,jdbcType=VARCHAR},
+      </if>
+      <if test="column109 != null">
+        #{column109,jdbcType=VARCHAR},
+      </if>
+      <if test="column110 != null">
+        #{column110,jdbcType=VARCHAR},
+      </if>
+      <if test="column111 != null">
+        #{column111,jdbcType=VARCHAR},
+      </if>
+      <if test="column112 != null">
+        #{column112,jdbcType=VARCHAR},
+      </if>
+      <if test="column113 != null">
+        #{column113,jdbcType=VARCHAR},
+      </if>
+      <if test="column114 != null">
+        #{column114,jdbcType=VARCHAR},
+      </if>
+      <if test="column115 != null">
+        #{column115,jdbcType=VARCHAR},
+      </if>
+      <if test="column116 != null">
+        #{column116,jdbcType=VARCHAR},
+      </if>
+      <if test="column117 != null">
+        #{column117,jdbcType=VARCHAR},
+      </if>
+      <if test="column118 != null">
+        #{column118,jdbcType=VARCHAR},
+      </if>
+      <if test="column119 != null">
+        #{column119,jdbcType=VARCHAR},
+      </if>
+      <if test="column120 != null">
+        #{column120,jdbcType=VARCHAR},
+      </if>
+      <if test="column121 != null">
+        #{column121,jdbcType=VARCHAR},
+      </if>
+      <if test="column122 != null">
+        #{column122,jdbcType=VARCHAR},
+      </if>
+      <if test="column123 != null">
+        #{column123,jdbcType=VARCHAR},
+      </if>
+      <if test="column124 != null">
+        #{column124,jdbcType=VARCHAR},
+      </if>
+      <if test="column125 != null">
+        #{column125,jdbcType=VARCHAR},
+      </if>
+      <if test="column126 != null">
+        #{column126,jdbcType=VARCHAR},
+      </if>
+      <if test="column127 != null">
+        #{column127,jdbcType=VARCHAR},
+      </if>
+      <if test="column128 != null">
+        #{column128,jdbcType=VARCHAR},
+      </if>
+      <if test="column129 != null">
+        #{column129,jdbcType=VARCHAR},
+      </if>
+      <if test="column130 != null">
+        #{column130,jdbcType=VARCHAR},
+      </if>
+      <if test="column131 != null">
+        #{column131,jdbcType=VARCHAR},
+      </if>
+      <if test="column132 != null">
+        #{column132,jdbcType=VARCHAR},
+      </if>
+      <if test="column133 != null">
+        #{column133,jdbcType=VARCHAR},
+      </if>
+      <if test="column134 != null">
+        #{column134,jdbcType=VARCHAR},
+      </if>
+      <if test="column135 != null">
+        #{column135,jdbcType=VARCHAR},
+      </if>
+      <if test="column136 != null">
+        #{column136,jdbcType=VARCHAR},
+      </if>
+      <if test="column137 != null">
+        #{column137,jdbcType=VARCHAR},
+      </if>
+      <if test="column138 != null">
+        #{column138,jdbcType=VARCHAR},
+      </if>
+      <if test="column139 != null">
+        #{column139,jdbcType=VARCHAR},
+      </if>
+      <if test="column140 != null">
+        #{column140,jdbcType=VARCHAR},
+      </if>
+      <if test="column141 != null">
+        #{column141,jdbcType=VARCHAR},
+      </if>
+      <if test="column142 != null">
+        #{column142,jdbcType=VARCHAR},
+      </if>
+      <if test="column143 != null">
+        #{column143,jdbcType=VARCHAR},
+      </if>
+      <if test="column144 != null">
+        #{column144,jdbcType=VARCHAR},
+      </if>
+      <if test="column145 != null">
+        #{column145,jdbcType=VARCHAR},
+      </if>
+      <if test="column146 != null">
+        #{column146,jdbcType=VARCHAR},
+      </if>
+      <if test="column147 != null">
+        #{column147,jdbcType=VARCHAR},
+      </if>
+      <if test="column148 != null">
+        #{column148,jdbcType=VARCHAR},
+      </if>
+      <if test="column149 != null">
+        #{column149,jdbcType=VARCHAR},
+      </if>
+      <if test="column150 != null">
+        #{column150,jdbcType=VARCHAR},
+      </if>
+      <if test="column151 != null">
+        #{column151,jdbcType=VARCHAR},
+      </if>
+      <if test="column152 != null">
+        #{column152,jdbcType=VARCHAR},
+      </if>
+      <if test="column153 != null">
+        #{column153,jdbcType=VARCHAR},
+      </if>
+      <if test="column154 != null">
+        #{column154,jdbcType=VARCHAR},
+      </if>
+      <if test="column155 != null">
+        #{column155,jdbcType=VARCHAR},
+      </if>
+      <if test="column156 != null">
+        #{column156,jdbcType=VARCHAR},
+      </if>
+      <if test="column157 != null">
+        #{column157,jdbcType=VARCHAR},
+      </if>
+      <if test="column158 != null">
+        #{column158,jdbcType=VARCHAR},
+      </if>
+      <if test="column159 != null">
+        #{column159,jdbcType=VARCHAR},
+      </if>
+      <if test="column160 != null">
+        #{column160,jdbcType=VARCHAR},
+      </if>
+      <if test="column161 != null">
+        #{column161,jdbcType=VARCHAR},
+      </if>
+      <if test="column162 != null">
+        #{column162,jdbcType=VARCHAR},
+      </if>
+      <if test="column163 != null">
+        #{column163,jdbcType=VARCHAR},
+      </if>
+      <if test="column164 != null">
+        #{column164,jdbcType=VARCHAR},
+      </if>
+      <if test="column165 != null">
+        #{column165,jdbcType=VARCHAR},
+      </if>
+      <if test="column166 != null">
+        #{column166,jdbcType=VARCHAR},
+      </if>
+      <if test="column167 != null">
+        #{column167,jdbcType=VARCHAR},
+      </if>
+      <if test="column168 != null">
+        #{column168,jdbcType=VARCHAR},
+      </if>
+      <if test="column169 != null">
+        #{column169,jdbcType=VARCHAR},
+      </if>
+      <if test="column170 != null">
+        #{column170,jdbcType=VARCHAR},
+      </if>
+      <if test="column171 != null">
+        #{column171,jdbcType=VARCHAR},
+      </if>
+      <if test="column172 != null">
+        #{column172,jdbcType=VARCHAR},
+      </if>
+      <if test="column173 != null">
+        #{column173,jdbcType=VARCHAR},
+      </if>
+      <if test="column174 != null">
+        #{column174,jdbcType=VARCHAR},
+      </if>
+      <if test="column175 != null">
+        #{column175,jdbcType=VARCHAR},
+      </if>
+      <if test="column176 != null">
+        #{column176,jdbcType=VARCHAR},
+      </if>
+      <if test="column177 != null">
+        #{column177,jdbcType=VARCHAR},
+      </if>
+      <if test="column178 != null">
+        #{column178,jdbcType=VARCHAR},
+      </if>
+      <if test="column179 != null">
+        #{column179,jdbcType=VARCHAR},
+      </if>
+      <if test="column180 != null">
+        #{column180,jdbcType=VARCHAR},
+      </if>
+      <if test="column181 != null">
+        #{column181,jdbcType=VARCHAR},
+      </if>
+      <if test="column182 != null">
+        #{column182,jdbcType=VARCHAR},
+      </if>
+      <if test="column183 != null">
+        #{column183,jdbcType=VARCHAR},
+      </if>
+      <if test="column184 != null">
+        #{column184,jdbcType=VARCHAR},
+      </if>
+      <if test="column185 != null">
+        #{column185,jdbcType=VARCHAR},
+      </if>
+      <if test="column186 != null">
+        #{column186,jdbcType=VARCHAR},
+      </if>
+      <if test="column187 != null">
+        #{column187,jdbcType=VARCHAR},
+      </if>
+      <if test="column188 != null">
+        #{column188,jdbcType=VARCHAR},
+      </if>
+      <if test="column189 != null">
+        #{column189,jdbcType=VARCHAR},
+      </if>
+      <if test="column190 != null">
+        #{column190,jdbcType=VARCHAR},
+      </if>
+      <if test="column191 != null">
+        #{column191,jdbcType=VARCHAR},
+      </if>
+      <if test="column192 != null">
+        #{column192,jdbcType=VARCHAR},
+      </if>
+      <if test="column193 != null">
+        #{column193,jdbcType=VARCHAR},
+      </if>
+      <if test="column194 != null">
+        #{column194,jdbcType=VARCHAR},
+      </if>
+      <if test="column195 != null">
+        #{column195,jdbcType=VARCHAR},
+      </if>
+      <if test="column196 != null">
+        #{column196,jdbcType=VARCHAR},
+      </if>
+      <if test="column197 != null">
+        #{column197,jdbcType=VARCHAR},
+      </if>
+      <if test="column198 != null">
+        #{column198,jdbcType=VARCHAR},
+      </if>
+      <if test="column199 != null">
+        #{column199,jdbcType=VARCHAR},
+      </if>
+      <if test="column200 != null">
+        #{column200,jdbcType=VARCHAR},
+      </if>
+      <if test="registerId != null">
+        #{registerId,jdbcType=VARCHAR},
+      </if>
+      <if test="registTs != null">
+        #{registTs,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updaterId != null">
+        #{updaterId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTs != null">
+        #{updateTs,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="jp.co.axio.masterMentsetSystem.model.WUploadFileSubEntityExample" resultType="java.lang.Long">
+    select count(*) from public.w_upload_file_sub
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update public.w_upload_file_sub
+    <set>
+      <if test="record.uploadUserId != null">
+        upload_user_id = #{record.uploadUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.uploadUserTs != null">
+        upload_user_ts = #{record.uploadUserTs,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.rowNo != null">
+        row_no = #{record.rowNo,jdbcType=INTEGER},
+      </if>
+      <if test="record.uploadSession != null">
+        upload_session = #{record.uploadSession,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rowData != null">
+        row_data = #{record.rowData,jdbcType=VARCHAR},
+      </if>
+      <if test="record.checkFlag != null">
+        check_flag = #{record.checkFlag,jdbcType=CHAR},
+      </if>
+      <if test="record.checkMessage != null">
+        check_message = #{record.checkMessage,jdbcType=VARCHAR},
+      </if>
+      <if test="record.processKbn != null">
+        process_kbn = #{record.processKbn,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userId != null">
+        user_id = #{record.userId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.reflectionDate != null">
+        reflection_date = #{record.reflectionDate,jdbcType=DATE},
+      </if>
+      <if test="record.column1 != null">
+        column_1 = #{record.column1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column2 != null">
+        column_2 = #{record.column2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column3 != null">
+        column_3 = #{record.column3,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column4 != null">
+        column_4 = #{record.column4,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column5 != null">
+        column_5 = #{record.column5,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column6 != null">
+        column_6 = #{record.column6,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column7 != null">
+        column_7 = #{record.column7,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column8 != null">
+        column_8 = #{record.column8,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column9 != null">
+        column_9 = #{record.column9,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column10 != null">
+        column_10 = #{record.column10,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column11 != null">
+        column_11 = #{record.column11,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column12 != null">
+        column_12 = #{record.column12,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column13 != null">
+        column_13 = #{record.column13,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column14 != null">
+        column_14 = #{record.column14,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column15 != null">
+        column_15 = #{record.column15,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column16 != null">
+        column_16 = #{record.column16,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column17 != null">
+        column_17 = #{record.column17,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column18 != null">
+        column_18 = #{record.column18,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column19 != null">
+        column_19 = #{record.column19,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column20 != null">
+        column_20 = #{record.column20,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column21 != null">
+        column_21 = #{record.column21,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column22 != null">
+        column_22 = #{record.column22,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column23 != null">
+        column_23 = #{record.column23,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column24 != null">
+        column_24 = #{record.column24,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column25 != null">
+        column_25 = #{record.column25,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column26 != null">
+        column_26 = #{record.column26,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column27 != null">
+        column_27 = #{record.column27,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column28 != null">
+        column_28 = #{record.column28,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column29 != null">
+        column_29 = #{record.column29,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column30 != null">
+        column_30 = #{record.column30,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column31 != null">
+        column_31 = #{record.column31,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column32 != null">
+        column_32 = #{record.column32,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column33 != null">
+        column_33 = #{record.column33,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column34 != null">
+        column_34 = #{record.column34,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column35 != null">
+        column_35 = #{record.column35,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column36 != null">
+        column_36 = #{record.column36,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column37 != null">
+        column_37 = #{record.column37,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column38 != null">
+        column_38 = #{record.column38,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column39 != null">
+        column_39 = #{record.column39,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column40 != null">
+        column_40 = #{record.column40,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column41 != null">
+        column_41 = #{record.column41,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column42 != null">
+        column_42 = #{record.column42,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column43 != null">
+        column_43 = #{record.column43,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column44 != null">
+        column_44 = #{record.column44,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column45 != null">
+        column_45 = #{record.column45,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column46 != null">
+        column_46 = #{record.column46,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column47 != null">
+        column_47 = #{record.column47,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column48 != null">
+        column_48 = #{record.column48,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column49 != null">
+        column_49 = #{record.column49,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column50 != null">
+        column_50 = #{record.column50,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column51 != null">
+        column_51 = #{record.column51,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column52 != null">
+        column_52 = #{record.column52,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column53 != null">
+        column_53 = #{record.column53,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column54 != null">
+        column_54 = #{record.column54,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column55 != null">
+        column_55 = #{record.column55,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column56 != null">
+        column_56 = #{record.column56,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column57 != null">
+        column_57 = #{record.column57,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column58 != null">
+        column_58 = #{record.column58,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column59 != null">
+        column_59 = #{record.column59,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column60 != null">
+        column_60 = #{record.column60,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column61 != null">
+        column_61 = #{record.column61,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column62 != null">
+        column_62 = #{record.column62,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column63 != null">
+        column_63 = #{record.column63,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column64 != null">
+        column_64 = #{record.column64,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column65 != null">
+        column_65 = #{record.column65,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column66 != null">
+        column_66 = #{record.column66,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column67 != null">
+        column_67 = #{record.column67,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column68 != null">
+        column_68 = #{record.column68,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column69 != null">
+        column_69 = #{record.column69,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column70 != null">
+        column_70 = #{record.column70,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column71 != null">
+        column_71 = #{record.column71,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column72 != null">
+        column_72 = #{record.column72,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column73 != null">
+        column_73 = #{record.column73,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column74 != null">
+        column_74 = #{record.column74,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column75 != null">
+        column_75 = #{record.column75,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column76 != null">
+        column_76 = #{record.column76,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column77 != null">
+        column_77 = #{record.column77,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column78 != null">
+        column_78 = #{record.column78,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column79 != null">
+        column_79 = #{record.column79,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column80 != null">
+        column_80 = #{record.column80,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column81 != null">
+        column_81 = #{record.column81,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column82 != null">
+        column_82 = #{record.column82,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column83 != null">
+        column_83 = #{record.column83,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column84 != null">
+        column_84 = #{record.column84,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column85 != null">
+        column_85 = #{record.column85,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column86 != null">
+        column_86 = #{record.column86,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column87 != null">
+        column_87 = #{record.column87,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column88 != null">
+        column_88 = #{record.column88,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column89 != null">
+        column_89 = #{record.column89,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column90 != null">
+        column_90 = #{record.column90,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column91 != null">
+        column_91 = #{record.column91,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column92 != null">
+        column_92 = #{record.column92,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column93 != null">
+        column_93 = #{record.column93,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column94 != null">
+        column_94 = #{record.column94,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column95 != null">
+        column_95 = #{record.column95,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column96 != null">
+        column_96 = #{record.column96,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column97 != null">
+        column_97 = #{record.column97,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column98 != null">
+        column_98 = #{record.column98,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column99 != null">
+        column_99 = #{record.column99,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column100 != null">
+        column_100 = #{record.column100,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column101 != null">
+        column_101 = #{record.column101,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column102 != null">
+        column_102 = #{record.column102,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column103 != null">
+        column_103 = #{record.column103,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column104 != null">
+        column_104 = #{record.column104,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column105 != null">
+        column_105 = #{record.column105,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column106 != null">
+        column_106 = #{record.column106,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column107 != null">
+        column_107 = #{record.column107,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column108 != null">
+        column_108 = #{record.column108,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column109 != null">
+        column_109 = #{record.column109,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column110 != null">
+        column_110 = #{record.column110,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column111 != null">
+        column_111 = #{record.column111,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column112 != null">
+        column_112 = #{record.column112,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column113 != null">
+        column_113 = #{record.column113,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column114 != null">
+        column_114 = #{record.column114,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column115 != null">
+        column_115 = #{record.column115,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column116 != null">
+        column_116 = #{record.column116,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column117 != null">
+        column_117 = #{record.column117,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column118 != null">
+        column_118 = #{record.column118,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column119 != null">
+        column_119 = #{record.column119,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column120 != null">
+        column_120 = #{record.column120,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column121 != null">
+        column_121 = #{record.column121,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column122 != null">
+        column_122 = #{record.column122,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column123 != null">
+        column_123 = #{record.column123,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column124 != null">
+        column_124 = #{record.column124,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column125 != null">
+        column_125 = #{record.column125,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column126 != null">
+        column_126 = #{record.column126,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column127 != null">
+        column_127 = #{record.column127,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column128 != null">
+        column_128 = #{record.column128,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column129 != null">
+        column_129 = #{record.column129,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column130 != null">
+        column_130 = #{record.column130,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column131 != null">
+        column_131 = #{record.column131,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column132 != null">
+        column_132 = #{record.column132,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column133 != null">
+        column_133 = #{record.column133,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column134 != null">
+        column_134 = #{record.column134,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column135 != null">
+        column_135 = #{record.column135,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column136 != null">
+        column_136 = #{record.column136,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column137 != null">
+        column_137 = #{record.column137,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column138 != null">
+        column_138 = #{record.column138,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column139 != null">
+        column_139 = #{record.column139,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column140 != null">
+        column_140 = #{record.column140,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column141 != null">
+        column_141 = #{record.column141,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column142 != null">
+        column_142 = #{record.column142,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column143 != null">
+        column_143 = #{record.column143,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column144 != null">
+        column_144 = #{record.column144,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column145 != null">
+        column_145 = #{record.column145,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column146 != null">
+        column_146 = #{record.column146,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column147 != null">
+        column_147 = #{record.column147,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column148 != null">
+        column_148 = #{record.column148,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column149 != null">
+        column_149 = #{record.column149,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column150 != null">
+        column_150 = #{record.column150,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column151 != null">
+        column_151 = #{record.column151,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column152 != null">
+        column_152 = #{record.column152,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column153 != null">
+        column_153 = #{record.column153,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column154 != null">
+        column_154 = #{record.column154,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column155 != null">
+        column_155 = #{record.column155,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column156 != null">
+        column_156 = #{record.column156,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column157 != null">
+        column_157 = #{record.column157,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column158 != null">
+        column_158 = #{record.column158,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column159 != null">
+        column_159 = #{record.column159,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column160 != null">
+        column_160 = #{record.column160,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column161 != null">
+        column_161 = #{record.column161,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column162 != null">
+        column_162 = #{record.column162,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column163 != null">
+        column_163 = #{record.column163,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column164 != null">
+        column_164 = #{record.column164,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column165 != null">
+        column_165 = #{record.column165,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column166 != null">
+        column_166 = #{record.column166,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column167 != null">
+        column_167 = #{record.column167,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column168 != null">
+        column_168 = #{record.column168,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column169 != null">
+        column_169 = #{record.column169,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column170 != null">
+        column_170 = #{record.column170,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column171 != null">
+        column_171 = #{record.column171,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column172 != null">
+        column_172 = #{record.column172,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column173 != null">
+        column_173 = #{record.column173,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column174 != null">
+        column_174 = #{record.column174,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column175 != null">
+        column_175 = #{record.column175,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column176 != null">
+        column_176 = #{record.column176,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column177 != null">
+        column_177 = #{record.column177,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column178 != null">
+        column_178 = #{record.column178,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column179 != null">
+        column_179 = #{record.column179,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column180 != null">
+        column_180 = #{record.column180,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column181 != null">
+        column_181 = #{record.column181,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column182 != null">
+        column_182 = #{record.column182,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column183 != null">
+        column_183 = #{record.column183,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column184 != null">
+        column_184 = #{record.column184,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column185 != null">
+        column_185 = #{record.column185,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column186 != null">
+        column_186 = #{record.column186,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column187 != null">
+        column_187 = #{record.column187,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column188 != null">
+        column_188 = #{record.column188,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column189 != null">
+        column_189 = #{record.column189,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column190 != null">
+        column_190 = #{record.column190,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column191 != null">
+        column_191 = #{record.column191,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column192 != null">
+        column_192 = #{record.column192,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column193 != null">
+        column_193 = #{record.column193,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column194 != null">
+        column_194 = #{record.column194,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column195 != null">
+        column_195 = #{record.column195,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column196 != null">
+        column_196 = #{record.column196,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column197 != null">
+        column_197 = #{record.column197,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column198 != null">
+        column_198 = #{record.column198,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column199 != null">
+        column_199 = #{record.column199,jdbcType=VARCHAR},
+      </if>
+      <if test="record.column200 != null">
+        column_200 = #{record.column200,jdbcType=VARCHAR},
+      </if>
+      <if test="record.registerId != null">
+        register_id = #{record.registerId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.registTs != null">
+        regist_ts = #{record.registTs,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updaterId != null">
+        updater_id = #{record.updaterId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.updateTs != null">
+        update_ts = #{record.updateTs,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update public.w_upload_file_sub
+    set upload_user_id = #{record.uploadUserId,jdbcType=VARCHAR},
+      upload_user_ts = #{record.uploadUserTs,jdbcType=TIMESTAMP},
+      row_no = #{record.rowNo,jdbcType=INTEGER},
+      upload_session = #{record.uploadSession,jdbcType=VARCHAR},
+      row_data = #{record.rowData,jdbcType=VARCHAR},
+      check_flag = #{record.checkFlag,jdbcType=CHAR},
+      check_message = #{record.checkMessage,jdbcType=VARCHAR},
+      process_kbn = #{record.processKbn,jdbcType=VARCHAR},
+      user_id = #{record.userId,jdbcType=VARCHAR},
+      reflection_date = #{record.reflectionDate,jdbcType=DATE},
+      column_1 = #{record.column1,jdbcType=VARCHAR},
+      column_2 = #{record.column2,jdbcType=VARCHAR},
+      column_3 = #{record.column3,jdbcType=VARCHAR},
+      column_4 = #{record.column4,jdbcType=VARCHAR},
+      column_5 = #{record.column5,jdbcType=VARCHAR},
+      column_6 = #{record.column6,jdbcType=VARCHAR},
+      column_7 = #{record.column7,jdbcType=VARCHAR},
+      column_8 = #{record.column8,jdbcType=VARCHAR},
+      column_9 = #{record.column9,jdbcType=VARCHAR},
+      column_10 = #{record.column10,jdbcType=VARCHAR},
+      column_11 = #{record.column11,jdbcType=VARCHAR},
+      column_12 = #{record.column12,jdbcType=VARCHAR},
+      column_13 = #{record.column13,jdbcType=VARCHAR},
+      column_14 = #{record.column14,jdbcType=VARCHAR},
+      column_15 = #{record.column15,jdbcType=VARCHAR},
+      column_16 = #{record.column16,jdbcType=VARCHAR},
+      column_17 = #{record.column17,jdbcType=VARCHAR},
+      column_18 = #{record.column18,jdbcType=VARCHAR},
+      column_19 = #{record.column19,jdbcType=VARCHAR},
+      column_20 = #{record.column20,jdbcType=VARCHAR},
+      column_21 = #{record.column21,jdbcType=VARCHAR},
+      column_22 = #{record.column22,jdbcType=VARCHAR},
+      column_23 = #{record.column23,jdbcType=VARCHAR},
+      column_24 = #{record.column24,jdbcType=VARCHAR},
+      column_25 = #{record.column25,jdbcType=VARCHAR},
+      column_26 = #{record.column26,jdbcType=VARCHAR},
+      column_27 = #{record.column27,jdbcType=VARCHAR},
+      column_28 = #{record.column28,jdbcType=VARCHAR},
+      column_29 = #{record.column29,jdbcType=VARCHAR},
+      column_30 = #{record.column30,jdbcType=VARCHAR},
+      column_31 = #{record.column31,jdbcType=VARCHAR},
+      column_32 = #{record.column32,jdbcType=VARCHAR},
+      column_33 = #{record.column33,jdbcType=VARCHAR},
+      column_34 = #{record.column34,jdbcType=VARCHAR},
+      column_35 = #{record.column35,jdbcType=VARCHAR},
+      column_36 = #{record.column36,jdbcType=VARCHAR},
+      column_37 = #{record.column37,jdbcType=VARCHAR},
+      column_38 = #{record.column38,jdbcType=VARCHAR},
+      column_39 = #{record.column39,jdbcType=VARCHAR},
+      column_40 = #{record.column40,jdbcType=VARCHAR},
+      column_41 = #{record.column41,jdbcType=VARCHAR},
+      column_42 = #{record.column42,jdbcType=VARCHAR},
+      column_43 = #{record.column43,jdbcType=VARCHAR},
+      column_44 = #{record.column44,jdbcType=VARCHAR},
+      column_45 = #{record.column45,jdbcType=VARCHAR},
+      column_46 = #{record.column46,jdbcType=VARCHAR},
+      column_47 = #{record.column47,jdbcType=VARCHAR},
+      column_48 = #{record.column48,jdbcType=VARCHAR},
+      column_49 = #{record.column49,jdbcType=VARCHAR},
+      column_50 = #{record.column50,jdbcType=VARCHAR},
+      column_51 = #{record.column51,jdbcType=VARCHAR},
+      column_52 = #{record.column52,jdbcType=VARCHAR},
+      column_53 = #{record.column53,jdbcType=VARCHAR},
+      column_54 = #{record.column54,jdbcType=VARCHAR},
+      column_55 = #{record.column55,jdbcType=VARCHAR},
+      column_56 = #{record.column56,jdbcType=VARCHAR},
+      column_57 = #{record.column57,jdbcType=VARCHAR},
+      column_58 = #{record.column58,jdbcType=VARCHAR},
+      column_59 = #{record.column59,jdbcType=VARCHAR},
+      column_60 = #{record.column60,jdbcType=VARCHAR},
+      column_61 = #{record.column61,jdbcType=VARCHAR},
+      column_62 = #{record.column62,jdbcType=VARCHAR},
+      column_63 = #{record.column63,jdbcType=VARCHAR},
+      column_64 = #{record.column64,jdbcType=VARCHAR},
+      column_65 = #{record.column65,jdbcType=VARCHAR},
+      column_66 = #{record.column66,jdbcType=VARCHAR},
+      column_67 = #{record.column67,jdbcType=VARCHAR},
+      column_68 = #{record.column68,jdbcType=VARCHAR},
+      column_69 = #{record.column69,jdbcType=VARCHAR},
+      column_70 = #{record.column70,jdbcType=VARCHAR},
+      column_71 = #{record.column71,jdbcType=VARCHAR},
+      column_72 = #{record.column72,jdbcType=VARCHAR},
+      column_73 = #{record.column73,jdbcType=VARCHAR},
+      column_74 = #{record.column74,jdbcType=VARCHAR},
+      column_75 = #{record.column75,jdbcType=VARCHAR},
+      column_76 = #{record.column76,jdbcType=VARCHAR},
+      column_77 = #{record.column77,jdbcType=VARCHAR},
+      column_78 = #{record.column78,jdbcType=VARCHAR},
+      column_79 = #{record.column79,jdbcType=VARCHAR},
+      column_80 = #{record.column80,jdbcType=VARCHAR},
+      column_81 = #{record.column81,jdbcType=VARCHAR},
+      column_82 = #{record.column82,jdbcType=VARCHAR},
+      column_83 = #{record.column83,jdbcType=VARCHAR},
+      column_84 = #{record.column84,jdbcType=VARCHAR},
+      column_85 = #{record.column85,jdbcType=VARCHAR},
+      column_86 = #{record.column86,jdbcType=VARCHAR},
+      column_87 = #{record.column87,jdbcType=VARCHAR},
+      column_88 = #{record.column88,jdbcType=VARCHAR},
+      column_89 = #{record.column89,jdbcType=VARCHAR},
+      column_90 = #{record.column90,jdbcType=VARCHAR},
+      column_91 = #{record.column91,jdbcType=VARCHAR},
+      column_92 = #{record.column92,jdbcType=VARCHAR},
+      column_93 = #{record.column93,jdbcType=VARCHAR},
+      column_94 = #{record.column94,jdbcType=VARCHAR},
+      column_95 = #{record.column95,jdbcType=VARCHAR},
+      column_96 = #{record.column96,jdbcType=VARCHAR},
+      column_97 = #{record.column97,jdbcType=VARCHAR},
+      column_98 = #{record.column98,jdbcType=VARCHAR},
+      column_99 = #{record.column99,jdbcType=VARCHAR},
+      column_100 = #{record.column100,jdbcType=VARCHAR},
+      column_101 = #{record.column101,jdbcType=VARCHAR},
+      column_102 = #{record.column102,jdbcType=VARCHAR},
+      column_103 = #{record.column103,jdbcType=VARCHAR},
+      column_104 = #{record.column104,jdbcType=VARCHAR},
+      column_105 = #{record.column105,jdbcType=VARCHAR},
+      column_106 = #{record.column106,jdbcType=VARCHAR},
+      column_107 = #{record.column107,jdbcType=VARCHAR},
+      column_108 = #{record.column108,jdbcType=VARCHAR},
+      column_109 = #{record.column109,jdbcType=VARCHAR},
+      column_110 = #{record.column110,jdbcType=VARCHAR},
+      column_111 = #{record.column111,jdbcType=VARCHAR},
+      column_112 = #{record.column112,jdbcType=VARCHAR},
+      column_113 = #{record.column113,jdbcType=VARCHAR},
+      column_114 = #{record.column114,jdbcType=VARCHAR},
+      column_115 = #{record.column115,jdbcType=VARCHAR},
+      column_116 = #{record.column116,jdbcType=VARCHAR},
+      column_117 = #{record.column117,jdbcType=VARCHAR},
+      column_118 = #{record.column118,jdbcType=VARCHAR},
+      column_119 = #{record.column119,jdbcType=VARCHAR},
+      column_120 = #{record.column120,jdbcType=VARCHAR},
+      column_121 = #{record.column121,jdbcType=VARCHAR},
+      column_122 = #{record.column122,jdbcType=VARCHAR},
+      column_123 = #{record.column123,jdbcType=VARCHAR},
+      column_124 = #{record.column124,jdbcType=VARCHAR},
+      column_125 = #{record.column125,jdbcType=VARCHAR},
+      column_126 = #{record.column126,jdbcType=VARCHAR},
+      column_127 = #{record.column127,jdbcType=VARCHAR},
+      column_128 = #{record.column128,jdbcType=VARCHAR},
+      column_129 = #{record.column129,jdbcType=VARCHAR},
+      column_130 = #{record.column130,jdbcType=VARCHAR},
+      column_131 = #{record.column131,jdbcType=VARCHAR},
+      column_132 = #{record.column132,jdbcType=VARCHAR},
+      column_133 = #{record.column133,jdbcType=VARCHAR},
+      column_134 = #{record.column134,jdbcType=VARCHAR},
+      column_135 = #{record.column135,jdbcType=VARCHAR},
+      column_136 = #{record.column136,jdbcType=VARCHAR},
+      column_137 = #{record.column137,jdbcType=VARCHAR},
+      column_138 = #{record.column138,jdbcType=VARCHAR},
+      column_139 = #{record.column139,jdbcType=VARCHAR},
+      column_140 = #{record.column140,jdbcType=VARCHAR},
+      column_141 = #{record.column141,jdbcType=VARCHAR},
+      column_142 = #{record.column142,jdbcType=VARCHAR},
+      column_143 = #{record.column143,jdbcType=VARCHAR},
+      column_144 = #{record.column144,jdbcType=VARCHAR},
+      column_145 = #{record.column145,jdbcType=VARCHAR},
+      column_146 = #{record.column146,jdbcType=VARCHAR},
+      column_147 = #{record.column147,jdbcType=VARCHAR},
+      column_148 = #{record.column148,jdbcType=VARCHAR},
+      column_149 = #{record.column149,jdbcType=VARCHAR},
+      column_150 = #{record.column150,jdbcType=VARCHAR},
+      column_151 = #{record.column151,jdbcType=VARCHAR},
+      column_152 = #{record.column152,jdbcType=VARCHAR},
+      column_153 = #{record.column153,jdbcType=VARCHAR},
+      column_154 = #{record.column154,jdbcType=VARCHAR},
+      column_155 = #{record.column155,jdbcType=VARCHAR},
+      column_156 = #{record.column156,jdbcType=VARCHAR},
+      column_157 = #{record.column157,jdbcType=VARCHAR},
+      column_158 = #{record.column158,jdbcType=VARCHAR},
+      column_159 = #{record.column159,jdbcType=VARCHAR},
+      column_160 = #{record.column160,jdbcType=VARCHAR},
+      column_161 = #{record.column161,jdbcType=VARCHAR},
+      column_162 = #{record.column162,jdbcType=VARCHAR},
+      column_163 = #{record.column163,jdbcType=VARCHAR},
+      column_164 = #{record.column164,jdbcType=VARCHAR},
+      column_165 = #{record.column165,jdbcType=VARCHAR},
+      column_166 = #{record.column166,jdbcType=VARCHAR},
+      column_167 = #{record.column167,jdbcType=VARCHAR},
+      column_168 = #{record.column168,jdbcType=VARCHAR},
+      column_169 = #{record.column169,jdbcType=VARCHAR},
+      column_170 = #{record.column170,jdbcType=VARCHAR},
+      column_171 = #{record.column171,jdbcType=VARCHAR},
+      column_172 = #{record.column172,jdbcType=VARCHAR},
+      column_173 = #{record.column173,jdbcType=VARCHAR},
+      column_174 = #{record.column174,jdbcType=VARCHAR},
+      column_175 = #{record.column175,jdbcType=VARCHAR},
+      column_176 = #{record.column176,jdbcType=VARCHAR},
+      column_177 = #{record.column177,jdbcType=VARCHAR},
+      column_178 = #{record.column178,jdbcType=VARCHAR},
+      column_179 = #{record.column179,jdbcType=VARCHAR},
+      column_180 = #{record.column180,jdbcType=VARCHAR},
+      column_181 = #{record.column181,jdbcType=VARCHAR},
+      column_182 = #{record.column182,jdbcType=VARCHAR},
+      column_183 = #{record.column183,jdbcType=VARCHAR},
+      column_184 = #{record.column184,jdbcType=VARCHAR},
+      column_185 = #{record.column185,jdbcType=VARCHAR},
+      column_186 = #{record.column186,jdbcType=VARCHAR},
+      column_187 = #{record.column187,jdbcType=VARCHAR},
+      column_188 = #{record.column188,jdbcType=VARCHAR},
+      column_189 = #{record.column189,jdbcType=VARCHAR},
+      column_190 = #{record.column190,jdbcType=VARCHAR},
+      column_191 = #{record.column191,jdbcType=VARCHAR},
+      column_192 = #{record.column192,jdbcType=VARCHAR},
+      column_193 = #{record.column193,jdbcType=VARCHAR},
+      column_194 = #{record.column194,jdbcType=VARCHAR},
+      column_195 = #{record.column195,jdbcType=VARCHAR},
+      column_196 = #{record.column196,jdbcType=VARCHAR},
+      column_197 = #{record.column197,jdbcType=VARCHAR},
+      column_198 = #{record.column198,jdbcType=VARCHAR},
+      column_199 = #{record.column199,jdbcType=VARCHAR},
+      column_200 = #{record.column200,jdbcType=VARCHAR},
+      register_id = #{record.registerId,jdbcType=VARCHAR},
+      regist_ts = #{record.registTs,jdbcType=TIMESTAMP},
+      updater_id = #{record.updaterId,jdbcType=VARCHAR},
+      update_ts = #{record.updateTs,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="jp.co.axio.masterMentsetSystem.model.WUploadFileSubEntity">
+    update public.w_upload_file_sub
+    <set>
+      <if test="rowData != null">
+        row_data = #{rowData,jdbcType=VARCHAR},
+      </if>
+      <if test="checkFlag != null">
+        check_flag = #{checkFlag,jdbcType=CHAR},
+      </if>
+      <if test="checkMessage != null">
+        check_message = #{checkMessage,jdbcType=VARCHAR},
+      </if>
+      <if test="processKbn != null">
+        process_kbn = #{processKbn,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="reflectionDate != null">
+        reflection_date = #{reflectionDate,jdbcType=DATE},
+      </if>
+      <if test="column1 != null">
+        column_1 = #{column1,jdbcType=VARCHAR},
+      </if>
+      <if test="column2 != null">
+        column_2 = #{column2,jdbcType=VARCHAR},
+      </if>
+      <if test="column3 != null">
+        column_3 = #{column3,jdbcType=VARCHAR},
+      </if>
+      <if test="column4 != null">
+        column_4 = #{column4,jdbcType=VARCHAR},
+      </if>
+      <if test="column5 != null">
+        column_5 = #{column5,jdbcType=VARCHAR},
+      </if>
+      <if test="column6 != null">
+        column_6 = #{column6,jdbcType=VARCHAR},
+      </if>
+      <if test="column7 != null">
+        column_7 = #{column7,jdbcType=VARCHAR},
+      </if>
+      <if test="column8 != null">
+        column_8 = #{column8,jdbcType=VARCHAR},
+      </if>
+      <if test="column9 != null">
+        column_9 = #{column9,jdbcType=VARCHAR},
+      </if>
+      <if test="column10 != null">
+        column_10 = #{column10,jdbcType=VARCHAR},
+      </if>
+      <if test="column11 != null">
+        column_11 = #{column11,jdbcType=VARCHAR},
+      </if>
+      <if test="column12 != null">
+        column_12 = #{column12,jdbcType=VARCHAR},
+      </if>
+      <if test="column13 != null">
+        column_13 = #{column13,jdbcType=VARCHAR},
+      </if>
+      <if test="column14 != null">
+        column_14 = #{column14,jdbcType=VARCHAR},
+      </if>
+      <if test="column15 != null">
+        column_15 = #{column15,jdbcType=VARCHAR},
+      </if>
+      <if test="column16 != null">
+        column_16 = #{column16,jdbcType=VARCHAR},
+      </if>
+      <if test="column17 != null">
+        column_17 = #{column17,jdbcType=VARCHAR},
+      </if>
+      <if test="column18 != null">
+        column_18 = #{column18,jdbcType=VARCHAR},
+      </if>
+      <if test="column19 != null">
+        column_19 = #{column19,jdbcType=VARCHAR},
+      </if>
+      <if test="column20 != null">
+        column_20 = #{column20,jdbcType=VARCHAR},
+      </if>
+      <if test="column21 != null">
+        column_21 = #{column21,jdbcType=VARCHAR},
+      </if>
+      <if test="column22 != null">
+        column_22 = #{column22,jdbcType=VARCHAR},
+      </if>
+      <if test="column23 != null">
+        column_23 = #{column23,jdbcType=VARCHAR},
+      </if>
+      <if test="column24 != null">
+        column_24 = #{column24,jdbcType=VARCHAR},
+      </if>
+      <if test="column25 != null">
+        column_25 = #{column25,jdbcType=VARCHAR},
+      </if>
+      <if test="column26 != null">
+        column_26 = #{column26,jdbcType=VARCHAR},
+      </if>
+      <if test="column27 != null">
+        column_27 = #{column27,jdbcType=VARCHAR},
+      </if>
+      <if test="column28 != null">
+        column_28 = #{column28,jdbcType=VARCHAR},
+      </if>
+      <if test="column29 != null">
+        column_29 = #{column29,jdbcType=VARCHAR},
+      </if>
+      <if test="column30 != null">
+        column_30 = #{column30,jdbcType=VARCHAR},
+      </if>
+      <if test="column31 != null">
+        column_31 = #{column31,jdbcType=VARCHAR},
+      </if>
+      <if test="column32 != null">
+        column_32 = #{column32,jdbcType=VARCHAR},
+      </if>
+      <if test="column33 != null">
+        column_33 = #{column33,jdbcType=VARCHAR},
+      </if>
+      <if test="column34 != null">
+        column_34 = #{column34,jdbcType=VARCHAR},
+      </if>
+      <if test="column35 != null">
+        column_35 = #{column35,jdbcType=VARCHAR},
+      </if>
+      <if test="column36 != null">
+        column_36 = #{column36,jdbcType=VARCHAR},
+      </if>
+      <if test="column37 != null">
+        column_37 = #{column37,jdbcType=VARCHAR},
+      </if>
+      <if test="column38 != null">
+        column_38 = #{column38,jdbcType=VARCHAR},
+      </if>
+      <if test="column39 != null">
+        column_39 = #{column39,jdbcType=VARCHAR},
+      </if>
+      <if test="column40 != null">
+        column_40 = #{column40,jdbcType=VARCHAR},
+      </if>
+      <if test="column41 != null">
+        column_41 = #{column41,jdbcType=VARCHAR},
+      </if>
+      <if test="column42 != null">
+        column_42 = #{column42,jdbcType=VARCHAR},
+      </if>
+      <if test="column43 != null">
+        column_43 = #{column43,jdbcType=VARCHAR},
+      </if>
+      <if test="column44 != null">
+        column_44 = #{column44,jdbcType=VARCHAR},
+      </if>
+      <if test="column45 != null">
+        column_45 = #{column45,jdbcType=VARCHAR},
+      </if>
+      <if test="column46 != null">
+        column_46 = #{column46,jdbcType=VARCHAR},
+      </if>
+      <if test="column47 != null">
+        column_47 = #{column47,jdbcType=VARCHAR},
+      </if>
+      <if test="column48 != null">
+        column_48 = #{column48,jdbcType=VARCHAR},
+      </if>
+      <if test="column49 != null">
+        column_49 = #{column49,jdbcType=VARCHAR},
+      </if>
+      <if test="column50 != null">
+        column_50 = #{column50,jdbcType=VARCHAR},
+      </if>
+      <if test="column51 != null">
+        column_51 = #{column51,jdbcType=VARCHAR},
+      </if>
+      <if test="column52 != null">
+        column_52 = #{column52,jdbcType=VARCHAR},
+      </if>
+      <if test="column53 != null">
+        column_53 = #{column53,jdbcType=VARCHAR},
+      </if>
+      <if test="column54 != null">
+        column_54 = #{column54,jdbcType=VARCHAR},
+      </if>
+      <if test="column55 != null">
+        column_55 = #{column55,jdbcType=VARCHAR},
+      </if>
+      <if test="column56 != null">
+        column_56 = #{column56,jdbcType=VARCHAR},
+      </if>
+      <if test="column57 != null">
+        column_57 = #{column57,jdbcType=VARCHAR},
+      </if>
+      <if test="column58 != null">
+        column_58 = #{column58,jdbcType=VARCHAR},
+      </if>
+      <if test="column59 != null">
+        column_59 = #{column59,jdbcType=VARCHAR},
+      </if>
+      <if test="column60 != null">
+        column_60 = #{column60,jdbcType=VARCHAR},
+      </if>
+      <if test="column61 != null">
+        column_61 = #{column61,jdbcType=VARCHAR},
+      </if>
+      <if test="column62 != null">
+        column_62 = #{column62,jdbcType=VARCHAR},
+      </if>
+      <if test="column63 != null">
+        column_63 = #{column63,jdbcType=VARCHAR},
+      </if>
+      <if test="column64 != null">
+        column_64 = #{column64,jdbcType=VARCHAR},
+      </if>
+      <if test="column65 != null">
+        column_65 = #{column65,jdbcType=VARCHAR},
+      </if>
+      <if test="column66 != null">
+        column_66 = #{column66,jdbcType=VARCHAR},
+      </if>
+      <if test="column67 != null">
+        column_67 = #{column67,jdbcType=VARCHAR},
+      </if>
+      <if test="column68 != null">
+        column_68 = #{column68,jdbcType=VARCHAR},
+      </if>
+      <if test="column69 != null">
+        column_69 = #{column69,jdbcType=VARCHAR},
+      </if>
+      <if test="column70 != null">
+        column_70 = #{column70,jdbcType=VARCHAR},
+      </if>
+      <if test="column71 != null">
+        column_71 = #{column71,jdbcType=VARCHAR},
+      </if>
+      <if test="column72 != null">
+        column_72 = #{column72,jdbcType=VARCHAR},
+      </if>
+      <if test="column73 != null">
+        column_73 = #{column73,jdbcType=VARCHAR},
+      </if>
+      <if test="column74 != null">
+        column_74 = #{column74,jdbcType=VARCHAR},
+      </if>
+      <if test="column75 != null">
+        column_75 = #{column75,jdbcType=VARCHAR},
+      </if>
+      <if test="column76 != null">
+        column_76 = #{column76,jdbcType=VARCHAR},
+      </if>
+      <if test="column77 != null">
+        column_77 = #{column77,jdbcType=VARCHAR},
+      </if>
+      <if test="column78 != null">
+        column_78 = #{column78,jdbcType=VARCHAR},
+      </if>
+      <if test="column79 != null">
+        column_79 = #{column79,jdbcType=VARCHAR},
+      </if>
+      <if test="column80 != null">
+        column_80 = #{column80,jdbcType=VARCHAR},
+      </if>
+      <if test="column81 != null">
+        column_81 = #{column81,jdbcType=VARCHAR},
+      </if>
+      <if test="column82 != null">
+        column_82 = #{column82,jdbcType=VARCHAR},
+      </if>
+      <if test="column83 != null">
+        column_83 = #{column83,jdbcType=VARCHAR},
+      </if>
+      <if test="column84 != null">
+        column_84 = #{column84,jdbcType=VARCHAR},
+      </if>
+      <if test="column85 != null">
+        column_85 = #{column85,jdbcType=VARCHAR},
+      </if>
+      <if test="column86 != null">
+        column_86 = #{column86,jdbcType=VARCHAR},
+      </if>
+      <if test="column87 != null">
+        column_87 = #{column87,jdbcType=VARCHAR},
+      </if>
+      <if test="column88 != null">
+        column_88 = #{column88,jdbcType=VARCHAR},
+      </if>
+      <if test="column89 != null">
+        column_89 = #{column89,jdbcType=VARCHAR},
+      </if>
+      <if test="column90 != null">
+        column_90 = #{column90,jdbcType=VARCHAR},
+      </if>
+      <if test="column91 != null">
+        column_91 = #{column91,jdbcType=VARCHAR},
+      </if>
+      <if test="column92 != null">
+        column_92 = #{column92,jdbcType=VARCHAR},
+      </if>
+      <if test="column93 != null">
+        column_93 = #{column93,jdbcType=VARCHAR},
+      </if>
+      <if test="column94 != null">
+        column_94 = #{column94,jdbcType=VARCHAR},
+      </if>
+      <if test="column95 != null">
+        column_95 = #{column95,jdbcType=VARCHAR},
+      </if>
+      <if test="column96 != null">
+        column_96 = #{column96,jdbcType=VARCHAR},
+      </if>
+      <if test="column97 != null">
+        column_97 = #{column97,jdbcType=VARCHAR},
+      </if>
+      <if test="column98 != null">
+        column_98 = #{column98,jdbcType=VARCHAR},
+      </if>
+      <if test="column99 != null">
+        column_99 = #{column99,jdbcType=VARCHAR},
+      </if>
+      <if test="column100 != null">
+        column_100 = #{column100,jdbcType=VARCHAR},
+      </if>
+      <if test="column101 != null">
+        column_101 = #{column101,jdbcType=VARCHAR},
+      </if>
+      <if test="column102 != null">
+        column_102 = #{column102,jdbcType=VARCHAR},
+      </if>
+      <if test="column103 != null">
+        column_103 = #{column103,jdbcType=VARCHAR},
+      </if>
+      <if test="column104 != null">
+        column_104 = #{column104,jdbcType=VARCHAR},
+      </if>
+      <if test="column105 != null">
+        column_105 = #{column105,jdbcType=VARCHAR},
+      </if>
+      <if test="column106 != null">
+        column_106 = #{column106,jdbcType=VARCHAR},
+      </if>
+      <if test="column107 != null">
+        column_107 = #{column107,jdbcType=VARCHAR},
+      </if>
+      <if test="column108 != null">
+        column_108 = #{column108,jdbcType=VARCHAR},
+      </if>
+      <if test="column109 != null">
+        column_109 = #{column109,jdbcType=VARCHAR},
+      </if>
+      <if test="column110 != null">
+        column_110 = #{column110,jdbcType=VARCHAR},
+      </if>
+      <if test="column111 != null">
+        column_111 = #{column111,jdbcType=VARCHAR},
+      </if>
+      <if test="column112 != null">
+        column_112 = #{column112,jdbcType=VARCHAR},
+      </if>
+      <if test="column113 != null">
+        column_113 = #{column113,jdbcType=VARCHAR},
+      </if>
+      <if test="column114 != null">
+        column_114 = #{column114,jdbcType=VARCHAR},
+      </if>
+      <if test="column115 != null">
+        column_115 = #{column115,jdbcType=VARCHAR},
+      </if>
+      <if test="column116 != null">
+        column_116 = #{column116,jdbcType=VARCHAR},
+      </if>
+      <if test="column117 != null">
+        column_117 = #{column117,jdbcType=VARCHAR},
+      </if>
+      <if test="column118 != null">
+        column_118 = #{column118,jdbcType=VARCHAR},
+      </if>
+      <if test="column119 != null">
+        column_119 = #{column119,jdbcType=VARCHAR},
+      </if>
+      <if test="column120 != null">
+        column_120 = #{column120,jdbcType=VARCHAR},
+      </if>
+      <if test="column121 != null">
+        column_121 = #{column121,jdbcType=VARCHAR},
+      </if>
+      <if test="column122 != null">
+        column_122 = #{column122,jdbcType=VARCHAR},
+      </if>
+      <if test="column123 != null">
+        column_123 = #{column123,jdbcType=VARCHAR},
+      </if>
+      <if test="column124 != null">
+        column_124 = #{column124,jdbcType=VARCHAR},
+      </if>
+      <if test="column125 != null">
+        column_125 = #{column125,jdbcType=VARCHAR},
+      </if>
+      <if test="column126 != null">
+        column_126 = #{column126,jdbcType=VARCHAR},
+      </if>
+      <if test="column127 != null">
+        column_127 = #{column127,jdbcType=VARCHAR},
+      </if>
+      <if test="column128 != null">
+        column_128 = #{column128,jdbcType=VARCHAR},
+      </if>
+      <if test="column129 != null">
+        column_129 = #{column129,jdbcType=VARCHAR},
+      </if>
+      <if test="column130 != null">
+        column_130 = #{column130,jdbcType=VARCHAR},
+      </if>
+      <if test="column131 != null">
+        column_131 = #{column131,jdbcType=VARCHAR},
+      </if>
+      <if test="column132 != null">
+        column_132 = #{column132,jdbcType=VARCHAR},
+      </if>
+      <if test="column133 != null">
+        column_133 = #{column133,jdbcType=VARCHAR},
+      </if>
+      <if test="column134 != null">
+        column_134 = #{column134,jdbcType=VARCHAR},
+      </if>
+      <if test="column135 != null">
+        column_135 = #{column135,jdbcType=VARCHAR},
+      </if>
+      <if test="column136 != null">
+        column_136 = #{column136,jdbcType=VARCHAR},
+      </if>
+      <if test="column137 != null">
+        column_137 = #{column137,jdbcType=VARCHAR},
+      </if>
+      <if test="column138 != null">
+        column_138 = #{column138,jdbcType=VARCHAR},
+      </if>
+      <if test="column139 != null">
+        column_139 = #{column139,jdbcType=VARCHAR},
+      </if>
+      <if test="column140 != null">
+        column_140 = #{column140,jdbcType=VARCHAR},
+      </if>
+      <if test="column141 != null">
+        column_141 = #{column141,jdbcType=VARCHAR},
+      </if>
+      <if test="column142 != null">
+        column_142 = #{column142,jdbcType=VARCHAR},
+      </if>
+      <if test="column143 != null">
+        column_143 = #{column143,jdbcType=VARCHAR},
+      </if>
+      <if test="column144 != null">
+        column_144 = #{column144,jdbcType=VARCHAR},
+      </if>
+      <if test="column145 != null">
+        column_145 = #{column145,jdbcType=VARCHAR},
+      </if>
+      <if test="column146 != null">
+        column_146 = #{column146,jdbcType=VARCHAR},
+      </if>
+      <if test="column147 != null">
+        column_147 = #{column147,jdbcType=VARCHAR},
+      </if>
+      <if test="column148 != null">
+        column_148 = #{column148,jdbcType=VARCHAR},
+      </if>
+      <if test="column149 != null">
+        column_149 = #{column149,jdbcType=VARCHAR},
+      </if>
+      <if test="column150 != null">
+        column_150 = #{column150,jdbcType=VARCHAR},
+      </if>
+      <if test="column151 != null">
+        column_151 = #{column151,jdbcType=VARCHAR},
+      </if>
+      <if test="column152 != null">
+        column_152 = #{column152,jdbcType=VARCHAR},
+      </if>
+      <if test="column153 != null">
+        column_153 = #{column153,jdbcType=VARCHAR},
+      </if>
+      <if test="column154 != null">
+        column_154 = #{column154,jdbcType=VARCHAR},
+      </if>
+      <if test="column155 != null">
+        column_155 = #{column155,jdbcType=VARCHAR},
+      </if>
+      <if test="column156 != null">
+        column_156 = #{column156,jdbcType=VARCHAR},
+      </if>
+      <if test="column157 != null">
+        column_157 = #{column157,jdbcType=VARCHAR},
+      </if>
+      <if test="column158 != null">
+        column_158 = #{column158,jdbcType=VARCHAR},
+      </if>
+      <if test="column159 != null">
+        column_159 = #{column159,jdbcType=VARCHAR},
+      </if>
+      <if test="column160 != null">
+        column_160 = #{column160,jdbcType=VARCHAR},
+      </if>
+      <if test="column161 != null">
+        column_161 = #{column161,jdbcType=VARCHAR},
+      </if>
+      <if test="column162 != null">
+        column_162 = #{column162,jdbcType=VARCHAR},
+      </if>
+      <if test="column163 != null">
+        column_163 = #{column163,jdbcType=VARCHAR},
+      </if>
+      <if test="column164 != null">
+        column_164 = #{column164,jdbcType=VARCHAR},
+      </if>
+      <if test="column165 != null">
+        column_165 = #{column165,jdbcType=VARCHAR},
+      </if>
+      <if test="column166 != null">
+        column_166 = #{column166,jdbcType=VARCHAR},
+      </if>
+      <if test="column167 != null">
+        column_167 = #{column167,jdbcType=VARCHAR},
+      </if>
+      <if test="column168 != null">
+        column_168 = #{column168,jdbcType=VARCHAR},
+      </if>
+      <if test="column169 != null">
+        column_169 = #{column169,jdbcType=VARCHAR},
+      </if>
+      <if test="column170 != null">
+        column_170 = #{column170,jdbcType=VARCHAR},
+      </if>
+      <if test="column171 != null">
+        column_171 = #{column171,jdbcType=VARCHAR},
+      </if>
+      <if test="column172 != null">
+        column_172 = #{column172,jdbcType=VARCHAR},
+      </if>
+      <if test="column173 != null">
+        column_173 = #{column173,jdbcType=VARCHAR},
+      </if>
+      <if test="column174 != null">
+        column_174 = #{column174,jdbcType=VARCHAR},
+      </if>
+      <if test="column175 != null">
+        column_175 = #{column175,jdbcType=VARCHAR},
+      </if>
+      <if test="column176 != null">
+        column_176 = #{column176,jdbcType=VARCHAR},
+      </if>
+      <if test="column177 != null">
+        column_177 = #{column177,jdbcType=VARCHAR},
+      </if>
+      <if test="column178 != null">
+        column_178 = #{column178,jdbcType=VARCHAR},
+      </if>
+      <if test="column179 != null">
+        column_179 = #{column179,jdbcType=VARCHAR},
+      </if>
+      <if test="column180 != null">
+        column_180 = #{column180,jdbcType=VARCHAR},
+      </if>
+      <if test="column181 != null">
+        column_181 = #{column181,jdbcType=VARCHAR},
+      </if>
+      <if test="column182 != null">
+        column_182 = #{column182,jdbcType=VARCHAR},
+      </if>
+      <if test="column183 != null">
+        column_183 = #{column183,jdbcType=VARCHAR},
+      </if>
+      <if test="column184 != null">
+        column_184 = #{column184,jdbcType=VARCHAR},
+      </if>
+      <if test="column185 != null">
+        column_185 = #{column185,jdbcType=VARCHAR},
+      </if>
+      <if test="column186 != null">
+        column_186 = #{column186,jdbcType=VARCHAR},
+      </if>
+      <if test="column187 != null">
+        column_187 = #{column187,jdbcType=VARCHAR},
+      </if>
+      <if test="column188 != null">
+        column_188 = #{column188,jdbcType=VARCHAR},
+      </if>
+      <if test="column189 != null">
+        column_189 = #{column189,jdbcType=VARCHAR},
+      </if>
+      <if test="column190 != null">
+        column_190 = #{column190,jdbcType=VARCHAR},
+      </if>
+      <if test="column191 != null">
+        column_191 = #{column191,jdbcType=VARCHAR},
+      </if>
+      <if test="column192 != null">
+        column_192 = #{column192,jdbcType=VARCHAR},
+      </if>
+      <if test="column193 != null">
+        column_193 = #{column193,jdbcType=VARCHAR},
+      </if>
+      <if test="column194 != null">
+        column_194 = #{column194,jdbcType=VARCHAR},
+      </if>
+      <if test="column195 != null">
+        column_195 = #{column195,jdbcType=VARCHAR},
+      </if>
+      <if test="column196 != null">
+        column_196 = #{column196,jdbcType=VARCHAR},
+      </if>
+      <if test="column197 != null">
+        column_197 = #{column197,jdbcType=VARCHAR},
+      </if>
+      <if test="column198 != null">
+        column_198 = #{column198,jdbcType=VARCHAR},
+      </if>
+      <if test="column199 != null">
+        column_199 = #{column199,jdbcType=VARCHAR},
+      </if>
+      <if test="column200 != null">
+        column_200 = #{column200,jdbcType=VARCHAR},
+      </if>
+      <if test="registerId != null">
+        register_id = #{registerId,jdbcType=VARCHAR},
+      </if>
+      <if test="registTs != null">
+        regist_ts = #{registTs,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updaterId != null">
+        updater_id = #{updaterId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTs != null">
+        update_ts = #{updateTs,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where upload_user_id = #{uploadUserId,jdbcType=VARCHAR}
+      and upload_user_ts = #{uploadUserTs,jdbcType=TIMESTAMP}
+      and row_no = #{rowNo,jdbcType=INTEGER}
+      and upload_session = #{uploadSession,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="jp.co.axio.masterMentsetSystem.model.WUploadFileSubEntity">
+    update public.w_upload_file_sub
+    set row_data = #{rowData,jdbcType=VARCHAR},
+      check_flag = #{checkFlag,jdbcType=CHAR},
+      check_message = #{checkMessage,jdbcType=VARCHAR},
+      process_kbn = #{processKbn,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=VARCHAR},
+      reflection_date = #{reflectionDate,jdbcType=DATE},
+      column_1 = #{column1,jdbcType=VARCHAR},
+      column_2 = #{column2,jdbcType=VARCHAR},
+      column_3 = #{column3,jdbcType=VARCHAR},
+      column_4 = #{column4,jdbcType=VARCHAR},
+      column_5 = #{column5,jdbcType=VARCHAR},
+      column_6 = #{column6,jdbcType=VARCHAR},
+      column_7 = #{column7,jdbcType=VARCHAR},
+      column_8 = #{column8,jdbcType=VARCHAR},
+      column_9 = #{column9,jdbcType=VARCHAR},
+      column_10 = #{column10,jdbcType=VARCHAR},
+      column_11 = #{column11,jdbcType=VARCHAR},
+      column_12 = #{column12,jdbcType=VARCHAR},
+      column_13 = #{column13,jdbcType=VARCHAR},
+      column_14 = #{column14,jdbcType=VARCHAR},
+      column_15 = #{column15,jdbcType=VARCHAR},
+      column_16 = #{column16,jdbcType=VARCHAR},
+      column_17 = #{column17,jdbcType=VARCHAR},
+      column_18 = #{column18,jdbcType=VARCHAR},
+      column_19 = #{column19,jdbcType=VARCHAR},
+      column_20 = #{column20,jdbcType=VARCHAR},
+      column_21 = #{column21,jdbcType=VARCHAR},
+      column_22 = #{column22,jdbcType=VARCHAR},
+      column_23 = #{column23,jdbcType=VARCHAR},
+      column_24 = #{column24,jdbcType=VARCHAR},
+      column_25 = #{column25,jdbcType=VARCHAR},
+      column_26 = #{column26,jdbcType=VARCHAR},
+      column_27 = #{column27,jdbcType=VARCHAR},
+      column_28 = #{column28,jdbcType=VARCHAR},
+      column_29 = #{column29,jdbcType=VARCHAR},
+      column_30 = #{column30,jdbcType=VARCHAR},
+      column_31 = #{column31,jdbcType=VARCHAR},
+      column_32 = #{column32,jdbcType=VARCHAR},
+      column_33 = #{column33,jdbcType=VARCHAR},
+      column_34 = #{column34,jdbcType=VARCHAR},
+      column_35 = #{column35,jdbcType=VARCHAR},
+      column_36 = #{column36,jdbcType=VARCHAR},
+      column_37 = #{column37,jdbcType=VARCHAR},
+      column_38 = #{column38,jdbcType=VARCHAR},
+      column_39 = #{column39,jdbcType=VARCHAR},
+      column_40 = #{column40,jdbcType=VARCHAR},
+      column_41 = #{column41,jdbcType=VARCHAR},
+      column_42 = #{column42,jdbcType=VARCHAR},
+      column_43 = #{column43,jdbcType=VARCHAR},
+      column_44 = #{column44,jdbcType=VARCHAR},
+      column_45 = #{column45,jdbcType=VARCHAR},
+      column_46 = #{column46,jdbcType=VARCHAR},
+      column_47 = #{column47,jdbcType=VARCHAR},
+      column_48 = #{column48,jdbcType=VARCHAR},
+      column_49 = #{column49,jdbcType=VARCHAR},
+      column_50 = #{column50,jdbcType=VARCHAR},
+      column_51 = #{column51,jdbcType=VARCHAR},
+      column_52 = #{column52,jdbcType=VARCHAR},
+      column_53 = #{column53,jdbcType=VARCHAR},
+      column_54 = #{column54,jdbcType=VARCHAR},
+      column_55 = #{column55,jdbcType=VARCHAR},
+      column_56 = #{column56,jdbcType=VARCHAR},
+      column_57 = #{column57,jdbcType=VARCHAR},
+      column_58 = #{column58,jdbcType=VARCHAR},
+      column_59 = #{column59,jdbcType=VARCHAR},
+      column_60 = #{column60,jdbcType=VARCHAR},
+      column_61 = #{column61,jdbcType=VARCHAR},
+      column_62 = #{column62,jdbcType=VARCHAR},
+      column_63 = #{column63,jdbcType=VARCHAR},
+      column_64 = #{column64,jdbcType=VARCHAR},
+      column_65 = #{column65,jdbcType=VARCHAR},
+      column_66 = #{column66,jdbcType=VARCHAR},
+      column_67 = #{column67,jdbcType=VARCHAR},
+      column_68 = #{column68,jdbcType=VARCHAR},
+      column_69 = #{column69,jdbcType=VARCHAR},
+      column_70 = #{column70,jdbcType=VARCHAR},
+      column_71 = #{column71,jdbcType=VARCHAR},
+      column_72 = #{column72,jdbcType=VARCHAR},
+      column_73 = #{column73,jdbcType=VARCHAR},
+      column_74 = #{column74,jdbcType=VARCHAR},
+      column_75 = #{column75,jdbcType=VARCHAR},
+      column_76 = #{column76,jdbcType=VARCHAR},
+      column_77 = #{column77,jdbcType=VARCHAR},
+      column_78 = #{column78,jdbcType=VARCHAR},
+      column_79 = #{column79,jdbcType=VARCHAR},
+      column_80 = #{column80,jdbcType=VARCHAR},
+      column_81 = #{column81,jdbcType=VARCHAR},
+      column_82 = #{column82,jdbcType=VARCHAR},
+      column_83 = #{column83,jdbcType=VARCHAR},
+      column_84 = #{column84,jdbcType=VARCHAR},
+      column_85 = #{column85,jdbcType=VARCHAR},
+      column_86 = #{column86,jdbcType=VARCHAR},
+      column_87 = #{column87,jdbcType=VARCHAR},
+      column_88 = #{column88,jdbcType=VARCHAR},
+      column_89 = #{column89,jdbcType=VARCHAR},
+      column_90 = #{column90,jdbcType=VARCHAR},
+      column_91 = #{column91,jdbcType=VARCHAR},
+      column_92 = #{column92,jdbcType=VARCHAR},
+      column_93 = #{column93,jdbcType=VARCHAR},
+      column_94 = #{column94,jdbcType=VARCHAR},
+      column_95 = #{column95,jdbcType=VARCHAR},
+      column_96 = #{column96,jdbcType=VARCHAR},
+      column_97 = #{column97,jdbcType=VARCHAR},
+      column_98 = #{column98,jdbcType=VARCHAR},
+      column_99 = #{column99,jdbcType=VARCHAR},
+      column_100 = #{column100,jdbcType=VARCHAR},
+      column_101 = #{column101,jdbcType=VARCHAR},
+      column_102 = #{column102,jdbcType=VARCHAR},
+      column_103 = #{column103,jdbcType=VARCHAR},
+      column_104 = #{column104,jdbcType=VARCHAR},
+      column_105 = #{column105,jdbcType=VARCHAR},
+      column_106 = #{column106,jdbcType=VARCHAR},
+      column_107 = #{column107,jdbcType=VARCHAR},
+      column_108 = #{column108,jdbcType=VARCHAR},
+      column_109 = #{column109,jdbcType=VARCHAR},
+      column_110 = #{column110,jdbcType=VARCHAR},
+      column_111 = #{column111,jdbcType=VARCHAR},
+      column_112 = #{column112,jdbcType=VARCHAR},
+      column_113 = #{column113,jdbcType=VARCHAR},
+      column_114 = #{column114,jdbcType=VARCHAR},
+      column_115 = #{column115,jdbcType=VARCHAR},
+      column_116 = #{column116,jdbcType=VARCHAR},
+      column_117 = #{column117,jdbcType=VARCHAR},
+      column_118 = #{column118,jdbcType=VARCHAR},
+      column_119 = #{column119,jdbcType=VARCHAR},
+      column_120 = #{column120,jdbcType=VARCHAR},
+      column_121 = #{column121,jdbcType=VARCHAR},
+      column_122 = #{column122,jdbcType=VARCHAR},
+      column_123 = #{column123,jdbcType=VARCHAR},
+      column_124 = #{column124,jdbcType=VARCHAR},
+      column_125 = #{column125,jdbcType=VARCHAR},
+      column_126 = #{column126,jdbcType=VARCHAR},
+      column_127 = #{column127,jdbcType=VARCHAR},
+      column_128 = #{column128,jdbcType=VARCHAR},
+      column_129 = #{column129,jdbcType=VARCHAR},
+      column_130 = #{column130,jdbcType=VARCHAR},
+      column_131 = #{column131,jdbcType=VARCHAR},
+      column_132 = #{column132,jdbcType=VARCHAR},
+      column_133 = #{column133,jdbcType=VARCHAR},
+      column_134 = #{column134,jdbcType=VARCHAR},
+      column_135 = #{column135,jdbcType=VARCHAR},
+      column_136 = #{column136,jdbcType=VARCHAR},
+      column_137 = #{column137,jdbcType=VARCHAR},
+      column_138 = #{column138,jdbcType=VARCHAR},
+      column_139 = #{column139,jdbcType=VARCHAR},
+      column_140 = #{column140,jdbcType=VARCHAR},
+      column_141 = #{column141,jdbcType=VARCHAR},
+      column_142 = #{column142,jdbcType=VARCHAR},
+      column_143 = #{column143,jdbcType=VARCHAR},
+      column_144 = #{column144,jdbcType=VARCHAR},
+      column_145 = #{column145,jdbcType=VARCHAR},
+      column_146 = #{column146,jdbcType=VARCHAR},
+      column_147 = #{column147,jdbcType=VARCHAR},
+      column_148 = #{column148,jdbcType=VARCHAR},
+      column_149 = #{column149,jdbcType=VARCHAR},
+      column_150 = #{column150,jdbcType=VARCHAR},
+      column_151 = #{column151,jdbcType=VARCHAR},
+      column_152 = #{column152,jdbcType=VARCHAR},
+      column_153 = #{column153,jdbcType=VARCHAR},
+      column_154 = #{column154,jdbcType=VARCHAR},
+      column_155 = #{column155,jdbcType=VARCHAR},
+      column_156 = #{column156,jdbcType=VARCHAR},
+      column_157 = #{column157,jdbcType=VARCHAR},
+      column_158 = #{column158,jdbcType=VARCHAR},
+      column_159 = #{column159,jdbcType=VARCHAR},
+      column_160 = #{column160,jdbcType=VARCHAR},
+      column_161 = #{column161,jdbcType=VARCHAR},
+      column_162 = #{column162,jdbcType=VARCHAR},
+      column_163 = #{column163,jdbcType=VARCHAR},
+      column_164 = #{column164,jdbcType=VARCHAR},
+      column_165 = #{column165,jdbcType=VARCHAR},
+      column_166 = #{column166,jdbcType=VARCHAR},
+      column_167 = #{column167,jdbcType=VARCHAR},
+      column_168 = #{column168,jdbcType=VARCHAR},
+      column_169 = #{column169,jdbcType=VARCHAR},
+      column_170 = #{column170,jdbcType=VARCHAR},
+      column_171 = #{column171,jdbcType=VARCHAR},
+      column_172 = #{column172,jdbcType=VARCHAR},
+      column_173 = #{column173,jdbcType=VARCHAR},
+      column_174 = #{column174,jdbcType=VARCHAR},
+      column_175 = #{column175,jdbcType=VARCHAR},
+      column_176 = #{column176,jdbcType=VARCHAR},
+      column_177 = #{column177,jdbcType=VARCHAR},
+      column_178 = #{column178,jdbcType=VARCHAR},
+      column_179 = #{column179,jdbcType=VARCHAR},
+      column_180 = #{column180,jdbcType=VARCHAR},
+      column_181 = #{column181,jdbcType=VARCHAR},
+      column_182 = #{column182,jdbcType=VARCHAR},
+      column_183 = #{column183,jdbcType=VARCHAR},
+      column_184 = #{column184,jdbcType=VARCHAR},
+      column_185 = #{column185,jdbcType=VARCHAR},
+      column_186 = #{column186,jdbcType=VARCHAR},
+      column_187 = #{column187,jdbcType=VARCHAR},
+      column_188 = #{column188,jdbcType=VARCHAR},
+      column_189 = #{column189,jdbcType=VARCHAR},
+      column_190 = #{column190,jdbcType=VARCHAR},
+      column_191 = #{column191,jdbcType=VARCHAR},
+      column_192 = #{column192,jdbcType=VARCHAR},
+      column_193 = #{column193,jdbcType=VARCHAR},
+      column_194 = #{column194,jdbcType=VARCHAR},
+      column_195 = #{column195,jdbcType=VARCHAR},
+      column_196 = #{column196,jdbcType=VARCHAR},
+      column_197 = #{column197,jdbcType=VARCHAR},
+      column_198 = #{column198,jdbcType=VARCHAR},
+      column_199 = #{column199,jdbcType=VARCHAR},
+      column_200 = #{column200,jdbcType=VARCHAR},
+      register_id = #{registerId,jdbcType=VARCHAR},
+      regist_ts = #{registTs,jdbcType=TIMESTAMP},
+      updater_id = #{updaterId,jdbcType=VARCHAR},
+      update_ts = #{updateTs,jdbcType=TIMESTAMP}
+    where upload_user_id = #{uploadUserId,jdbcType=VARCHAR}
+      and upload_user_ts = #{uploadUserTs,jdbcType=TIMESTAMP}
+      and row_no = #{rowNo,jdbcType=INTEGER}
+      and upload_session = #{uploadSession,jdbcType=VARCHAR}
+  </update>
+</mapper>

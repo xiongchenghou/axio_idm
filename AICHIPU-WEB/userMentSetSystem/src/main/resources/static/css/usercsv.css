@@ -1,0 +1,279 @@
+/* @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300); */
+body {
+    padding: 0;
+    margin: 0;
+    background: #fff;
+}
+
+/* .card-header {
+    background-color: transparent;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    padding: 0.75rem 1.25rem;
+    position: relative;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+} */
+
+/* h1 {
+    text-align: center;
+    font: 300 40px 'open sans', sans-serif;
+    color: #666;
+    text-transform: uppercase;
+} */
+
+
+
+.main {
+    /* font-size: 14px !important; */
+    font-size: 100% !important;
+}
+
+.form-control {
+    font-size: 13px;
+}
+
+.form-select {
+    font-size: 13px;
+}
+
+.form-group {
+    margin-top: 15px;
+}
+
+.searchCard {
+    /* border-color: black;
+    border-style: solid; */
+}
+
+
+
+.tableContainer {
+    /* width: 100%;
+    margin-left: auto;
+    margin-right: auto; */
+    font-size: 14px;
+}
+
+
+/* .card-primary.card-outline {
+    border-top: 3px solid #007bff;
+} */
+
+
+.container {
+    width: 100%;
+}
+
+
+#myTab {
+    font-size: 16px;
+}
+
+
+.nav-link {
+    color: black;
+    font-size: 17px;
+}
+
+
+/* .searchCard .tab-content {
+    font-size: 14px;
+} */
+
+#myTabContent {
+    font-size: 14px;
+}
+
+#myTabContent .row {
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+}
+
+.nav-item {
+    background-color: aliceblue;
+    /* background-color:cornsilk; */
+    /* color: #fff; */
+}
+
+.cardUniversal:not(.card-outline)>.card-header,
+.cardUniversal:not(.card-outline)>.card-header a {
+    color: #fff;
+}
+
+.cardUniversal:not(.card-outline)>.card-header {
+    background-color: #1F3990;
+}
+
+.card-header {
+    background-color: transparent;
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
+    padding: 1.25rem;
+    position: relative;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+}
+
+
+
+
+/* テーブルデザイン */
+
+#userListTable_wrapper tr th {
+    padding: 5px 5px;
+    font-size: 14px;
+    /* text-align: center; */
+}
+
+
+#userListTable_wrapper tr td {
+    padding: 5px 5px;
+    font-size: 14px;
+    /* text-align: center; */
+}
+
+
+/* テーブルカーソル変更 */
+#userListTable td {
+    /* cursor: pointer !important; */
+}
+
+
+/* テーブルアイコン */
+/* 全体 */
+#userListTable i {
+    font-size: 15px;
+    margin-right: 2px;
+    margin-left: 2px;
+}
+
+/* 有効なユーザ */
+#userListTable .fa-user {
+    color: green;
+}
+
+/* ロックユーザ */
+#userListTable .fa-user-lock {
+    color: orange;
+}
+
+/* 削除ユーザ */
+#userListTable .fa-user-slash {
+    color: gray;
+}
+
+/* 未来ユーザ */
+#userListTable .fa-circle-user {
+    color: blue;
+}
+
+/* テーブルデザイン */
+
+#userDiffReserveTable_wrapper tr th {
+    padding: 5px 5px;
+    font-size: 14px;
+    /* text-align: center; */
+}
+
+
+#userDiffReserveTable_wrapper tr td {
+    padding: 5px 5px;
+    font-size: 14px;
+    /* text-align: center; */
+}
+
+
+/* テーブルカーソル変更 */
+#userDiffReserveTable td {
+    /* cursor: pointer !important; */
+}
+
+
+/* テーブルアイコン */
+/* 全体 */
+#userDiffReserveTable i {
+    font-size: 15px;
+    margin-right: 2px;
+    margin-left: 2px;
+}
+
+/* 有効なユーザ */
+#userDiffReserveTable .fa-user {
+    color: green;
+}
+
+/* ロックユーザ */
+#userDiffReserveTable .fa-user-lock {
+    color: orange;
+}
+
+/* 削除ユーザ */
+#userDiffReserveTable .fa-user-slash {
+    color: gray;
+}
+
+/* 未来ユーザ */
+#userDiffReserveTable .fa-circle-user {
+    color: blue;
+}
+
+/* 状態カラム */
+.statusColumn {
+    /* min-width: 71px; */
+}
+
+/* 利用者IDカラム */
+.userIdColumn {
+    /* min-width: 106px; */
+}
+
+/* 学生番号カラム */
+.studentIdColumn {
+    /* min-width: 142px; */
+}
+
+/* 氏名カラム */
+.fullNameColumn {
+    /* min-width: 142px; */
+}
+
+/* 学部カラム */
+.facultyColumn {
+    /* min-width: 142px; */
+}
+
+/* 学科カラム */
+.departmentColumn {
+    /* min-width: 142px; */
+}
+
+
+
+.userViewBtn i {
+    font-size: 10px !important;
+}
+
+/* フロー */
+.usercsvDisplayCard {
+    font-size: 14px;
+}
+
+
+.dataTables_scrollBody {
+    overflow-x: scroll !important;
+}
+
+/* ユーザCSVエラーレコード */
+.csvUserErrorRecord td {
+    background-color: rgb(224, 70, 53) !important;
+    color: #fff !important;
+}
+
+.csvUserErrorRecord {
+    cursor: pointer;
+}
+
+/* 反映取り消しレコード */
+.csvUserDeleteRecord td {
+    background-color: gray !important;
+    color: #fff !important;
+}

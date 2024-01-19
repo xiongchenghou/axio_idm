@@ -1,0 +1,130 @@
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout">
+<!-- <script type="text/javascript" src="chrome-extension://mdnleldcmiljblolnjhpnblkcekpdkpa/libs/customElements.js"
+  class="__REQUESTLY__SCRIPT"></script> -->
+
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>利用者メンテナンス</title>
+
+  <link th:href="@{/vendor/jquery-ui-1.12.1/jquery-ui.css}" rel="stylesheet">
+  <link th:href="@{/vendor/bootstrap-5.0.2-dist/css/bootstrap.min.css}" rel="stylesheet">
+  <link th:href="@{/vendor/datatables/dataTables.bootstrap.css}" rel="stylesheet">
+  <link th:href="@{/css/common.css}" rel="stylesheet">
+  <link th:href="@{/css/userMaintenance.css}" rel="stylesheet">
+  <link th:href="@{/vendor/fontawesome-free-6.1.1-web/css/all.css}" rel="stylesheet">
+  <!-- 個別設定CSS -->
+  <link th:href="@{/assets/css/style2.css}" rel="stylesheet">
+  <link th:href="@{/css/UserMaintenanceMain.css}" rel="stylesheet">
+
+  
+
+</head>
+
+<body>
+  <!-- ダイヤログモーダル表示エリア -->
+  <div id="listModalArea">
+    <div class="modal fade" id="listModal" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static">
+      <div class="modal-dialog" style="width:1100px;">
+        <div class="modal-content" style="width:1100px;height:800px;overflow-y:auto">
+          <form id="dialogParamForm" name="dialogParamForm">
+            <input type="hidden" id="callFrom" name="callFrom" value="">
+            <input type="hidden" id="callParameter" name="callParameter" value="">
+            <input type="hidden" id="callReturn" name="callReturn" value="">
+          </form>
+          <div id="modal_dailog_body">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- message-->
+  <!-- 完了メッセージ保存エリア -->
+  <div style="display:none;">
+
+
+    <div id="axioErrDialog" title="エラー" class="col-sm-12 alert alert-danger asm_alert">
+      <span id="errMessage"></span>
+    </div>
+  </div>
+
+  <!--// header -->
+  <header id="header" class="header">
+    <div class="header__inner">
+      <figure class="header__img"><img src="./assets/img/common/img_logo01.png" alt="AXIO" width="73"
+          height="36"></figure>
+      <a href="./logout" class="header__link">ログアウト</a>
+    </div>
+  </header>
+  <!-- header //-->
+
+  <form role="form-inline" id="UserSetForm" action="/axiomodel/" method="post" class="form-horizontal">
+    <input type="hidden" value="100001" name="userDetailDto.userId">
+    <input type="hidden" value="24" name="userDetailDto.companyCode" id="companyCode">
+    <input type="hidden" value="100001" name="userDetailDto.loginId">
+    <input type="hidden" value="" name="errFlg" id="errFlg">
+    <input type="hidden" value="" name="errMessage" id="errMessage">
+    <input type="hidden" id="changedFlg">
+
+    <!--#include virtual="/assets/include/header.html" -->
+    <div class="searchDetail">
+      <main class="main">
+        <div class="modTitleArea">
+          <div class="modTitleArea__inner">
+            <h1 class="modTitleArea__title"><i class="fa-solid fa-user">　プロフィール確認</i></h1>
+            <a th:href="@{/menu}" class="modTitleArea__prevButton" id="btn_back"><span>戻る</span></a>
+          </div>
+        </div>
+
+        <div class="main__inner">
+  <form role="form-inline" id="UserRegistForm" th:action="@{/}"  th:object="${UserRegistForm}"  method="post" class="form-horizontal">
+          <div class="card">
+            <div class="card-body">
+              <section class="searchDetailBox">
+                <div class="searchDetailBox__titleArea">
+                  <h2 class="searchDetailBox__titleArea__title"><span
+                      style="margin-left:0px; font-size: 2.4rem; font-weight: 700; " th:text="*{otherItem29}">山本
+                      博之</span><span th:text="*{otherItem30}">yamamoto hiroyuki</span><br>
+                  </h2>
+                </div>
+
+                <ul class="searchDetailBox__profileList">
+                  <li class="searchDetailBox__profileList__item">
+                    <p class="title">利用者ID</p>
+                    <p class="text" th:text="*{riYouShaId}">100001</p>
+                  </li>
+                  <li class="searchDetailBox__profileList__item">
+                    <p class="title">学籍番号</p>
+                    <p class="text" th:text="*{gakuSekiBn}">100001</p>
+                  </li>
+                  <li class="searchDetailBox__profileList__item searchDetailBox__profileList__item--full">
+                    <p class="title">メールアドレス</p>
+                    <p class="text" th:text="*{mailAddr}" >testmail@university.co.jp</p>
+                  </li>
+                  <li class="searchDetailBox__profileList__item">
+                    <p class="title" style="font-size: 14px">前回パスワード更新日時</p>
+                    <p class="text" th:text="${lastUpdPwdDt}">2023/10/28 12:23:10</p>
+                  </li>
+                </ul>
+              </section>
+
+            </div>
+
+          </div>
+</form>
+
+        </div>
+      </main>
+    </div>
+  </form>
+  <!--#include virtual="/assets/include/footer.html" -->
+  <footer id="footer" class="footer">
+    <p class="footer__text">Copyright © AXIO corporation. All Rights Reserved.</p>
+  </footer>
+
+
+
+</body>
+
+</html>

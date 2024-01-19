@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout">
+<!-- <script type="text/javascript" src="chrome-extension://mdnleldcmiljblolnjhpnblkcekpdkpa/libs/customElements.js"
+  class="__REQUESTLY__SCRIPT"></script> -->
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>login</title>
+
+  <link th:href="@{/vendor/jquery-ui-1.12.1/jquery-ui.css}" rel="stylesheet">
+  <link th:href="@{/vendor/bootstrap-5.0.2-dist/css/bootstrap.min.css}" rel="stylesheet">
+  <!-- <link href="./vendor/bootstrap-5.0.2-dist/datepicker/css/bootstrap-datetimepicker.css" rel="stylesheet"> -->
+  <link th:href="@{/vendor/datatables/dataTables.bootstrap.css}" rel="stylesheet">
+  <link th:href="@{/css/login.css}" rel="stylesheet">
+  <link th:href="@{/css/util.css}" rel="stylesheet">
+
+  <!-- common's javascript start -->
+  <script th:src="@{/vendor/jquery-3.7.0.js}" type="text/javascript"></script>
+  <script th:src="@{/vendor/jquery-ui-1.12.1/jquery-ui.min.js}" type="text/javascript"></script>
+  <script th:src="@{/vendor/datatables/jquery.dataTables.js}" type="text/javascript"></script>
+  <script th:src="@{/vendor/datatables/dataTables.bootstrap.js}" type="text/javascript"></script>
+  <script th:src="@{/vendor/bootstrap-5.0.2-dist/js/bootstrap.min.js}" type="text/javascript"></script>
+
+  <!-- <script type="text/javascript" src="./vendor/bootstrap-5.0.2-dist/datepicker/js/moment.min.js"></script> -->
+  <!-- <script type="text/javascript" src="./vendor/bootstrap-5.0.2-dist/datepicker/js/moment-with-locales.min.js"></script> -->
+  <!-- <script type="text/javascript" src="./vendor/bootstrap-5.0.2-dist/datepicker/js/bootstrap-datetimepicker.js"></script> -->
+  <script th:src="@{/vendor/knockout-3.4.2.js}" type="text/javascript"></script>
+  <!-- common's javascript end -->
+</head>
+
+
+<body>
+<div class="h-100">
+  <div class="h-100 no-gutters row">
+    <div class="d-none d-lg-block col-lg-5">
+
+      <img src="./image/kimberly-farmer-lUaaKCUANVI-unsplash.jpg" width="100%" height="100%">
+
+    </div>
+    <div class="h-100 d-flex bg-white justify-content-center align-items-center col-md-12 col-lg-7">
+      <div class="mx-auto app-login-box col-sm-12 col-md-10 col-lg-9">
+
+        <div class="container-login100">
+          <div class="wrap-login100 p-t-70 p-b-20">
+            <!-- form -->
+            <!-- ↓formにする -->
+
+            <div class="login100-form validate-form">
+                <span class="login100-form-avatar">
+                  <img src="./image/logo.png">
+                </span>
+              <span class="login100-form-title p-b-10">
+                  管理者メンテナンス
+                </span>
+
+              <div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate="Enter username">
+                <input class="input100" type="text" name="username">
+                <span class="focus-input100" data-placeholder="利用者ID"></span>
+              </div>
+              <div class="wrap-input100 validate-input m-b-50" data-validate="Enter password">
+                <input class="input100" type="password" name="pass">
+                <span class="focus-input100" data-placeholder="パスワード"></span>
+              </div>
+              <div class="container-login100-form-btn">
+                <button class="login100-form-btn" id="adminLoginBtn">
+                  ログイン
+                </button>
+
+              </div>
+              <!-- ↑formここまで -->
+            </div>
+          </div>
+          <div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script th:src="@{/vendor/jquery-3.7.0.js}" type="text/javascript"></script>
+    <script th:src="@{/vendor/jquery-ui-1.12.1/jquery-ui.min.js}" type="text/javascript"></script>
+    <script th:src="@{/vendor/bootstrap-5.0.2-dist/js/bootstrap.min.js}" type="text/javascript"></script>
+    <script th:src="@{/assets/js/libs/jquery.min.js}" type="text/javascript"></script>
+    <script th:src="@{/assets/js/common.js}" type="text/javascript"></script>
+    <script th:src="@{/js/login.js}" type="text/javascript"></script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="jp.co.axio.masterMentsetSystem.repository.WUploadSubMapper">
+
+    <resultMap id="BaseResultMap" type="jp.co.axio.masterMentsetSystem.model.WUploadSub">
+            <id property="uploadUserId" column="upload_user_id" jdbcType="VARCHAR"/>
+            <id property="uploadUserTs" column="upload_user_ts" jdbcType="TIMESTAMP"/>
+            <id property="uploadSession" column="upload_session" jdbcType="VARCHAR"/>
+            <result property="processFlag" column="process_flag" jdbcType="CHAR"/>
+            <result property="registerId" column="register_id" jdbcType="VARCHAR"/>
+            <result property="registTs" column="regist_ts" jdbcType="TIMESTAMP"/>
+            <result property="updaterId" column="updater_id" jdbcType="VARCHAR"/>
+            <result property="updateTs" column="update_ts" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        upload_user_id,upload_user_ts,upload_session,
+        process_flag,register_id,regist_ts,
+        updater_id,update_ts
+    </sql>
+</mapper>

@@ -1,0 +1,6 @@
+target/*
+.mvn/*
+.settings/*
+.sts4-cache/*
+*.log
+/target/

@@ -1,0 +1,386 @@
+/* 繧ｿ繧､繝医Ν繧ｨ繝ｪ繧｢繝懊ち繝ｳ繝�繧ｶ繧､繝ｳ */
+.searchDetailBox__titleArea__btn div {
+  position: relative;
+}
+
+.searchDetailBox__titleArea__btn:hover {
+  opacity: 80%;
+}
+
+
+/* 螟画峩繝懊ち繝ｳ縲�繝�繧ｶ繧､繝ｳ */
+#userEditBtn {
+  /*繝懊ち繝ｳ縺ｮ荳句慍*/
+  color: #1F3990;
+  /*譁�蟄励�ｻ繧｢繧､繧ｳ繝ｳ濶ｲ*/
+  border-radius: 14px;
+  /*隗剃ｸｸ縺ｫ*/
+  position: relative;
+  display: block;
+  height: 100px;
+  /*鬮倥＆*/
+  width: 100px;
+  /*蟷�*/
+  text-align: center;
+  /*荳ｭ霄ｫ繧剃ｸｭ螟ｮ蟇�縺�*/
+  padding-top: 8px;
+  /*荳雁�ｴ縺ｨ縺ｮ菴咏區*/
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 13px;
+  /*譁�蟄励�ｮ繧ｵ繧､繧ｺ*/
+  font-weight: bold;
+  background-color: #FFF;
+  overflow: hidden;
+  /*縺ｯ縺ｿ蜃ｺ縺滄Κ蛻�繧帝國縺�*/
+  text-decoration: none;
+  /*荳狗ｷ壹�ｯ豸医☆*/
+}
+
+
+
+#userEditBtn i {
+  font-size: 40px;
+  /*繧｢繧､繧ｳ繝ｳ繧ｵ繧､繧ｺ*/
+  position: relative;
+  display: inline-block;
+  position: relative;
+  transition: .5;
+  color: #1F3990;
+  margin-bottom: 10px;
+}
+/* 螟画峩繝懊ち繝ｳ縲�繝�繧ｶ繧､繝ｳ */
+#userReportBtn {
+  /*繝懊ち繝ｳ縺ｮ荳句慍*/
+  color: #1F3990;
+  /*譁�蟄励�ｻ繧｢繧､繧ｳ繝ｳ濶ｲ*/
+  border-radius: 14px;
+  /*隗剃ｸｸ縺ｫ*/
+  position: relative;
+  display: block;
+  height: 100px;
+  /*鬮倥＆*/
+  width: 100px;
+  /*蟷�*/
+  text-align: center;
+  /*荳ｭ霄ｫ繧剃ｸｭ螟ｮ蟇�縺�*/
+  padding-top: 8px;
+  /*荳雁�ｴ縺ｨ縺ｮ菴咏區*/
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 13px;
+  /*譁�蟄励�ｮ繧ｵ繧､繧ｺ*/
+  font-weight: bold;
+  background-color: #FFF;
+  overflow: hidden;
+  /*縺ｯ縺ｿ蜃ｺ縺滄Κ蛻�繧帝國縺�*/
+  text-decoration: none;
+  /*荳狗ｷ壹�ｯ豸医☆*/
+}
+
+
+
+#userReportBtn i {
+  font-size: 40px;
+  /*繧｢繧､繧ｳ繝ｳ繧ｵ繧､繧ｺ*/
+  position: relative;
+  display: inline-block;
+  position: relative;
+  transition: .5;
+  color: #1F3990;
+  margin-bottom: 10px;
+}
+
+/* 繝ｭ繝�繧ｯ繝懊ち繝ｳ縲�繝�繧ｶ繧､繝ｳ */
+#lockBtn {
+  /*繝懊ち繝ｳ縺ｮ荳句慍*/
+  color: orange;
+  /*譁�蟄励�ｻ繧｢繧､繧ｳ繝ｳ濶ｲ*/
+  border-radius: 14px;
+  /*隗剃ｸｸ縺ｫ*/
+  position: relative;
+  display: block;
+  height: 100px;
+  /*鬮倥＆*/
+  width: 100px;
+  /*蟷�*/
+  text-align: center;
+  /*荳ｭ霄ｫ繧剃ｸｭ螟ｮ蟇�縺�*/
+  padding-top: 8px;
+  /*荳雁�ｴ縺ｨ縺ｮ菴咏區*/
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 13px;
+  /*譁�蟄励�ｮ繧ｵ繧､繧ｺ*/
+  font-weight: bold;
+  background-color: #FFF;
+  overflow: hidden;
+  /*縺ｯ縺ｿ蜃ｺ縺滄Κ蛻�繧帝國縺�*/
+  text-decoration: none;
+  /*荳狗ｷ壹�ｯ豸医☆*/
+}
+
+#lockBtn i {
+  font-size: 40px;
+  /*繧｢繧､繧ｳ繝ｳ繧ｵ繧､繧ｺ*/
+  position: relative;
+  display: inline-block;
+  position: relative;
+  transition: .5;
+  color: orange;
+  margin-bottom: 10px;
+}
+
+
+
+/* 繝ｭ繝�繧ｯ隗｣髯､繝懊ち繝ｳ縲�繝�繧ｶ繧､繝ｳ */
+#unlockBtn {
+  /*繝懊ち繝ｳ縺ｮ荳句慍*/
+  color: green;
+  /*譁�蟄励�ｻ繧｢繧､繧ｳ繝ｳ濶ｲ*/
+  border-radius: 14px;
+  /*隗剃ｸｸ縺ｫ*/
+  position: relative;
+  display: block;
+  height: 100px;
+  /*鬮倥＆*/
+  width: 100px;
+  /*蟷�*/
+  text-align: center;
+  /*荳ｭ霄ｫ繧剃ｸｭ螟ｮ蟇�縺�*/
+  padding-top: 8px;
+  /*荳雁�ｴ縺ｨ縺ｮ菴咏區*/
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 13px;
+  /*譁�蟄励�ｮ繧ｵ繧､繧ｺ*/
+  font-weight: bold;
+  background-color: #FFF;
+  overflow: hidden;
+  /*縺ｯ縺ｿ蜃ｺ縺滄Κ蛻�繧帝國縺�*/
+  text-decoration: none;
+  /*荳狗ｷ壹�ｯ豸医☆*/
+}
+
+#unlockBtn i {
+  font-size: 40px;
+  /*繧｢繧､繧ｳ繝ｳ繧ｵ繧､繧ｺ*/
+  position: relative;
+  display: inline-block;
+  position: relative;
+  transition: .5;
+  color: green;
+  margin-bottom: 10px;
+}
+
+/* 繝代せ繝ｯ繝ｼ繝牙�晄悄蛹悶�懊ち繝ｳ縲�繝�繧ｶ繧､繝ｳ */
+#passwordInitBtn {
+  /*繝懊ち繝ｳ縺ｮ荳句慍*/
+  color: #1F3990;
+  /*譁�蟄励�ｻ繧｢繧､繧ｳ繝ｳ濶ｲ*/
+  border-radius: 14px;
+  /*隗剃ｸｸ縺ｫ*/
+  position: relative;
+  display: block;
+  height: 100px;
+  /*鬮倥＆*/
+  width: 100px;
+  /*蟷�*/
+  text-align: center;
+  /*荳ｭ霄ｫ繧剃ｸｭ螟ｮ蟇�縺�*/
+  padding-top: 8px;
+  /*荳雁�ｴ縺ｨ縺ｮ菴咏區*/
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 13px;
+  /*譁�蟄励�ｮ繧ｵ繧､繧ｺ*/
+  font-weight: bold;
+  background-color: #FFF;
+  overflow: hidden;
+  /*縺ｯ縺ｿ蜃ｺ縺滄Κ蛻�繧帝國縺�*/
+  text-decoration: none;
+  /*荳狗ｷ壹�ｯ豸医☆*/
+}
+
+
+
+#passwordInitBtn i {
+  font-size: 40px;
+  /*繧｢繧､繧ｳ繝ｳ繧ｵ繧､繧ｺ*/
+  position: relative;
+  display: inline-block;
+  position: relative;
+  transition: .5;
+  color: #1F3990;
+  margin-bottom: 1px;
+}
+
+
+/* 蜑企勁繝懊ち繝ｳ縲�繝�繧ｶ繧､繝ｳ */
+.userDeleteBtn {
+  /*繝懊ち繝ｳ縺ｮ荳句慍*/
+  color: #1F3990;
+  /*譁�蟄励�ｻ繧｢繧､繧ｳ繝ｳ濶ｲ*/
+  border-radius: 14px;
+  /*隗剃ｸｸ縺ｫ*/
+  position: relative;
+  display: block;
+  height: 100px;
+  /*鬮倥＆*/
+  width: 100px;
+  /*蟷�*/
+  text-align: center;
+  /*荳ｭ霄ｫ繧剃ｸｭ螟ｮ蟇�縺�*/
+  padding-top: 8px;
+  /*荳雁�ｴ縺ｨ縺ｮ菴咏區*/
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 13px;
+  /*譁�蟄励�ｮ繧ｵ繧､繧ｺ*/
+  font-weight: bold;
+  background-color: #FFF;
+  overflow: hidden;
+  /*縺ｯ縺ｿ蜃ｺ縺滄Κ蛻�繧帝國縺�*/
+  text-decoration: none;
+  /*荳狗ｷ壹�ｯ豸医☆*/
+}
+
+
+
+.userDeleteBtn i {
+  font-size: 40px;
+  /*繧｢繧､繧ｳ繝ｳ繧ｵ繧､繧ｺ*/
+  position: relative;
+  display: inline-block;
+  position: relative;
+  transition: .5;
+  color: gray;
+  margin-bottom: 10px;
+}
+
+/* 譛牙柑繝懊ち繝ｳ縲�繝�繧ｶ繧､繝ｳ */
+#userValidBtn {
+  /*繝懊ち繝ｳ縺ｮ荳句慍*/
+  color: #1F3990;
+  /*譁�蟄励�ｻ繧｢繧､繧ｳ繝ｳ濶ｲ*/
+  border-radius: 14px;
+  /*隗剃ｸｸ縺ｫ*/
+  position: relative;
+  display: block;
+  height: 100px;
+  /*鬮倥＆*/
+  width: 100px;
+  /*蟷�*/
+  text-align: center;
+  /*荳ｭ霄ｫ繧剃ｸｭ螟ｮ蟇�縺�*/
+  padding-top: 8px;
+  /*荳雁�ｴ縺ｨ縺ｮ菴咏區*/
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 13px;
+  /*譁�蟄励�ｮ繧ｵ繧､繧ｺ*/
+  font-weight: bold;
+  background-color: #FFF;
+  overflow: hidden;
+  /*縺ｯ縺ｿ蜃ｺ縺滄Κ蛻�繧帝國縺�*/
+  text-decoration: none;
+  /*荳狗ｷ壹�ｯ豸医☆*/
+}
+
+
+
+#userValidBtn i {
+  font-size: 40px;
+  /*繧｢繧､繧ｳ繝ｳ繧ｵ繧､繧ｺ*/
+  position: relative;
+  display: inline-block;
+  position: relative;
+  transition: .5;
+  color: green;
+  margin-bottom: 10px;
+}
+
+
+
+
+
+/* 譛ｪ譚･譌･繝�繝ｼ繧ｿ縺後≠繧九→縺阪�∬ｨｭ螳壼､画峩繝懊ち繝ｳ辟｡蜉ｹ蛹� */
+
+#userEditBtnDisabled {
+  /*繝懊ち繝ｳ縺ｮ荳句慍*/
+  color: #1F3990;
+  /*譁�蟄励�ｻ繧｢繧､繧ｳ繝ｳ濶ｲ*/
+  border-radius: 14px;
+  /*隗剃ｸｸ縺ｫ*/
+  position: relative;
+  display: block;
+  height: 100px;
+  /*鬮倥＆*/
+  width: 100px;
+  /*蟷�*/
+  text-align: center;
+  /*荳ｭ霄ｫ繧剃ｸｭ螟ｮ蟇�縺�*/
+  padding-top: 8px;
+  /*荳雁�ｴ縺ｨ縺ｮ菴咏區*/
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 13px;
+  /*譁�蟄励�ｮ繧ｵ繧､繧ｺ*/
+  font-weight: bold;
+  background-color: #FFF;
+  overflow: hidden;
+  /*縺ｯ縺ｿ蜃ｺ縺滄Κ蛻�繧帝國縺�*/
+  text-decoration: none;
+  /*荳狗ｷ壹�ｯ豸医☆*/
+}
+
+
+
+.userEditBtnDisabled i {
+  font-size: 40px;
+  /*繧｢繧､繧ｳ繝ｳ繧ｵ繧､繧ｺ*/
+  position: relative;
+  display: inline-block;
+  position: relative;
+  transition: .5;
+  color: #1F3990;
+  margin-bottom: 10px;
+}
+
+.userEditBtnDisabled {
+  opacity: 80%;
+}
+
+.userEditBtnDisabled:hover {
+  cursor: not-allowed;
+}
+
+.status>i {
+  padding: 1px 16px 1px;
+  background-color: #fff;
+  color: #1F3990;
+  font-size: 14px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  font-style: inherit;
+}
+
+.searchDetailBox__profileList__item input {
+  max-width: 230px;
+}
+
+.searchDetailBox__profileList__item select {
+  max-width: 230px;
+}
+
+.searchDetailBox__profileList__item--full input {
+  max-width: 760px;
+}
+
+.searchDetailBox__profileList__item--full select {
+  max-width: 760px;
+}
+
+.searchDetailBox__profileList__item--full.searchDetailBox__profileList__item--50 input {
+  max-width: 270px;
+}

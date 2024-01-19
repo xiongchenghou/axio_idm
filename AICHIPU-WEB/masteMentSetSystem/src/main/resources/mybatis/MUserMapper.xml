@@ -1,0 +1,748 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="jp.co.axio.masterMentsetSystem.repository.MUserMapper">
+  <resultMap id="BaseResultMap" type="jp.co.axio.masterMentsetSystem.model.MUser">
+    <id column="user_id" jdbcType="VARCHAR" property="userId" />
+    <result column="employee_id" jdbcType="VARCHAR" property="employeeId" />
+    <result column="start_date" jdbcType="DATE" property="startDate" />
+    <result column="end_date" jdbcType="DATE" property="endDate" />
+    <result column="init_password" jdbcType="VARCHAR" property="initPassword" />
+    <result column="delete_flag" jdbcType="CHAR" property="deleteFlag" />
+    <result column="invalid_flag" jdbcType="CHAR" property="invalidFlag" />
+    <result column="lang_code" jdbcType="CHAR" property="langCode" />
+    <result column="enrollment_kbn" jdbcType="CHAR" property="enrollmentKbn" />
+    <result column="employment_kbn" jdbcType="CHAR" property="employmentKbn" />
+    <result column="mailaddr" jdbcType="VARCHAR" property="mailaddr" />
+    <result column="mailaddr_secound" jdbcType="VARCHAR" property="mailaddrSecound" />
+    <result column="mailaddr_notification" jdbcType="VARCHAR" property="mailaddrNotification" />
+    <result column="tel" jdbcType="VARCHAR" property="tel" />
+    <result column="tel_ex" jdbcType="VARCHAR" property="telEx" />
+    <result column="surname_en" jdbcType="VARCHAR" property="surnameEn" />
+    <result column="surname_jp" jdbcType="VARCHAR" property="surnameJp" />
+    <result column="surname_kana" jdbcType="VARCHAR" property="surnameKana" />
+    <result column="middlename_en" jdbcType="VARCHAR" property="middlenameEn" />
+    <result column="middlename_jp" jdbcType="VARCHAR" property="middlenameJp" />
+    <result column="middlename_kana" jdbcType="VARCHAR" property="middlenameKana" />
+    <result column="givenname_en" jdbcType="VARCHAR" property="givennameEn" />
+    <result column="givenname_jp" jdbcType="VARCHAR" property="givennameJp" />
+    <result column="givenname_kana" jdbcType="VARCHAR" property="givennameKana" />
+    <result column="surname_nick_en" jdbcType="VARCHAR" property="surnameNickEn" />
+    <result column="surname_nick_jp" jdbcType="VARCHAR" property="surnameNickJp" />
+    <result column="surname_nick_kana" jdbcType="VARCHAR" property="surnameNickKana" />
+    <result column="middlename_nick_en" jdbcType="VARCHAR" property="middlenameNickEn" />
+    <result column="middlename_nick_jp" jdbcType="VARCHAR" property="middlenameNickJp" />
+    <result column="middlename_nick_kana" jdbcType="VARCHAR" property="middlenameNickKana" />
+    <result column="givenname_nuck_en" jdbcType="VARCHAR" property="givennameNuckEn" />
+    <result column="givenname_nuck_jp" jdbcType="VARCHAR" property="givennameNuckJp" />
+    <result column="givenname_nuck_kana" jdbcType="VARCHAR" property="givennameNuckKana" />
+    <result column="update_kbn" jdbcType="CHAR" property="updateKbn" />
+    <result column="register_id" jdbcType="VARCHAR" property="registerId" />
+    <result column="regist_ts" jdbcType="TIMESTAMP" property="registTs" />
+    <result column="updater_id" jdbcType="VARCHAR" property="updaterId" />
+    <result column="update_ts" jdbcType="TIMESTAMP" property="updateTs" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    user_id, employee_id, start_date, end_date, init_password, delete_flag, invalid_flag, 
+    lang_code, enrollment_kbn, employment_kbn, mailaddr, mailaddr_secound, mailaddr_notification, 
+    tel, tel_ex, surname_en, surname_jp, surname_kana, middlename_en, middlename_jp, 
+    middlename_kana, givenname_en, givenname_jp, givenname_kana, surname_nick_en, surname_nick_jp, 
+    surname_nick_kana, middlename_nick_en, middlename_nick_jp, middlename_nick_kana, 
+    givenname_nuck_en, givenname_nuck_jp, givenname_nuck_kana, update_kbn, register_id, 
+    regist_ts, updater_id, update_ts
+  </sql>
+  <select id="selectByExample" parameterType="jp.co.axio.masterMentsetSystem.model.MUserExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from public.m_user
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from public.m_user
+    where user_id = #{userId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from public.m_user
+    where user_id = #{userId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="jp.co.axio.masterMentsetSystem.model.MUserExample">
+    delete from public.m_user
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="jp.co.axio.masterMentsetSystem.model.MUser">
+    insert into public.m_user (user_id, employee_id, start_date, 
+      end_date, init_password, delete_flag, 
+      invalid_flag, lang_code, enrollment_kbn, 
+      employment_kbn, mailaddr, mailaddr_secound, 
+      mailaddr_notification, tel, tel_ex, 
+      surname_en, surname_jp, surname_kana, 
+      middlename_en, middlename_jp, middlename_kana, 
+      givenname_en, givenname_jp, givenname_kana, 
+      surname_nick_en, surname_nick_jp, surname_nick_kana, 
+      middlename_nick_en, middlename_nick_jp, middlename_nick_kana, 
+      givenname_nuck_en, givenname_nuck_jp, givenname_nuck_kana, 
+      update_kbn, register_id, regist_ts, 
+      updater_id, update_ts)
+    values (#{userId,jdbcType=VARCHAR}, #{employeeId,jdbcType=VARCHAR}, #{startDate,jdbcType=DATE}, 
+      #{endDate,jdbcType=DATE}, #{initPassword,jdbcType=VARCHAR}, #{deleteFlag,jdbcType=CHAR}, 
+      #{invalidFlag,jdbcType=CHAR}, #{langCode,jdbcType=CHAR}, #{enrollmentKbn,jdbcType=CHAR}, 
+      #{employmentKbn,jdbcType=CHAR}, #{mailaddr,jdbcType=VARCHAR}, #{mailaddrSecound,jdbcType=VARCHAR}, 
+      #{mailaddrNotification,jdbcType=VARCHAR}, #{tel,jdbcType=VARCHAR}, #{telEx,jdbcType=VARCHAR}, 
+      #{surnameEn,jdbcType=VARCHAR}, #{surnameJp,jdbcType=VARCHAR}, #{surnameKana,jdbcType=VARCHAR}, 
+      #{middlenameEn,jdbcType=VARCHAR}, #{middlenameJp,jdbcType=VARCHAR}, #{middlenameKana,jdbcType=VARCHAR}, 
+      #{givennameEn,jdbcType=VARCHAR}, #{givennameJp,jdbcType=VARCHAR}, #{givennameKana,jdbcType=VARCHAR}, 
+      #{surnameNickEn,jdbcType=VARCHAR}, #{surnameNickJp,jdbcType=VARCHAR}, #{surnameNickKana,jdbcType=VARCHAR}, 
+      #{middlenameNickEn,jdbcType=VARCHAR}, #{middlenameNickJp,jdbcType=VARCHAR}, #{middlenameNickKana,jdbcType=VARCHAR}, 
+      #{givennameNuckEn,jdbcType=VARCHAR}, #{givennameNuckJp,jdbcType=VARCHAR}, #{givennameNuckKana,jdbcType=VARCHAR}, 
+      #{updateKbn,jdbcType=CHAR}, #{registerId,jdbcType=VARCHAR}, #{registTs,jdbcType=TIMESTAMP}, 
+      #{updaterId,jdbcType=VARCHAR}, #{updateTs,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="jp.co.axio.masterMentsetSystem.model.MUser">
+    insert into public.m_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="employeeId != null">
+        employee_id,
+      </if>
+      <if test="startDate != null">
+        start_date,
+      </if>
+      <if test="endDate != null">
+        end_date,
+      </if>
+      <if test="initPassword != null">
+        init_password,
+      </if>
+      <if test="deleteFlag != null">
+        delete_flag,
+      </if>
+      <if test="invalidFlag != null">
+        invalid_flag,
+      </if>
+      <if test="langCode != null">
+        lang_code,
+      </if>
+      <if test="enrollmentKbn != null">
+        enrollment_kbn,
+      </if>
+      <if test="employmentKbn != null">
+        employment_kbn,
+      </if>
+      <if test="mailaddr != null">
+        mailaddr,
+      </if>
+      <if test="mailaddrSecound != null">
+        mailaddr_secound,
+      </if>
+      <if test="mailaddrNotification != null">
+        mailaddr_notification,
+      </if>
+      <if test="tel != null">
+        tel,
+      </if>
+      <if test="telEx != null">
+        tel_ex,
+      </if>
+      <if test="surnameEn != null">
+        surname_en,
+      </if>
+      <if test="surnameJp != null">
+        surname_jp,
+      </if>
+      <if test="surnameKana != null">
+        surname_kana,
+      </if>
+      <if test="middlenameEn != null">
+        middlename_en,
+      </if>
+      <if test="middlenameJp != null">
+        middlename_jp,
+      </if>
+      <if test="middlenameKana != null">
+        middlename_kana,
+      </if>
+      <if test="givennameEn != null">
+        givenname_en,
+      </if>
+      <if test="givennameJp != null">
+        givenname_jp,
+      </if>
+      <if test="givennameKana != null">
+        givenname_kana,
+      </if>
+      <if test="surnameNickEn != null">
+        surname_nick_en,
+      </if>
+      <if test="surnameNickJp != null">
+        surname_nick_jp,
+      </if>
+      <if test="surnameNickKana != null">
+        surname_nick_kana,
+      </if>
+      <if test="middlenameNickEn != null">
+        middlename_nick_en,
+      </if>
+      <if test="middlenameNickJp != null">
+        middlename_nick_jp,
+      </if>
+      <if test="middlenameNickKana != null">
+        middlename_nick_kana,
+      </if>
+      <if test="givennameNuckEn != null">
+        givenname_nuck_en,
+      </if>
+      <if test="givennameNuckJp != null">
+        givenname_nuck_jp,
+      </if>
+      <if test="givennameNuckKana != null">
+        givenname_nuck_kana,
+      </if>
+      <if test="updateKbn != null">
+        update_kbn,
+      </if>
+      <if test="registerId != null">
+        register_id,
+      </if>
+      <if test="registTs != null">
+        regist_ts,
+      </if>
+      <if test="updaterId != null">
+        updater_id,
+      </if>
+      <if test="updateTs != null">
+        update_ts,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeId != null">
+        #{employeeId,jdbcType=VARCHAR},
+      </if>
+      <if test="startDate != null">
+        #{startDate,jdbcType=DATE},
+      </if>
+      <if test="endDate != null">
+        #{endDate,jdbcType=DATE},
+      </if>
+      <if test="initPassword != null">
+        #{initPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="deleteFlag != null">
+        #{deleteFlag,jdbcType=CHAR},
+      </if>
+      <if test="invalidFlag != null">
+        #{invalidFlag,jdbcType=CHAR},
+      </if>
+      <if test="langCode != null">
+        #{langCode,jdbcType=CHAR},
+      </if>
+      <if test="enrollmentKbn != null">
+        #{enrollmentKbn,jdbcType=CHAR},
+      </if>
+      <if test="employmentKbn != null">
+        #{employmentKbn,jdbcType=CHAR},
+      </if>
+      <if test="mailaddr != null">
+        #{mailaddr,jdbcType=VARCHAR},
+      </if>
+      <if test="mailaddrSecound != null">
+        #{mailaddrSecound,jdbcType=VARCHAR},
+      </if>
+      <if test="mailaddrNotification != null">
+        #{mailaddrNotification,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null">
+        #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="telEx != null">
+        #{telEx,jdbcType=VARCHAR},
+      </if>
+      <if test="surnameEn != null">
+        #{surnameEn,jdbcType=VARCHAR},
+      </if>
+      <if test="surnameJp != null">
+        #{surnameJp,jdbcType=VARCHAR},
+      </if>
+      <if test="surnameKana != null">
+        #{surnameKana,jdbcType=VARCHAR},
+      </if>
+      <if test="middlenameEn != null">
+        #{middlenameEn,jdbcType=VARCHAR},
+      </if>
+      <if test="middlenameJp != null">
+        #{middlenameJp,jdbcType=VARCHAR},
+      </if>
+      <if test="middlenameKana != null">
+        #{middlenameKana,jdbcType=VARCHAR},
+      </if>
+      <if test="givennameEn != null">
+        #{givennameEn,jdbcType=VARCHAR},
+      </if>
+      <if test="givennameJp != null">
+        #{givennameJp,jdbcType=VARCHAR},
+      </if>
+      <if test="givennameKana != null">
+        #{givennameKana,jdbcType=VARCHAR},
+      </if>
+      <if test="surnameNickEn != null">
+        #{surnameNickEn,jdbcType=VARCHAR},
+      </if>
+      <if test="surnameNickJp != null">
+        #{surnameNickJp,jdbcType=VARCHAR},
+      </if>
+      <if test="surnameNickKana != null">
+        #{surnameNickKana,jdbcType=VARCHAR},
+      </if>
+      <if test="middlenameNickEn != null">
+        #{middlenameNickEn,jdbcType=VARCHAR},
+      </if>
+      <if test="middlenameNickJp != null">
+        #{middlenameNickJp,jdbcType=VARCHAR},
+      </if>
+      <if test="middlenameNickKana != null">
+        #{middlenameNickKana,jdbcType=VARCHAR},
+      </if>
+      <if test="givennameNuckEn != null">
+        #{givennameNuckEn,jdbcType=VARCHAR},
+      </if>
+      <if test="givennameNuckJp != null">
+        #{givennameNuckJp,jdbcType=VARCHAR},
+      </if>
+      <if test="givennameNuckKana != null">
+        #{givennameNuckKana,jdbcType=VARCHAR},
+      </if>
+      <if test="updateKbn != null">
+        #{updateKbn,jdbcType=CHAR},
+      </if>
+      <if test="registerId != null">
+        #{registerId,jdbcType=VARCHAR},
+      </if>
+      <if test="registTs != null">
+        #{registTs,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updaterId != null">
+        #{updaterId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTs != null">
+        #{updateTs,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="jp.co.axio.masterMentsetSystem.model.MUserExample" resultType="java.lang.Long">
+    select count(*) from public.m_user
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+
+  <select id="selectLoginInfoByUserId" resultType="jp.co.axio.masterMentsetSystem.controller.LoginInfo">
+    select
+      mu.user_id
+      ,mp.curr_password
+      ,vsu.admin_flag
+    from
+      m_user as mu
+        LEFT join
+      m_password as mp on mu.user_id=mp.user_id
+        LEFT JOIN
+      v_search_user as vsu ON  vsu.user_id=mu.user_id
+    where mu.user_id= #{userId,jdbcType=VARCHAR}
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update public.m_user
+    <set>
+      <if test="record.userId != null">
+        user_id = #{record.userId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeeId != null">
+        employee_id = #{record.employeeId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.startDate != null">
+        start_date = #{record.startDate,jdbcType=DATE},
+      </if>
+      <if test="record.endDate != null">
+        end_date = #{record.endDate,jdbcType=DATE},
+      </if>
+      <if test="record.initPassword != null">
+        init_password = #{record.initPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="record.deleteFlag != null">
+        delete_flag = #{record.deleteFlag,jdbcType=CHAR},
+      </if>
+      <if test="record.invalidFlag != null">
+        invalid_flag = #{record.invalidFlag,jdbcType=CHAR},
+      </if>
+      <if test="record.langCode != null">
+        lang_code = #{record.langCode,jdbcType=CHAR},
+      </if>
+      <if test="record.enrollmentKbn != null">
+        enrollment_kbn = #{record.enrollmentKbn,jdbcType=CHAR},
+      </if>
+      <if test="record.employmentKbn != null">
+        employment_kbn = #{record.employmentKbn,jdbcType=CHAR},
+      </if>
+      <if test="record.mailaddr != null">
+        mailaddr = #{record.mailaddr,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mailaddrSecound != null">
+        mailaddr_secound = #{record.mailaddrSecound,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mailaddrNotification != null">
+        mailaddr_notification = #{record.mailaddrNotification,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tel != null">
+        tel = #{record.tel,jdbcType=VARCHAR},
+      </if>
+      <if test="record.telEx != null">
+        tel_ex = #{record.telEx,jdbcType=VARCHAR},
+      </if>
+      <if test="record.surnameEn != null">
+        surname_en = #{record.surnameEn,jdbcType=VARCHAR},
+      </if>
+      <if test="record.surnameJp != null">
+        surname_jp = #{record.surnameJp,jdbcType=VARCHAR},
+      </if>
+      <if test="record.surnameKana != null">
+        surname_kana = #{record.surnameKana,jdbcType=VARCHAR},
+      </if>
+      <if test="record.middlenameEn != null">
+        middlename_en = #{record.middlenameEn,jdbcType=VARCHAR},
+      </if>
+      <if test="record.middlenameJp != null">
+        middlename_jp = #{record.middlenameJp,jdbcType=VARCHAR},
+      </if>
+      <if test="record.middlenameKana != null">
+        middlename_kana = #{record.middlenameKana,jdbcType=VARCHAR},
+      </if>
+      <if test="record.givennameEn != null">
+        givenname_en = #{record.givennameEn,jdbcType=VARCHAR},
+      </if>
+      <if test="record.givennameJp != null">
+        givenname_jp = #{record.givennameJp,jdbcType=VARCHAR},
+      </if>
+      <if test="record.givennameKana != null">
+        givenname_kana = #{record.givennameKana,jdbcType=VARCHAR},
+      </if>
+      <if test="record.surnameNickEn != null">
+        surname_nick_en = #{record.surnameNickEn,jdbcType=VARCHAR},
+      </if>
+      <if test="record.surnameNickJp != null">
+        surname_nick_jp = #{record.surnameNickJp,jdbcType=VARCHAR},
+      </if>
+      <if test="record.surnameNickKana != null">
+        surname_nick_kana = #{record.surnameNickKana,jdbcType=VARCHAR},
+      </if>
+      <if test="record.middlenameNickEn != null">
+        middlename_nick_en = #{record.middlenameNickEn,jdbcType=VARCHAR},
+      </if>
+      <if test="record.middlenameNickJp != null">
+        middlename_nick_jp = #{record.middlenameNickJp,jdbcType=VARCHAR},
+      </if>
+      <if test="record.middlenameNickKana != null">
+        middlename_nick_kana = #{record.middlenameNickKana,jdbcType=VARCHAR},
+      </if>
+      <if test="record.givennameNuckEn != null">
+        givenname_nuck_en = #{record.givennameNuckEn,jdbcType=VARCHAR},
+      </if>
+      <if test="record.givennameNuckJp != null">
+        givenname_nuck_jp = #{record.givennameNuckJp,jdbcType=VARCHAR},
+      </if>
+      <if test="record.givennameNuckKana != null">
+        givenname_nuck_kana = #{record.givennameNuckKana,jdbcType=VARCHAR},
+      </if>
+      <if test="record.updateKbn != null">
+        update_kbn = #{record.updateKbn,jdbcType=CHAR},
+      </if>
+      <if test="record.registerId != null">
+        register_id = #{record.registerId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.registTs != null">
+        regist_ts = #{record.registTs,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updaterId != null">
+        updater_id = #{record.updaterId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.updateTs != null">
+        update_ts = #{record.updateTs,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update public.m_user
+    set user_id = #{record.userId,jdbcType=VARCHAR},
+      employee_id = #{record.employeeId,jdbcType=VARCHAR},
+      start_date = #{record.startDate,jdbcType=DATE},
+      end_date = #{record.endDate,jdbcType=DATE},
+      init_password = #{record.initPassword,jdbcType=VARCHAR},
+      delete_flag = #{record.deleteFlag,jdbcType=CHAR},
+      invalid_flag = #{record.invalidFlag,jdbcType=CHAR},
+      lang_code = #{record.langCode,jdbcType=CHAR},
+      enrollment_kbn = #{record.enrollmentKbn,jdbcType=CHAR},
+      employment_kbn = #{record.employmentKbn,jdbcType=CHAR},
+      mailaddr = #{record.mailaddr,jdbcType=VARCHAR},
+      mailaddr_secound = #{record.mailaddrSecound,jdbcType=VARCHAR},
+      mailaddr_notification = #{record.mailaddrNotification,jdbcType=VARCHAR},
+      tel = #{record.tel,jdbcType=VARCHAR},
+      tel_ex = #{record.telEx,jdbcType=VARCHAR},
+      surname_en = #{record.surnameEn,jdbcType=VARCHAR},
+      surname_jp = #{record.surnameJp,jdbcType=VARCHAR},
+      surname_kana = #{record.surnameKana,jdbcType=VARCHAR},
+      middlename_en = #{record.middlenameEn,jdbcType=VARCHAR},
+      middlename_jp = #{record.middlenameJp,jdbcType=VARCHAR},
+      middlename_kana = #{record.middlenameKana,jdbcType=VARCHAR},
+      givenname_en = #{record.givennameEn,jdbcType=VARCHAR},
+      givenname_jp = #{record.givennameJp,jdbcType=VARCHAR},
+      givenname_kana = #{record.givennameKana,jdbcType=VARCHAR},
+      surname_nick_en = #{record.surnameNickEn,jdbcType=VARCHAR},
+      surname_nick_jp = #{record.surnameNickJp,jdbcType=VARCHAR},
+      surname_nick_kana = #{record.surnameNickKana,jdbcType=VARCHAR},
+      middlename_nick_en = #{record.middlenameNickEn,jdbcType=VARCHAR},
+      middlename_nick_jp = #{record.middlenameNickJp,jdbcType=VARCHAR},
+      middlename_nick_kana = #{record.middlenameNickKana,jdbcType=VARCHAR},
+      givenname_nuck_en = #{record.givennameNuckEn,jdbcType=VARCHAR},
+      givenname_nuck_jp = #{record.givennameNuckJp,jdbcType=VARCHAR},
+      givenname_nuck_kana = #{record.givennameNuckKana,jdbcType=VARCHAR},
+      update_kbn = #{record.updateKbn,jdbcType=CHAR},
+      register_id = #{record.registerId,jdbcType=VARCHAR},
+      regist_ts = #{record.registTs,jdbcType=TIMESTAMP},
+      updater_id = #{record.updaterId,jdbcType=VARCHAR},
+      update_ts = #{record.updateTs,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="jp.co.axio.masterMentsetSystem.model.MUser">
+    update public.m_user
+    <set>
+      <if test="employeeId != null">
+        employee_id = #{employeeId,jdbcType=VARCHAR},
+      </if>
+      <if test="startDate != null">
+        start_date = #{startDate,jdbcType=DATE},
+      </if>
+      <if test="endDate != null">
+        end_date = #{endDate,jdbcType=DATE},
+      </if>
+      <if test="initPassword != null">
+        init_password = #{initPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="deleteFlag != null">
+        delete_flag = #{deleteFlag,jdbcType=CHAR},
+      </if>
+      <if test="invalidFlag != null">
+        invalid_flag = #{invalidFlag,jdbcType=CHAR},
+      </if>
+      <if test="langCode != null">
+        lang_code = #{langCode,jdbcType=CHAR},
+      </if>
+      <if test="enrollmentKbn != null">
+        enrollment_kbn = #{enrollmentKbn,jdbcType=CHAR},
+      </if>
+      <if test="employmentKbn != null">
+        employment_kbn = #{employmentKbn,jdbcType=CHAR},
+      </if>
+      <if test="mailaddr != null">
+        mailaddr = #{mailaddr,jdbcType=VARCHAR},
+      </if>
+      <if test="mailaddrSecound != null">
+        mailaddr_secound = #{mailaddrSecound,jdbcType=VARCHAR},
+      </if>
+      <if test="mailaddrNotification != null">
+        mailaddr_notification = #{mailaddrNotification,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null">
+        tel = #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="telEx != null">
+        tel_ex = #{telEx,jdbcType=VARCHAR},
+      </if>
+      <if test="surnameEn != null">
+        surname_en = #{surnameEn,jdbcType=VARCHAR},
+      </if>
+      <if test="surnameJp != null">
+        surname_jp = #{surnameJp,jdbcType=VARCHAR},
+      </if>
+      <if test="surnameKana != null">
+        surname_kana = #{surnameKana,jdbcType=VARCHAR},
+      </if>
+      <if test="middlenameEn != null">
+        middlename_en = #{middlenameEn,jdbcType=VARCHAR},
+      </if>
+      <if test="middlenameJp != null">
+        middlename_jp = #{middlenameJp,jdbcType=VARCHAR},
+      </if>
+      <if test="middlenameKana != null">
+        middlename_kana = #{middlenameKana,jdbcType=VARCHAR},
+      </if>
+      <if test="givennameEn != null">
+        givenname_en = #{givennameEn,jdbcType=VARCHAR},
+      </if>
+      <if test="givennameJp != null">
+        givenname_jp = #{givennameJp,jdbcType=VARCHAR},
+      </if>
+      <if test="givennameKana != null">
+        givenname_kana = #{givennameKana,jdbcType=VARCHAR},
+      </if>
+      <if test="surnameNickEn != null">
+        surname_nick_en = #{surnameNickEn,jdbcType=VARCHAR},
+      </if>
+      <if test="surnameNickJp != null">
+        surname_nick_jp = #{surnameNickJp,jdbcType=VARCHAR},
+      </if>
+      <if test="surnameNickKana != null">
+        surname_nick_kana = #{surnameNickKana,jdbcType=VARCHAR},
+      </if>
+      <if test="middlenameNickEn != null">
+        middlename_nick_en = #{middlenameNickEn,jdbcType=VARCHAR},
+      </if>
+      <if test="middlenameNickJp != null">
+        middlename_nick_jp = #{middlenameNickJp,jdbcType=VARCHAR},
+      </if>
+      <if test="middlenameNickKana != null">
+        middlename_nick_kana = #{middlenameNickKana,jdbcType=VARCHAR},
+      </if>
+      <if test="givennameNuckEn != null">
+        givenname_nuck_en = #{givennameNuckEn,jdbcType=VARCHAR},
+      </if>
+      <if test="givennameNuckJp != null">
+        givenname_nuck_jp = #{givennameNuckJp,jdbcType=VARCHAR},
+      </if>
+      <if test="givennameNuckKana != null">
+        givenname_nuck_kana = #{givennameNuckKana,jdbcType=VARCHAR},
+      </if>
+      <if test="updateKbn != null">
+        update_kbn = #{updateKbn,jdbcType=CHAR},
+      </if>
+      <if test="registerId != null">
+        register_id = #{registerId,jdbcType=VARCHAR},
+      </if>
+      <if test="registTs != null">
+        regist_ts = #{registTs,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updaterId != null">
+        updater_id = #{updaterId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTs != null">
+        update_ts = #{updateTs,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where user_id = #{userId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="jp.co.axio.masterMentsetSystem.model.MUser">
+    update public.m_user
+    set employee_id = #{employeeId,jdbcType=VARCHAR},
+      start_date = #{startDate,jdbcType=DATE},
+      end_date = #{endDate,jdbcType=DATE},
+      init_password = #{initPassword,jdbcType=VARCHAR},
+      delete_flag = #{deleteFlag,jdbcType=CHAR},
+      invalid_flag = #{invalidFlag,jdbcType=CHAR},
+      lang_code = #{langCode,jdbcType=CHAR},
+      enrollment_kbn = #{enrollmentKbn,jdbcType=CHAR},
+      employment_kbn = #{employmentKbn,jdbcType=CHAR},
+      mailaddr = #{mailaddr,jdbcType=VARCHAR},
+      mailaddr_secound = #{mailaddrSecound,jdbcType=VARCHAR},
+      mailaddr_notification = #{mailaddrNotification,jdbcType=VARCHAR},
+      tel = #{tel,jdbcType=VARCHAR},
+      tel_ex = #{telEx,jdbcType=VARCHAR},
+      surname_en = #{surnameEn,jdbcType=VARCHAR},
+      surname_jp = #{surnameJp,jdbcType=VARCHAR},
+      surname_kana = #{surnameKana,jdbcType=VARCHAR},
+      middlename_en = #{middlenameEn,jdbcType=VARCHAR},
+      middlename_jp = #{middlenameJp,jdbcType=VARCHAR},
+      middlename_kana = #{middlenameKana,jdbcType=VARCHAR},
+      givenname_en = #{givennameEn,jdbcType=VARCHAR},
+      givenname_jp = #{givennameJp,jdbcType=VARCHAR},
+      givenname_kana = #{givennameKana,jdbcType=VARCHAR},
+      surname_nick_en = #{surnameNickEn,jdbcType=VARCHAR},
+      surname_nick_jp = #{surnameNickJp,jdbcType=VARCHAR},
+      surname_nick_kana = #{surnameNickKana,jdbcType=VARCHAR},
+      middlename_nick_en = #{middlenameNickEn,jdbcType=VARCHAR},
+      middlename_nick_jp = #{middlenameNickJp,jdbcType=VARCHAR},
+      middlename_nick_kana = #{middlenameNickKana,jdbcType=VARCHAR},
+      givenname_nuck_en = #{givennameNuckEn,jdbcType=VARCHAR},
+      givenname_nuck_jp = #{givennameNuckJp,jdbcType=VARCHAR},
+      givenname_nuck_kana = #{givennameNuckKana,jdbcType=VARCHAR},
+      update_kbn = #{updateKbn,jdbcType=CHAR},
+      register_id = #{registerId,jdbcType=VARCHAR},
+      regist_ts = #{registTs,jdbcType=TIMESTAMP},
+      updater_id = #{updaterId,jdbcType=VARCHAR},
+      update_ts = #{updateTs,jdbcType=TIMESTAMP}
+    where user_id = #{userId,jdbcType=VARCHAR}
+  </update>
+</mapper>

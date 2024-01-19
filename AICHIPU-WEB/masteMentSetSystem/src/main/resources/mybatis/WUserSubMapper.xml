@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="jp.co.axio.masterMentsetSystem.repository.WUserSubMapper">
+
+    <resultMap id="BaseResultMap" type="jp.co.axio.masterMentsetSystem.model.WUserSub">
+            <id property="uploadUserId" column="upload_user_id" jdbcType="VARCHAR"/>
+            <id property="uploadUserTs" column="upload_user_ts" jdbcType="TIMESTAMP"/>
+            <id property="userId" column="user_id" jdbcType="VARCHAR"/>
+            <id property="uploadSession" column="upload_session" jdbcType="VARCHAR"/>
+            <result property="reflectionDate" column="reflection_date" jdbcType="DATE"/>
+            <result property="employeeId" column="employee_id" jdbcType="VARCHAR"/>
+            <result property="lmId" column="lm_id" jdbcType="VARCHAR"/>
+            <result property="startDate" column="start_date" jdbcType="DATE"/>
+            <result property="endDate" column="end_date" jdbcType="DATE"/>
+            <result property="initPassword" column="init_password" jdbcType="VARCHAR"/>
+            <result property="deleteFlag" column="delete_flag" jdbcType="CHAR"/>
+            <result property="invalidFlag" column="invalid_flag" jdbcType="CHAR"/>
+            <result property="langCode" column="lang_code" jdbcType="CHAR"/>
+            <result property="enrollmentKbn" column="enrollment_kbn" jdbcType="CHAR"/>
+            <result property="employmentKbn" column="employment_kbn" jdbcType="CHAR"/>
+            <result property="mailaddr" column="mailaddr" jdbcType="VARCHAR"/>
+            <result property="mailaddrSecound" column="mailaddr_secound" jdbcType="VARCHAR"/>
+            <result property="mailaddrNotification" column="mailaddr_notification" jdbcType="VARCHAR"/>
+            <result property="tel" column="tel" jdbcType="VARCHAR"/>
+            <result property="telEx" column="tel_ex" jdbcType="VARCHAR"/>
+            <result property="surnameEn" column="surname_en" jdbcType="VARCHAR"/>
+            <result property="surnameJp" column="surname_jp" jdbcType="VARCHAR"/>
+            <result property="surnameKana" column="surname_kana" jdbcType="VARCHAR"/>
+            <result property="middlenameEn" column="middlename_en" jdbcType="VARCHAR"/>
+            <result property="middlenameJp" column="middlename_jp" jdbcType="VARCHAR"/>
+            <result property="middlenameKana" column="middlename_kana" jdbcType="VARCHAR"/>
+            <result property="givennameEn" column="givenname_en" jdbcType="VARCHAR"/>
+            <result property="givennameJp" column="givenname_jp" jdbcType="VARCHAR"/>
+            <result property="givennameKana" column="givenname_kana" jdbcType="VARCHAR"/>
+            <result property="surnameNickEn" column="surname_nick_en" jdbcType="VARCHAR"/>
+            <result property="surnameNickJp" column="surname_nick_jp" jdbcType="VARCHAR"/>
+            <result property="surnameNickKana" column="surname_nick_kana" jdbcType="VARCHAR"/>
+            <result property="middlenameNickEn" column="middlename_nick_en" jdbcType="VARCHAR"/>
+            <result property="middlenameNickJp" column="middlename_nick_jp" jdbcType="VARCHAR"/>
+            <result property="middlenameNickKana" column="middlename_nick_kana" jdbcType="VARCHAR"/>
+            <result property="givennameNuckEn" column="givenname_nuck_en" jdbcType="VARCHAR"/>
+            <result property="givennameNuckJp" column="givenname_nuck_jp" jdbcType="VARCHAR"/>
+            <result property="givennameNuckKana" column="givenname_nuck_kana" jdbcType="VARCHAR"/>
+            <result property="companyCode" column="company_code" jdbcType="VARCHAR"/>
+            <result property="companyName" column="company_name" jdbcType="VARCHAR"/>
+            <result property="positionCode" column="position_code" jdbcType="VARCHAR"/>
+            <result property="positionName" column="position_name" jdbcType="VARCHAR"/>
+            <result property="gradeCode" column="grade_code" jdbcType="VARCHAR"/>
+            <result property="gradeName" column="grade_name" jdbcType="VARCHAR"/>
+            <result property="organizationCode" column="organization_code" jdbcType="VARCHAR"/>
+            <result property="locationCode" column="location_code" jdbcType="CHAR"/>
+            <result property="kenmuInfo" column="kenmu_info" jdbcType="VARCHAR"/>
+            <result property="registerId" column="register_id" jdbcType="VARCHAR"/>
+            <result property="registTs" column="regist_ts" jdbcType="TIMESTAMP"/>
+            <result property="updaterId" column="updater_id" jdbcType="VARCHAR"/>
+            <result property="updateTs" column="update_ts" jdbcType="TIMESTAMP"/>
+            <result property="expansionAttr1" column="expansion_attr1" jdbcType="VARCHAR"/>
+            <result property="expansionAttr2" column="expansion_attr2" jdbcType="VARCHAR"/>
+            <result property="expansionAttr3" column="expansion_attr3" jdbcType="VARCHAR"/>
+            <result property="expansionAttr4" column="expansion_attr4" jdbcType="VARCHAR"/>
+            <result property="expansionAttr5" column="expansion_attr5" jdbcType="VARCHAR"/>
+            <result property="expansionAttr6" column="expansion_attr6" jdbcType="VARCHAR"/>
+            <result property="expansionAttr7" column="expansion_attr7" jdbcType="VARCHAR"/>
+            <result property="expansionAttr8" column="expansion_attr8" jdbcType="VARCHAR"/>
+            <result property="expansionAttr9" column="expansion_attr9" jdbcType="VARCHAR"/>
+            <result property="expansionAttr10" column="expansion_attr10" jdbcType="VARCHAR"/>
+            <result property="expansionAttr11" column="expansion_attr11" jdbcType="VARCHAR"/>
+            <result property="expansionAttr12" column="expansion_attr12" jdbcType="VARCHAR"/>
+            <result property="expansionAttr13" column="expansion_attr13" jdbcType="VARCHAR"/>
+            <result property="expansionAttr14" column="expansion_attr14" jdbcType="VARCHAR"/>
+            <result property="expansionAttr15" column="expansion_attr15" jdbcType="VARCHAR"/>
+            <result property="expansionAttr16" column="expansion_attr16" jdbcType="VARCHAR"/>
+            <result property="expansionAttr17" column="expansion_attr17" jdbcType="VARCHAR"/>
+            <result property="expansionAttr18" column="expansion_attr18" jdbcType="VARCHAR"/>
+            <result property="expansionAttr19" column="expansion_attr19" jdbcType="VARCHAR"/>
+            <result property="expansionAttr20" column="expansion_attr20" jdbcType="VARCHAR"/>
+            <result property="expansionAttr21" column="expansion_attr21" jdbcType="VARCHAR"/>
+            <result property="expansionAttr22" column="expansion_attr22" jdbcType="VARCHAR"/>
+            <result property="expansionAttr23" column="expansion_attr23" jdbcType="VARCHAR"/>
+            <result property="expansionAttr24" column="expansion_attr24" jdbcType="VARCHAR"/>
+            <result property="expansionAttr25" column="expansion_attr25" jdbcType="VARCHAR"/>
+            <result property="expansionAttr26" column="expansion_attr26" jdbcType="VARCHAR"/>
+            <result property="expansionAttr27" column="expansion_attr27" jdbcType="VARCHAR"/>
+            <result property="expansionAttr28" column="expansion_attr28" jdbcType="VARCHAR"/>
+            <result property="expansionAttr29" column="expansion_attr29" jdbcType="VARCHAR"/>
+            <result property="expansionAttr30" column="expansion_attr30" jdbcType="VARCHAR"/>
+            <result property="expansionAttr31" column="expansion_attr31" jdbcType="VARCHAR"/>
+            <result property="expansionAttr32" column="expansion_attr32" jdbcType="VARCHAR"/>
+            <result property="expansionAttr33" column="expansion_attr33" jdbcType="VARCHAR"/>
+            <result property="expansionAttr34" column="expansion_attr34" jdbcType="VARCHAR"/>
+            <result property="expansionAttr35" column="expansion_attr35" jdbcType="VARCHAR"/>
+            <result property="expansionAttr36" column="expansion_attr36" jdbcType="VARCHAR"/>
+            <result property="expansionAttr37" column="expansion_attr37" jdbcType="VARCHAR"/>
+            <result property="expansionAttr38" column="expansion_attr38" jdbcType="VARCHAR"/>
+            <result property="expansionAttr39" column="expansion_attr39" jdbcType="VARCHAR"/>
+            <result property="expansionAttr40" column="expansion_attr40" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        upload_user_id,upload_user_ts,user_id,
+        upload_session,reflection_date,employee_id,
+        lm_id,start_date,end_date,
+        init_password,delete_flag,invalid_flag,
+        lang_code,enrollment_kbn,employment_kbn,
+        mailaddr,mailaddr_secound,mailaddr_notification,
+        tel,tel_ex,surname_en,
+        surname_jp,surname_kana,middlename_en,
+        middlename_jp,middlename_kana,givenname_en,
+        givenname_jp,givenname_kana,surname_nick_en,
+        surname_nick_jp,surname_nick_kana,middlename_nick_en,
+        middlename_nick_jp,middlename_nick_kana,givenname_nuck_en,
+        givenname_nuck_jp,givenname_nuck_kana,company_code,
+        company_name,position_code,position_name,
+        grade_code,grade_name,organization_code,
+        location_code,kenmu_info,register_id,
+        regist_ts,updater_id,update_ts,
+        expansion_attr1,expansion_attr2,expansion_attr3,
+        expansion_attr4,expansion_attr5,expansion_attr6,
+        expansion_attr7,expansion_attr8,expansion_attr9,
+        expansion_attr10,expansion_attr11,expansion_attr12,
+        expansion_attr13,expansion_attr14,expansion_attr15,
+        expansion_attr16,expansion_attr17,expansion_attr18,
+        expansion_attr19,expansion_attr20,expansion_attr21,
+        expansion_attr22,expansion_attr23,expansion_attr24,
+        expansion_attr25,expansion_attr26,expansion_attr27,
+        expansion_attr28,expansion_attr29,expansion_attr30,
+        expansion_attr31,expansion_attr32,expansion_attr33,
+        expansion_attr34,expansion_attr35,expansion_attr36,
+        expansion_attr37,expansion_attr38,expansion_attr39,
+        expansion_attr40
+    </sql>
+</mapper>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="jp.co.axio.masterMentsetSystem.repository.VSearchUserMapper">
+
+    <resultMap id="BaseResultMap" type="jp.co.axio.masterMentsetSystem.model.VSearchUser">
+        <result property="userId" column="user_id" jdbcType="VARCHAR"/>
+        <result property="status" column="status" jdbcType="VARCHAR"/>
+        <result property="userReserve" column="user_reserve" jdbcType="VARCHAR"/>
+        <result property="employmentKbn" column="employment_kbn" jdbcType="CHAR"/>
+        <result property="employmentName" column="employment_name" jdbcType="VARCHAR"/>
+        <result property="fullnameJp" column="fullname_jp" jdbcType="VARCHAR"/>
+        <result property="fullnameEn" column="fullname_en" jdbcType="VARCHAR"/>
+        <result property="locationCode" column="location_code" jdbcType="CHAR"/>
+        <result property="cmapus" column="cmapus" jdbcType="VARCHAR"/>
+        <result property="organizationCode" column="organization_code" jdbcType="VARCHAR"/>
+        <result property="department" column="department" jdbcType="VARCHAR"/>
+        <result property="entranceYear" column="entrance_year" jdbcType="VARCHAR"/>
+        <result property="vpn" column="vpn" jdbcType="VARCHAR"/>
+        <result property="adminFlag" column="admin_flag" jdbcType="VARCHAR"/>
+        <result property="startDate" column="start_date" jdbcType="DATE"/>
+        <result property="invalidFlag" column="invalid_flag" jdbcType="CHAR"/>
+        <result property="deleteFlag" column="delete_flag" jdbcType="CHAR"/>
+        <result property="criterionDt" column="criterion_dt" jdbcType="DATE"/>
+        <result property="userStartDate" column="user_start_date" jdbcType="DATE"/>
+        <result property="userEndDate" column="user_end_date" jdbcType="DATE"/>
+        <result property="userInvalidFlag" column="user_invalid_flag" jdbcType="CHAR"/>
+        <result property="userDeleteFlag" column="user_delete_flag" jdbcType="CHAR"/>
+        <result property="userPassword" column="user_password" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        user_id,status,user_reserve,
+        employment_kbn,employment_name,fullname_jp,
+        fullname_en,location_code,cmapus,
+        organization_code,department,entrance_year,
+        vpn,admin_flag,start_date,
+        invalid_flag,delete_flag,criterion_dt,
+        user_start_date,user_end_date,user_invalid_flag,
+        user_delete_flag,user_password
+    </sql>
+    <select id="selectComplexUserPage" resultType="jp.co.axio.masterMentsetSystem.model.VSearchUser">
+        SELECT
+        vsu.user_id,
+        vsu.user_reserve,
+        vsu.status,
+        vsu.employment_name,
+        vsu.fullname_jp,
+        vsu.fullname_en,
+        vsu.department,
+        vsu.vpn
+        FROM
+        v_search_user vsu
+        <where>
+            <if test="dto.userId != null and dto.userId != ''">
+                AND vsu.user_id LIKE CONCAT('%', #{dto.userId, jdbcType=VARCHAR}, '%')
+            </if>
+            <if test="dto.employmentKbn != null and dto.employmentKbn != ''">
+                AND vsu.employment_kbn = #{dto.employmentKbn, jdbcType=VARCHAR}
+            </if>
+            <if test="dto.fullNameJp != null and dto.fullNameJp != ''">
+                AND vsu.fullname_jp LIKE CONCAT('%', #{dto.fullNameJp, jdbcType=VARCHAR}, '%')
+            </if>
+            <if test="dto.fullNameEn != null and dto.fullNameEn != ''">
+                AND vsu.fullname_en LIKE CONCAT('%', #{dto.fullNameEn, jdbcType=VARCHAR}, '%')
+            </if>
+            <if test="dto.campus != null and dto.campus != ''">
+                AND vsu.location_code = #{dto.campus, jdbcTyp=}
+            </if>
+            <if test="dto.department != null and dto.department != ''">
+                AND vsu.organization_code = #{dto.department, jdbcType=VARCHAR}
+            </if>
+            <if test="dto.entranceYear != null and dto.entranceYear != ''">
+                AND vsu.entrance_year like CONCAT('%', #{dto.entranceYear, jdbcType=VARCHAR}, '%')
+            </if>
+            <if test="dto.vpn != null and dto.vpn != '' and dto.vpn != 0">
+                AND vsu.vpn = #{dto.vpn, jdbcType=VARCHAR}
+            </if>
+            <if test="dto.status != null and dto.status.size() > 0">
+                AND vsu.status IN
+                <foreach item="statusValue" collection="dto.status" open="(" separator="," close=")">
+                    #{statusValue}
+                </foreach>
+            </if>
+            <if test="dto.initPassword ==true">
+                AND vsu.user_start_date &lt; vsu.criterion_dt
+                AND vsu.criterion_dt &lt; vsu.user_end_date
+                AND vsu.user_invalid_flag &lt;&gt; '1'
+                AND vsu.user_delete_flag &lt;&gt; '1'
+                AND vsu.user_password is NULL
+            </if>
+        </where>
+    </select>
+    <select id="searchUserList" resultType="jp.co.axio.masterMentsetSystem.model.VSearchUser">
+        SELECT
+        vsu.user_id,
+        vsu.user_reserve,
+        vsu.status,
+        vsu.employment_name,
+        vsu.fullname_jp,
+        vsu.fullname_en,
+        vsu.department,
+        vsu.vpn
+        FROM
+        v_search_user vsu
+        <where>
+            <if test="dto.userId != null and dto.userId != ''">
+                AND vsu.user_id LIKE CONCAT('%', #{dto.userId, jdbcType=VARCHAR}, '%')
+            </if>
+            <if test="dto.employmentKbn != null and dto.employmentKbn != ''">
+                AND vsu.employment_kbn = #{dto.employmentKbn, jdbcType=VARCHAR}
+            </if>
+            <if test="dto.fullNameJp != null and dto.fullNameJp != ''">
+                AND vsu.fullname_jp LIKE CONCAT('%', #{dto.fullNameJp, jdbcType=VARCHAR}, '%')
+            </if>
+            <if test="dto.fullNameEn != null and dto.fullNameEn != ''">
+                AND vsu.fullname_en LIKE CONCAT('%', #{dto.fullNameEn, jdbcType=VARCHAR}, '%')
+            </if>
+            <if test="dto.campus != null and dto.campus != ''">
+                AND vsu.location_code = #{dto.campus, jdbcTyp=}
+            </if>
+            <if test="dto.department != null and dto.department != ''">
+                AND vsu.organization_code = #{dto.department, jdbcType=VARCHAR}
+            </if>
+            <if test="dto.entranceYear != null and dto.entranceYear != ''">
+                AND vsu.entrance_year like CONCAT('%', #{dto.entranceYear, jdbcType=VARCHAR}, '%')
+            </if>
+            <if test="dto.vpn != null and dto.vpn != '' and dto.vpn != 0">
+                AND vsu.vpn = #{dto.vpn, jdbcType=VARCHAR}
+            </if>
+            <if test="dto.status != null and dto.status.size() > 0">
+                AND vsu.status IN
+                <foreach item="statusValue" collection="dto.status" open="(" separator="," close=")">
+                    #{statusValue}
+                </foreach>
+            </if>
+            <if test="dto.initPassword ==true">
+                AND vsu.user_start_date &lt; vsu.criterion_dt
+                AND vsu.criterion_dt &lt; vsu.user_end_date
+                AND vsu.user_invalid_flag &lt;&gt; '1'
+                AND vsu.user_delete_flag &lt;&gt; '1'
+                AND vsu.user_password is NULL
+            </if>
+        </where>
+    </select>
+</mapper>
+

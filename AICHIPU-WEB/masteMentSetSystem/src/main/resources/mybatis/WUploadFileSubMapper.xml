@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="jp.co.axio.masterMentsetSystem.repository.WUploadFileSubMapper">
+
+    <resultMap id="BaseResultMap" type="jp.co.axio.masterMentsetSystem.model.WUploadFileSub">
+            <id property="uploadUserId" column="upload_user_id" jdbcType="VARCHAR"/>
+            <id property="uploadUserTs" column="upload_user_ts" jdbcType="TIMESTAMP"/>
+            <id property="rowNo" column="row_no" jdbcType="INTEGER"/>
+            <id property="uploadSession" column="upload_session" jdbcType="VARCHAR"/>
+            <result property="rowData" column="row_data" jdbcType="VARCHAR"/>
+            <result property="checkFlag" column="check_flag" jdbcType="CHAR"/>
+            <result property="checkMessage" column="check_message" jdbcType="VARCHAR"/>
+            <result property="processKbn" column="process_kbn" jdbcType="VARCHAR"/>
+            <result property="userId" column="user_id" jdbcType="VARCHAR"/>
+            <result property="reflectionDate" column="reflection_date" jdbcType="DATE"/>
+            <result property="column1" column="column_1" jdbcType="VARCHAR"/>
+            <result property="column2" column="column_2" jdbcType="VARCHAR"/>
+            <result property="column3" column="column_3" jdbcType="VARCHAR"/>
+            <result property="column4" column="column_4" jdbcType="VARCHAR"/>
+            <result property="column5" column="column_5" jdbcType="VARCHAR"/>
+            <result property="column6" column="column_6" jdbcType="VARCHAR"/>
+            <result property="column7" column="column_7" jdbcType="VARCHAR"/>
+            <result property="column8" column="column_8" jdbcType="VARCHAR"/>
+            <result property="column9" column="column_9" jdbcType="VARCHAR"/>
+            <result property="column10" column="column_10" jdbcType="VARCHAR"/>
+            <result property="column11" column="column_11" jdbcType="VARCHAR"/>
+            <result property="column12" column="column_12" jdbcType="VARCHAR"/>
+            <result property="column13" column="column_13" jdbcType="VARCHAR"/>
+            <result property="column14" column="column_14" jdbcType="VARCHAR"/>
+            <result property="column15" column="column_15" jdbcType="VARCHAR"/>
+            <result property="column16" column="column_16" jdbcType="VARCHAR"/>
+            <result property="column17" column="column_17" jdbcType="VARCHAR"/>
+            <result property="column18" column="column_18" jdbcType="VARCHAR"/>
+            <result property="column19" column="column_19" jdbcType="VARCHAR"/>
+            <result property="column20" column="column_20" jdbcType="VARCHAR"/>
+            <result property="column21" column="column_21" jdbcType="VARCHAR"/>
+            <result property="column22" column="column_22" jdbcType="VARCHAR"/>
+            <result property="column23" column="column_23" jdbcType="VARCHAR"/>
+            <result property="column24" column="column_24" jdbcType="VARCHAR"/>
+            <result property="column25" column="column_25" jdbcType="VARCHAR"/>
+            <result property="column26" column="column_26" jdbcType="VARCHAR"/>
+            <result property="column27" column="column_27" jdbcType="VARCHAR"/>
+            <result property="column28" column="column_28" jdbcType="VARCHAR"/>
+            <result property="column29" column="column_29" jdbcType="VARCHAR"/>
+            <result property="column30" column="column_30" jdbcType="VARCHAR"/>
+            <result property="column31" column="column_31" jdbcType="VARCHAR"/>
+            <result property="column32" column="column_32" jdbcType="VARCHAR"/>
+            <result property="column33" column="column_33" jdbcType="VARCHAR"/>
+            <result property="column34" column="column_34" jdbcType="VARCHAR"/>
+            <result property="column35" column="column_35" jdbcType="VARCHAR"/>
+            <result property="column36" column="column_36" jdbcType="VARCHAR"/>
+            <result property="column37" column="column_37" jdbcType="VARCHAR"/>
+            <result property="column38" column="column_38" jdbcType="VARCHAR"/>
+            <result property="column39" column="column_39" jdbcType="VARCHAR"/>
+            <result property="column40" column="column_40" jdbcType="VARCHAR"/>
+            <result property="column41" column="column_41" jdbcType="VARCHAR"/>
+            <result property="column42" column="column_42" jdbcType="VARCHAR"/>
+            <result property="column43" column="column_43" jdbcType="VARCHAR"/>
+            <result property="column44" column="column_44" jdbcType="VARCHAR"/>
+            <result property="column45" column="column_45" jdbcType="VARCHAR"/>
+            <result property="column46" column="column_46" jdbcType="VARCHAR"/>
+            <result property="column47" column="column_47" jdbcType="VARCHAR"/>
+            <result property="column48" column="column_48" jdbcType="VARCHAR"/>
+            <result property="column49" column="column_49" jdbcType="VARCHAR"/>
+            <result property="column50" column="column_50" jdbcType="VARCHAR"/>
+            <result property="column51" column="column_51" jdbcType="VARCHAR"/>
+            <result property="column52" column="column_52" jdbcType="VARCHAR"/>
+            <result property="column53" column="column_53" jdbcType="VARCHAR"/>
+            <result property="column54" column="column_54" jdbcType="VARCHAR"/>
+            <result property="column55" column="column_55" jdbcType="VARCHAR"/>
+            <result property="column56" column="column_56" jdbcType="VARCHAR"/>
+            <result property="column57" column="column_57" jdbcType="VARCHAR"/>
+            <result property="column58" column="column_58" jdbcType="VARCHAR"/>
+            <result property="column59" column="column_59" jdbcType="VARCHAR"/>
+            <result property="column60" column="column_60" jdbcType="VARCHAR"/>
+            <result property="column61" column="column_61" jdbcType="VARCHAR"/>
+            <result property="column62" column="column_62" jdbcType="VARCHAR"/>
+            <result property="column63" column="column_63" jdbcType="VARCHAR"/>
+            <result property="column64" column="column_64" jdbcType="VARCHAR"/>
+            <result property="column65" column="column_65" jdbcType="VARCHAR"/>
+            <result property="column66" column="column_66" jdbcType="VARCHAR"/>
+            <result property="column67" column="column_67" jdbcType="VARCHAR"/>
+            <result property="column68" column="column_68" jdbcType="VARCHAR"/>
+            <result property="column69" column="column_69" jdbcType="VARCHAR"/>
+            <result property="column70" column="column_70" jdbcType="VARCHAR"/>
+            <result property="column71" column="column_71" jdbcType="VARCHAR"/>
+            <result property="column72" column="column_72" jdbcType="VARCHAR"/>
+            <result property="column73" column="column_73" jdbcType="VARCHAR"/>
+            <result property="column74" column="column_74" jdbcType="VARCHAR"/>
+            <result property="column75" column="column_75" jdbcType="VARCHAR"/>
+            <result property="column76" column="column_76" jdbcType="VARCHAR"/>
+            <result property="column77" column="column_77" jdbcType="VARCHAR"/>
+            <result property="column78" column="column_78" jdbcType="VARCHAR"/>
+            <result property="column79" column="column_79" jdbcType="VARCHAR"/>
+            <result property="column80" column="column_80" jdbcType="VARCHAR"/>
+            <result property="column81" column="column_81" jdbcType="VARCHAR"/>
+            <result property="column82" column="column_82" jdbcType="VARCHAR"/>
+            <result property="column83" column="column_83" jdbcType="VARCHAR"/>
+            <result property="column84" column="column_84" jdbcType="VARCHAR"/>
+            <result property="column85" column="column_85" jdbcType="VARCHAR"/>
+            <result property="column86" column="column_86" jdbcType="VARCHAR"/>
+            <result property="column87" column="column_87" jdbcType="VARCHAR"/>
+            <result property="column88" column="column_88" jdbcType="VARCHAR"/>
+            <result property="column89" column="column_89" jdbcType="VARCHAR"/>
+            <result property="column90" column="column_90" jdbcType="VARCHAR"/>
+            <result property="column91" column="column_91" jdbcType="VARCHAR"/>
+            <result property="column92" column="column_92" jdbcType="VARCHAR"/>
+            <result property="column93" column="column_93" jdbcType="VARCHAR"/>
+            <result property="column94" column="column_94" jdbcType="VARCHAR"/>
+            <result property="column95" column="column_95" jdbcType="VARCHAR"/>
+            <result property="column96" column="column_96" jdbcType="VARCHAR"/>
+            <result property="column97" column="column_97" jdbcType="VARCHAR"/>
+            <result property="column98" column="column_98" jdbcType="VARCHAR"/>
+            <result property="column99" column="column_99" jdbcType="VARCHAR"/>
+            <result property="column100" column="column_100" jdbcType="VARCHAR"/>
+            <result property="column101" column="column_101" jdbcType="VARCHAR"/>
+            <result property="column102" column="column_102" jdbcType="VARCHAR"/>
+            <result property="column103" column="column_103" jdbcType="VARCHAR"/>
+            <result property="column104" column="column_104" jdbcType="VARCHAR"/>
+            <result property="column105" column="column_105" jdbcType="VARCHAR"/>
+            <result property="column106" column="column_106" jdbcType="VARCHAR"/>
+            <result property="column107" column="column_107" jdbcType="VARCHAR"/>
+            <result property="column108" column="column_108" jdbcType="VARCHAR"/>
+            <result property="column109" column="column_109" jdbcType="VARCHAR"/>
+            <result property="column110" column="column_110" jdbcType="VARCHAR"/>
+            <result property="column111" column="column_111" jdbcType="VARCHAR"/>
+            <result property="column112" column="column_112" jdbcType="VARCHAR"/>
+            <result property="column113" column="column_113" jdbcType="VARCHAR"/>
+            <result property="column114" column="column_114" jdbcType="VARCHAR"/>
+            <result property="column115" column="column_115" jdbcType="VARCHAR"/>
+            <result property="column116" column="column_116" jdbcType="VARCHAR"/>
+            <result property="column117" column="column_117" jdbcType="VARCHAR"/>
+            <result property="column118" column="column_118" jdbcType="VARCHAR"/>
+            <result property="column119" column="column_119" jdbcType="VARCHAR"/>
+            <result property="column120" column="column_120" jdbcType="VARCHAR"/>
+            <result property="column121" column="column_121" jdbcType="VARCHAR"/>
+            <result property="column122" column="column_122" jdbcType="VARCHAR"/>
+            <result property="column123" column="column_123" jdbcType="VARCHAR"/>
+            <result property="column124" column="column_124" jdbcType="VARCHAR"/>
+            <result property="column125" column="column_125" jdbcType="VARCHAR"/>
+            <result property="column126" column="column_126" jdbcType="VARCHAR"/>
+            <result property="column127" column="column_127" jdbcType="VARCHAR"/>
+            <result property="column128" column="column_128" jdbcType="VARCHAR"/>
+            <result property="column129" column="column_129" jdbcType="VARCHAR"/>
+            <result property="column130" column="column_130" jdbcType="VARCHAR"/>
+            <result property="column131" column="column_131" jdbcType="VARCHAR"/>
+            <result property="column132" column="column_132" jdbcType="VARCHAR"/>
+            <result property="column133" column="column_133" jdbcType="VARCHAR"/>
+            <result property="column134" column="column_134" jdbcType="VARCHAR"/>
+            <result property="column135" column="column_135" jdbcType="VARCHAR"/>
+            <result property="column136" column="column_136" jdbcType="VARCHAR"/>
+            <result property="column137" column="column_137" jdbcType="VARCHAR"/>
+            <result property="column138" column="column_138" jdbcType="VARCHAR"/>
+            <result property="column139" column="column_139" jdbcType="VARCHAR"/>
+            <result property="column140" column="column_140" jdbcType="VARCHAR"/>
+            <result property="column141" column="column_141" jdbcType="VARCHAR"/>
+            <result property="column142" column="column_142" jdbcType="VARCHAR"/>
+            <result property="column143" column="column_143" jdbcType="VARCHAR"/>
+            <result property="column144" column="column_144" jdbcType="VARCHAR"/>
+            <result property="column145" column="column_145" jdbcType="VARCHAR"/>
+            <result property="column146" column="column_146" jdbcType="VARCHAR"/>
+            <result property="column147" column="column_147" jdbcType="VARCHAR"/>
+            <result property="column148" column="column_148" jdbcType="VARCHAR"/>
+            <result property="column149" column="column_149" jdbcType="VARCHAR"/>
+            <result property="column150" column="column_150" jdbcType="VARCHAR"/>
+            <result property="column151" column="column_151" jdbcType="VARCHAR"/>
+            <result property="column152" column="column_152" jdbcType="VARCHAR"/>
+            <result property="column153" column="column_153" jdbcType="VARCHAR"/>
+            <result property="column154" column="column_154" jdbcType="VARCHAR"/>
+            <result property="column155" column="column_155" jdbcType="VARCHAR"/>
+            <result property="column156" column="column_156" jdbcType="VARCHAR"/>
+            <result property="column157" column="column_157" jdbcType="VARCHAR"/>
+            <result property="column158" column="column_158" jdbcType="VARCHAR"/>
+            <result property="column159" column="column_159" jdbcType="VARCHAR"/>
+            <result property="column160" column="column_160" jdbcType="VARCHAR"/>
+            <result property="column161" column="column_161" jdbcType="VARCHAR"/>
+            <result property="column162" column="column_162" jdbcType="VARCHAR"/>
+            <result property="column163" column="column_163" jdbcType="VARCHAR"/>
+            <result property="column164" column="column_164" jdbcType="VARCHAR"/>
+            <result property="column165" column="column_165" jdbcType="VARCHAR"/>
+            <result property="column166" column="column_166" jdbcType="VARCHAR"/>
+            <result property="column167" column="column_167" jdbcType="VARCHAR"/>
+            <result property="column168" column="column_168" jdbcType="VARCHAR"/>
+            <result property="column169" column="column_169" jdbcType="VARCHAR"/>
+            <result property="column170" column="column_170" jdbcType="VARCHAR"/>
+            <result property="column171" column="column_171" jdbcType="VARCHAR"/>
+            <result property="column172" column="column_172" jdbcType="VARCHAR"/>
+            <result property="column173" column="column_173" jdbcType="VARCHAR"/>
+            <result property="column174" column="column_174" jdbcType="VARCHAR"/>
+            <result property="column175" column="column_175" jdbcType="VARCHAR"/>
+            <result property="column176" column="column_176" jdbcType="VARCHAR"/>
+            <result property="column177" column="column_177" jdbcType="VARCHAR"/>
+            <result property="column178" column="column_178" jdbcType="VARCHAR"/>
+            <result property="column179" column="column_179" jdbcType="VARCHAR"/>
+            <result property="column180" column="column_180" jdbcType="VARCHAR"/>
+            <result property="column181" column="column_181" jdbcType="VARCHAR"/>
+            <result property="column182" column="column_182" jdbcType="VARCHAR"/>
+            <result property="column183" column="column_183" jdbcType="VARCHAR"/>
+            <result property="column184" column="column_184" jdbcType="VARCHAR"/>
+            <result property="column185" column="column_185" jdbcType="VARCHAR"/>
+            <result property="column186" column="column_186" jdbcType="VARCHAR"/>
+            <result property="column187" column="column_187" jdbcType="VARCHAR"/>
+            <result property="column188" column="column_188" jdbcType="VARCHAR"/>
+            <result property="column189" column="column_189" jdbcType="VARCHAR"/>
+            <result property="column190" column="column_190" jdbcType="VARCHAR"/>
+            <result property="column191" column="column_191" jdbcType="VARCHAR"/>
+            <result property="column192" column="column_192" jdbcType="VARCHAR"/>
+            <result property="column193" column="column_193" jdbcType="VARCHAR"/>
+            <result property="column194" column="column_194" jdbcType="VARCHAR"/>
+            <result property="column195" column="column_195" jdbcType="VARCHAR"/>
+            <result property="column196" column="column_196" jdbcType="VARCHAR"/>
+            <result property="column197" column="column_197" jdbcType="VARCHAR"/>
+            <result property="column198" column="column_198" jdbcType="VARCHAR"/>
+            <result property="column199" column="column_199" jdbcType="VARCHAR"/>
+            <result property="column200" column="column_200" jdbcType="VARCHAR"/>
+            <result property="registerId" column="register_id" jdbcType="VARCHAR"/>
+            <result property="registTs" column="regist_ts" jdbcType="TIMESTAMP"/>
+            <result property="updaterId" column="updater_id" jdbcType="VARCHAR"/>
+            <result property="updateTs" column="update_ts" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        upload_user_id,upload_user_ts,row_no,
+        upload_session,row_data,check_flag,
+        check_message,process_kbn,user_id,
+        reflection_date,column_1,column_2,
+        column_3,column_4,column_5,
+        column_6,column_7,column_8,
+        column_9,column_10,column_11,
+        column_12,column_13,column_14,
+        column_15,column_16,column_17,
+        column_18,column_19,column_20,
+        column_21,column_22,column_23,
+        column_24,column_25,column_26,
+        column_27,column_28,column_29,
+        column_30,column_31,column_32,
+        column_33,column_34,column_35,
+        column_36,column_37,column_38,
+        column_39,column_40,column_41,
+        column_42,column_43,column_44,
+        column_45,column_46,column_47,
+        column_48,column_49,column_50,
+        column_51,column_52,column_53,
+        column_54,column_55,column_56,
+        column_57,column_58,column_59,
+        column_60,column_61,column_62,
+        column_63,column_64,column_65,
+        column_66,column_67,column_68,
+        column_69,column_70,column_71,
+        column_72,column_73,column_74,
+        column_75,column_76,column_77,
+        column_78,column_79,column_80,
+        column_81,column_82,column_83,
+        column_84,column_85,column_86,
+        column_87,column_88,column_89,
+        column_90,column_91,column_92,
+        column_93,column_94,column_95,
+        column_96,column_97,column_98,
+        column_99,column_100,column_101,
+        column_102,column_103,column_104,
+        column_105,column_106,column_107,
+        column_108,column_109,column_110,
+        column_111,column_112,column_113,
+        column_114,column_115,column_116,
+        column_117,column_118,column_119,
+        column_120,column_121,column_122,
+        column_123,column_124,column_125,
+        column_126,column_127,column_128,
+        column_129,column_130,column_131,
+        column_132,column_133,column_134,
+        column_135,column_136,column_137,
+        column_138,column_139,column_140,
+        column_141,column_142,column_143,
+        column_144,column_145,column_146,
+        column_147,column_148,column_149,
+        column_150,column_151,column_152,
+        column_153,column_154,column_155,
+        column_156,column_157,column_158,
+        column_159,column_160,column_161,
+        column_162,column_163,column_164,
+        column_165,column_166,column_167,
+        column_168,column_169,column_170,
+        column_171,column_172,column_173,
+        column_174,column_175,column_176,
+        column_177,column_178,column_179,
+        column_180,column_181,column_182,
+        column_183,column_184,column_185,
+        column_186,column_187,column_188,
+        column_189,column_190,column_191,
+        column_192,column_193,column_194,
+        column_195,column_196,column_197,
+        column_198,column_199,column_200,
+        register_id,regist_ts,updater_id,
+        update_ts
+    </sql>
+
+    <update id="updateWUploadFileSub" parameterType="jp.co.axio.masterMentsetSystem.model.WUploadFileSub">
+        UPDATE public.w_upload_file_sub
+        SET
+            check_flag = #{checkFlag},
+            check_message = #{checkMessage}
+        WHERE
+            upload_user_id = #{uploadUserId}
+          AND upload_user_ts = #{uploadUserTs}
+          AND row_no = #{rowNo}
+          AND upload_session = #{uploadSession}
+    </update>
+</mapper>

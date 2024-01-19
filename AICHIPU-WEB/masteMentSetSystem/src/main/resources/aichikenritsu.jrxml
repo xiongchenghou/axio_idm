@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="パスワード通知書２" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fbb41ed0-e5c6-40f5-9108-33afdd2a826b">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="new_id"/>
+	<subDataset name="Dataset1" uuid="28506b9b-c0b1-4cf4-935e-d7cd4bd028cc">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+	</subDataset>
+	<queryString language="csv">
+		<![CDATA[]]>
+	</queryString>
+	
+	<field name="ID" class="java.lang.String"/>
+	<field name="氏名" class="java.lang.String"/>
+	<field name="年月日" class="java.lang.String"/>
+	<field name="パスワード" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="84" splitType="Stretch">
+			<staticText>
+				<reportElement x="131" y="22" width="282" height="62" uuid="1145fa70-eb78-4529-b3a9-216c5fbf0a85"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="CustomFont" size="14"/>
+				</textElement>
+				<text><![CDATA[愛知県立大学情報科学部
+専門教育用計算機システムの利用について]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="420" y="0" width="132" height="15" backcolor="#000000" uuid="c7c0f71b-7712-456e-a5d6-e9418da16eb9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2f2a46e9-4a14-429f-ad9b-f80d897ac177"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="CustomFont"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{年月日}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="610" splitType="Stretch">
+			<textField>
+				<reportElement x="110" y="595" width="442" height="15" backcolor="#000000" uuid="a780c0d4-1d6f-4812-8e21-961129d0eafc">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2f2a46e9-4a14-429f-ad9b-f80d897ac177"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="anonymous-pro"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{パスワード}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="30" y="595" width="80" height="15" backcolor="#000000" uuid="34db41bd-a434-4055-84a9-24e900cc54e1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2f2a46e9-4a14-429f-ad9b-f80d897ac177"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="CustomFont"/>
+				</textElement>
+				<text><![CDATA[初期パスワード:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="110" y="580" width="442" height="15" backcolor="#000000" uuid="8ad607cb-1a23-4666-874d-39cdfe176692">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2f2a46e9-4a14-429f-ad9b-f80d897ac177"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="bitstream-vera-sans-mono"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ID}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="30" width="180" height="20" uuid="3751608f-ceda-4de3-8183-ae4554f8e167">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="CustomFont"/>
+				</textElement>
+				<text><![CDATA[1. 利用資格について]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="50" width="519" height="20" uuid="eb87e80f-c8c6-4425-b059-dce159250d37">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="CustomFont"/>
+				</textElement>
+				<text><![CDATA[利用者は，情報科学部内規で定められた資格を有すること]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="80" width="180" height="20" uuid="e8d5c8b5-e513-4a82-9a7e-b2407e81a4f5">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="CustomFont"/>
+				</textElement>
+				<text><![CDATA[2. 利用に関する注意]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="100" width="522" height="40" uuid="315297ad-bfc9-4879-8b37-1937c2b0f1f9">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="CustomFont"/>
+				</textElement>
+				<text><![CDATA[与えられた初期パスワードのままで利用せず，はじめて利用する際には必ずパスワードを変更しておくこと．
+詳細は，「専門教育用計算機システム利用の手引き」を参照すること．]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="140" width="522" height="20" uuid="588cebb9-73b9-4d81-b0f5-99cc9e6f4317">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="CustomFont"/>
+				</textElement>
+				<text><![CDATA[パスワードは，]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="70" y="160" width="502" height="20" uuid="cf609cdf-1b02-4300-b070-b12cd1030629">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="CustomFont"/>
+				</textElement>
+				<text><![CDATA[8文字以上であること．]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="70" y="180" width="502" height="20" uuid="802dcfa6-8073-420e-add6-836d03e5eddc">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="CustomFont"/>
+				</textElement>
+				<text><![CDATA[英大文字，英小文字，数字，記号がそれぞれ1文字以上含まれていること．]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="70" y="200" width="502" height="40" uuid="607399e8-18a3-4dcd-80dd-5c00efca5184">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="CustomFont"/>
+				</textElement>
+				<text><![CDATA[ユーザのログイン名と異なっていること．また，第 3者から容易に推測されると思われる
+もの（単純にログイン名を反転したりずらしただけのものなど）は避けること．]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="240" width="522" height="20" uuid="6c45beb7-5043-4be3-ba1a-a7dc3bd45c61">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="CustomFont"/>
+				</textElement>
+				<text><![CDATA[といった点に注意して決定すること．]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="260" width="522" height="40" uuid="fd72cc27-841e-4655-bfff-5acd2bec77d8">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="CustomFont"/>
+				</textElement>
+				<text><![CDATA[パスワードは，できるだけメモなどに記録せず，しっかりと記憶して忘れてしまうことのないよう
+注意すること．もし，パスワードを忘れてしまった場合は，システム管理者に連絡すること．]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="300" width="522" height="60" uuid="73c6ca75-4dfa-4abb-93da-8e23e907e7f1">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="CustomFont"/>
+				</textElement>
+				<text><![CDATA[専門教育用計算機システムは，インターネットに接続されており，世界中からさまざまな情報を得たり，
+逆に世界中に情報を発信することも可能である．悪質な情報の送受信を避けるよう，
+情報科学部で定められたネットワーク利用内規を熟読の上，これらを厳守すること．]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="360" width="522" height="60" uuid="91fa8c17-89a9-45a0-b5c3-ea50a778654a">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="CustomFont"/>
+				</textElement>
+				<text><![CDATA[本学部では，匿名による情報発信を認めない．利用者の名前情報を適切に設定すること．
+形式は，愛知太郎の場合， Taro AICHI とする．
+詳細は，「専門教育用計算機システム利用の手引き」を参照すること．]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="420" width="552" height="20" uuid="ae6c382c-3a30-4a31-b8f6-754cb0298d2f">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="CustomFont"/>
+				</textElement>
+				<text><![CDATA[3. その他]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="440" width="522" height="40" uuid="23393028-c312-4254-a8e1-f9e7c4fb2f26">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="CustomFont"/>
+				</textElement>
+				<text><![CDATA[UNIXは一台の計算機を複数のユーザが同時に利用することが可能な OSである．自分以外にも誰
+かが利用することを常に意識して，むやみに負荷をかける行為は慎むこと．]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="480" width="522" height="60" uuid="a37c5878-93d1-422f-baee-218944534b62">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="CustomFont" isBold="true"/>
+				</textElement>
+				<text><![CDATA[情報科学部情報施設管理運営委員会において，利用規定が順守されていないと判断されたユーザ
+には，アカウントの停止や削除などの処分が下される場合がある．そのようなことのないよう，
+常に節度ある利用を心掛けること．]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="540" width="522" height="20" uuid="373d3311-9b89-4e49-82fd-2e129f1198d9">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="CustomFont"/>
+				</textElement>
+				<text><![CDATA[演習室での飲食を禁止する．]]></text>
+			</staticText>
+			<line>
+				<reportElement x="3" y="570" width="549" height="1" uuid="1beaf719-3655-4135-a346-519f1fb43227">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="20" y="100" width="30" height="40" uuid="90fc0b36-ebbd-44cb-9de2-598aa19195b7">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="CustomFont"/>
+				</textElement>
+				<text><![CDATA[●]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="140" width="30" height="20" uuid="b140263c-c8c5-4ee1-b814-a142f31d5608">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="CustomFont"/>
+				</textElement>
+				<text><![CDATA[●]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="260" width="30" height="40" uuid="664c7e3a-5e19-45c1-8224-21a8d9c672cc">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="CustomFont"/>
+				</textElement>
+				<text><![CDATA[●]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="300" width="30" height="60" uuid="bc25476b-6140-4993-be69-1700641d8ac1">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="CustomFont"/>
+				</textElement>
+				<text><![CDATA[●]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="360" width="30" height="60" uuid="aa2a4c0b-a49a-4be9-b3ab-5f57e7500900">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="CustomFont"/>
+				</textElement>
+				<text><![CDATA[●]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="440" width="30" height="40" uuid="ff1e45cc-0ad5-45cb-b923-8756c5cf0472">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="CustomFont"/>
+				</textElement>
+				<text><![CDATA[●]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="480" width="30" height="60" uuid="bfe4b9e9-7f61-4773-8421-e142d4d2007e">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="CustomFont"/>
+				</textElement>
+				<text><![CDATA[●]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="540" width="30" height="20" uuid="cee008f0-53e6-4d6e-8ed3-7205e02edb39">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="CustomFont"/>
+				</textElement>
+				<text><![CDATA[●]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="160" width="20" height="20" uuid="12ab0106-2520-4728-8d65-6d57d04fb68a">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="CustomFont"/>
+				</textElement>
+				<text><![CDATA[-]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="180" width="20" height="20" uuid="02c87468-30df-4e60-a81c-95b292820f5d">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="CustomFont"/>
+				</textElement>
+				<text><![CDATA[-]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="200" width="20" height="20" uuid="369608b4-8b56-41e2-98ed-d42427690aa1">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="CustomFont"/>
+				</textElement>
+				<text><![CDATA[-]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="580" width="80" height="15" backcolor="#000000" uuid="3a05bc1f-1ac7-40d2-8361-0a6953c32e62">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2f2a46e9-4a14-429f-ad9b-f80d897ac177"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="CustomFont"/>
+				</textElement>
+				<text><![CDATA[利用者ID:]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

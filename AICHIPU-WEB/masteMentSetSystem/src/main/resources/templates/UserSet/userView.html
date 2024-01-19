@@ -1,0 +1,888 @@
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout">
+<!-- <script type="text/javascript" src="chrome-extension://mdnleldcmiljblolnjhpnblkcekpdkpa/libs/customElements.js"
+  class="__REQUESTLY__SCRIPT"></script> -->
+
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>利用者情報画面</title>
+
+<link href="./vendor/jquery-ui-1.12.1/jquery-ui.css" th:href="@{./vendor/jquery-ui-1.12.1/jquery-ui.css}" rel="stylesheet" />
+<link href="./vendor/bootstrap-5.0.2-dist/css/bootstrap.min.css" th:href="@{./vendor/bootstrap-5.0.2-dist/css/bootstrap.min.css}" rel="stylesheet" />
+<link href="./vendor/datatables/dataTables.bootstrap.css" th:href="@{./vendor/datatables/dataTables.bootstrap.css}" rel="stylesheet" />
+<link href="./css/common.css" th:href="@{./css/common.css}" rel="stylesheet" />
+<link href="./css/userMaintenance.css" th:href="@{./css/userMaintenance.css}" rel="stylesheet" />
+  <link href="./vendor/fontawesome-free-6.1.1-web/css/all.css"
+    th:href="@{./vendor/fontawesome-free-6.1.1-web/css/all.css}" rel="stylesheet">
+<!-- SweetAlert2 CSS Style -->
+<link th:href="@{/vendor/sweetalert2/css/sweetalert2.min.css}" rel="stylesheet">
+<link href="./css/style2.css" th:href="@{./css/style2.css}" rel="stylesheet" />
+<link href="./css/UserMaintenanceMain.css" th:href="@{./css/UserMaintenanceMain.css}" rel="stylesheet" />
+
+
+</head>
+
+<body>
+  <div style="display:none;">
+   <div id="axioMessageDialog2" title="完了" >
+        <span id="axioMessage"></span>
+   </div>
+  </div>
+  <!-- ダイヤログモーダル表示エリア -->
+  <div id="listModalArea">
+    <div class="modal fade" id="listModal" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static">
+      <div class="modal-dialog" style="width:1100px;">
+        <div class="modal-content" style="width:1100px;height:800px;overflow-y:auto">
+          <form id="dialogParamForm" name="dialogParamForm">
+            <input type="hidden" id="callFrom" name="callFrom" value="">
+            <input type="hidden" id="callParameter" name="callParameter" value="">
+            <input type="hidden" id="callReturn" name="callReturn" value="">
+          </form>
+          <div id="modal_dailog_body">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- message-->
+  <!-- 完了メッセージ保存エリア -->
+  <div style="display:none;">
+
+
+    <div id="axioErrDialog" title="エラー" class="col-sm-12 alert alert-danger asm_alert">
+      <span id="errMessage"></span>
+    </div>
+  </div>
+
+  <!--// header -->
+  <header id="header" class="header">
+    <div class="header__inner">
+      <figure class="header__img"><img src="./assets/img/common/img_logo01.png" alt="AXIO" width="73"
+          height="36"></figure>
+      <a href="./logout" class="header__link">ログアウト</a>
+    </div>
+  </header>
+  <!-- header //-->
+
+    <input type="hidden" value="100001" name="userDetailDto.userId">
+    <input type="hidden" value="24" name="userDetailDto.companyCode" id="companyCode">
+    <input type="hidden" value="100001" name="userDetailDto.loginId">
+    <input type="hidden" value="" name="errFlg" id="errFlg">
+    <input type="hidden" value="" name="errMessage" id="errMessage">
+    <input type="hidden" id="changedFlg">
+    
+    <div class="d-none">
+    <form id="toEditFormSub" th:action="@{/userEdit}"  method="post" class="form-horizontal">
+    <input type="text" id="userId" name="userId" th:value="${UserRegistForm.riYouShaId}"/>
+    <input type="text" id="subFlag" name="subFlag" value="1"/>
+    <input type="text" id="showReserveMsg" name="showReserveMsg" value="1"/>
+    </form>
+    
+    <form id="toEditFormView" th:action="@{/userEdit}"  method="post" class="form-horizontal">
+    <input type="text" id="userId" name="userId" th:value="${UserRegistForm.riYouShaId}"/>
+    <input type="text" id="subFlag" name="subFlag"  th:value="${UserRegistForm.futureUserFlag}"/>
+    <input type="text" id="showReserveMsg" name="showReserveMsg" th:value="${UserRegistForm.futureUserFlag}">
+    </form>
+    <form id="toViewForm" th:action="@{/userView}"  method="post" class="form-horizontal">
+    <input type="text" id="userId" name="userId" th:value="${UserRegistForm.riYouShaId}"/>
+    <input type="text" id="subFlag" name="subFlag"  th:value="${UserRegistForm.futureUserFlag}"/>
+    <input type="text" id="showReserveMsg" name="showReserveMsg" th:value="${UserRegistForm.futureUserFlag}">
+    </form>
+    
+    <form id="UserOpForm" th:action="@{/userDelete}"  method="post" class="form-horizontal">
+    <input type="text" id="riYouShaId" name="riYouShaId" th:value="${UserRegistForm.riYouShaId}"/>
+    <input type="text" id="viewPageOpDiv" name="viewPageOpDiv" />
+    </form>
+    
+    <form id="UserReportForm" th:action="@{/userReportPdf}"  method="post" class="form-horizontal">
+    <input type="text" id="riYouShaId" name="riYouShaId" th:value="${UserRegistForm.riYouShaId}"/>
+    <input type="text" id="subFlag" name="subFlag"  th:value="${UserRegistForm.futureUserFlag}"/>
+    <input type="text" id="showReserveMsg" name="showReserveMsg" th:value="${UserRegistForm.futureUserFlag}">
+    </form>
+    
+    </div>
+    
+    <input type="hidden" id="hiddenDeleteFlag" name="hiddenDeleteFlag" th:value="${UserRegistForm.deleteFlag}"/>
+    <input type="hidden" id="hiddenInvalidFlag" name="hiddenInvalidFlag" th:value="${UserRegistForm.invalidFlag}"/>
+    <input type="hidden" id="hiddenUserId" name="hiddenUserId" th:value="${UserRegistForm.riYouShaId}"/>
+    <input type="hidden" id="futureUserFlag" th:value="${UserRegistForm.futureUserFlag}"/>
+    <input type="hidden" id="reflectionFlag" th:value="${UserRegistForm.reflectionFlag}"/>
+    
+  <form role="form-inline" id="UserRegistForm" th:action="@{/}"  th:object="${UserRegistForm}"  method="post" class="form-horizontal">
+
+    <!--#include virtual="/assets/include/header.html" -->
+    <div class="searchDetail">
+      <main class="main">
+        <div class="modTitleArea">
+          <div class="modTitleArea__inner">
+            <h1 class="modTitleArea__title"><i class="fa-solid fa-user">　利用者情報検索 - 詳細</i></h1>
+            <a href="./search"  th:href="@{./search}" class="modTitleArea__prevButton" id="btn_back"><span>戻る</span></a>
+          </div>
+        </div>
+
+        <div class="main__inner">
+
+          <div class="card">
+            <div class="card-body">
+
+              <!-- 注意事項 -->
+              <div class="row" th:if=" ${UserRegistForm.futureUserFlag} eq '0' and  ${UserRegistForm.reflectionFlag}  eq '1'">
+                <div class="col-6">
+                  <!-- 未来日 -->
+                  <div class="callout callout-danger">
+                    <h5 style="font-weight:bold">反映待ちの情報が存在します。　<button type="button" id="openUserMaintenanceEditReserve" class="btn btn-danger" style="font-size: 12px;">反映待ちの情報を編集する</button></h5>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="row"  th:if=" ${UserRegistForm.futureUserFlag} eq '1' and  ${UserRegistForm.reflectionFlag}  eq '1'">
+                <div class="col-6">
+                  <!-- 未来日 -->
+                  <div class="callout callout-danger">
+                    <h5 style="font-weight:bold">表示中のユーザは未来ユーザです。　<button type="button" id="openUserMaintenanceEditReserve" class="btn btn-danger" style="font-size: 12px;">反映待ちの情報を編集する</button></h5>
+                  </div>
+                </div>
+              </div>
+              
+               <div class="row" th:if=" ${UserRegistForm.futureUserFlag} eq '0' and  ${UserRegistForm.deleteFlag}  eq '1'">
+                <div class="col-6">
+                  <!-- 未来日 -->
+                  <div class="callout callout-danger">
+                    <h5 style="font-weight:bold">表示中のユーザは削除されています。</h5>
+                  </div>
+                </div>
+              </div>
+                <div class="row" th:if=" ${UserRegistForm.futureUserFlag} eq '0' and  ${UserRegistForm.deleteFlag}  eq '0' and  ${UserRegistForm.invalidFlag}  eq '1'">
+                <div class="col-6">
+                  <!-- 未来日 -->
+                  <div class="callout callout-danger">
+                    <h5 style="font-weight:bold">アカウントがロックされています。</h5>
+                  </div>
+                </div>
+              </div>
+              
+              <section class="searchDetailBox">
+                <div class="searchDetailBox__titleArea">
+                  <h2 class="searchDetailBox__titleArea__title"><span
+                      style="margin-left:0px; font-size: 2.4rem; font-weight: 700; " th:text="*{otherItem29}">山本
+                      博之</span><span th:text="*{otherItem30}">yamamoto hiroyuki</span><br>
+                  </h2>
+                  <div class="searchDetailBox__titleArea__textArea">
+                    <div class="row" style="width: 100%;">
+
+
+                      <div class="col-2 status d-flex justi-content-center" th:unless="*{zaiSeki} eq '9'">
+                        <i >在籍</i>
+                      </div>
+
+                      <div class="col-5" th:text="'利用者ID:' + *{riYouShaId}">
+                        利用者ID:10001
+                      </div>
+
+                      
+
+                    </div>
+                    
+                  </div>
+                  <div class="searchDetailBox__titleArea__btnArea">
+
+<th:block th:if="${UserRegistForm.futureUserFlag} eq '0' and  ${#strings.equals(UserRegistForm.reflectionFlag, '1') == false} and  ${UserRegistForm.deleteFlag} eq '0' and  ${UserRegistForm.invalidFlag} eq '0'">
+                    <a href="#" id="userEditBtn" class="searchDetailBox__titleArea__btn rounded-3 border border-5 border-secondary " >
+                      <i class="fa-solid fa-pen-to-square"></i><div>設定変更</div>
+                    </a>
+</th:block>
+
+<th:block th:if="${UserRegistForm.futureUserFlag} eq '0' and ${UserRegistForm.deleteFlag} eq '0'  and ${UserRegistForm.invalidFlag} eq '0' ">
+                    <a href="#" id="passwordInitBtn" class="searchDetailBox__titleArea__btn rounded-3 border border-5 border-secondary">
+                      <i class="fa-solid fa-arrows-spin"></i><div>パスワード<br>初期化</div>
+                    </a>
+</th:block>
+
+<th:block th:if="${UserRegistForm.futureUserFlag} eq '0' and ${UserRegistForm.deleteFlag} eq '0'  and ${UserRegistForm.invalidFlag} eq '0' and  ${#strings.equals(UserRegistForm.reflectionFlag, '1') == false}">
+                    <a href="#" id="lockBtn" class="searchDetailBox__titleArea__btn rounded-3 border border-5 border-secondary ">
+                      <i class="fa-solid fa-lock"></i><div>ロック</div>
+                    </a>
+</th:block>
+<th:block th:if="${UserRegistForm.futureUserFlag} eq '0' and ${UserRegistForm.deleteFlag} eq '0'  and ${UserRegistForm.invalidFlag} eq '1' ">
+                    <a href="#" id="unlockBtn" class="searchDetailBox__titleArea__btn rounded-3 border border-5 border-secondary ">
+                      <i class="fa-solid fa-lock-open"></i><div>ロック解除</div>
+                    </a>
+</th:block>
+<th:block th:if="${UserRegistForm.futureUserFlag} eq '0' and  ${UserRegistForm.deleteFlag}  eq '0'  and  ${#strings.equals(UserRegistForm.reflectionFlag, '1') == false}">
+                    <a href="#" id="userDeleteBtn" class="userDeleteBtn searchDetailBox__titleArea__btn rounded-3 border border-5 border-secondary">
+                      <i class="fa-solid fa-user-slash"></i><div>削除</div>
+                    </a>
+</th:block>
+<th:block th:if="${UserRegistForm.futureUserFlag} eq '0' and  ${UserRegistForm.deleteFlag}  eq '1'">
+                    <a href="#" id="userUndoDeleteBtn" class="userDeleteBtn searchDetailBox__titleArea__btn rounded-3 border border-5 border-secondary">
+                      <i class="fa-solid fa-user-check"></i><div>有効</div>
+                    </a>
+</th:block>
+
+
+<th:block th:if="${UserRegistForm.futureUserFlag} eq '0'">
+                    <a href="#" id="userReportBtn" class="searchDetailBox__titleArea__btn rounded-3 border border-5 border-secondary">
+                      <i class="fa-regular fa-file-pdf"></i><div>帳票出力</div>
+                    </a>
+</th:block>
+
+                  </div>
+                </div>
+
+                <ul class="searchDetailBox__profileList">
+                  <li class="searchDetailBox__profileList__item">
+                    <p class="title">学籍番号・教職員番号</p>
+                    <p class="text" th:text="*{gakuSekiBn}">100001</p>
+                  </li>
+                  <li class="searchDetailBox__profileList__item">
+                    <p class="title">利用者区分</p>
+                    <p class="text" th:text="*{employmentName}">学生</p>
+                  </li>
+                  <li class="searchDetailBox__profileList__item">
+                    <p class="title">キャンパス</p>
+                    <p class="text" th:text="*{campusNm}">長久手</p>
+                  </li>
+                  <li class="searchDetailBox__profileList__item">
+                    <p class="title">所属</p>
+                    <p class="text" th:text="*{shoZokuNm}">情報科学部</p>
+                  </li>
+                  <li class="searchDetailBox__profileList__item">
+                    <p class="title">メールアドレス</p>
+                    <p class="text" th:text="*{mailAddr}">testmail@university.co.jp</p>
+                  </li>
+                  <li class="searchDetailBox__profileList__item">
+                    <p class="title">入学年度</p>
+                    <p class="text" th:text="*{nyuGakuNendo}">2023年度</p>
+                  </li>
+                  <li class="searchDetailBox__profileList__item">
+                    <p class="title">開始日</p>
+                    <p class="text" th:text="*{validateStartDtView}">2023/04/01</p>
+                  </li>
+                  <li class="searchDetailBox__profileList__item">
+                    <p class="title">終了日</p>
+                    <p class="text" th:text="*{validateEndDtView}">2999/12/31</p>
+                  </li>
+                </ul>
+                <div class="searchDetailBox__infoBox">
+                  <ul class="searchDetailBox__infoBox__list">
+                    <li id="tab1" class="item jsTabMenuItem is-on" onclick="showTab('div_1');">利用アプリケーション</li>
+                    <li id="tab2" class="item jsTabMenuItem" onclick="showTab('div_2');"　 th:unless=" ${UserRegistForm.futureUserFlag} eq '1' and  ${UserRegistForm.reflectionFlag}  eq '1'">パスワード変更履歴</li>
+                    <li id="tab3" class="item jsTabMenuItem" onclick="showTab('div_3');">その他</li>
+                  </ul>
+                  <div class="searchDetailBox__infoBox__area" style="min-height: 230px;">
+                    <!-- 利用アプリケーション -->
+                    <div id="div_1" class="box jsTabMenuArea is-on">
+                      <table class="modTable jsViewTable is-on" id="grouptab">
+                        <colgroup>
+                          <col width="100">
+                          <col width="500">
+                          <col width="200">
+                        </colgroup>
+                        <tbody>
+                          <tr>
+                            <th>№</th>
+                            <th>アプリケーション名</th>
+                            <th>利用区分</th>
+                          </tr>
+<th:block th:if="${mgpCodeAppList[0].value3} eq '1'" > 
+<tr id="useAPP1" > 
+<td th:text="${mgpCodeAppList[0].value4}"></td> 
+<td th:text="${mgpCodeAppList[0].value2}"></td> 
+<td><input class="form-check-input" type="checkbox" onclick='return false;' th:checked="*{useApp01}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeAppList[1].value3} eq '1'" > 
+<tr id="useAPP2" > 
+<td th:text="${mgpCodeAppList[1].value4}"></td> 
+<td th:text="${mgpCodeAppList[1].value2}"></td> 
+<td><input class="form-check-input" type="checkbox" onclick='return false;' th:checked="*{useApp02}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeAppList[2].value3} eq '1'" > 
+<tr id="useAPP3" > 
+<td th:text="${mgpCodeAppList[2].value4}"></td> 
+<td th:text="${mgpCodeAppList[2].value2}"></td> 
+<td><input class="form-check-input" type="checkbox" onclick='return false;' th:checked="*{useApp03}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeAppList[3].value3} eq '1'" > 
+<tr id="useAPP4" > 
+<td th:text="${mgpCodeAppList[3].value4}"></td> 
+<td th:text="${mgpCodeAppList[3].value2}"></td> 
+<td><input class="form-check-input" type="checkbox" onclick='return false;' th:checked="*{useApp04}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeAppList[4].value3} eq '1'" > 
+<tr id="useAPP5" > 
+<td th:text="${mgpCodeAppList[4].value4}"></td> 
+<td th:text="${mgpCodeAppList[4].value2}"></td> 
+<td><input class="form-check-input" type="checkbox" onclick='return false;' th:checked="*{useApp05}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeAppList[5].value3} eq '1'" > 
+<tr id="useAPP6" > 
+<td th:text="${mgpCodeAppList[5].value4}"></td> 
+<td th:text="${mgpCodeAppList[5].value2}"></td> 
+<td><input class="form-check-input" type="checkbox" onclick='return false;' th:checked="*{useApp06}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeAppList[6].value3} eq '1'" > 
+<tr id="useAPP7" > 
+<td th:text="${mgpCodeAppList[6].value4}"></td> 
+<td th:text="${mgpCodeAppList[6].value2}"></td> 
+<td><input class="form-check-input" type="checkbox" onclick='return false;' th:checked="*{useApp07}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeAppList[7].value3} eq '1'" > 
+<tr id="useAPP8" > 
+<td th:text="${mgpCodeAppList[7].value4}"></td> 
+<td th:text="${mgpCodeAppList[7].value2}"></td> 
+<td><input class="form-check-input" type="checkbox" onclick='return false;' th:checked="*{useApp08}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeAppList[8].value3} eq '1'" > 
+<tr id="useAPP9" > 
+<td th:text="${mgpCodeAppList[8].value4}"></td> 
+<td th:text="${mgpCodeAppList[8].value2}"></td> 
+<td><input class="form-check-input" type="checkbox" onclick='return false;' th:checked="*{useApp09}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeAppList[9].value3} eq '1'" > 
+<tr id="useAPP10" > 
+<td th:text="${mgpCodeAppList[9].value4}"></td> 
+<td th:text="${mgpCodeAppList[9].value2}"></td> 
+<td><input class="form-check-input" type="checkbox" onclick='return false;' th:checked="*{useApp10}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeAppList[10].value3} eq '1'" > 
+<tr id="useAPP11" > 
+<td th:text="${mgpCodeAppList[10].value4}"></td> 
+<td th:text="${mgpCodeAppList[10].value2}"></td> 
+<td><input class="form-check-input" type="checkbox" onclick='return false;' th:checked="*{useApp11}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeAppList[11].value3} eq '1'" > 
+<tr id="useAPP12" > 
+<td th:text="${mgpCodeAppList[11].value4}"></td> 
+<td th:text="${mgpCodeAppList[11].value2}"></td> 
+<td><input class="form-check-input" type="checkbox" onclick='return false;' th:checked="*{useApp12}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeAppList[12].value3} eq '1'" > 
+<tr id="useAPP13" > 
+<td th:text="${mgpCodeAppList[12].value4}"></td> 
+<td th:text="${mgpCodeAppList[12].value2}"></td> 
+<td><input class="form-check-input" type="checkbox" onclick='return false;' th:checked="*{useApp13}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeAppList[13].value3} eq '1'" > 
+<tr id="useAPP14" > 
+<td th:text="${mgpCodeAppList[13].value4}"></td> 
+<td th:text="${mgpCodeAppList[13].value2}"></td> 
+<td><input class="form-check-input" type="checkbox" onclick='return false;' th:checked="*{useApp14}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeAppList[14].value3} eq '1'" > 
+<tr id="useAPP15" > 
+<td th:text="${mgpCodeAppList[14].value4}"></td> 
+<td th:text="${mgpCodeAppList[14].value2}"></td> 
+<td><input class="form-check-input" type="checkbox" onclick='return false;' th:checked="*{useApp15}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeAppList[15].value3} eq '1'" > 
+<tr id="useAPP16" > 
+<td th:text="${mgpCodeAppList[15].value4}"></td> 
+<td th:text="${mgpCodeAppList[15].value2}"></td> 
+<td><input class="form-check-input" type="checkbox" onclick='return false;' th:checked="*{useApp16}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeAppList[16].value3} eq '1'" > 
+<tr id="useAPP17" > 
+<td th:text="${mgpCodeAppList[16].value4}"></td> 
+<td th:text="${mgpCodeAppList[16].value2}"></td> 
+<td><input class="form-check-input" type="checkbox" onclick='return false;' th:checked="*{useApp17}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeAppList[17].value3} eq '1'" > 
+<tr id="useAPP18" > 
+<td th:text="${mgpCodeAppList[17].value4}"></td> 
+<td th:text="${mgpCodeAppList[17].value2}"></td> 
+<td><input class="form-check-input" type="checkbox" onclick='return false;' th:checked="*{useApp18}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeAppList[18].value3} eq '1'" > 
+<tr id="useAPP19" > 
+<td th:text="${mgpCodeAppList[18].value4}"></td> 
+<td th:text="${mgpCodeAppList[18].value2}"></td> 
+<td><input class="form-check-input" type="checkbox" onclick='return false;' th:checked="*{useApp19}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeAppList[19].value3} eq '1'" > 
+<tr id="useAPP20" > 
+<td th:text="${mgpCodeAppList[19].value4}"></td> 
+<td th:text="${mgpCodeAppList[19].value2}"></td> 
+<td><input class="form-check-input" type="checkbox" onclick='return false;' th:checked="*{useApp20}"></td>
+</tr>
+</th:block>
+
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <!-- パスワード変更履歴 -->
+                    <div id="div_2" class="box jsTabMenuArea"　 th:unless=" ${UserRegistForm.futureUserFlag} eq '1' and  ${UserRegistForm.reflectionFlag}  eq '1'">
+                      <table class="modTable jsViewTable is-on" id="grouptab">
+                        <colgroup>
+                          <col width="100">
+                          <col width="300">
+                          <col width="300">
+                        </colgroup>
+                        <tbody>
+                          <tr>
+                            <th>№</th>
+                            <th>更新日時</th>
+                            <th>機能名</th>
+                          </tr>
+            <tr th:each="passwordHis, iterStat : ${pwdHisList}">
+                <td th:text="${iterStat.count}"></td>
+                <td th:text="${passwordHis.chgDt}"></td>
+                <td th:text="${passwordHis.opName}"></td>
+            </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <!-- そのたタブ -->
+                    <div id="div_3" class="box jsTabMenuArea">
+                      <table class="modTable jsViewTable">
+                        <!-- is-hide -->
+                        <colgroup>
+                          <col width="100">
+                          <col width="400">
+                          <col width="*">
+                        </colgroup>
+                        <tbody>
+                          <tr>
+                            <th>№</th>
+                            <th>項目名</th>
+                            <th>値</th>
+                          </tr>
+<th:block th:if="${mgpCodeOtherItemList[0].value3} eq '1'" > 
+<tr id="other1" > 
+<td th:text="${mgpCodeOtherItemList[0].value4}"></td> 
+<td th:text="${mgpCodeOtherItemList[0].value2}"></td> 
+<td th:text="*{otherItem01}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeOtherItemList[1].value3} eq '1'" > 
+<tr id="other2" > 
+<td th:text="${mgpCodeOtherItemList[1].value4}"></td> 
+<td th:text="${mgpCodeOtherItemList[1].value2}"></td> 
+<td th:text="*{otherItem02}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeOtherItemList[2].value3} eq '1'" > 
+<tr id="other3" > 
+<td th:text="${mgpCodeOtherItemList[2].value4}"></td> 
+<td th:text="${mgpCodeOtherItemList[2].value2}"></td> 
+<td th:text="*{otherItem03}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeOtherItemList[3].value3} eq '1'" > 
+<tr id="other4" > 
+<td th:text="${mgpCodeOtherItemList[3].value4}"></td> 
+<td th:text="${mgpCodeOtherItemList[3].value2}"></td> 
+<td th:text="*{otherItem04}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeOtherItemList[4].value3} eq '1'" > 
+<tr id="other5" > 
+<td th:text="${mgpCodeOtherItemList[4].value4}"></td> 
+<td th:text="${mgpCodeOtherItemList[4].value2}"></td> 
+<td th:text="*{otherItem05}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeOtherItemList[5].value3} eq '1'" > 
+<tr id="other6" > 
+<td th:text="${mgpCodeOtherItemList[5].value4}"></td> 
+<td th:text="${mgpCodeOtherItemList[5].value2}"></td> 
+<td th:text="*{otherItem06}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeOtherItemList[6].value3} eq '1'" > 
+<tr id="other7" > 
+<td th:text="${mgpCodeOtherItemList[6].value4}"></td> 
+<td th:text="${mgpCodeOtherItemList[6].value2}"></td> 
+<td th:text="*{otherItem07}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeOtherItemList[7].value3} eq '1'" > 
+<tr id="other8" > 
+<td th:text="${mgpCodeOtherItemList[7].value4}"></td> 
+<td th:text="${mgpCodeOtherItemList[7].value2}"></td> 
+<td th:text="*{otherItem08}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeOtherItemList[8].value3} eq '1'" > 
+<tr id="other9" > 
+<td th:text="${mgpCodeOtherItemList[8].value4}"></td> 
+<td th:text="${mgpCodeOtherItemList[8].value2}"></td> 
+<td th:text="*{otherItem09}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeOtherItemList[9].value3} eq '1'" > 
+<tr id="other10" > 
+<td th:text="${mgpCodeOtherItemList[9].value4}"></td> 
+<td th:text="${mgpCodeOtherItemList[9].value2}"></td> 
+<td th:text="*{otherItem10}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeOtherItemList[10].value3} eq '1'" > 
+<tr id="other11" > 
+<td th:text="${mgpCodeOtherItemList[10].value4}"></td> 
+<td th:text="${mgpCodeOtherItemList[10].value2}"></td> 
+<td th:text="*{otherItem11}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeOtherItemList[11].value3} eq '1'" > 
+<tr id="other12" > 
+<td th:text="${mgpCodeOtherItemList[11].value4}"></td> 
+<td th:text="${mgpCodeOtherItemList[11].value2}"></td> 
+<td th:text="*{otherItem12}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeOtherItemList[12].value3} eq '1'" > 
+<tr id="other13" > 
+<td th:text="${mgpCodeOtherItemList[12].value4}"></td> 
+<td th:text="${mgpCodeOtherItemList[12].value2}"></td> 
+<td th:text="*{otherItem13}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeOtherItemList[13].value3} eq '1'" > 
+<tr id="other14" > 
+<td th:text="${mgpCodeOtherItemList[13].value4}"></td> 
+<td th:text="${mgpCodeOtherItemList[13].value2}"></td> 
+<td th:text="*{otherItem14}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeOtherItemList[14].value3} eq '1'" > 
+<tr id="other15" > 
+<td th:text="${mgpCodeOtherItemList[14].value4}"></td> 
+<td th:text="${mgpCodeOtherItemList[14].value2}"></td> 
+<td th:text="*{otherItem15}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeOtherItemList[15].value3} eq '1'" > 
+<tr id="other16" > 
+<td th:text="${mgpCodeOtherItemList[15].value4}"></td> 
+<td th:text="${mgpCodeOtherItemList[15].value2}"></td> 
+<td th:text="*{otherItem16}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeOtherItemList[16].value3} eq '1'" > 
+<tr id="other17" > 
+<td th:text="${mgpCodeOtherItemList[16].value4}"></td> 
+<td th:text="${mgpCodeOtherItemList[16].value2}"></td> 
+<td th:text="*{otherItem17}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeOtherItemList[17].value3} eq '1'" > 
+<tr id="other18" > 
+<td th:text="${mgpCodeOtherItemList[17].value4}"></td> 
+<td th:text="${mgpCodeOtherItemList[17].value2}"></td> 
+<td th:text="*{otherItem18}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeOtherItemList[18].value3} eq '1'" > 
+<tr id="other19" > 
+<td th:text="${mgpCodeOtherItemList[18].value4}"></td> 
+<td th:text="${mgpCodeOtherItemList[18].value2}"></td> 
+<td th:text="*{otherItem19}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeOtherItemList[19].value3} eq '1'" > 
+<tr id="other20" > 
+<td th:text="${mgpCodeOtherItemList[19].value4}"></td> 
+<td th:text="${mgpCodeOtherItemList[19].value2}"></td> 
+<td th:text="*{otherItem20}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeOtherItemList[20].value3} eq '1'" > 
+<tr id="other21" > 
+<td th:text="${mgpCodeOtherItemList[20].value4}"></td> 
+<td th:text="${mgpCodeOtherItemList[20].value2}"></td> 
+<td th:text="*{otherItem21}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeOtherItemList[21].value3} eq '1'" > 
+<tr id="other22" > 
+<td th:text="${mgpCodeOtherItemList[21].value4}"></td> 
+<td th:text="${mgpCodeOtherItemList[21].value2}"></td> 
+<td th:text="*{otherItem22}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeOtherItemList[22].value3} eq '1'" > 
+<tr id="other23" > 
+<td th:text="${mgpCodeOtherItemList[22].value4}"></td> 
+<td th:text="${mgpCodeOtherItemList[22].value2}"></td> 
+<td th:text="*{otherItem23}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeOtherItemList[23].value3} eq '1'" > 
+<tr id="other24" > 
+<td th:text="${mgpCodeOtherItemList[23].value4}"></td> 
+<td th:text="${mgpCodeOtherItemList[23].value2}"></td> 
+<td th:text="*{otherItem24}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeOtherItemList[24].value3} eq '1'" > 
+<tr id="other25" > 
+<td th:text="${mgpCodeOtherItemList[24].value4}"></td> 
+<td th:text="${mgpCodeOtherItemList[24].value2}"></td> 
+<td th:text="*{otherItem25}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeOtherItemList[25].value3} eq '1'" > 
+<tr id="other26" > 
+<td th:text="${mgpCodeOtherItemList[25].value4}"></td> 
+<td th:text="${mgpCodeOtherItemList[25].value2}"></td> 
+<td th:text="*{otherItem26}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeOtherItemList[26].value3} eq '1'" > 
+<tr id="other27" > 
+<td th:text="${mgpCodeOtherItemList[26].value4}"></td> 
+<td th:text="${mgpCodeOtherItemList[26].value2}"></td> 
+<td th:text="*{otherItem27}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeOtherItemList[27].value3} eq '1'" > 
+<tr id="other28" > 
+<td th:text="${mgpCodeOtherItemList[27].value4}"></td> 
+<td th:text="${mgpCodeOtherItemList[27].value2}"></td> 
+<td th:text="*{otherItem28}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeOtherItemList[28].value3} eq '1'" > 
+<tr id="other29" > 
+<td th:text="${mgpCodeOtherItemList[28].value4}"></td> 
+<td th:text="${mgpCodeOtherItemList[28].value2}"></td> 
+<td th:text="*{otherItem29}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeOtherItemList[29].value3} eq '1'" > 
+<tr id="other30" > 
+<td th:text="${mgpCodeOtherItemList[29].value4}"></td> 
+<td th:text="${mgpCodeOtherItemList[29].value2}"></td> 
+<td th:text="*{otherItem30}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeOtherItemList[30].value3} eq '1'" > 
+<tr id="other31" > 
+<td th:text="${mgpCodeOtherItemList[30].value4}"></td> 
+<td th:text="${mgpCodeOtherItemList[30].value2}"></td> 
+<td th:text="*{otherItem31}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeOtherItemList[31].value3} eq '1'" > 
+<tr id="other32" > 
+<td th:text="${mgpCodeOtherItemList[31].value4}"></td> 
+<td th:text="${mgpCodeOtherItemList[31].value2}"></td> 
+<td th:text="*{otherItem32}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeOtherItemList[32].value3} eq '1'" > 
+<tr id="other33" > 
+<td th:text="${mgpCodeOtherItemList[32].value4}"></td> 
+<td th:text="${mgpCodeOtherItemList[32].value2}"></td> 
+<td th:text="*{otherItem33}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeOtherItemList[33].value3} eq '1'" > 
+<tr id="other34" > 
+<td th:text="${mgpCodeOtherItemList[33].value4}"></td> 
+<td th:text="${mgpCodeOtherItemList[33].value2}"></td> 
+<td th:text="*{otherItem34}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeOtherItemList[34].value3} eq '1'" > 
+<tr id="other35" > 
+<td th:text="${mgpCodeOtherItemList[34].value4}"></td> 
+<td th:text="${mgpCodeOtherItemList[34].value2}"></td> 
+<td th:text="*{otherItem35}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeOtherItemList[35].value3} eq '1'" > 
+<tr id="other36" > 
+<td th:text="${mgpCodeOtherItemList[35].value4}"></td> 
+<td th:text="${mgpCodeOtherItemList[35].value2}"></td> 
+<td th:text="*{otherItem36}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeOtherItemList[36].value3} eq '1'" > 
+<tr id="other37" > 
+<td th:text="${mgpCodeOtherItemList[36].value4}"></td> 
+<td th:text="${mgpCodeOtherItemList[36].value2}"></td> 
+<td th:text="*{otherItem37}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeOtherItemList[37].value3} eq '1'" > 
+<tr id="other38" > 
+<td th:text="${mgpCodeOtherItemList[37].value4}"></td> 
+<td th:text="${mgpCodeOtherItemList[37].value2}"></td> 
+<td th:text="*{otherItem38}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeOtherItemList[38].value3} eq '1'" > 
+<tr id="other39" > 
+<td th:text="${mgpCodeOtherItemList[38].value4}"></td> 
+<td th:text="${mgpCodeOtherItemList[38].value2}"></td> 
+<td th:text="*{otherItem39}"></td>
+</tr>
+</th:block>
+
+<th:block th:if="${mgpCodeOtherItemList[39].value3} eq '1'" > 
+<tr id="other40" > 
+<td th:text="${mgpCodeOtherItemList[39].value4}"></td> 
+<td th:text="${mgpCodeOtherItemList[39].value2}"></td> 
+<td th:text="*{otherItem40}"></td>
+</tr>
+</th:block>
+
+
+
+                        </tbody>
+                      </table>
+                    </div>
+
+                  </div>
+                </div>
+              </section>
+
+            </div>
+
+          </div>
+
+
+        </div>
+      </main>
+    </div>
+  </form>
+  <!--#include virtual="/assets/include/footer.html" -->
+  <footer id="footer" class="footer">
+    <p class="footer__text">Copyright © AXIO corporation. All Rights Reserved.</p>
+  </footer>
+
+  <!-- 解除確認モーダル -->
+  <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true"
+       data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header card-axio">
+          <h5 class="modal-title" id="userUnlockModalTitle">確認画面</h5>
+        </div>
+        <div class="modal-body" style="font-size: 16px; padding-bottom: 5px;">
+			<div style="margin-bottom: 15px;" id="confirmMessage">
+			</div>
+        </div>
+
+        <div class="modal-footer" style="font-size: 16px;">
+          <div class="">
+            <button type="button" class="btn btn-outline-secondary btn-lg" data-bs-dismiss="modal">
+              　キャンセル　
+            </button>
+            <button id="btnConfirmOK" type="button" class="btn btn-primary btn-lg" >
+              　
+              <i class="fa-solid fa-check"></i>
+              　確定　　
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 解除確認モーダル ここまで -->
+
+  <!-- common's javascript start -->
+<script type="text/javascript" src="./vendor/jquery-3.2.1.js" th:src="@{./vendor/jquery-3.2.1.js}"></script>
+<script type="text/javascript" src="./vendor/jquery-ui-1.12.1/jquery-ui.min.js" th:src="@{./vendor/jquery-ui-1.12.1/jquery-ui.min.js}"></script>
+<script type="text/javascript" src="./vendor/datatables/jquery.dataTables.js" th:src="@{./vendor/datatables/jquery.dataTables.js}"></script>
+<script type="text/javascript" src="./vendor/datatables/dataTables.bootstrap.js" th:src="@{./vendor/datatables/dataTables.bootstrap.js}"></script>
+<script type="text/javascript" src="./vendor/bootstrap-5.0.2-dist/js/bootstrap.min.js" th:src="@{./vendor/bootstrap-5.0.2-dist/js/bootstrap.min.js}"></script>
+  <!-- <script type="text/javascript" src="../../../static/vendor/bootstrap-5.0.2-dist/datepicker/js/moment.min.js"></script> -->
+  <!-- <script type="text/javascript"
+    src="../../../static/vendor/bootstrap-5.0.2-dist/datepicker/js/moment-with-locales.min.js"></script> -->
+  <!-- <script type="text/javascript"
+    src="../../../static/vendor/bootstrap-5.0.2-dist/datepicker/js/bootstrap-datetimepicker.js"></script> -->
+  <script type="text/javascript" src="./vendor/knockout-3.4.2.js"></script>
+  <!-- common's javascript end -->
+  <!-- common's javascript end -->
+    <script th:src="@{/vendor/sweetalert2/js/sweetalert2.min.js}" type="text/javascript"></script>
+
+  <script type="text/javascript" th:src="@{./js/common.js}"></script>
+  <script type="text/javascript" th:src="@{./js/axio_common.js}"></script>
+  <script type="text/javascript" th:src="@{./js/userView.js}"></script>
+  <script type="text/javascript" th:src="@{./js/userSet.js}"></script>
+
+
+</body>
+
+</html>

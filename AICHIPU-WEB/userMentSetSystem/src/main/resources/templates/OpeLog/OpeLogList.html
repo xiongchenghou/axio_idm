@@ -1,0 +1,345 @@
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout">
+<!-- <script type="text/javascript" src="chrome-extension://mdnleldcmiljblolnjhpnblkcekpdkpa/libs/customElements.js" class="__REQUESTLY__SCRIPT"></script> -->
+
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>管理者操作ログ</title>
+
+<link th:href="@{./vendor/jquery-ui-1.12.1/jquery-ui.css}" rel="stylesheet" />
+<link th:href="@{./vendor/bootstrap-5.0.2-dist/css/bootstrap.min.css}" rel="stylesheet" />
+<link th:href="@{./vendor/datatables/dataTables.bootstrap.css}" rel="stylesheet" />
+<link th:href="@{./css/common.css}" rel="stylesheet" />
+<link th:href="@{./vendor/fontawesome-free-6.1.1-web/css/all.css}" rel="stylesheet">
+
+
+  <!-- DataTables -->
+  <link rel="stylesheet" th:href="@{./vendor/datatables/1.13.6/css/bootstrap.min.css}">
+  <link rel="stylesheet" th:href="@{./vendor/datatables/1.13.6/css/dataTables.bootstrap5.min.css}">
+  <link rel="stylesheet" th:href="@{./vendor/datatables/1.13.6/css/fixedColumns.dataTables.min.css}">
+  <link rel="stylesheet" th:href="@{./vendor/AdminLTE-3.2.0/plugins/datatables-responsive/css/responsive.bootstrap4.min.css}">
+  <link rel="stylesheet" th:href="@{./vendor/AdminLTE-3.2.0/plugins/datatables-buttons/css/buttons.bootstrap4.min.css}">
+
+  <link rel="stylesheet" th:href="@{./vendor/AdminLTE-3.2.0/plugins/icheck-bootstrap/icheck-bootstrap.min.css}">
+
+  <!-- Theme style -->
+  <link rel="stylesheet" th:href="@{./vendor/AdminLTE-3.2.0/dist/css/adminlte.min.css}">
+  <!-- 個別設定CSS -->
+  <link th:href="@{./css/OperationLog.css}" rel="stylesheet">
+<link th:href="@{./css/common.css}" rel="stylesheet" />
+<link th:href="@{./css/style2.css}" rel="stylesheet" />
+<link th:href="@{./css/usercsv.css}" rel="stylesheet" /> 
+
+</head>
+
+<body>
+
+
+  <!--// header -->
+  <header id="header" class="header">
+    <div class="header__inner">
+      <figure class="header__img"><img src="./assets/img/common/img_logo01.png" alt="AXIO" width="73"
+          height="36"></figure>
+      <a href="./logout" class="header__link">ログアウト</a>
+    </div>
+  </header>
+  <!-- header //-->
+
+  <div class="modTitleArea">
+    <div class="modTitleArea__inner">
+      <h1 class="modTitleArea__title"><i class="fa-solid fa-desktop">　操作ログ</i></h1>
+      <a href="./login" class="modTitleArea__prevButton"><span>戻る</span></a>
+    </div>
+  </div>
+
+  <div class="main">
+
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-4">
+          <div class="card searchCard cardUniversal">
+
+            <div class="card-header">
+              <h2>
+                <i class="fa-solid fa-magnifying-glass"></i>　検索
+              </h2>
+            </div>
+
+            <div class="card-body">
+              <div class="tab-content" id="myTabContent">
+              <form id="OpelogForm" th:action="@{/logSearch}" th:object="${OpelogForm}"  method="post" class="form-horizontal">
+                <!-- 学生検索タブ -->
+                <div class="tab-pane fade show active" id="student" role="tabpanel" aria-labelledby="student-tab">
+                  <div class="form-group">
+                
+                    <div class="row mb-3"></div>
+
+                    <!-- 機能入力欄 -->
+                    <div class="row  mb-3">
+                      <div class="col-3 d-flex justify-content-end">
+                        <label for="surName" class="form-label">機能名</label>
+                      </div>
+                      <div class="col-9">
+                        <select class="form-select" th:field="*{opName}" >
+                                    <option th:each="item : *{opNameList}" 
+                                            th:value="${item.value}" 
+                                            th:text="${item.label}"
+                                            th:selected="${item.value eq riYouShaDiv}"></option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <!-- 利用者ID入力欄 -->
+                    <div class="row mb-3">
+                      <div class="col-3 d-flex justify-content-end">
+                        <label for="userId" class="form-label">操作者ID</label>
+                      </div>
+                      <div class="col-9">
+                        <input class="form-control"  th:field="*{opUserId}" >
+                      </div>
+                    </div>
+
+                    <!-- 利用者ID入力欄 -->
+                    <div class="row mb-3">
+                      <div class="col-3 d-flex justify-content-end">
+                        <label for="targetUserId" class="form-label">対象者ID</label>
+                      </div>
+                      <div class="col-9">
+                        <input class="form-control"  th:field="*{targetUserId}" >
+                      </div>
+                    </div>
+                
+                    <div class="row  mb-3">
+                      <div class="col-3 d-flex justify-content-end">
+                        <label for="studentId" class="form-label">操作日時</label>
+                      </div>
+                      <div class="col-9">
+                        <input type="datetime-local" class="form-control inquiryContent" min="2017-04-01T00:00" max="2999-12-31T23:59"  th:field="*{startDt}" >
+
+                        <div class="row">
+                          <div class="d-flex justify-content-start">
+                            <i class="fa-solid fa-caret-down"></i>
+                          </div>
+
+                        </div>
+                        
+                        <input type="datetime-local" class="form-control inquiryContent" min="2017-04-01T00:00" max="2999-12-31T23:59"  th:field="*{endDt}" >
+                      </div>
+                    </div>
+
+                    <div class="mb-3"></div>
+                
+                    <!-- クリア・検索ボタン -->
+                    <div class="row">
+                      <!-- クリア -->
+                      <div class="col-6 d-flex justify-content-center">
+                        <button type="button" class="btn btn-outline-secondary btn-lg" id="btnClear">
+                          <i class="fa-solid fa-eraser"></i>
+                          　クリア　
+                        </button>
+                      </div>
+                
+                      <!-- 検索 -->
+                      <div class="col-6 d-flex justify-content-center">
+                        <button type="button" class="btn btn-primary btn-lg" id="btnSearch">
+                          <i class="fa-solid fa-magnifying-glass"></i>
+                          　検索　
+                        </button>
+                      </div>
+                
+                
+                    </div>
+                
+                  </div>
+                </div>
+              </form>
+              </div>
+
+
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- 操作ログ覧 -->
+        <div class="col-8">
+          <div class="card searchCard cardUniversal">
+              <div class="card-header">
+                <div class="row">
+                  <div class="col-3">
+                    <h2>
+                      <i class="fa-solid fa-list"></i>　操作ログ一覧
+                    </h2>
+                  </div>
+                  <div class="col-9">
+                  </div>
+                </div>
+              </div>
+
+                <div class="row">
+              <!-- CSVダウンロード -->
+              <div class="col-9"></div>
+              <div class="col-3 ">
+                <button id="csvDownloadBtn" type="button" class="btn btn-outline-dark btn-lg my-2" style="width: 100%;">
+                  <i class="fa-solid fa-download"></i>
+                  ダウンロード
+                </button>
+              </div>
+              </div>
+
+            <div class="tableContainer">
+              <!-- 操作ログ覧テーブル -->
+              <div class="row">
+                <div class="col-12">
+                  <div class="mb-2"></div>
+
+                  <div class="card">
+                    <div class="card-body">
+
+                      <table id="operationLogTable" class="table table-hover">
+                        <thead>
+                            <tr>
+                              <th class="checkboxColumn">機能名</th>
+                              <th class="statusColumn">操作日時</th>
+                              <th class="userIdColumn">操作者ID</th>
+                              <th class="userIdColumn">対象者ID</th>
+                              <th class="userClassColumn">詳細</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                    </div>
+                    <!-- /.card-body -->
+                  </div>
+                  <!-- /.card -->
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+  </div>
+
+
+  <footer id="footer" class="footer">
+    <p class="footer__text">Copyright © AXIO corporation. All Rights Reserved.</p>
+  </footer>
+
+
+  <!-- モーダル領域 -->
+  <!-- ロック確認モーダル -->
+  <div class="modal fade" id="operationLogDetailModal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true"
+    data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header card-axio">
+          <h5 class="modal-title" id="demoModalTitle">ログ詳細</h5>
+        </div>
+        <div class="modal-body" id="modal_content" style="font-size: 16px; padding-bottom: 5px;">
+          <div style="margin-bottom: 15px;">
+
+            <!-- 機能 -->
+            <div class="row">
+              <div class="col-3 d-flex justify-content-end">
+                機能名：
+              </div>
+
+              <div class="col-9" id="modOpName">
+                ユーザCSV管理
+              </div>
+
+            </div>
+
+            <!-- 操作日時 -->
+            <div class="row">
+              <div class="col-3 d-flex justify-content-end">
+                操作日時：
+              </div>
+
+              <div class="col-9" id="modOpDt">
+                2024/10/27 10:27:30:370
+              </div>
+
+            </div>
+
+
+            <!-- 操作者ID -->
+            <div class="row">
+              <div class="col-3 d-flex justify-content-end">
+                操作者ID：
+              </div>
+              <div class="col-9" id="modOpUserId">
+                10003
+              </div>
+            </div>
+
+            <!-- 対象者ID -->
+            <div class="row">
+              <div class="col-3 d-flex justify-content-end">
+                対象者ID：
+              </div>
+              <div class="col-9" id="modTargetUserId">
+                10007
+              </div>
+            </div>
+
+            
+            <!-- 詳細 -->
+            <div class="row">
+              <div class="col-3 d-flex justify-content-end">
+                詳細：
+              </div>
+              <div class="col-9" id="modDetail">
+                ユーザ情報を更新しました。
+              </div>
+            </div>
+
+          </div>
+          <!-- /.card -->
+        </div>
+        <div class="modal-footer" style="font-size: 16px;">
+          <div class="">
+            <button type="button" class="btn btn-outline-secondary btn-lg" data-bs-dismiss="modal">
+              　閉じる　
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ロック確認モーダル ここまで -->
+
+
+  <!-- JS -->
+
+    <!-- common's javascript start -->
+<script type="text/javascript" th:src="@{./vendor/jquery-3.7.0.js}"></script>
+    <script type="text/javascript" th:src="@{./vendor/jquery-3.7.0.js}"></script>
+    <script type="text/javascript" th:src="@{./vendor/jquery-ui-1.12.1/jquery-ui.min.js}"></script>
+    <script type="text/javascript" th:src="@{./vendor/bootstrap-5.0.2-dist/js/bootstrap.min.js}"></script>
+    <script type="text/javascript" th:src="@{./vendor/datatables/1.13.6/js/jquery.dataTables.min.js}"></script>
+    <script type="text/javascript" th:src="@{./vendor/datatables/1.13.6/js/dataTables.bootstrap5.min.js}"></script>
+    <script type="text/javascript" th:src="@{./vendor/datatables/1.13.6/js/dataTables.select.min.js}"></script>
+    <script type="text/javascript" th:src="@{./vendor/datatables/1.13.6/js/dataTables.fixedColumns.min.js}"></script>
+    <script type="text/javascript" th:src="@{./vendor/knockout-3.4.2.js}"></script>
+    <!-- common's javascript end -->
+    <script type="text/javascript" th:src="@{./js/OperationLog.js}"></script>
+
+</body>
+
+</html>

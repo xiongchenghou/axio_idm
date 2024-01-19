@@ -1,0 +1,870 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="jp.co.axio.masterMentsetSystem.repository.MUserSystemMapper">
+  <resultMap id="BaseResultMap" type="jp.co.axio.masterMentsetSystem.model.MUserSystem">
+    <id column="user_id" jdbcType="VARCHAR" property="userId" />
+    <result column="application_use_flag_01" jdbcType="VARCHAR" property="applicationUseFlag01" />
+    <result column="application_use_flag_02" jdbcType="VARCHAR" property="applicationUseFlag02" />
+    <result column="application_use_flag_03" jdbcType="VARCHAR" property="applicationUseFlag03" />
+    <result column="application_use_flag_04" jdbcType="VARCHAR" property="applicationUseFlag04" />
+    <result column="application_use_flag_05" jdbcType="VARCHAR" property="applicationUseFlag05" />
+    <result column="application_use_flag_06" jdbcType="VARCHAR" property="applicationUseFlag06" />
+    <result column="application_use_flag_07" jdbcType="VARCHAR" property="applicationUseFlag07" />
+    <result column="application_use_flag_08" jdbcType="VARCHAR" property="applicationUseFlag08" />
+    <result column="application_use_flag_09" jdbcType="VARCHAR" property="applicationUseFlag09" />
+    <result column="application_use_flag_10" jdbcType="VARCHAR" property="applicationUseFlag10" />
+    <result column="application_use_flag_11" jdbcType="VARCHAR" property="applicationUseFlag11" />
+    <result column="application_use_flag_12" jdbcType="VARCHAR" property="applicationUseFlag12" />
+    <result column="application_use_flag_13" jdbcType="VARCHAR" property="applicationUseFlag13" />
+    <result column="application_use_flag_14" jdbcType="VARCHAR" property="applicationUseFlag14" />
+    <result column="application_use_flag_15" jdbcType="VARCHAR" property="applicationUseFlag15" />
+    <result column="application_use_flag_16" jdbcType="VARCHAR" property="applicationUseFlag16" />
+    <result column="application_use_flag_17" jdbcType="VARCHAR" property="applicationUseFlag17" />
+    <result column="application_use_flag_18" jdbcType="VARCHAR" property="applicationUseFlag18" />
+    <result column="application_use_flag_19" jdbcType="VARCHAR" property="applicationUseFlag19" />
+    <result column="application_use_flag_20" jdbcType="VARCHAR" property="applicationUseFlag20" />
+    <result column="system_valid_flag_01" jdbcType="VARCHAR" property="systemValidFlag01" />
+    <result column="system_valid_flag_02" jdbcType="VARCHAR" property="systemValidFlag02" />
+    <result column="system_valid_flag_03" jdbcType="VARCHAR" property="systemValidFlag03" />
+    <result column="system_valid_flag_04" jdbcType="VARCHAR" property="systemValidFlag04" />
+    <result column="system_valid_flag_05" jdbcType="VARCHAR" property="systemValidFlag05" />
+    <result column="system_valid_flag_06" jdbcType="VARCHAR" property="systemValidFlag06" />
+    <result column="system_valid_flag_07" jdbcType="VARCHAR" property="systemValidFlag07" />
+    <result column="system_valid_flag_08" jdbcType="VARCHAR" property="systemValidFlag08" />
+    <result column="system_valid_flag_09" jdbcType="VARCHAR" property="systemValidFlag09" />
+    <result column="system_valid_flag_10" jdbcType="VARCHAR" property="systemValidFlag10" />
+    <result column="system_valid_flag_11" jdbcType="VARCHAR" property="systemValidFlag11" />
+    <result column="system_valid_flag_12" jdbcType="VARCHAR" property="systemValidFlag12" />
+    <result column="system_valid_flag_13" jdbcType="VARCHAR" property="systemValidFlag13" />
+    <result column="system_valid_flag_14" jdbcType="VARCHAR" property="systemValidFlag14" />
+    <result column="system_valid_flag_15" jdbcType="VARCHAR" property="systemValidFlag15" />
+    <result column="system_valid_flag_16" jdbcType="VARCHAR" property="systemValidFlag16" />
+    <result column="system_valid_flag_17" jdbcType="VARCHAR" property="systemValidFlag17" />
+    <result column="system_valid_flag_18" jdbcType="VARCHAR" property="systemValidFlag18" />
+    <result column="system_valid_flag_19" jdbcType="VARCHAR" property="systemValidFlag19" />
+    <result column="system_valid_flag_20" jdbcType="VARCHAR" property="systemValidFlag20" />
+    <result column="admin_flag" jdbcType="VARCHAR" property="adminFlag" />
+    <result column="register_id" jdbcType="VARCHAR" property="registerId" />
+    <result column="regist_ts" jdbcType="TIMESTAMP" property="registTs" />
+    <result column="updater_id" jdbcType="VARCHAR" property="updaterId" />
+    <result column="update_ts" jdbcType="TIMESTAMP" property="updateTs" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    user_id, application_use_flag_01, application_use_flag_02, application_use_flag_03, 
+    application_use_flag_04, application_use_flag_05, application_use_flag_06, application_use_flag_07, 
+    application_use_flag_08, application_use_flag_09, application_use_flag_10, application_use_flag_11, 
+    application_use_flag_12, application_use_flag_13, application_use_flag_14, application_use_flag_15, 
+    application_use_flag_16, application_use_flag_17, application_use_flag_18, application_use_flag_19, 
+    application_use_flag_20, system_valid_flag_01, system_valid_flag_02, system_valid_flag_03, 
+    system_valid_flag_04, system_valid_flag_05, system_valid_flag_06, system_valid_flag_07, 
+    system_valid_flag_08, system_valid_flag_09, system_valid_flag_10, system_valid_flag_11, 
+    system_valid_flag_12, system_valid_flag_13, system_valid_flag_14, system_valid_flag_15, 
+    system_valid_flag_16, system_valid_flag_17, system_valid_flag_18, system_valid_flag_19, 
+    system_valid_flag_20, admin_flag, register_id, regist_ts, updater_id, update_ts
+  </sql>
+  <select id="selectByExample" parameterType="jp.co.axio.masterMentsetSystem.model.MUserSystemExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from public.m_user_system
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from public.m_user_system
+    where user_id = #{userId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from public.m_user_system
+    where user_id = #{userId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="jp.co.axio.masterMentsetSystem.model.MUserSystemExample">
+    delete from public.m_user_system
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="jp.co.axio.masterMentsetSystem.model.MUserSystem">
+    insert into public.m_user_system (user_id, application_use_flag_01, application_use_flag_02, 
+      application_use_flag_03, application_use_flag_04, 
+      application_use_flag_05, application_use_flag_06, 
+      application_use_flag_07, application_use_flag_08, 
+      application_use_flag_09, application_use_flag_10, 
+      application_use_flag_11, application_use_flag_12, 
+      application_use_flag_13, application_use_flag_14, 
+      application_use_flag_15, application_use_flag_16, 
+      application_use_flag_17, application_use_flag_18, 
+      application_use_flag_19, application_use_flag_20, 
+      system_valid_flag_01, system_valid_flag_02, system_valid_flag_03, 
+      system_valid_flag_04, system_valid_flag_05, system_valid_flag_06, 
+      system_valid_flag_07, system_valid_flag_08, system_valid_flag_09, 
+      system_valid_flag_10, system_valid_flag_11, system_valid_flag_12, 
+      system_valid_flag_13, system_valid_flag_14, system_valid_flag_15, 
+      system_valid_flag_16, system_valid_flag_17, system_valid_flag_18, 
+      system_valid_flag_19, system_valid_flag_20, admin_flag, 
+      register_id, regist_ts, updater_id, 
+      update_ts)
+    values (#{userId,jdbcType=VARCHAR}, #{applicationUseFlag01,jdbcType=VARCHAR}, #{applicationUseFlag02,jdbcType=VARCHAR}, 
+      #{applicationUseFlag03,jdbcType=VARCHAR}, #{applicationUseFlag04,jdbcType=VARCHAR}, 
+      #{applicationUseFlag05,jdbcType=VARCHAR}, #{applicationUseFlag06,jdbcType=VARCHAR}, 
+      #{applicationUseFlag07,jdbcType=VARCHAR}, #{applicationUseFlag08,jdbcType=VARCHAR}, 
+      #{applicationUseFlag09,jdbcType=VARCHAR}, #{applicationUseFlag10,jdbcType=VARCHAR}, 
+      #{applicationUseFlag11,jdbcType=VARCHAR}, #{applicationUseFlag12,jdbcType=VARCHAR}, 
+      #{applicationUseFlag13,jdbcType=VARCHAR}, #{applicationUseFlag14,jdbcType=VARCHAR}, 
+      #{applicationUseFlag15,jdbcType=VARCHAR}, #{applicationUseFlag16,jdbcType=VARCHAR}, 
+      #{applicationUseFlag17,jdbcType=VARCHAR}, #{applicationUseFlag18,jdbcType=VARCHAR}, 
+      #{applicationUseFlag19,jdbcType=VARCHAR}, #{applicationUseFlag20,jdbcType=VARCHAR}, 
+      #{systemValidFlag01,jdbcType=VARCHAR}, #{systemValidFlag02,jdbcType=VARCHAR}, #{systemValidFlag03,jdbcType=VARCHAR}, 
+      #{systemValidFlag04,jdbcType=VARCHAR}, #{systemValidFlag05,jdbcType=VARCHAR}, #{systemValidFlag06,jdbcType=VARCHAR}, 
+      #{systemValidFlag07,jdbcType=VARCHAR}, #{systemValidFlag08,jdbcType=VARCHAR}, #{systemValidFlag09,jdbcType=VARCHAR}, 
+      #{systemValidFlag10,jdbcType=VARCHAR}, #{systemValidFlag11,jdbcType=VARCHAR}, #{systemValidFlag12,jdbcType=VARCHAR}, 
+      #{systemValidFlag13,jdbcType=VARCHAR}, #{systemValidFlag14,jdbcType=VARCHAR}, #{systemValidFlag15,jdbcType=VARCHAR}, 
+      #{systemValidFlag16,jdbcType=VARCHAR}, #{systemValidFlag17,jdbcType=VARCHAR}, #{systemValidFlag18,jdbcType=VARCHAR}, 
+      #{systemValidFlag19,jdbcType=VARCHAR}, #{systemValidFlag20,jdbcType=VARCHAR}, #{adminFlag,jdbcType=VARCHAR}, 
+      #{registerId,jdbcType=VARCHAR}, #{registTs,jdbcType=TIMESTAMP}, #{updaterId,jdbcType=VARCHAR}, 
+      #{updateTs,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="jp.co.axio.masterMentsetSystem.model.MUserSystem">
+    insert into public.m_user_system
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="applicationUseFlag01 != null">
+        application_use_flag_01,
+      </if>
+      <if test="applicationUseFlag02 != null">
+        application_use_flag_02,
+      </if>
+      <if test="applicationUseFlag03 != null">
+        application_use_flag_03,
+      </if>
+      <if test="applicationUseFlag04 != null">
+        application_use_flag_04,
+      </if>
+      <if test="applicationUseFlag05 != null">
+        application_use_flag_05,
+      </if>
+      <if test="applicationUseFlag06 != null">
+        application_use_flag_06,
+      </if>
+      <if test="applicationUseFlag07 != null">
+        application_use_flag_07,
+      </if>
+      <if test="applicationUseFlag08 != null">
+        application_use_flag_08,
+      </if>
+      <if test="applicationUseFlag09 != null">
+        application_use_flag_09,
+      </if>
+      <if test="applicationUseFlag10 != null">
+        application_use_flag_10,
+      </if>
+      <if test="applicationUseFlag11 != null">
+        application_use_flag_11,
+      </if>
+      <if test="applicationUseFlag12 != null">
+        application_use_flag_12,
+      </if>
+      <if test="applicationUseFlag13 != null">
+        application_use_flag_13,
+      </if>
+      <if test="applicationUseFlag14 != null">
+        application_use_flag_14,
+      </if>
+      <if test="applicationUseFlag15 != null">
+        application_use_flag_15,
+      </if>
+      <if test="applicationUseFlag16 != null">
+        application_use_flag_16,
+      </if>
+      <if test="applicationUseFlag17 != null">
+        application_use_flag_17,
+      </if>
+      <if test="applicationUseFlag18 != null">
+        application_use_flag_18,
+      </if>
+      <if test="applicationUseFlag19 != null">
+        application_use_flag_19,
+      </if>
+      <if test="applicationUseFlag20 != null">
+        application_use_flag_20,
+      </if>
+      <if test="systemValidFlag01 != null">
+        system_valid_flag_01,
+      </if>
+      <if test="systemValidFlag02 != null">
+        system_valid_flag_02,
+      </if>
+      <if test="systemValidFlag03 != null">
+        system_valid_flag_03,
+      </if>
+      <if test="systemValidFlag04 != null">
+        system_valid_flag_04,
+      </if>
+      <if test="systemValidFlag05 != null">
+        system_valid_flag_05,
+      </if>
+      <if test="systemValidFlag06 != null">
+        system_valid_flag_06,
+      </if>
+      <if test="systemValidFlag07 != null">
+        system_valid_flag_07,
+      </if>
+      <if test="systemValidFlag08 != null">
+        system_valid_flag_08,
+      </if>
+      <if test="systemValidFlag09 != null">
+        system_valid_flag_09,
+      </if>
+      <if test="systemValidFlag10 != null">
+        system_valid_flag_10,
+      </if>
+      <if test="systemValidFlag11 != null">
+        system_valid_flag_11,
+      </if>
+      <if test="systemValidFlag12 != null">
+        system_valid_flag_12,
+      </if>
+      <if test="systemValidFlag13 != null">
+        system_valid_flag_13,
+      </if>
+      <if test="systemValidFlag14 != null">
+        system_valid_flag_14,
+      </if>
+      <if test="systemValidFlag15 != null">
+        system_valid_flag_15,
+      </if>
+      <if test="systemValidFlag16 != null">
+        system_valid_flag_16,
+      </if>
+      <if test="systemValidFlag17 != null">
+        system_valid_flag_17,
+      </if>
+      <if test="systemValidFlag18 != null">
+        system_valid_flag_18,
+      </if>
+      <if test="systemValidFlag19 != null">
+        system_valid_flag_19,
+      </if>
+      <if test="systemValidFlag20 != null">
+        system_valid_flag_20,
+      </if>
+      <if test="adminFlag != null">
+        admin_flag,
+      </if>
+      <if test="registerId != null">
+        register_id,
+      </if>
+      <if test="registTs != null">
+        regist_ts,
+      </if>
+      <if test="updaterId != null">
+        updater_id,
+      </if>
+      <if test="updateTs != null">
+        update_ts,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag01 != null">
+        #{applicationUseFlag01,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag02 != null">
+        #{applicationUseFlag02,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag03 != null">
+        #{applicationUseFlag03,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag04 != null">
+        #{applicationUseFlag04,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag05 != null">
+        #{applicationUseFlag05,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag06 != null">
+        #{applicationUseFlag06,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag07 != null">
+        #{applicationUseFlag07,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag08 != null">
+        #{applicationUseFlag08,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag09 != null">
+        #{applicationUseFlag09,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag10 != null">
+        #{applicationUseFlag10,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag11 != null">
+        #{applicationUseFlag11,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag12 != null">
+        #{applicationUseFlag12,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag13 != null">
+        #{applicationUseFlag13,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag14 != null">
+        #{applicationUseFlag14,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag15 != null">
+        #{applicationUseFlag15,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag16 != null">
+        #{applicationUseFlag16,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag17 != null">
+        #{applicationUseFlag17,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag18 != null">
+        #{applicationUseFlag18,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag19 != null">
+        #{applicationUseFlag19,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag20 != null">
+        #{applicationUseFlag20,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag01 != null">
+        #{systemValidFlag01,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag02 != null">
+        #{systemValidFlag02,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag03 != null">
+        #{systemValidFlag03,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag04 != null">
+        #{systemValidFlag04,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag05 != null">
+        #{systemValidFlag05,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag06 != null">
+        #{systemValidFlag06,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag07 != null">
+        #{systemValidFlag07,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag08 != null">
+        #{systemValidFlag08,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag09 != null">
+        #{systemValidFlag09,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag10 != null">
+        #{systemValidFlag10,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag11 != null">
+        #{systemValidFlag11,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag12 != null">
+        #{systemValidFlag12,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag13 != null">
+        #{systemValidFlag13,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag14 != null">
+        #{systemValidFlag14,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag15 != null">
+        #{systemValidFlag15,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag16 != null">
+        #{systemValidFlag16,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag17 != null">
+        #{systemValidFlag17,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag18 != null">
+        #{systemValidFlag18,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag19 != null">
+        #{systemValidFlag19,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag20 != null">
+        #{systemValidFlag20,jdbcType=VARCHAR},
+      </if>
+      <if test="adminFlag != null">
+        #{adminFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="registerId != null">
+        #{registerId,jdbcType=VARCHAR},
+      </if>
+      <if test="registTs != null">
+        #{registTs,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updaterId != null">
+        #{updaterId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTs != null">
+        #{updateTs,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="jp.co.axio.masterMentsetSystem.model.MUserSystemExample" resultType="java.lang.Long">
+    select count(*) from public.m_user_system
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update public.m_user_system
+    <set>
+      <if test="record.userId != null">
+        user_id = #{record.userId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applicationUseFlag01 != null">
+        application_use_flag_01 = #{record.applicationUseFlag01,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applicationUseFlag02 != null">
+        application_use_flag_02 = #{record.applicationUseFlag02,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applicationUseFlag03 != null">
+        application_use_flag_03 = #{record.applicationUseFlag03,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applicationUseFlag04 != null">
+        application_use_flag_04 = #{record.applicationUseFlag04,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applicationUseFlag05 != null">
+        application_use_flag_05 = #{record.applicationUseFlag05,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applicationUseFlag06 != null">
+        application_use_flag_06 = #{record.applicationUseFlag06,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applicationUseFlag07 != null">
+        application_use_flag_07 = #{record.applicationUseFlag07,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applicationUseFlag08 != null">
+        application_use_flag_08 = #{record.applicationUseFlag08,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applicationUseFlag09 != null">
+        application_use_flag_09 = #{record.applicationUseFlag09,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applicationUseFlag10 != null">
+        application_use_flag_10 = #{record.applicationUseFlag10,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applicationUseFlag11 != null">
+        application_use_flag_11 = #{record.applicationUseFlag11,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applicationUseFlag12 != null">
+        application_use_flag_12 = #{record.applicationUseFlag12,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applicationUseFlag13 != null">
+        application_use_flag_13 = #{record.applicationUseFlag13,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applicationUseFlag14 != null">
+        application_use_flag_14 = #{record.applicationUseFlag14,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applicationUseFlag15 != null">
+        application_use_flag_15 = #{record.applicationUseFlag15,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applicationUseFlag16 != null">
+        application_use_flag_16 = #{record.applicationUseFlag16,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applicationUseFlag17 != null">
+        application_use_flag_17 = #{record.applicationUseFlag17,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applicationUseFlag18 != null">
+        application_use_flag_18 = #{record.applicationUseFlag18,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applicationUseFlag19 != null">
+        application_use_flag_19 = #{record.applicationUseFlag19,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applicationUseFlag20 != null">
+        application_use_flag_20 = #{record.applicationUseFlag20,jdbcType=VARCHAR},
+      </if>
+      <if test="record.systemValidFlag01 != null">
+        system_valid_flag_01 = #{record.systemValidFlag01,jdbcType=VARCHAR},
+      </if>
+      <if test="record.systemValidFlag02 != null">
+        system_valid_flag_02 = #{record.systemValidFlag02,jdbcType=VARCHAR},
+      </if>
+      <if test="record.systemValidFlag03 != null">
+        system_valid_flag_03 = #{record.systemValidFlag03,jdbcType=VARCHAR},
+      </if>
+      <if test="record.systemValidFlag04 != null">
+        system_valid_flag_04 = #{record.systemValidFlag04,jdbcType=VARCHAR},
+      </if>
+      <if test="record.systemValidFlag05 != null">
+        system_valid_flag_05 = #{record.systemValidFlag05,jdbcType=VARCHAR},
+      </if>
+      <if test="record.systemValidFlag06 != null">
+        system_valid_flag_06 = #{record.systemValidFlag06,jdbcType=VARCHAR},
+      </if>
+      <if test="record.systemValidFlag07 != null">
+        system_valid_flag_07 = #{record.systemValidFlag07,jdbcType=VARCHAR},
+      </if>
+      <if test="record.systemValidFlag08 != null">
+        system_valid_flag_08 = #{record.systemValidFlag08,jdbcType=VARCHAR},
+      </if>
+      <if test="record.systemValidFlag09 != null">
+        system_valid_flag_09 = #{record.systemValidFlag09,jdbcType=VARCHAR},
+      </if>
+      <if test="record.systemValidFlag10 != null">
+        system_valid_flag_10 = #{record.systemValidFlag10,jdbcType=VARCHAR},
+      </if>
+      <if test="record.systemValidFlag11 != null">
+        system_valid_flag_11 = #{record.systemValidFlag11,jdbcType=VARCHAR},
+      </if>
+      <if test="record.systemValidFlag12 != null">
+        system_valid_flag_12 = #{record.systemValidFlag12,jdbcType=VARCHAR},
+      </if>
+      <if test="record.systemValidFlag13 != null">
+        system_valid_flag_13 = #{record.systemValidFlag13,jdbcType=VARCHAR},
+      </if>
+      <if test="record.systemValidFlag14 != null">
+        system_valid_flag_14 = #{record.systemValidFlag14,jdbcType=VARCHAR},
+      </if>
+      <if test="record.systemValidFlag15 != null">
+        system_valid_flag_15 = #{record.systemValidFlag15,jdbcType=VARCHAR},
+      </if>
+      <if test="record.systemValidFlag16 != null">
+        system_valid_flag_16 = #{record.systemValidFlag16,jdbcType=VARCHAR},
+      </if>
+      <if test="record.systemValidFlag17 != null">
+        system_valid_flag_17 = #{record.systemValidFlag17,jdbcType=VARCHAR},
+      </if>
+      <if test="record.systemValidFlag18 != null">
+        system_valid_flag_18 = #{record.systemValidFlag18,jdbcType=VARCHAR},
+      </if>
+      <if test="record.systemValidFlag19 != null">
+        system_valid_flag_19 = #{record.systemValidFlag19,jdbcType=VARCHAR},
+      </if>
+      <if test="record.systemValidFlag20 != null">
+        system_valid_flag_20 = #{record.systemValidFlag20,jdbcType=VARCHAR},
+      </if>
+      <if test="record.adminFlag != null">
+        admin_flag = #{record.adminFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="record.registerId != null">
+        register_id = #{record.registerId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.registTs != null">
+        regist_ts = #{record.registTs,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updaterId != null">
+        updater_id = #{record.updaterId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.updateTs != null">
+        update_ts = #{record.updateTs,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update public.m_user_system
+    set user_id = #{record.userId,jdbcType=VARCHAR},
+      application_use_flag_01 = #{record.applicationUseFlag01,jdbcType=VARCHAR},
+      application_use_flag_02 = #{record.applicationUseFlag02,jdbcType=VARCHAR},
+      application_use_flag_03 = #{record.applicationUseFlag03,jdbcType=VARCHAR},
+      application_use_flag_04 = #{record.applicationUseFlag04,jdbcType=VARCHAR},
+      application_use_flag_05 = #{record.applicationUseFlag05,jdbcType=VARCHAR},
+      application_use_flag_06 = #{record.applicationUseFlag06,jdbcType=VARCHAR},
+      application_use_flag_07 = #{record.applicationUseFlag07,jdbcType=VARCHAR},
+      application_use_flag_08 = #{record.applicationUseFlag08,jdbcType=VARCHAR},
+      application_use_flag_09 = #{record.applicationUseFlag09,jdbcType=VARCHAR},
+      application_use_flag_10 = #{record.applicationUseFlag10,jdbcType=VARCHAR},
+      application_use_flag_11 = #{record.applicationUseFlag11,jdbcType=VARCHAR},
+      application_use_flag_12 = #{record.applicationUseFlag12,jdbcType=VARCHAR},
+      application_use_flag_13 = #{record.applicationUseFlag13,jdbcType=VARCHAR},
+      application_use_flag_14 = #{record.applicationUseFlag14,jdbcType=VARCHAR},
+      application_use_flag_15 = #{record.applicationUseFlag15,jdbcType=VARCHAR},
+      application_use_flag_16 = #{record.applicationUseFlag16,jdbcType=VARCHAR},
+      application_use_flag_17 = #{record.applicationUseFlag17,jdbcType=VARCHAR},
+      application_use_flag_18 = #{record.applicationUseFlag18,jdbcType=VARCHAR},
+      application_use_flag_19 = #{record.applicationUseFlag19,jdbcType=VARCHAR},
+      application_use_flag_20 = #{record.applicationUseFlag20,jdbcType=VARCHAR},
+      system_valid_flag_01 = #{record.systemValidFlag01,jdbcType=VARCHAR},
+      system_valid_flag_02 = #{record.systemValidFlag02,jdbcType=VARCHAR},
+      system_valid_flag_03 = #{record.systemValidFlag03,jdbcType=VARCHAR},
+      system_valid_flag_04 = #{record.systemValidFlag04,jdbcType=VARCHAR},
+      system_valid_flag_05 = #{record.systemValidFlag05,jdbcType=VARCHAR},
+      system_valid_flag_06 = #{record.systemValidFlag06,jdbcType=VARCHAR},
+      system_valid_flag_07 = #{record.systemValidFlag07,jdbcType=VARCHAR},
+      system_valid_flag_08 = #{record.systemValidFlag08,jdbcType=VARCHAR},
+      system_valid_flag_09 = #{record.systemValidFlag09,jdbcType=VARCHAR},
+      system_valid_flag_10 = #{record.systemValidFlag10,jdbcType=VARCHAR},
+      system_valid_flag_11 = #{record.systemValidFlag11,jdbcType=VARCHAR},
+      system_valid_flag_12 = #{record.systemValidFlag12,jdbcType=VARCHAR},
+      system_valid_flag_13 = #{record.systemValidFlag13,jdbcType=VARCHAR},
+      system_valid_flag_14 = #{record.systemValidFlag14,jdbcType=VARCHAR},
+      system_valid_flag_15 = #{record.systemValidFlag15,jdbcType=VARCHAR},
+      system_valid_flag_16 = #{record.systemValidFlag16,jdbcType=VARCHAR},
+      system_valid_flag_17 = #{record.systemValidFlag17,jdbcType=VARCHAR},
+      system_valid_flag_18 = #{record.systemValidFlag18,jdbcType=VARCHAR},
+      system_valid_flag_19 = #{record.systemValidFlag19,jdbcType=VARCHAR},
+      system_valid_flag_20 = #{record.systemValidFlag20,jdbcType=VARCHAR},
+      admin_flag = #{record.adminFlag,jdbcType=VARCHAR},
+      register_id = #{record.registerId,jdbcType=VARCHAR},
+      regist_ts = #{record.registTs,jdbcType=TIMESTAMP},
+      updater_id = #{record.updaterId,jdbcType=VARCHAR},
+      update_ts = #{record.updateTs,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="jp.co.axio.masterMentsetSystem.model.MUserSystem">
+    update public.m_user_system
+    <set>
+      <if test="applicationUseFlag01 != null">
+        application_use_flag_01 = #{applicationUseFlag01,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag02 != null">
+        application_use_flag_02 = #{applicationUseFlag02,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag03 != null">
+        application_use_flag_03 = #{applicationUseFlag03,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag04 != null">
+        application_use_flag_04 = #{applicationUseFlag04,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag05 != null">
+        application_use_flag_05 = #{applicationUseFlag05,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag06 != null">
+        application_use_flag_06 = #{applicationUseFlag06,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag07 != null">
+        application_use_flag_07 = #{applicationUseFlag07,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag08 != null">
+        application_use_flag_08 = #{applicationUseFlag08,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag09 != null">
+        application_use_flag_09 = #{applicationUseFlag09,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag10 != null">
+        application_use_flag_10 = #{applicationUseFlag10,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag11 != null">
+        application_use_flag_11 = #{applicationUseFlag11,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag12 != null">
+        application_use_flag_12 = #{applicationUseFlag12,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag13 != null">
+        application_use_flag_13 = #{applicationUseFlag13,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag14 != null">
+        application_use_flag_14 = #{applicationUseFlag14,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag15 != null">
+        application_use_flag_15 = #{applicationUseFlag15,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag16 != null">
+        application_use_flag_16 = #{applicationUseFlag16,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag17 != null">
+        application_use_flag_17 = #{applicationUseFlag17,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag18 != null">
+        application_use_flag_18 = #{applicationUseFlag18,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag19 != null">
+        application_use_flag_19 = #{applicationUseFlag19,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationUseFlag20 != null">
+        application_use_flag_20 = #{applicationUseFlag20,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag01 != null">
+        system_valid_flag_01 = #{systemValidFlag01,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag02 != null">
+        system_valid_flag_02 = #{systemValidFlag02,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag03 != null">
+        system_valid_flag_03 = #{systemValidFlag03,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag04 != null">
+        system_valid_flag_04 = #{systemValidFlag04,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag05 != null">
+        system_valid_flag_05 = #{systemValidFlag05,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag06 != null">
+        system_valid_flag_06 = #{systemValidFlag06,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag07 != null">
+        system_valid_flag_07 = #{systemValidFlag07,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag08 != null">
+        system_valid_flag_08 = #{systemValidFlag08,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag09 != null">
+        system_valid_flag_09 = #{systemValidFlag09,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag10 != null">
+        system_valid_flag_10 = #{systemValidFlag10,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag11 != null">
+        system_valid_flag_11 = #{systemValidFlag11,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag12 != null">
+        system_valid_flag_12 = #{systemValidFlag12,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag13 != null">
+        system_valid_flag_13 = #{systemValidFlag13,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag14 != null">
+        system_valid_flag_14 = #{systemValidFlag14,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag15 != null">
+        system_valid_flag_15 = #{systemValidFlag15,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag16 != null">
+        system_valid_flag_16 = #{systemValidFlag16,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag17 != null">
+        system_valid_flag_17 = #{systemValidFlag17,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag18 != null">
+        system_valid_flag_18 = #{systemValidFlag18,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag19 != null">
+        system_valid_flag_19 = #{systemValidFlag19,jdbcType=VARCHAR},
+      </if>
+      <if test="systemValidFlag20 != null">
+        system_valid_flag_20 = #{systemValidFlag20,jdbcType=VARCHAR},
+      </if>
+      <if test="adminFlag != null">
+        admin_flag = #{adminFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="registerId != null">
+        register_id = #{registerId,jdbcType=VARCHAR},
+      </if>
+      <if test="registTs != null">
+        regist_ts = #{registTs,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updaterId != null">
+        updater_id = #{updaterId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTs != null">
+        update_ts = #{updateTs,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where user_id = #{userId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="jp.co.axio.masterMentsetSystem.model.MUserSystem">
+    update public.m_user_system
+    set application_use_flag_01 = #{applicationUseFlag01,jdbcType=VARCHAR},
+      application_use_flag_02 = #{applicationUseFlag02,jdbcType=VARCHAR},
+      application_use_flag_03 = #{applicationUseFlag03,jdbcType=VARCHAR},
+      application_use_flag_04 = #{applicationUseFlag04,jdbcType=VARCHAR},
+      application_use_flag_05 = #{applicationUseFlag05,jdbcType=VARCHAR},
+      application_use_flag_06 = #{applicationUseFlag06,jdbcType=VARCHAR},
+      application_use_flag_07 = #{applicationUseFlag07,jdbcType=VARCHAR},
+      application_use_flag_08 = #{applicationUseFlag08,jdbcType=VARCHAR},
+      application_use_flag_09 = #{applicationUseFlag09,jdbcType=VARCHAR},
+      application_use_flag_10 = #{applicationUseFlag10,jdbcType=VARCHAR},
+      application_use_flag_11 = #{applicationUseFlag11,jdbcType=VARCHAR},
+      application_use_flag_12 = #{applicationUseFlag12,jdbcType=VARCHAR},
+      application_use_flag_13 = #{applicationUseFlag13,jdbcType=VARCHAR},
+      application_use_flag_14 = #{applicationUseFlag14,jdbcType=VARCHAR},
+      application_use_flag_15 = #{applicationUseFlag15,jdbcType=VARCHAR},
+      application_use_flag_16 = #{applicationUseFlag16,jdbcType=VARCHAR},
+      application_use_flag_17 = #{applicationUseFlag17,jdbcType=VARCHAR},
+      application_use_flag_18 = #{applicationUseFlag18,jdbcType=VARCHAR},
+      application_use_flag_19 = #{applicationUseFlag19,jdbcType=VARCHAR},
+      application_use_flag_20 = #{applicationUseFlag20,jdbcType=VARCHAR},
+      system_valid_flag_01 = #{systemValidFlag01,jdbcType=VARCHAR},
+      system_valid_flag_02 = #{systemValidFlag02,jdbcType=VARCHAR},
+      system_valid_flag_03 = #{systemValidFlag03,jdbcType=VARCHAR},
+      system_valid_flag_04 = #{systemValidFlag04,jdbcType=VARCHAR},
+      system_valid_flag_05 = #{systemValidFlag05,jdbcType=VARCHAR},
+      system_valid_flag_06 = #{systemValidFlag06,jdbcType=VARCHAR},
+      system_valid_flag_07 = #{systemValidFlag07,jdbcType=VARCHAR},
+      system_valid_flag_08 = #{systemValidFlag08,jdbcType=VARCHAR},
+      system_valid_flag_09 = #{systemValidFlag09,jdbcType=VARCHAR},
+      system_valid_flag_10 = #{systemValidFlag10,jdbcType=VARCHAR},
+      system_valid_flag_11 = #{systemValidFlag11,jdbcType=VARCHAR},
+      system_valid_flag_12 = #{systemValidFlag12,jdbcType=VARCHAR},
+      system_valid_flag_13 = #{systemValidFlag13,jdbcType=VARCHAR},
+      system_valid_flag_14 = #{systemValidFlag14,jdbcType=VARCHAR},
+      system_valid_flag_15 = #{systemValidFlag15,jdbcType=VARCHAR},
+      system_valid_flag_16 = #{systemValidFlag16,jdbcType=VARCHAR},
+      system_valid_flag_17 = #{systemValidFlag17,jdbcType=VARCHAR},
+      system_valid_flag_18 = #{systemValidFlag18,jdbcType=VARCHAR},
+      system_valid_flag_19 = #{systemValidFlag19,jdbcType=VARCHAR},
+      system_valid_flag_20 = #{systemValidFlag20,jdbcType=VARCHAR},
+      admin_flag = #{adminFlag,jdbcType=VARCHAR},
+      register_id = #{registerId,jdbcType=VARCHAR},
+      regist_ts = #{registTs,jdbcType=TIMESTAMP},
+      updater_id = #{updaterId,jdbcType=VARCHAR},
+      update_ts = #{updateTs,jdbcType=TIMESTAMP}
+    where user_id = #{userId,jdbcType=VARCHAR}
+  </update>
+</mapper>

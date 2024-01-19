@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="jp.co.axio.masterMentsetSystem.repository.TAuthHistMapper">
+  <resultMap id="BaseResultMap" type="jp.co.axio.masterMentsetSystem.model.TAuthHist">
+    <id column="user_id" jdbcType="VARCHAR" property="userId" />
+    <id column="web_kbn" jdbcType="CHAR" property="webKbn" />
+    <id column="auth_ts" jdbcType="TIMESTAMP" property="authTs" />
+    <result column="auth_fail_flag" jdbcType="CHAR" property="authFailFlag" />
+    <result column="register_id" jdbcType="VARCHAR" property="registerId" />
+    <result column="regist_ts" jdbcType="TIMESTAMP" property="registTs" />
+    <result column="updater_id" jdbcType="VARCHAR" property="updaterId" />
+    <result column="update_ts" jdbcType="TIMESTAMP" property="updateTs" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    user_id, web_kbn, auth_ts, auth_fail_flag, register_id, regist_ts, updater_id, update_ts
+  </sql>
+  <select id="selectByExample" parameterType="jp.co.axio.masterMentsetSystem.model.TAuthHistExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from public.t_auth_hist
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="jp.co.axio.masterMentsetSystem.model.TAuthHistKey" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from public.t_auth_hist
+    where user_id = #{userId,jdbcType=VARCHAR}
+      and web_kbn = #{webKbn,jdbcType=CHAR}
+      and auth_ts = #{authTs,jdbcType=TIMESTAMP}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="jp.co.axio.masterMentsetSystem.model.TAuthHistKey">
+    delete from public.t_auth_hist
+    where user_id = #{userId,jdbcType=VARCHAR}
+      and web_kbn = #{webKbn,jdbcType=CHAR}
+      and auth_ts = #{authTs,jdbcType=TIMESTAMP}
+  </delete>
+  <delete id="deleteByExample" parameterType="jp.co.axio.masterMentsetSystem.model.TAuthHistExample">
+    delete from public.t_auth_hist
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="jp.co.axio.masterMentsetSystem.model.TAuthHist">
+    insert into public.t_auth_hist (user_id, web_kbn, auth_ts, 
+      auth_fail_flag, register_id, regist_ts, 
+      updater_id, update_ts)
+    values (#{userId,jdbcType=VARCHAR}, #{webKbn,jdbcType=CHAR}, #{authTs,jdbcType=TIMESTAMP}, 
+      #{authFailFlag,jdbcType=CHAR}, #{registerId,jdbcType=VARCHAR}, #{registTs,jdbcType=TIMESTAMP}, 
+      #{updaterId,jdbcType=VARCHAR}, #{updateTs,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="jp.co.axio.masterMentsetSystem.model.TAuthHist">
+    insert into public.t_auth_hist
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="webKbn != null">
+        web_kbn,
+      </if>
+      <if test="authTs != null">
+        auth_ts,
+      </if>
+      <if test="authFailFlag != null">
+        auth_fail_flag,
+      </if>
+      <if test="registerId != null">
+        register_id,
+      </if>
+      <if test="registTs != null">
+        regist_ts,
+      </if>
+      <if test="updaterId != null">
+        updater_id,
+      </if>
+      <if test="updateTs != null">
+        update_ts,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="webKbn != null">
+        #{webKbn,jdbcType=CHAR},
+      </if>
+      <if test="authTs != null">
+        #{authTs,jdbcType=TIMESTAMP},
+      </if>
+      <if test="authFailFlag != null">
+        #{authFailFlag,jdbcType=CHAR},
+      </if>
+      <if test="registerId != null">
+        #{registerId,jdbcType=VARCHAR},
+      </if>
+      <if test="registTs != null">
+        #{registTs,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updaterId != null">
+        #{updaterId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTs != null">
+        #{updateTs,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="jp.co.axio.masterMentsetSystem.model.TAuthHistExample" resultType="java.lang.Long">
+    select count(*) from public.t_auth_hist
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update public.t_auth_hist
+    <set>
+      <if test="record.userId != null">
+        user_id = #{record.userId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.webKbn != null">
+        web_kbn = #{record.webKbn,jdbcType=CHAR},
+      </if>
+      <if test="record.authTs != null">
+        auth_ts = #{record.authTs,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.authFailFlag != null">
+        auth_fail_flag = #{record.authFailFlag,jdbcType=CHAR},
+      </if>
+      <if test="record.registerId != null">
+        register_id = #{record.registerId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.registTs != null">
+        regist_ts = #{record.registTs,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updaterId != null">
+        updater_id = #{record.updaterId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.updateTs != null">
+        update_ts = #{record.updateTs,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update public.t_auth_hist
+    set user_id = #{record.userId,jdbcType=VARCHAR},
+      web_kbn = #{record.webKbn,jdbcType=CHAR},
+      auth_ts = #{record.authTs,jdbcType=TIMESTAMP},
+      auth_fail_flag = #{record.authFailFlag,jdbcType=CHAR},
+      register_id = #{record.registerId,jdbcType=VARCHAR},
+      regist_ts = #{record.registTs,jdbcType=TIMESTAMP},
+      updater_id = #{record.updaterId,jdbcType=VARCHAR},
+      update_ts = #{record.updateTs,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="jp.co.axio.masterMentsetSystem.model.TAuthHist">
+    update public.t_auth_hist
+    <set>
+      <if test="authFailFlag != null">
+        auth_fail_flag = #{authFailFlag,jdbcType=CHAR},
+      </if>
+      <if test="registerId != null">
+        register_id = #{registerId,jdbcType=VARCHAR},
+      </if>
+      <if test="registTs != null">
+        regist_ts = #{registTs,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updaterId != null">
+        updater_id = #{updaterId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTs != null">
+        update_ts = #{updateTs,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where user_id = #{userId,jdbcType=VARCHAR}
+      and web_kbn = #{webKbn,jdbcType=CHAR}
+      and auth_ts = #{authTs,jdbcType=TIMESTAMP}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="jp.co.axio.masterMentsetSystem.model.TAuthHist">
+    update public.t_auth_hist
+    set auth_fail_flag = #{authFailFlag,jdbcType=CHAR},
+      register_id = #{registerId,jdbcType=VARCHAR},
+      regist_ts = #{registTs,jdbcType=TIMESTAMP},
+      updater_id = #{updaterId,jdbcType=VARCHAR},
+      update_ts = #{updateTs,jdbcType=TIMESTAMP}
+    where user_id = #{userId,jdbcType=VARCHAR}
+      and web_kbn = #{webKbn,jdbcType=CHAR}
+      and auth_ts = #{authTs,jdbcType=TIMESTAMP}
+  </update>
+</mapper>

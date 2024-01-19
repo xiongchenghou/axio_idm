@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="jp.co.axio.masterMentsetSystem.repository.WUserSystemSubMapper">
+
+    <resultMap id="BaseResultMap" type="jp.co.axio.masterMentsetSystem.model.WUserSystemSub">
+            <id property="userId" column="user_id" jdbcType="VARCHAR"/>
+            <id property="uploadUserId" column="upload_user_id" jdbcType="VARCHAR"/>
+            <id property="uploadUserTs" column="upload_user_ts" jdbcType="TIMESTAMP"/>
+            <id property="uploadSession" column="upload_session" jdbcType="VARCHAR"/>
+            <result property="reflectionDate" column="reflection_date" jdbcType="DATE"/>
+            <result property="applicationUseFlag01" column="application_use_flag_01" jdbcType="VARCHAR"/>
+            <result property="applicationUseFlag02" column="application_use_flag_02" jdbcType="VARCHAR"/>
+            <result property="applicationUseFlag03" column="application_use_flag_03" jdbcType="VARCHAR"/>
+            <result property="applicationUseFlag04" column="application_use_flag_04" jdbcType="VARCHAR"/>
+            <result property="applicationUseFlag05" column="application_use_flag_05" jdbcType="VARCHAR"/>
+            <result property="applicationUseFlag06" column="application_use_flag_06" jdbcType="VARCHAR"/>
+            <result property="applicationUseFlag07" column="application_use_flag_07" jdbcType="VARCHAR"/>
+            <result property="applicationUseFlag08" column="application_use_flag_08" jdbcType="VARCHAR"/>
+            <result property="applicationUseFlag09" column="application_use_flag_09" jdbcType="VARCHAR"/>
+            <result property="applicationUseFlag10" column="application_use_flag_10" jdbcType="VARCHAR"/>
+            <result property="applicationUseFlag11" column="application_use_flag_11" jdbcType="VARCHAR"/>
+            <result property="applicationUseFlag12" column="application_use_flag_12" jdbcType="VARCHAR"/>
+            <result property="applicationUseFlag13" column="application_use_flag_13" jdbcType="VARCHAR"/>
+            <result property="applicationUseFlag14" column="application_use_flag_14" jdbcType="VARCHAR"/>
+            <result property="applicationUseFlag15" column="application_use_flag_15" jdbcType="VARCHAR"/>
+            <result property="applicationUseFlag16" column="application_use_flag_16" jdbcType="VARCHAR"/>
+            <result property="applicationUseFlag17" column="application_use_flag_17" jdbcType="VARCHAR"/>
+            <result property="applicationUseFlag18" column="application_use_flag_18" jdbcType="VARCHAR"/>
+            <result property="applicationUseFlag19" column="application_use_flag_19" jdbcType="VARCHAR"/>
+            <result property="applicationUseFlag20" column="application_use_flag_20" jdbcType="VARCHAR"/>
+            <result property="systemValidFlag01" column="system_valid_flag_01" jdbcType="VARCHAR"/>
+            <result property="systemValidFlag02" column="system_valid_flag_02" jdbcType="VARCHAR"/>
+            <result property="systemValidFlag03" column="system_valid_flag_03" jdbcType="VARCHAR"/>
+            <result property="systemValidFlag04" column="system_valid_flag_04" jdbcType="VARCHAR"/>
+            <result property="systemValidFlag05" column="system_valid_flag_05" jdbcType="VARCHAR"/>
+            <result property="systemValidFlag06" column="system_valid_flag_06" jdbcType="VARCHAR"/>
+            <result property="systemValidFlag07" column="system_valid_flag_07" jdbcType="VARCHAR"/>
+            <result property="systemValidFlag08" column="system_valid_flag_08" jdbcType="VARCHAR"/>
+            <result property="systemValidFlag09" column="system_valid_flag_09" jdbcType="VARCHAR"/>
+            <result property="systemValidFlag10" column="system_valid_flag_10" jdbcType="VARCHAR"/>
+            <result property="systemValidFlag11" column="system_valid_flag_11" jdbcType="VARCHAR"/>
+            <result property="systemValidFlag12" column="system_valid_flag_12" jdbcType="VARCHAR"/>
+            <result property="systemValidFlag13" column="system_valid_flag_13" jdbcType="VARCHAR"/>
+            <result property="systemValidFlag14" column="system_valid_flag_14" jdbcType="VARCHAR"/>
+            <result property="systemValidFlag15" column="system_valid_flag_15" jdbcType="VARCHAR"/>
+            <result property="systemValidFlag16" column="system_valid_flag_16" jdbcType="VARCHAR"/>
+            <result property="systemValidFlag17" column="system_valid_flag_17" jdbcType="VARCHAR"/>
+            <result property="systemValidFlag18" column="system_valid_flag_18" jdbcType="VARCHAR"/>
+            <result property="systemValidFlag19" column="system_valid_flag_19" jdbcType="VARCHAR"/>
+            <result property="systemValidFlag20" column="system_valid_flag_20" jdbcType="VARCHAR"/>
+            <result property="adminFlag" column="admin_flag" jdbcType="VARCHAR"/>
+            <result property="registerId" column="register_id" jdbcType="VARCHAR"/>
+            <result property="registTs" column="regist_ts" jdbcType="TIMESTAMP"/>
+            <result property="updaterId" column="updater_id" jdbcType="VARCHAR"/>
+            <result property="updateTs" column="update_ts" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        user_id,upload_user_id,upload_user_ts,
+        upload_session,reflection_date,application_use_flag_01,
+        application_use_flag_02,application_use_flag_03,application_use_flag_04,
+        application_use_flag_05,application_use_flag_06,application_use_flag_07,
+        application_use_flag_08,application_use_flag_09,application_use_flag_10,
+        application_use_flag_11,application_use_flag_12,application_use_flag_13,
+        application_use_flag_14,application_use_flag_15,application_use_flag_16,
+        application_use_flag_17,application_use_flag_18,application_use_flag_19,
+        application_use_flag_20,system_valid_flag_01,system_valid_flag_02,
+        system_valid_flag_03,system_valid_flag_04,system_valid_flag_05,
+        system_valid_flag_06,system_valid_flag_07,system_valid_flag_08,
+        system_valid_flag_09,system_valid_flag_10,system_valid_flag_11,
+        system_valid_flag_12,system_valid_flag_13,system_valid_flag_14,
+        system_valid_flag_15,system_valid_flag_16,system_valid_flag_17,
+        system_valid_flag_18,system_valid_flag_19,system_valid_flag_20,
+        admin_flag,register_id,regist_ts,
+        updater_id,update_ts
+    </sql>
+</mapper>

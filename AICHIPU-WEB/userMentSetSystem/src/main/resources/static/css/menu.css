@@ -1,0 +1,54 @@
+/* AXIO追加 */
+
+a {
+    color: #337ab7 !important;
+    text-decoration: none !important;
+}
+
+
+body {
+    /* background: #e9e9e9; */
+    background-color: rgba(250, 250, 250, 1) !important;
+    /* font: 400 87.5%/1.5em 'Open Sans', sans-serif; */
+}
+
+
+h1.menuListArea__title {
+    font-size: 2.5rem;
+    margin-bottom: 20px !important;
+    border-bottom: 3px solid rgba(31, 57, 114, 0.2) !important;
+}
+
+h2.menuListArea__title {
+    font-size: 2rem;
+    margin-bottom: 20px !important;
+    border-bottom: 2px solid rgba(31, 57, 114, 0.2) !important;
+}
+
+.card-body {
+    padding: 3rem 3rem !important;
+}
+
+.menuListArea {
+    margin-top: 0px !important;
+}
+
+.menuListArea__list__item {
+    width: calc(100%/ 7 - -36px) !important;
+    background-color: #fafafa !important;
+    margin-right: 15.1px;
+    -webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+
+    border: 2px solid #203990
+}
+
+
+.menuListArea__list__item>a .text {
+    font-size: 1.6rem !important;
+}
+
+
+.menu__margin {
+    margin-bottom: 30px;
+}

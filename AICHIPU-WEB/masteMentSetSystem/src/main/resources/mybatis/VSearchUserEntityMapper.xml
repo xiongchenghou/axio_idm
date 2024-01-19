@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="jp.co.axio.masterMentsetSystem.repository.VSearchUserEntityMapper">
+  <resultMap id="BaseResultMap" type="jp.co.axio.masterMentsetSystem.model.VSearchUserEntity">
+    <result column="user_id" jdbcType="VARCHAR" property="userId" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="user_reserve" jdbcType="CHAR" property="userReserve" />
+    <result column="employment_kbn" jdbcType="CHAR" property="employmentKbn" />
+    <result column="employment_name" jdbcType="VARCHAR" property="employmentName" />
+    <result column="fullname_jp" jdbcType="VARCHAR" property="fullnameJp" />
+    <result column="fullname_en" jdbcType="VARCHAR" property="fullnameEn" />
+    <result column="location_code" jdbcType="CHAR" property="locationCode" />
+    <result column="cmapus" jdbcType="VARCHAR" property="cmapus" />
+    <result column="organization_code" jdbcType="VARCHAR" property="organizationCode" />
+    <result column="department" jdbcType="VARCHAR" property="department" />
+    <result column="entrance_year" jdbcType="VARCHAR" property="entranceYear" />
+    <result column="vpn" jdbcType="VARCHAR" property="vpn" />
+    <result column="admin_flag" jdbcType="VARCHAR" property="adminFlag" />
+    <result column="start_date" jdbcType="DATE" property="startDate" />
+    <result column="end_date" jdbcType="DATE" property="endDate" />
+    <result column="invalid_flag" jdbcType="CHAR" property="invalidFlag" />
+    <result column="delete_flag" jdbcType="CHAR" property="deleteFlag" />
+    <result column="criterion_dt" jdbcType="DATE" property="criterionDt" />
+    <result column="user_start_date" jdbcType="DATE" property="userStartDate" />
+    <result column="user_end_date" jdbcType="DATE" property="userEndDate" />
+    <result column="user_invalid_flag" jdbcType="CHAR" property="userInvalidFlag" />
+    <result column="user_delete_flag" jdbcType="CHAR" property="userDeleteFlag" />
+    <result column="user_password" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    user_id, status, user_reserve, employment_kbn, employment_name, fullname_jp, fullname_en, 
+    location_code, cmapus, organization_code, department, entrance_year, vpn, admin_flag, 
+    start_date, end_date, invalid_flag, delete_flag, criterion_dt, user_start_date, user_end_date, 
+    user_invalid_flag, user_delete_flag, user_password
+  </sql>
+  <select id="selectByExample" parameterType="jp.co.axio.masterMentsetSystem.model.VSearchUserEntityExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from public.v_search_user
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="jp.co.axio.masterMentsetSystem.model.VSearchUserEntityExample">
+    delete from public.v_search_user
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="jp.co.axio.masterMentsetSystem.model.VSearchUserEntity">
+    insert into public.v_search_user (user_id, status, user_reserve, 
+      employment_kbn, employment_name, fullname_jp, 
+      fullname_en, location_code, cmapus, 
+      organization_code, department, entrance_year, 
+      vpn, admin_flag, start_date, 
+      end_date, invalid_flag, delete_flag, 
+      criterion_dt, user_start_date, user_end_date, 
+      user_invalid_flag, user_delete_flag, user_password
+      )
+    values (#{userId,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{userReserve,jdbcType=CHAR}, 
+      #{employmentKbn,jdbcType=CHAR}, #{employmentName,jdbcType=VARCHAR}, #{fullnameJp,jdbcType=VARCHAR}, 
+      #{fullnameEn,jdbcType=VARCHAR}, #{locationCode,jdbcType=CHAR}, #{cmapus,jdbcType=VARCHAR}, 
+      #{organizationCode,jdbcType=VARCHAR}, #{department,jdbcType=VARCHAR}, #{entranceYear,jdbcType=VARCHAR}, 
+      #{vpn,jdbcType=VARCHAR}, #{adminFlag,jdbcType=VARCHAR}, #{startDate,jdbcType=DATE}, 
+      #{endDate,jdbcType=DATE}, #{invalidFlag,jdbcType=CHAR}, #{deleteFlag,jdbcType=CHAR}, 
+      #{criterionDt,jdbcType=DATE}, #{userStartDate,jdbcType=DATE}, #{userEndDate,jdbcType=DATE}, 
+      #{userInvalidFlag,jdbcType=CHAR}, #{userDeleteFlag,jdbcType=CHAR}, #{userPassword,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="jp.co.axio.masterMentsetSystem.model.VSearchUserEntity">
+    insert into public.v_search_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="userReserve != null">
+        user_reserve,
+      </if>
+      <if test="employmentKbn != null">
+        employment_kbn,
+      </if>
+      <if test="employmentName != null">
+        employment_name,
+      </if>
+      <if test="fullnameJp != null">
+        fullname_jp,
+      </if>
+      <if test="fullnameEn != null">
+        fullname_en,
+      </if>
+      <if test="locationCode != null">
+        location_code,
+      </if>
+      <if test="cmapus != null">
+        cmapus,
+      </if>
+      <if test="organizationCode != null">
+        organization_code,
+      </if>
+      <if test="department != null">
+        department,
+      </if>
+      <if test="entranceYear != null">
+        entrance_year,
+      </if>
+      <if test="vpn != null">
+        vpn,
+      </if>
+      <if test="adminFlag != null">
+        admin_flag,
+      </if>
+      <if test="startDate != null">
+        start_date,
+      </if>
+      <if test="endDate != null">
+        end_date,
+      </if>
+      <if test="invalidFlag != null">
+        invalid_flag,
+      </if>
+      <if test="deleteFlag != null">
+        delete_flag,
+      </if>
+      <if test="criterionDt != null">
+        criterion_dt,
+      </if>
+      <if test="userStartDate != null">
+        user_start_date,
+      </if>
+      <if test="userEndDate != null">
+        user_end_date,
+      </if>
+      <if test="userInvalidFlag != null">
+        user_invalid_flag,
+      </if>
+      <if test="userDeleteFlag != null">
+        user_delete_flag,
+      </if>
+      <if test="userPassword != null">
+        user_password,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="userReserve != null">
+        #{userReserve,jdbcType=CHAR},
+      </if>
+      <if test="employmentKbn != null">
+        #{employmentKbn,jdbcType=CHAR},
+      </if>
+      <if test="employmentName != null">
+        #{employmentName,jdbcType=VARCHAR},
+      </if>
+      <if test="fullnameJp != null">
+        #{fullnameJp,jdbcType=VARCHAR},
+      </if>
+      <if test="fullnameEn != null">
+        #{fullnameEn,jdbcType=VARCHAR},
+      </if>
+      <if test="locationCode != null">
+        #{locationCode,jdbcType=CHAR},
+      </if>
+      <if test="cmapus != null">
+        #{cmapus,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationCode != null">
+        #{organizationCode,jdbcType=VARCHAR},
+      </if>
+      <if test="department != null">
+        #{department,jdbcType=VARCHAR},
+      </if>
+      <if test="entranceYear != null">
+        #{entranceYear,jdbcType=VARCHAR},
+      </if>
+      <if test="vpn != null">
+        #{vpn,jdbcType=VARCHAR},
+      </if>
+      <if test="adminFlag != null">
+        #{adminFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="startDate != null">
+        #{startDate,jdbcType=DATE},
+      </if>
+      <if test="endDate != null">
+        #{endDate,jdbcType=DATE},
+      </if>
+      <if test="invalidFlag != null">
+        #{invalidFlag,jdbcType=CHAR},
+      </if>
+      <if test="deleteFlag != null">
+        #{deleteFlag,jdbcType=CHAR},
+      </if>
+      <if test="criterionDt != null">
+        #{criterionDt,jdbcType=DATE},
+      </if>
+      <if test="userStartDate != null">
+        #{userStartDate,jdbcType=DATE},
+      </if>
+      <if test="userEndDate != null">
+        #{userEndDate,jdbcType=DATE},
+      </if>
+      <if test="userInvalidFlag != null">
+        #{userInvalidFlag,jdbcType=CHAR},
+      </if>
+      <if test="userDeleteFlag != null">
+        #{userDeleteFlag,jdbcType=CHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="jp.co.axio.masterMentsetSystem.model.VSearchUserEntityExample" resultType="java.lang.Long">
+    select count(*) from public.v_search_user
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update public.v_search_user
+    <set>
+      <if test="record.userId != null">
+        user_id = #{record.userId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null">
+        status = #{record.status,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userReserve != null">
+        user_reserve = #{record.userReserve,jdbcType=CHAR},
+      </if>
+      <if test="record.employmentKbn != null">
+        employment_kbn = #{record.employmentKbn,jdbcType=CHAR},
+      </if>
+      <if test="record.employmentName != null">
+        employment_name = #{record.employmentName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fullnameJp != null">
+        fullname_jp = #{record.fullnameJp,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fullnameEn != null">
+        fullname_en = #{record.fullnameEn,jdbcType=VARCHAR},
+      </if>
+      <if test="record.locationCode != null">
+        location_code = #{record.locationCode,jdbcType=CHAR},
+      </if>
+      <if test="record.cmapus != null">
+        cmapus = #{record.cmapus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.organizationCode != null">
+        organization_code = #{record.organizationCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.department != null">
+        department = #{record.department,jdbcType=VARCHAR},
+      </if>
+      <if test="record.entranceYear != null">
+        entrance_year = #{record.entranceYear,jdbcType=VARCHAR},
+      </if>
+      <if test="record.vpn != null">
+        vpn = #{record.vpn,jdbcType=VARCHAR},
+      </if>
+      <if test="record.adminFlag != null">
+        admin_flag = #{record.adminFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="record.startDate != null">
+        start_date = #{record.startDate,jdbcType=DATE},
+      </if>
+      <if test="record.endDate != null">
+        end_date = #{record.endDate,jdbcType=DATE},
+      </if>
+      <if test="record.invalidFlag != null">
+        invalid_flag = #{record.invalidFlag,jdbcType=CHAR},
+      </if>
+      <if test="record.deleteFlag != null">
+        delete_flag = #{record.deleteFlag,jdbcType=CHAR},
+      </if>
+      <if test="record.criterionDt != null">
+        criterion_dt = #{record.criterionDt,jdbcType=DATE},
+      </if>
+      <if test="record.userStartDate != null">
+        user_start_date = #{record.userStartDate,jdbcType=DATE},
+      </if>
+      <if test="record.userEndDate != null">
+        user_end_date = #{record.userEndDate,jdbcType=DATE},
+      </if>
+      <if test="record.userInvalidFlag != null">
+        user_invalid_flag = #{record.userInvalidFlag,jdbcType=CHAR},
+      </if>
+      <if test="record.userDeleteFlag != null">
+        user_delete_flag = #{record.userDeleteFlag,jdbcType=CHAR},
+      </if>
+      <if test="record.userPassword != null">
+        user_password = #{record.userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update public.v_search_user
+    set user_id = #{record.userId,jdbcType=VARCHAR},
+      status = #{record.status,jdbcType=VARCHAR},
+      user_reserve = #{record.userReserve,jdbcType=CHAR},
+      employment_kbn = #{record.employmentKbn,jdbcType=CHAR},
+      employment_name = #{record.employmentName,jdbcType=VARCHAR},
+      fullname_jp = #{record.fullnameJp,jdbcType=VARCHAR},
+      fullname_en = #{record.fullnameEn,jdbcType=VARCHAR},
+      location_code = #{record.locationCode,jdbcType=CHAR},
+      cmapus = #{record.cmapus,jdbcType=VARCHAR},
+      organization_code = #{record.organizationCode,jdbcType=VARCHAR},
+      department = #{record.department,jdbcType=VARCHAR},
+      entrance_year = #{record.entranceYear,jdbcType=VARCHAR},
+      vpn = #{record.vpn,jdbcType=VARCHAR},
+      admin_flag = #{record.adminFlag,jdbcType=VARCHAR},
+      start_date = #{record.startDate,jdbcType=DATE},
+      end_date = #{record.endDate,jdbcType=DATE},
+      invalid_flag = #{record.invalidFlag,jdbcType=CHAR},
+      delete_flag = #{record.deleteFlag,jdbcType=CHAR},
+      criterion_dt = #{record.criterionDt,jdbcType=DATE},
+      user_start_date = #{record.userStartDate,jdbcType=DATE},
+      user_end_date = #{record.userEndDate,jdbcType=DATE},
+      user_invalid_flag = #{record.userInvalidFlag,jdbcType=CHAR},
+      user_delete_flag = #{record.userDeleteFlag,jdbcType=CHAR},
+      user_password = #{record.userPassword,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

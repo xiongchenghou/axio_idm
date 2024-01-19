@@ -1,0 +1,69 @@
+
+
+.searchDetailBox__profileList__item {
+  background-color: #f9f9f9 !important;
+  /* border: 3px !important;
+  border-color: black !important; */
+}
+
+
+.box__list__item {
+  background-color: #f9f9f9;
+  border: 3px !important;
+}
+
+.searchDetailBox__infoBox__list .item {
+  color: black !important;
+  background-color: #FFFFFF !important;
+  border: 2px #1F3990 !important;
+  border-style: solid solid none !important;
+}
+
+.searchDetailBox__infoBox__list .item.is-on {
+  background-color: #1F3990 !important;
+  color: #FFFFFF !important;
+}
+
+.searchDetailBox__infoBox__area {
+  border: 2px #1F3990 !important;
+  border-style: solid !important;
+
+}
+
+/* ロック解除ボタン */
+.searchDetailBox__titleArea__btnArea .unlockBtn {
+  width: calc(100%/ 7 - -150px) !important;
+  background-color: #fafafa !important;
+  color: green;
+  margin-right: 11px;
+  -webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  border: 2px solid #203990;
+}
+
+/* パスワード初期化ボタン */
+.searchDetailBox__titleArea__btnArea .passInitBtn {
+  width: calc(100%/ 7 - -150px) !important;
+  background-color: #fafafa !important;
+  margin-right: 11px;
+  -webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  border: 2px solid #203990;
+}
+
+.searchDetailBox__titleArea__btnArea>button {
+  display: block;
+  padding: 18px 10px 6px;
+  border: 4px solid #fff;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+
+  
+}
+
+
+
+.searchDetailBox__profileList__item .title {
+  width: 200px !important;
+}
+

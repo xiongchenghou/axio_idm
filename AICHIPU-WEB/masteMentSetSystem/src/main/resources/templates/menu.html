@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>menu</title>
+  <link rel="stylesheet"  th:href="@{/assets/css/style.css}">
+  <link rel="stylesheet" th:href="@{/css/menu.css}" />
+  <link rel="stylesheet" th:href="@{/css/common.css}" />
+  <link th:href="@{/vendor/bootstrap-5.0.2-dist/css/bootstrap.min.css}" rel="stylesheet" />
+  <!-- <link th:href="@{/vendor/bootstrap-3.3.7_a/css/bootstrap.min.css}" rel="stylesheet" /> -->
+  <!-- 個別設定CSS -->
+  <link th:href="@{/vendor/fontawesome-free-6.1.1-web/css/all.css}" rel="stylesheet" />
+
+</head>
+
+<body>
+<!-- ヘッダー -->
+<header id="header" class="header">
+  <div class="header__inner">
+    <figure class="header__img"><img src="./assets/img/common/img_logo01.png" alt="AXIO" width="73"
+                                     height="36">
+    </figure>
+    <a href="./logout" class="header__link">ログアウト</a>
+  </div>
+</header>
+
+
+<!--#include virtual="/assets/include/header.html" -->
+<div id="ActionErrorMessage" class="alert alert-danger asm_alert" style="display:none" role="alert">
+  <span id="ActionErrorText"></span>
+</div>
+<div class="menu">
+  <main class="main">
+
+    <!-- タイトルエリア -->
+    <div class="modTitleArea">
+    </div>
+
+    <div class="main__inner">
+
+      <div class="container">
+        <div class="card">
+          <div class="card-body">
+
+            <section class="menuListArea">
+              <h1 class="menuListArea__title"><b>管理者ポータル</b></h1>
+
+              <!-- ユーザ管理 -->
+              <h2 class="menuListArea__title">利用者管理</h2>
+              <ul class="menuListArea__list">
+                <li class="menuListArea__list__item">
+                  <a th:href="@{/search}" style="text-align: center;">
+                    <i class="fa-solid fa-user fa-5x"></i>
+                    <p class="text">利用者情報管理</p>
+                  </a>
+                </li>
+
+                <li class="menuListArea__list__item">
+                  <a th:href="@{/csv}" style="text-align: center;">
+                    <i class="fa-solid fa-users-rectangle fa-5x"></i>
+                    <p class="text">利用者CSV管理</p>
+                  </a>
+                </li>
+
+                <li class="menuListArea__list__item">
+                  <a th:href="@{/admin}" style="text-align: center;">
+                    <i class="fa-solid fa-user-gear fa-5x"></i>
+                    <p class="text">管理者権限</p>
+                  </a>
+                </li>
+
+                <li class="menuListArea__list__item">
+                  <a th:href="@{/report}"  style="text-align: center;">
+                    <i class="fa-solid fa-address-card fa-5x"></i>
+                    <p class="text">帳票出力</p>
+                  </a>
+                </li>
+
+              </ul>
+
+              <div class="menu__margin"></div>
+
+              <!-- システム管理 -->
+              <h2 class="menuListArea__title">システム管理</h2>
+              <ul class="menuListArea__list">
+
+                <li class="menuListArea__list__item">
+                  <!-- <a th:href="@{/hinemos}" style="text-align: center;">  -->
+                  <a th:href="@{${urlHinemos}}" style="text-align: center;" target="_blank">
+                    <i class="fa-solid fa-toolbox fa-5x"></i>
+                    <p class="text">ジョブ管理</p>
+                  </a>
+                </li>
+
+                <li class="menuListArea__list__item">
+                  <!-- <a th:href="@{/idm}" style="text-align: center;"> -->
+                  <a th:href="@{${urlIdm}}" style="text-align: center;" target="_blank">
+                    <i class="fa-solid fa-screwdriver-wrench fa-5x"></i>
+                    <p class="text">IDM管理</p>
+                  </a>
+                </li>
+
+                <li class="menuListArea__list__item">
+                  <a th:href="@{/log}" style="text-align: center;">
+                    <i class="fa-solid fa-desktop fa-5x"></i>
+                    <p class="text">操作ログ</p>
+                  </a>
+                </li>
+
+                <li class="menuListArea__list__item">
+                  <a href="./mgpCsvExport" th:href="@{./mgpCsvExport}"  style="text-align: center;">
+                    <i class="fa-solid fa-file-csv fa-5x"></i>
+                    <p class="text">汎用CSV設定</p>
+                  </a>
+                </li>
+
+
+                <li class="menuListArea__list__item">
+                  <a  href="./GpuMasterSet" th:href="@{./GpuMasterSet}" style="text-align: center;">
+                    <i class="fa-solid fa-gear fa-5x"></i>
+                    <p class="text">汎用コード設定</p>
+                  </a>
+                </li>
+
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<!--#include virtual="/assets/include/footer.html" -->
+
+
+
+</body>
+
+</html>
